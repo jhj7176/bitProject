@@ -1,0 +1,95 @@
+
+<style rel="stylesheet" type="text/css">
+ 
+
+
+
+ #header, #menu, #content, #footer {
+	
+}
+
+#header {
+	height:100px;
+}
+
+#header>h1 {
+	width: 320px;
+	height: 120px;
+	background-image: url("../img/bitcamp_logo.png");
+	background-repeat: no-repeat;
+/* 	border:1px solid; */
+	text-indent: -999px;
+}
+
+#menu, #footer {
+ background-color: white;
+}
+
+#menu {
+	height: 52px;
+}
+
+#menu>ul {
+	overflow: hidden;
+	list-style: none;
+	margin: 0px auto;
+	padding: 0px;
+	width: 410px;
+}
+
+#menu>ul>li {
+	padding: 0px;
+	width: 100px;
+	height: 50px;
+	line-height: 50px;
+	float: left;
+	border: 1px solid black;
+	text-align: center;
+}
+
+#menu>ul>li>a {
+	color: black; diplay : block;
+	text-decoration: none;
+	diplay: block;
+}
+
+#menu>ul>li:hover {
+	color: gray;
+	background-color: darkgray;
+}
+
+
+#content{
+	margin-top:20px;
+	margin-bottom:20px;
+	border-top:2px solid gray;
+	border-bottom:2px solid gray;
+
+}
+
+#content>div{
+width:800px;
+	margin:auto;
+	display:block;
+}
+#footer {
+	
+}
+
+#footer>div {
+	width: 550px; display : block;
+	margin: auto;
+	display: block;
+}
+
+#footer>div>img {
+	float: left;
+}
+   
+
+
+
+
+
+    </style>
+
