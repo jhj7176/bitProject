@@ -44,8 +44,8 @@ public class AttendController extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-		request.getRequestDispatcher("result.jsp").forward(request, response);
+		response.sendRedirect("list.bit");
+		//request.getRequestDispatcher("result.jsp").forward(request, response);
 
 	}// post
 

@@ -47,9 +47,10 @@ public class AttendDao {
 			oabsent = rs.getInt("absent");
 		}//while
 	
+		if(pstmt!=null) pstmt.close();
 		String sql ="update attend set att=?, late=?, absent=? where num=?"; //새 출석정보 업데이트,
 		
-		conn = dataSource.getConnection();
+		//conn = dataSource.getConnection();
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, oatt+att);	//servlet에서 호출할 때 att~absent값이 있냐없냐에 따라 0이나 1을 파라미터로 준다. 
 		pstmt.setInt(2, olate+late);	//기존 출석 정보에서 +1이나 +0을 한다. 

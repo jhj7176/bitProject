@@ -38,8 +38,7 @@
 		$('#submit').on('click', function() {
 
 			$('.formBtn').each(function() {
-
-				$(this).delay(50).click();
+				$(this).click().delay(100);
 			});//each
 		});//onclick
 	});//ready
