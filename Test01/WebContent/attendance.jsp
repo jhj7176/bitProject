@@ -35,7 +35,9 @@
 			<legend>출석</legend>
 		<c:forEach var="i" begin="0" end="9">
 			<form  method="post" action="attendance.bit">
-				<input type="hidden" name="mnum" value="${i}${i}" />
+				
+				<input type="hidden" name="num" value="${i}${i}" />
+				
 				<div>
 				<span>${i}번</span>
 					<label>출석</label> 
@@ -45,6 +47,7 @@
 					<label>결석</label> 
 					<input type="radio" class="ra" value="absent" name="ra" />
 				</div>
+				
 				<div>
 					<button class="formBtn">저장</button>
 				</div>
