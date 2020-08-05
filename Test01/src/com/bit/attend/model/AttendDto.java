@@ -1,11 +1,20 @@
 package com.bit.attend.model;
 
+import java.sql.Date;
+
 public class AttendDto {
 
 	private int att, late, absent, mnum;
-	private String name;
+	private Date attdate;
+	private String attendance;
 	
 	
+	public String getAttendance() {
+		return attendance;
+	}
+	public void setAttendance(String attendance) {
+		this.attendance = attendance;
+	}
 	public int getAtt() {
 		return att;
 	}
@@ -30,12 +39,16 @@ public class AttendDto {
 	public void setMnum(int mnum) {
 		this.mnum = mnum;
 	}
-	public String getName() {
-		return name;
+	public Date getAttdate() {
+		return attdate;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setAttdate(Date attDate) {
+		// TODO Auto-generated method stub
+		this.attdate = attDate;
+		
 	}
+
+
 	
 	
 	

@@ -18,15 +18,34 @@ create table member(
 );
 
 create table attend(
-	mnum number primary key,
-	name varchar2(40),
-	id_email varchar2(50), 
-	att number default 0,
+	mnum number,
+	attdate date,
+	attendance varchar2(10),
+ 	att number default 0,
 	late number default 0,
 	absent number default 0,
-	foreign key(mnum) references member(mnum) on delete cascade,
-	foreign key(id_email) references member(id_email) on delete cascade
+	foreign key(mnum) references member(mnum) on delete cascade	
 );
+
+insert into attend (mnum) values (11);
+insert into attend (mnum) values (22);
+insert into attend (mnum) values (33);
+insert into attend (mnum) values (44);
+insert into attend (mnum) values (55);
+insert into attend (mnum) values (66);
+insert into attend (mnum) values (77);
+insert into attend (mnum) values (88);
+insert into attend (mnum) values (99);
+
+select * from attend;
+select * from attend where mnum=22;
+--select count(*) from attend where attdate between '2020-08-05 00:00:00' and '2020-08-05 23:59:59';
+
+select * from (select to_char(attdate) as charattdate, mnum, attendance from attend) where mnum=22 and charattdate='20/08/05';
+
+
+select to_char(attdate) as charattdate, mnum, attendance from attend
+
 
 create table grade(
 	mnum number primary key,
@@ -75,14 +94,5 @@ insert into member values (member_seq.nextval||member_seq.currval, 'text9@email.
 
 select * from member;
 
-insert into attend (mnum, name) values (11, 'AAA');
-insert into attend (mnum, name) values (22, 'BBB');
-insert into attend (mnum, name) values (33, 'CCC');
-insert into attend (mnum, name) values (44, 'DDD');
-insert into attend (mnum, name) values (55, 'EEE');
-insert into attend (mnum, name) values (66, 'FFF');
-insert into attend (mnum, name) values (77, 'GGG');
-insert into attend (mnum, name) values (88, 'HHH');
-insert into attend (mnum, name) values (99, 'III');
+insert into attend (mnum,attdate,attendance) values (11,sysdate,'att');
 
-select * from attend;

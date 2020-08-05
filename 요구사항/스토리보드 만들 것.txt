@@ -1,0 +1,22 @@
+스토리보드
+
+LMS 행정팀 화면목록
+
+화면넘버 (  )
+
+( 1 )행정직원이 LMS로 로그인한 경우 (lms/staff/lms.bit)
+메뉴구성
+( 2 )강의관리 (lms/staff/lecture/lecture.bit)
+개설강좌목록이 나오고 강좌 개설가능
+( 3 )강좌개설  lms/staff /lecture/add.bit
+( 4 )강좌정보 lms/staff /lecrture/detail.bit
+( 5 )강좌수정  lms/staff /lecture/edit.bit
+( 6 )강좌삭제  lms/staff /lecture/delete.bit
+( 7 ) 계정관리 lms/staff /account/account.bit
+회원목록이 나오고 회원을 클릭해서 회원정보수정가능. 직원으로 레벨 올려주거나 가능
+( 12 ) 직원등록 lms/staff/account/add.bit
+( 8 )회원정보 lms/staff /account/detail.bit
+( 9 )회원정보 수정 lms/staff /account/edit.bit
+( 10 )회원정보 삭제 lms/staff /account/delete.bit
+( 11 ) 수강생 관리 (lms/staff /sudent/student.bit)
+수강생목록이 나오고 학생을 누르면 lm

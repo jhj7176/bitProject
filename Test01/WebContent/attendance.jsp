@@ -31,10 +31,11 @@
 	<div id="target">
 		<fieldset>
 			<legend>출석</legend>
-		<c:forEach var="i" begin="0" end="9">	
-			<form  method="post" action="attendance.bit">
+		<c:forEach var="i" begin="1" end="9">	
+			<!-- <form  method="post" action="attendance.bit"> -->
+			<form  method="post" action="att.bit">
 				
-				<input type="hidden" name="num" value="${i}${i}" />
+				<input type="hidden" name="mnum" value="${i}${i}" />
 				
 				<div>
 				<span>${i}번</span>
