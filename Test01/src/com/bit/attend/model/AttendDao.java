@@ -32,11 +32,11 @@ public class AttendDao {
 		}
 	}
 	
-	public void updateAttend(int num, int att, int late, int absent) throws SQLException {
-		String sql2 = "select att, late, absent from attend where num = ?"; //기존의 출석 정보를 가져옴.
+	public void updateAttend(int mnum, int att, int late, int absent) throws SQLException {
+		String sql2 = "select att, late, absent from attend where mnum = ?"; //기존의 출석 정보를 가져옴.
 		conn = dataSource.getConnection();
 		pstmt = conn.prepareStatement(sql2);
-		pstmt.setInt(1, num);
+		pstmt.setInt(1, mnum);
 		rs = pstmt.executeQuery();
 		int oatt = 0;
 		int olate = 0;
@@ -48,14 +48,14 @@ public class AttendDao {
 		}//while
 	
 		if(pstmt!=null) pstmt.close();
-		String sql ="update attend set att=?, late=?, absent=? where num=?"; //새 출석정보 업데이트,
+		String sql ="update attend set att=?, late=?, absent=? where mnum=?"; //새 출석정보 업데이트,
 		
 		//conn = dataSource.getConnection();
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, oatt+att);	//servlet에서 호출할 때 att~absent값이 있냐없냐에 따라 0이나 1을 파라미터로 준다. 
 		pstmt.setInt(2, olate+late);	//기존 출석 정보에서 +1이나 +0을 한다. 
 		pstmt.setInt(3, oabsent+absent);
-		pstmt.setInt(4, num);
+		pstmt.setInt(4, mnum);
 		pstmt.executeQuery();
 		
 		if(pstmt!=null) pstmt.close();
@@ -74,7 +74,7 @@ public class AttendDao {
 		rs = pstmt.executeQuery();
 		while(rs.next()) {
 			bean = new AttendDto();
-			bean.setNum(rs.getInt("num"));
+			bean.setMnum(rs.getInt("mnum"));
 			bean.setName(rs.getString("name"));
 			bean.setAtt(rs.getInt("att"));
 			bean.setLate(rs.getInt("late"));

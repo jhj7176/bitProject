@@ -2,7 +2,7 @@ package com.bit.attend.model;
 
 public class AttendDto {
 
-	private int att, late, absent, num;
+	private int att, late, absent, mnum;
 	private String name;
 	
 	
@@ -24,11 +24,11 @@ public class AttendDto {
 	public void setAbsent(int absent) {
 		this.absent = absent;
 	}
-	public int getNum() {
-		return num;
+	public int getMnum() {
+		return mnum;
 	}
-	public void setNum(int num) {
-		this.num = num;
+	public void setMnum(int mnum) {
+		this.mnum = mnum;
 	}
 	public String getName() {
 		return name;

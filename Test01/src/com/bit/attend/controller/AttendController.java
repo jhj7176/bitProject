@@ -22,9 +22,9 @@ public class AttendController extends HttpServlet {
 
 		// TODO Auto-generated method stu
 
-		int num = -1;
+		int mnum = -1;
 		try {
-			num = Integer.parseInt(request.getParameter("num"));
+			mnum = Integer.parseInt(request.getParameter("mnum"));
 		} catch (NumberFormatException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
@@ -47,7 +47,7 @@ public class AttendController extends HttpServlet {
 
 		AttendDao dao = new AttendDao();
 		try {
-			dao.updateAttend(num, att, late, absent);
+			dao.updateAttend(mnum, att, late, absent);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

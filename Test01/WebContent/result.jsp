@@ -23,7 +23,7 @@
 		</tr>
 		<c:forEach items="${alist }" varStatus="status" var="ele">
 			<tr>
-				<td>${alist.get(status.index).num }</td>
+				<td>${alist.get(status.index).mnum }</td>
 				<td>${alist.get(status.index).name }</td>
 				<td>${alist.get(status.index).att }</td>
 				<td>${alist.get(status.index).late }</td>
