@@ -45,6 +45,8 @@
 					<input type="radio" class="ra" value="late" name="ra" /> 
 					<label>결석</label> 
 					<input type="radio" class="ra" value="absent" name="ra" />
+					<label>조퇴</label> 
+					<input type="radio" class="ra" value="early" name="ra" />
 				</div>
 				
 				<div>

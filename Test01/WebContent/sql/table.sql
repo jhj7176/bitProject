@@ -18,14 +18,31 @@ create table member(
 );
 
 create table attend(
-	mnum number,
-	attdate date,
-	attendance varchar2(10),
- 	att number default 0,
-	late number default 0,
-	absent number default 0,
-	foreign key(mnum) references member(mnum) on delete cascade	
+	mnum number, --회원테이블의 회원번호 FK 
+	attdate date,	--출석체크 날짜
+	attendance varchar2(10), --출성정보(출석, 지각, 결석, 조퇴)
+ 	--att number default 0,
+	--late number default 0,
+	--absent number default 0,
+	foreign key(mnum) references member(mnum) on delete cascade --회원테이블 회원번호 외래키지정	
 );
+--기본 테이블 스키마. 필수만 표기함. 컬럼 추가 가능 
+
+select * from (select to_char(attdate) as charattdate, mnum, attendance from attend) where mnum=22 and charattdate='20/08/05';
+--8월5일 22번학생의 출석정보 (출석 or 지각 or 결석 or 조퇴)
+
+update attend set attendance = 'late' where mnum = 22 and to_char(attdate) = '20/08/05';
+--8월5일 오전 출석체크에서 22번 학생 없어서 결석으로 insert
+--8월5일 22번학생 9시 이후에 출석함
+--8월5일 22번학생 결석>>지각으로 변경
+
+select count(*) from attend where mnum = 11 and attendance='att';--11번학생의 출석일수
+select count(*) from attend where mnum = 11;					--11번학생의 총 수업일수
+
+
+
+
+
 
 insert into attend (mnum) values (11);
 insert into attend (mnum) values (22);
@@ -41,10 +58,6 @@ select * from attend;
 select * from attend where mnum=22;
 --select count(*) from attend where attdate between '2020-08-05 00:00:00' and '2020-08-05 23:59:59';
 
-select * from (select to_char(attdate) as charattdate, mnum, attendance from attend) where mnum=22 and charattdate='20/08/05';
-
-
-select to_char(attdate) as charattdate, mnum, attendance from attend
 
 
 create table grade(
