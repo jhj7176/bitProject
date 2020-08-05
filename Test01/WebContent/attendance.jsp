@@ -28,12 +28,10 @@
 </head>
 <body>
 
-
-
 	<div id="target">
 		<fieldset>
 			<legend>출석</legend>
-		<c:forEach var="i" begin="0" end="9">
+		<c:forEach var="i" begin="0" end="9">	
 			<form  method="post" action="attendance.bit">
 				
 				<input type="hidden" name="num" value="${i}${i}" />
@@ -53,7 +51,6 @@
 				</div>
 			</form>
 		</c:forEach>
-
 			<button id="submit">전송</button>
 		</fieldset>
 
