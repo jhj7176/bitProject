@@ -1,5 +1,7 @@
 drop table attend;
 drop table grade;
+drop table lectures;
+drop table notice;
 drop table member;
 drop sequence member_seq;
 
@@ -37,6 +39,29 @@ create table grade(
 	foreign key(id_email) references member(id_email) on delete cascade
 );  
 
+create table lectures(
+	lecture_name varchar2(50) primary key,
+	start_day date,
+	end_day date,
+	mnum number,
+	name varchar2(15),
+	lecture_room number,
+	foreign key(mnum) references member(mnum) on delete cascade
+);
+
+create table notice(
+	num number primary key,
+	title varchar2(100) not null,
+	writer varchar2(50) not null,
+	wtime date,
+	content varchar2(3000),
+	ref number,
+	serial number,
+	lev	number,
+	filename varchar2(255)
+);
+
+
 
 insert into member values (member_seq.nextval||member_seq.currval, 'text1@email.com','繹熱1','熱鬼儅',2,'password',01012341234,'JAVA');
 insert into member values (member_seq.nextval||member_seq.currval, 'text2@email.com','繹熱2','熱鬼儅',2,'password',01012341234,'JAVA');
@@ -59,7 +84,5 @@ insert into attend (mnum, name) values (66, 'FFF');
 insert into attend (mnum, name) values (77, 'GGG');
 insert into attend (mnum, name) values (88, 'HHH');
 insert into attend (mnum, name) values (99, 'III');
-
-
 
 select * from attend;
