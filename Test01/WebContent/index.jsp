@@ -33,10 +33,12 @@
 }
 
 #menu>ul>li {
+	
 	float: left;
 	padding: 0px;
 	margin: 0px;
 	border-left: 1px dotted gray;
+/* 	border-bottom:1px solid gray; */
 	width: 100px;
 	height: 50px;
 	line-height: 50px;
@@ -141,6 +143,18 @@
 	overflow: hidden:
 }
 
+#btn_lms{
+	width:202px;
+	height:30px;
+	border:1px solid gray;
+	background-color:white;
+	margin-bottom:5px;
+	font-size:110%;
+	color:#575757;
+}
+
+
+
 #ad>ul>li {
 	/* margin-left:-30px; */
 	padding: 0px;
@@ -207,7 +221,8 @@
 				<div id="login">
 					<fieldset>
 						<legend id="login_title">비트캠프로그인</legend>
-						<form id="side_login">
+						<form id="side_login" method="post" action="#servlet#">
+		<!--FORM SUBMIT하면 로그인 컨트롤러로 가서 DB회원정보와 비교 후 일치하면 세션만들고 사이드바변경.-->
 							<ul>
 								<li><span>ID&nbsp;</span><input type="text" name="id"
 									size="15" id="id" /></li>
@@ -229,8 +244,9 @@
 
 
 				<div id="ad">
-					<img alt="" src="img/btn1.png"> <img alt=""
-						src="img/btn3.png">
+					<button id="btn_lms" >LMS</button>
+					<img alt="" src="img/btn1.png"> 
+					<img alt="" src="img/btn3.png">
 				</div>
 			</div>
 			
