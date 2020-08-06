@@ -10,13 +10,11 @@
 <script type="text/javascript" src="jquery/jquery-1.12.4.js"></script>
 <script type="text/javascript">
 $(function() {
-
-	$('#att_next').on('click',function(){
-						
-		
-	});
-
-	
+	$('#submit').on('click', function() {
+		$('.formBtn').each(function() {
+			$(this).click();
+		});//each
+	});//onclick
 });//ready
 </script>
 
@@ -83,7 +81,6 @@ $(function() {
 }
 
 #centerContent {
-	text-align:center;
 	border: 1px solid; 
 	width : 690px;
 	height: 400px;
@@ -186,7 +183,6 @@ $(function() {
 }
 
 #att_table{
-margin:auto;
 width:400px;
 	border:1px solid;
 	border-collapse: collapse;
@@ -242,39 +238,46 @@ width:400px;
 				
 				<div id="centerContent">
 				
-	<form action="dateselect.bit" method="get">
-		<h1>LMS출석부</h1>
-		<label for="date">날짜:</label>
-		<input type="date" id="date" name="date">
-		<button id="datechoice" type="submit">선택</button>
-		<button id="goToList"><a href="list.bit">리스트</a></button>
-	</form>
-	<div id="attendtable">
-		<table id="att_table" class="table">
-			<tr>
-				<th>날짜</th>
-				<th>학번</th>
-				<th>상태</th>
-			</tr>
-		
-<c:forEach items="${list}" varStatus="status" begin="${att_begin}" end="${att_end}" var="bean">
-			<tr>
+				<h2>LMS출서관리</h2>
+					<a href="list.bit">list.bit</a>
+	<a href="attendance.jsp">attend.bit</a>
 
-				<td>${list.get(status.index).nalja }</td>
-				<td>${list.get(status.index).num }</td>
-				<td>${list.get(status.index).state }</td>
+
+	<table id="att_table">
+		<tr>
+			<th>학번</th>
+			<th width="100px">날짜</th>
+			<th>출석정보</th>
+			<th>출석</th>
+			<th>지각</th>
+			<th>결석</th>
+		</tr>
+		<c:forEach items="${alist }" varStatus="status" var="ele">
+			<tr>
+				<td>${alist.get(status.index).mnum }</td>
+				<td>${alist.get(status.index).attdate }</td>
+				<td>${alist.get(status.index).attendance }</td>
+				<td>${alist.get(status.index).att }</td>
+				<td>${alist.get(status.index).late }</td>
+				<td>${alist.get(status.index).absent }</td>
 			</tr>
-			</c:forEach>
-		</table>
-		
-		<a href="page.bit?p=prev&end=${att_end}&begin=${att_begin }">prev:${att_begin eq null}</a>
-		<a href="page.bit?p=next&end=${att_end}&begin=${att_begin }">next:${att_end}</a>
-	</div>
+		</c:forEach>
+
+	</table>
 				
-				</div><!-- centerContent -->
-
-			</div><!--grid_12  -->
+				
+				</div>
 			
+			
+			
+			
+			
+			
+			
+			</div>
+
+
+
 			<div class="grid_4">
 				<div id="login">
 					<fieldset>
@@ -284,7 +287,7 @@ width:400px;
 			<c:choose>
 				<c:when test="${empty login}"><!-- 세션 attribution인 "login"이 null이면 id,pw 입력폼이 나타남 -->
 								<ul>
-									<li><span>ID&nbsp;</span><input type="text" name="id_email" 
+									<li><span>ID&nbsp;</span><input type="text" name="id_email"
 										size="15" id="id" /></li>
 	
 									<li><span>PW&nbsp;</span><input type="password" name="password"

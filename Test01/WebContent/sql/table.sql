@@ -16,6 +16,8 @@ create table member(
 	phone number,
 	lecture varchar2(30)
 );
+select * from MEMBER;
+select * from member where id_email='tmsisj' and password='tmsisj';
 
 create table attend(
 	mnum number,
@@ -82,7 +84,7 @@ create table notice(
 
 
 
-insert into member values (member_seq.nextval||member_seq.currval, 'text1@email.com','철수1','수강생',2,'password',01012341234,'JAVA');
+insert into member values (member_seq.nextval||member_seq.currval, 'tmsisj@email.com','형진','관리자',5,'tmsisj',01012341234,'JAVA');
 insert into member values (member_seq.nextval||member_seq.currval, 'text2@email.com','철수2','수강생',2,'password',01012341234,'JAVA');
 insert into member values (member_seq.nextval||member_seq.currval, 'text3@email.com','철수3','수강생',2,'password',01012341234,'JAVA');
 insert into member values (member_seq.nextval||member_seq.currval, 'text4@email.com','철수4','수강생',2,'password',01012341234,'JAVA');
