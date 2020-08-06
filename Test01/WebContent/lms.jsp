@@ -9,15 +9,9 @@
 <link type="text/css" rel="stylesheet" href="css/960.css" />
 <script type="text/javascript" src="jquery/jquery-1.12.4.js"></script>
 <script type="text/javascript">
-$(function() {
+	$(function() {
 
-	$('#att_next').on('click',function(){
-						
-		
-	});
-
-	
-});//ready
+	});//ready
 </script>
 
 <style type="text/css" rel="stylesheet">
@@ -83,7 +77,6 @@ $(function() {
 }
 
 #centerContent {
-	text-align:center;
 	border: 1px solid; 
 	width : 690px;
 	height: 400px;
@@ -184,22 +177,6 @@ $(function() {
 #footer>div>div {
 	float: left;
 }
-
-#att_table{
-margin:auto;
-width:400px;
-	border:1px solid;
-	border-collapse: collapse;
-}
-#att_table tr{
-	text-align:center;
-	padding:10px;
-}
-#att_table th{
-	border:1px solid;	
-}
-
-
 </style>
 
 
@@ -235,46 +212,16 @@ width:400px;
 			<div class="clear"></div>
 
 			<div class="grid_12">
+			<div id="centerContent">
 				
-				
-				
-				
-				
-				<div id="centerContent">
-				
-	<form action="dateselect.bit" method="get">
-		<h1>LMS출석부</h1>
-		<label for="date">날짜:</label>
-		<input type="date" id="date" name="date">
-		<button id="datechoice" type="submit">선택</button>
-		<button id="goToList"><a href="list.bit">리스트</a></button>
-	</form>
-	<div id="attendtable">
-		<table id="att_table" class="table">
-			<tr>
-				<th>날짜</th>
-				<th>학번</th>
-				<th>상태</th>
-			</tr>
-		
-<c:forEach items="${list}" varStatus="status" begin="${att_begin}" end="${att_end}" var="bean">
-			<tr>
+			<h2>LMS페이지</h2>
+					
+			<a href="list.bit">출결관리</a>
+			</div>
+			</div>
 
-				<td>${list.get(status.index).nalja }</td>
-				<td>${list.get(status.index).num }</td>
-				<td>${list.get(status.index).state }</td>
-			</tr>
-			</c:forEach>
-		</table>
-		
-		<a href="page.bit?p=prev&end=${att_end}&begin=${att_begin }">prev:${att_begin eq null}</a>
-		<a href="page.bit?p=next&end=${att_end}&begin=${att_begin }">next:${att_end}</a>
-	</div>
-				
-				</div><!-- centerContent -->
 
-			</div><!--grid_12  -->
-			
+
 			<div class="grid_4">
 				<div id="login">
 					<fieldset>
@@ -284,7 +231,7 @@ width:400px;
 			<c:choose>
 				<c:when test="${empty login}"><!-- 세션 attribution인 "login"이 null이면 id,pw 입력폼이 나타남 -->
 								<ul>
-									<li><span>ID&nbsp;</span><input type="text" name="id_email" 
+									<li><span>ID&nbsp;</span><input type="text" name="id_email"
 										size="15" id="id" /></li>
 	
 									<li><span>PW&nbsp;</span><input type="password" name="password"

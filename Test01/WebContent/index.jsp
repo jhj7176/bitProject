@@ -188,7 +188,7 @@
 
 	<div class="container_16">
 		<div id="header" class="grid_16">
-			<img alt="" src="img/bitcamp_logo.png">
+			<a href="index.bit"><img alt="" src="img/bitcamp_logo.png"></a>
 		</div>
 		<div class="clear"></div>
 		<div id="menu" class="grid_16">
@@ -212,7 +212,7 @@
 			<div class="clear"></div>
 
 			<div class="grid_12">
-				<div id="centerContent">컨텐츠</div>
+				<div id="centerContent"><h1>메인홈</h1></div>
 			</div>
 
 
@@ -221,21 +221,44 @@
 				<div id="login">
 					<fieldset>
 						<legend id="login_title">비트캠프로그인</legend>
-						<form id="side_login" method="post" action="#servlet#">
+						<form id="side_login" method="post" action="login.bit">
 		<!--FORM SUBMIT하면 로그인 컨트롤러로 가서 DB회원정보와 비교 후 일치하면 세션만들고 사이드바변경.-->
-							<ul>
-								<li><span>ID&nbsp;</span><input type="text" name="id"
-									size="15" id="id" /></li>
+			<c:choose>
+				<c:when test="${empty login}"><!-- 세션 attribution인 "login"이 null이면 id,pw 입력폼이 나타남 -->
+								<ul>
+									<li><span>ID&nbsp;</span><input type="text" name="id_email" value="${id_err }"
+										size="15" id="id" /></li>
+	
+									<li><span>PW&nbsp;</span><input type="password" name="password"
+										size="15" id="pw" /></li>
+								</ul>
+								
+								<button type="submit">
+									<img alt="" src="img/btn_login.png" />
+								</button>
+								<button>
+									<img alt="" src="img/btn_join.png" />
+								</button>
+				<!-- <p>체크1</p> -->
+				
+				</c:when>
 
-								<li><span>PW&nbsp;</span><input type="password" name="pw"
-									size="15" id="pw" /></li>
-							</ul>
-							<button>
-								<img alt="" src="img/btn_login.png" />
-							</button>
-							<button>
-								<img alt="" src="img/btn_join.png" />
-							</button>
+				<c:when test="${not empty login}"> <!-- 세션 attribution인 "login"이 null아니면 해당세션 회원의 이름이 나타남 -->
+								<ul>
+									<li><span>${login.name}님 환영합니다.&nbsp;</span></li>
+	
+									<li><span>&nbsp;</span></li>
+								</ul>
+								
+								<button type="submit">
+									<img alt="" src="img/btn_logout.png" />
+								</button>
+								<button>
+									<img alt="" src="img/btn_join.png" />
+								</button>
+							<!-- 	<p>체크2</p> -->
+				</c:when>
+			</c:choose>
 							<!-- 		<button><img alt="" src="img/btn_join.png"/></button> -->
 						</form>
 					</fieldset>
@@ -244,7 +267,10 @@
 
 
 				<div id="ad">
-					<button id="btn_lms" >LMS</button>
+					<form action="lms.bit" method="post">
+					<input type="hidden" name="deptno" value="${login.deptno}"/>
+					<button id="btn_lms" >LMS</button>					
+					</form>
 					<img alt="" src="img/btn1.png"> 
 					<img alt="" src="img/btn3.png">
 				</div>
