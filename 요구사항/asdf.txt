@@ -1,0 +1,27 @@
+main.bit 홈페이지
+
+login
+com.bit.bitjeju.login.controller
+com.bit.bitjeju.login.model
+
+signup.bit 
+com.bit.bitjeju.signup.controller
+com.bit.bitjeju.signup.model
+
+mypage.bit
+com.bit.bitjeju.mypage.model
+com.bit.bitjeju.mypage.controller
+
+intro/intro.bit
+com.bit.bitjeju.intro 소개 연혁 강사진. 지도/ db연결X
+
+lms> 학생, 강사, 영업, 행정
+
+com.bit.bitjeju.lms.sales
+//모집공고, 수강등록
+com.bit.bitjeju.lms.staff
+//계정관리, 성적, 수업
+com.bit.bitjeju.lms.stu
+//성적조회, 출석조회
+com.bit.bitjeju.lms.teacher
+//출결관리, 수강생관리

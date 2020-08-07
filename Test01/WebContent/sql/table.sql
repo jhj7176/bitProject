@@ -87,12 +87,6 @@ create table notice(
 insert into member values (member_seq.nextval||member_seq.currval, 'tmsisj@email.com','형진','관리자',5,'tmsisj',01012341234,'JAVA');
 insert into member values (member_seq.nextval||member_seq.currval, 'text2@email.com','철수2','수강생',2,'password',01012341234,'JAVA');
 insert into member values (member_seq.nextval||member_seq.currval, 'text3@email.com','철수3','수강생',2,'password',01012341234,'JAVA');
-insert into member values (member_seq.nextval||member_seq.currval, 'text4@email.com','철수4','수강생',2,'password',01012341234,'JAVA');
-insert into member values (member_seq.nextval||member_seq.currval, 'text5@email.com','철수5','수강생',2,'password',01012341234,'JAVA');
-insert into member values (member_seq.nextval||member_seq.currval, 'text6@email.com','철수6','수강생',2,'password',01012341234,'JAVA');
-insert into member values (member_seq.nextval||member_seq.currval, 'text7@email.com','철수7','수강생',2,'password',01012341234,'JAVA');
-insert into member values (member_seq.nextval||member_seq.currval, 'text8@email.com','철수8','수강생',2,'password',01012341234,'JAVA');
-insert into member values (member_seq.nextval||member_seq.currval, 'text9@email.com','철수9','수강생',2,'password',01012341234,'JAVA');
 
 select * from member;
 

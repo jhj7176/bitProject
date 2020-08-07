@@ -1,0 +1,81 @@
+drop table grade;
+drop table board2;
+drop table lectures;
+drop table attendance;
+drop table member;--member테이블의 num을 다른데서 참조하므로 항상 drop을 마지막에 해줘야함
+drop sequence member_seq;
+
+
+create sequence member_seq;
+create table member(						--회원테이블
+	num number primary key, 				--회원번호
+	id_email varchar2(50) unique not null,  --이메일을 아이디로씀
+	name varchar2(15),						--회원이름
+	dept varchar2(20) default '일반회원',		--회원명
+	lvl number(1) default 1,				--등급
+	password varchar2(15) not null, 		--비밀번호 영문+숫자조합
+	phone number,							--전화번호
+	lecture varchar2(30)					--강좌명 
+);
+select * from MEMBER;
+
+
+insert into member values (member_seq.nextval||member_seq.currval, 'tmsisj@email.com','형진','관리자',5,'tmsisj',01012341234,'JAVA');
+insert into member values (member_seq.nextval||member_seq.currval, 'text2@email.com','철수2','수강생',2,'password',01012341234,'JAVA');
+insert into member values (member_seq.nextval||member_seq.currval, 'text3@email.com','철수3','수강생',2,'password',01012341234,'JAVA');
+
+
+
+
+create table attendance( --출석테이블
+	nalja date not null,
+	num number,
+	state varchar2(10), --출석 지각 결석 조퇴
+	foreign key(num) references member(num) on delete cascade --foreign key지정. member테이블 num참조
+);
+
+insert into attendance values('2020-08-04',11,'attend');
+insert into attendance values('2020-08-04',22,'attend');
+insert into attendance values('2020-08-04',33,'absent');
+
+
+commit;
+
+select * from attendance;
+
+
+
+--select * from student;
+
+
+create table grade(  			--성적테이블
+	num number primary key,		--회원번호로 누군지 식별함. 멤버테이블 num참조
+	exam1 number,				--시험성적
+	exam2 number,
+	exam3 number,
+	foreign key(num) references member(num) on delete cascade
+);  
+
+create table lectures(								--강좌테이블
+	lecture_name varchar2(50) primary key,			--강좌명
+	start_day date,									--교육기간
+	end_day date,
+	num number,										--회원번호/./담당강사의 회원번호가 들어감
+	lecture_room number,							--강의실번호
+	foreign key(num) references member(num) on delete cascade
+);
+
+create table board2(									--기본적인 게시판 테이블
+	num number primary key,
+	title varchar2(100) not null,
+	writer varchar2(50) not null,
+	wtime date,
+	content varchar2(3000),
+	ref number,
+	serial number,
+	lev	number,
+	filename varchar2(255)
+);
+
+
+

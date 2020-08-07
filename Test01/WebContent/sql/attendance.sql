@@ -15,3 +15,5 @@ insert into attendance values('2020-08-04',5555,'attend');
 commit
 
 select * from attendance;
+
+select * from attendance where nalja='2020-08-03';
