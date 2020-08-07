@@ -24,7 +24,7 @@
       
 
 
-
+   <img src="img/capture.PNG">
 
 
        <!--*************content end******************-->

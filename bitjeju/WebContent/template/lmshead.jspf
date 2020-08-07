@@ -6,9 +6,10 @@
 <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
 
 <%
-	String root = request.getRealPath("/");
-	System.out.println(root);
 
+	String root = request.getRealPath("/");
+	String root2 = request.getContextPath();
+	System.out.println(root2);
 
 	MemberDto dto =null; //로그인 컨트롤러에서 setAttribute("login", bean)한 걸 받아옴. 
 	String loginfail = null;
@@ -55,17 +56,16 @@ $(function (){
 		if($('#emailid').val()=="" || $('#pw').val()==""){//아이디나 비번 입력안한경우.
 			alert("아이디 혹은 비밀번호를 확인해주세요.");
 		}
+<%-- 		<%
+		if(loginfail!=null){
+			if(loginfail.equals("fail")){
+		%>
+		console.log('아이디 비번 입력필요');	
+    	alert('아이디 혹은 비밀번호를 확인해주세요.');
 		<%
-		if(loginfail=="fail"){ 
-			//아이디 비번 입력은 했는데 회원정보와 일치하지 않는 경우
-			//로그인 컨트롤러가 dao를 통해 member테이블과 비교 후 일치 하지 않으면
-			//리퀘스트스코프에 loginFail = "fail" 저장
-		%>
-			alert('아이디 혹은 비밀번호를 확인해주세요.');
-		<%	
+			}
 		}
-		%>
-		
+		%> --%>
 	});
 	
 
@@ -76,12 +76,15 @@ $(function (){
 </script>
 
 <style rel="stylesheet" type="text/css">
-    #header{
+     #header{
         height: 110px;
     }
-    #header>.grid3{
-        position:relative;
-        margin-top: 40px;/*로고위치 밑으로 내림*/
+    .logo{
+        margin: 10px auto;로고위치 밑으로 내림
+    }
+    .logo>img{
+        height : 87px;
+        margin-left: 200px;
     }
     #menu{
         height: 70px;/*메뉴 크기*/
@@ -109,6 +112,45 @@ $(function (){
     }
     #contents{/*내용+사이드바*/
         width: 100%;
+    }
+    #content{
+        border-left: 1px solid #e4e4e4;
+    }
+    #lmsmenu{
+        margin-top: 20px;
+        margin-left: 45px;
+        width: 200px;
+        border:3px solid white;
+/*        background-color: #F6F6F6;*/
+    }
+    .bigletter{
+        font-size: 18px;
+        font-weight: 600;
+    }
+    #lmsmenu>p{
+        line-height: 10px;
+        color: #505050;
+        font-weight: 800;
+        font-size: 21px;
+        border-bottom: 1px solid #e4e4e4;
+        padding-bottom: 30px;
+        padding-left: 40px; 
+    }
+    #lmsmenu>ul{
+        list-style: none;
+        color: #505050;
+    }
+    #lmsmenu>ul>li{
+        padding-bottom: 10px;
+        color: #505050;
+        color: 
+    }
+    #lmsmenu>ul>li>a{
+        text-decoration: none;
+        color: #505050;
+    }
+    #lmsmenu>ul>li>a:hover{
+        color:#000069;
     }
     #content{/*로그인창만*/
         border-right: 1px solid #e4e4e4;

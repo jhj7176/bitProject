@@ -3,8 +3,24 @@ drop table board2;
 drop table lectures;
 drop table attendance;
 drop table member;--member테이블의 num을 다른데서 참조하므로 항상 drop을 마지막에 해줘야함
+drop table bitjejudept;
 drop sequence member_seq;
 
+
+create table bitjejudept(
+	dept varchar2(20) primary key,
+	lvl number unique not null
+);
+--부서와 권한레벨을 가진 테이블, 6개의 부서로 나뉜다. 
+
+insert into bitjejudept values ('일반회원',1);
+insert into bitjejudept values ('수강생',2);
+insert into bitjejudept values ('강사',3);
+insert into bitjejudept values ('영업',4);
+insert into bitjejudept values ('행정',5);
+insert into bitjejudept values ('관리자',6);
+
+select * from bitjejudept;
 
 create sequence member_seq;
 create table member(						--회원테이블
@@ -15,15 +31,19 @@ create table member(						--회원테이블
 	lvl number(1) default 1,				--등급
 	password varchar2(15) not null, 		--비밀번호 영문+숫자조합
 	phone number,							--전화번호
-	lecture varchar2(30)					--강좌명 
+	lecture varchar2(30),					--강좌명 
+	foreign key(dept) references bitjejudept(dept) on delete cascade,
+	foreign key(lvl) references bitjejudept(lvl) on delete cascade
 );
+
 select * from MEMBER;
 
 
-insert into member values (member_seq.nextval||member_seq.currval, 'tmsisj@email.com','형진','관리자',5,'tmsisj',01012341234,'JAVA');
+insert into member values (member_seq.nextval||member_seq.currval, 'tmsisj@email.com','형진','관리자',6,'tmsisj',01012341234,'');
 insert into member values (member_seq.nextval||member_seq.currval, 'text2@email.com','철수2','수강생',2,'password',01012341234,'JAVA');
-insert into member values (member_seq.nextval||member_seq.currval, 'text3@email.com','철수3','수강생',2,'password',01012341234,'JAVA');
-
+insert into member values (member_seq.nextval||member_seq.currval, 'sales@email.com','이영업','영업',4,'password',01012341234, null);
+insert into member values (member_seq.nextval||member_seq.currval, 'staff@email.com','김행정','행정',5,'password',01012341234, null);
+insert into member values (member_seq.nextval||member_seq.currval, 'teacher@email.com','김영조','강사',3,'password',01012341234, null);
 
 
 
@@ -44,8 +64,6 @@ commit;
 select * from attendance;
 
 
-
---select * from student;
 
 
 create table grade(  			--성적테이블

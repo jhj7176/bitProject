@@ -4,30 +4,33 @@
 <head>
 <link rel="stylesheet" type="text/css" href="css/bitgrid.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<%@ include file="template/head.jspf" %>
+<%@ include file="template/lmshead.jspf" %>
 <title>Insert title here</title>
 </head>
 <body>
-<%@ include file="template/header.jspf" %>
+<%@ include file="template/lmsheader.jspf" %>
 <%@ include file="template/menu.jspf" %>
-   <div id="carousel" class="gird12">
-       <img src="img/forc.jpg">
-   </div><!--carousel-->
    <div id="contents">
-       <div class="grid2">&nbsp;</div>
+   <!--*****************lms메뉴******************-->
+       <div class="grid2">
+        <div id="lmsmenu">
+            <p>행정</p>
+            <ul>
+             <li class="bigletter">계정관리</li>
+					<li><a href="lmsstaffaccountlist.bit">회원정보</a></li>
+					<li class="bigletter">강의관리</li>
+					<li><a href="lms/staff/lecture/add.bit">강좌개설</a></li>
+					<li><a href="lms/staff/lecture/list.bit">강좌정보</a></li>
+					<li class="bigletter">수강생관리</li>
+					<li><a href="lms/staff/student/list.bit">수강생정보</a></li>
+					<li></li>
+            </ul>
+        </div>
+       </div>
+        <!--*****************lms메뉴******************-->
        <div  id="content" class="grid6">&nbsp;
        <!--*************content start****************-->
-      
-
-<h1>LMS 행정팀 메인화면 </h1>
-
-
-
-
-
-
-
-
+       <img src="img/capture.PNG">
        <!--*************content end******************-->
 <%@ include file="template/footer.jspf" %>
 </body>
