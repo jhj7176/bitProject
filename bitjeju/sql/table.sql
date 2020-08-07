@@ -83,6 +83,13 @@ create table lectures(								--강좌테이블
 	foreign key(num) references member(num) on delete cascade
 );
 
+
+insert into lectures values ('Java',sysdate,sysdate,66,401);
+insert into lectures values ('Web',sysdate,sysdate,66,401);
+insert into lectures values ('Framework',sysdate,sysdate,66,401);
+
+
+
 create table board2(									--기본적인 게시판 테이블
 	num number primary key,
 	title varchar2(100) not null,

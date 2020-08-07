@@ -6,10 +6,6 @@
 <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
 
 <%
-	String root = request.getRealPath("/");
-	System.out.println(root);
-
-
 	MemberDto dto =null; //로그인 컨트롤러에서 setAttribute("login", bean)한 걸 받아옴. 
 	String loginfail = null;
 	try{

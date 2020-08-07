@@ -6,6 +6,13 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%@ include file="template/lmshead.jspf" %>
 <title>Insert title here</title>
+<style type="text/css">
+.lmscontent {
+	width: 600px;
+	display: block;
+	margin: auto;
+}
+</style>
 </head>
 <body>
 <%@ include file="template/lmsheader.jspf" %>
@@ -16,29 +23,47 @@
         <div id="lmsmenu">
             <p>행정</p>
             <ul>
-                <li class="bigletter">계정관리</li>
-                <li>
-                    <a href="#">회원정보</a>    
-                </li>
-                <li class="bigletter">강의관리</li>
-                <li>
-                    <a href="#">강좌개설</a>    
-                </li>
-                <li>
-                    <a href="#">강좌정보</a>    
-                </li>
-                <li class="bigletter">수강생관리</li>
-                <li>
-                    <a href="#">수강생정보</a>    
-                </li>
-                <li></li>
+             <li class="bigletter">계정관리</li>
+					<li><a href="lmsstaffaccountlist.bit">회원정보</a></li>
+					<li class="bigletter">강의관리</li>
+					<li><a href="lmsstafflectureadd.bit">강좌개설</a></li>
+					<li><a href="lmsstafflecturelist.bit">강좌정보</a></li>
+					<li class="bigletter">수강생관리</li>
+					<li><a href="lmsstaffstudentlist.bit">수강생정보</a></li>
+					<li></li>
             </ul>
         </div>
        </div>
         <!--*****************lms메뉴******************-->
        <div  id="content" class="grid6">&nbsp;
        <!--*************content start****************-->
-       <img src="img/capture.PNG">
+			<div class="lmscontent">
+				<h2>강의관리</h2>
+				<h4>강좌정보</h4>
+
+
+				<table>
+					<tr>
+						<th>강좌명</th>
+						<th>강사번호</th>
+						<th>강의실</th>
+						<th>개강일</th>
+						<th>종강일</th>
+					</tr>
+			<c:forEach items="${list }" var="bean">
+					<tr>
+						<td>${bean.lecture_name }</td>
+						<td>${bean.num }</td>
+						<td>${bean.lecture_room }</td>
+						<td>${bean.start_day }</td>
+						<td>${bean.end_day }</td>
+					</tr>
+			</c:forEach>
+
+				</table>
+
+
+			</div>
        <!--*************content end******************-->
 <%@ include file="template/footer.jspf" %>
 </body>

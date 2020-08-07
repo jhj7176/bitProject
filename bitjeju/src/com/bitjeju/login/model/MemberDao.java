@@ -85,6 +85,32 @@ public class MemberDao {
 		if(conn!=null) conn.close();
 		
 		return list;
+	}//selectAll
+	
+	public ArrayList<MemberDto> stuSelectAll() throws SQLException{
+		ArrayList<MemberDto> list = new ArrayList<MemberDto>();
+		String sql ="select * from member where dept='¼ö°­»ý'";
+		MemberDto bean=null;
+		
+		pstmt = conn.prepareStatement(sql);
+		rs = pstmt.executeQuery();
+		
+		while(rs.next()) {
+			bean = new MemberDto();
+			bean.setnum(rs.getInt("num"));
+			bean.setId_email(rs.getString("id_email"));
+			bean.setName(rs.getString("name"));
+			bean.setDept(rs.getString("dept"));
+			bean.setLvl(rs.getInt("lvl"));
+			bean.setPassword(rs.getString("password"));
+			bean.setPhone(rs.getInt("phone"));
+			bean.setLecture(rs.getString("lecture"));
+			list.add(bean);
+		}//while
+		
+		if(pstmt!=null) pstmt.close();
+		if(conn!=null) conn.close();
+		
+		return list;
 	}
-
 }

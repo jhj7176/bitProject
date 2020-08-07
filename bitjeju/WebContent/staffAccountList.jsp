@@ -28,10 +28,10 @@
 					<li class="bigletter">계정관리</li>
 					<li><a href="lmsstaffaccountlist.bit">회원정보</a></li>
 					<li class="bigletter">강의관리</li>
-					<li><a href="lms/staff/lecture/add.bit">강좌개설</a></li>
-					<li><a href="lms/staff/lecture/list.bit">강좌정보</a></li>
+					<li><a href="lmsstafflectureadd.bit">강좌개설</a></li>
+					<li><a href="lmsstafflecturelist.bit">강좌정보</a></li>
 					<li class="bigletter">수강생관리</li>
-					<li><a href="lms/staff/student/list.bit">수강생정보</a></li>
+					<li><a href="lmsstaffstudentlist.bit">수강생정보</a></li>
 					<li></li>
 				</ul>
 			</div>
@@ -51,13 +51,13 @@
 						<th>이름</th>
 						<th>구분</th>
 					</tr>
-			<c:forEach items="${list }" var="bean">
-					<tr>
-						<td>${bean.num }</td>
-						<td>${bean.name }</td>
-						<td>${bean.dept }</td>
-					</tr>
-			</c:forEach>
+					<c:forEach items="${list }" var="bean">
+						<tr>
+							<td>${bean.num }</td>
+							<td>${bean.name }</td>
+							<td>${bean.dept }</td>
+						</tr>
+					</c:forEach>
 
 				</table>
 
