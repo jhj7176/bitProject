@@ -11,8 +11,8 @@
 	           <input type="text" id="emailid" name="emailid" placeholder=" 아이디">
 	           <input type="password" placeholder=" 비밀번호" id="pw" name="pw">
 	           <button id="login" type="submit">로그인</button>
-	           <button id="createaccount">회원가입</button>
-	           <button class="gotolms">LMS system</button>
+	           <button id="createaccount" type="button">회원가입</button>
+	           <button class="gotolms" type="button">LMS system</button>
 	 	  </form>
 	 	   <p><a href="#">아이디/비밀번호 찾기</a></p>
   		</c:when>
@@ -26,8 +26,8 @@
 	           <label>&nbsp;</label>					           
 	         	<br/><br/>
 	           <button id="logout" type="submit">로그아웃</button>
-	           <button id="mypage">내정보</button>
-	           <button class="gotolms">LMS system</button>
+	           <button id="mypage" type="button">내정보</button>
+	           <button class="gotolms" type="button">LMS system</button>
 	 	  </form>
 	    	
 	    

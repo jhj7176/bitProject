@@ -18,7 +18,7 @@
        <div  id="content" class="grid6">&nbsp;
        <!--*************content start****************-->
       
-
+<h1>LMS 행정팀 강좌개설 페이지</h1>
 
 
 
