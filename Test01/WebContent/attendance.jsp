@@ -21,7 +21,6 @@ $(function(){
 		 selectDate = $('#nalja').val();
 	  	$('.nalja').val(selectDate);
 		})//날짜 input 클릭
-
 		
 		$('.nalja').val(selectDate);
 	  console.log(selectDate);
@@ -40,15 +39,12 @@ $(function(){
 
 
 <style type="text/css">
-
 #header {
 	
 }
-
 #menu {
 	margin-bottom: 10px;
 }
-
 #menu>ul {
 	overflow: hidden;
 	margin: auto;
@@ -57,7 +53,6 @@ $(function(){
 	text-align: center;
 	width: 406px;
 }
-
 #menu>ul>li {
 	
 	float: left;
@@ -70,55 +65,44 @@ $(function(){
 	line-height: 50px;
 	width: 100px;
 }
-
 #menu>ul>li+li+li+li {
 	border-right: 1px dotted gray;
 }
-
 #menu>ul>li:hover {
 	background-color: aliceblue;
 }
-
 #menu>ul>li>a {
 	text-decoration: none;
 	display: block;
 	color: black;
 }
-
 #content {
 	
 }
-
 #content>div>img {
 	margin: auto;
 }
-
 .grid_12 {
 	float: left;
 	margin: 0px;
 }
-
 .grid_4 {
 	float: right;
 }
-
 #centerContent {
 	border: 1px solid; 
 	width : 690px;
 	height: 400px;
 	width: 690px;
 }
-
 #atttable{
 	diplay:block;
 }
-
 #login {
 	height: 220px;
 	width: 212px;
 	margin-bottom: 10px;
 }
-
 #login>fieldset {
 	margin: 0px;
 	padding: 0px;
@@ -127,11 +111,9 @@ $(function(){
 	width: 200px;
 	height: 220px;
 }
-
 #login>fieldset>form {
 	width: 200px;
 }
-
 #login>fieldset>form button {
 	display:block;
 	margin:auto;
@@ -139,14 +121,12 @@ $(function(){
 	cursor: pointer;
 	border: 0px;
 }
-
 #login>fieldset>form>ul {
 	padding: 0px;
 	width: 200px;
 	overflow: hidden;
 	width: 200px;
 }
-
 #login>fieldset>form>ul>li {
 	display: inline-block;
 	width: 180px;
@@ -154,25 +134,20 @@ $(function(){
 	padding: 0px;
 	/* margin-left: -30px; */
 }
-
 #login>fieldset>form>ul>li>span {
 	float: left;
 	margin-left: 20px;
 }
-
 #login>fieldset>form>ul>li>input {
 	float: right;
 }
-
 #ad {
 	padding: 0px;
 }
-
 #ad>ul {
 	list-style: none;
 	overflow: hidden:
 }
-
 #btn_lms{
 	width:202px;
 	height:30px;
@@ -182,28 +157,21 @@ $(function(){
 	font-size:110%;
 	color:#575757;
 }
-
-
-
 #ad>ul>li {
 	/* margin-left:-30px; */
 	padding: 0px;
 }
-
 #footer {
 	margin-top: 50px;
 }
-
 #footer>div:first-child {
 	width: 580px;
 	margin: auto;
 	display: block;
 }
-
 #footer>div>img {
 	float: left;
 }
-
 #footer>div>div {
 	float: left;
 }
