@@ -6,7 +6,7 @@
      <c:choose>
     	 <c:when test="${empty login}">
      
-	       <form action="login.bit" method="post">
+	       <form id="formlogin" action="login.bit" method="post">
 	           <span>비트캠프 로그인</span>
 	           <input type="text" id="emailid" name="emailid" placeholder=" 아이디">
 	           <input type="password" placeholder=" 비밀번호" id="pw" name="pw">
@@ -18,7 +18,7 @@
   		</c:when>
 	    <c:when test="${not empty login}">
 
-	       <form action="logout.bit" method="post">
+	       <form id="formlogout"  action="logout.bit" method="post">
 	           <span>비트캠프 로그인</span>
 	         	<br/><br/>
 	           <label>&nbsp;</label>					           

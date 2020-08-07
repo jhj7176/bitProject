@@ -34,9 +34,11 @@ public class LoginController extends HttpServlet {
 		
 		if (id == null || password == null) {
 			request.setAttribute("login", null);
+			request.setAttribute("loginFail", "fail");
 			if (session != null) {
 				session.invalidate();
 			}
+			
 			//id나 pw가 입력되지않으면 세션있다면 종료, 메인페이지로 forward함.
 			request.getRequestDispatcher("main.jsp").forward(request, response);
 			return;

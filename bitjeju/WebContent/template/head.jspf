@@ -4,31 +4,70 @@
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     
 <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
-<jsp:useBean id="dto" class="com.bitjeju.login.model.MemberDto" scope="session" >
-<jsp:setProperty name = "dto" property="*" />
-</jsp:useBean>
-<jsp:getProperty name="빈이름" property="필드명" />
+
+<%
+	MemberDto dto =null; //로그인 컨트롤러에서 setAttribute("login", bean)한 걸 받아옴. 
+	String loginfail = null;
+	try{
+	dto = (MemberDto)session.getAttribute("login");
+	loginfail = (String)request.getAttribute("loginFail"); //로그인컨트톨러에서 아이디비번 입력안했을때보내는값
+	System.out.println("fail"+loginfail);
+	System.out.println(dto.getLvl());
+	}catch(NullPointerException e){
+	}
+%>
+
 <script type="text/javascript">
-var loginDto = <%=%>
+
 
 $(function (){
+
 	
-	$('.gotolms').on('click', function(){
-	   if(""!=null){
+	$('.gotolms').on('click', function(){ //LMS접속 버튼 눌렀을 때 처리
+		
+		<%
+	   if(dto==null){	//세션에 회원정보가 없으면 로그인 필요.
+		%>
 			console.log('로그인필요');	
 	    	alert('로그인이 필요합니다.');
-	   } else if(<%=dto%>.lvl<3){
+	    <%
+	   } else if(dto.getLvl()<3){ //로그인되어있는 회원의 권한레벨이 낮으면 접속불가
+	    %>
 			console.log('권한부족');	
 	    	alert('권한이 부족합니다.');
-	   } else{
+	    <%
+	   } else{ //접속성공
+	    %>
 			console.log('lms로 이동');	
 			location.href="lms.bit";				
+	    <%
 	   }
+	    %>
+	   
+	});
+		
+	$('#formlogin').submit(function(){ //로그인버튼 눌렀을 때 이벤트.
+		
+		if($('#emailid').val()=="" || $('#pw').val()==""){//아이디나 비번 입력안한경우.
+			alert("아이디 혹은 비밀번호를 확인해주세요.");
+		}
+<%-- 		<%
+		if(loginfail!=null){
+			if(loginfail.equals("fail")){
+		%>
+		console.log('아이디 비번 입력필요');	
+    	alert('아이디 혹은 비밀번호를 확인해주세요.');
+		<%
+			}
+		}
+		%> --%>
 	});
 	
 
 	
 });//document.Ready
+
+
 </script>
 
 <style rel="stylesheet" type="text/css">
