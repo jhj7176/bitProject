@@ -2,7 +2,6 @@ package com.bitjeju.lms.staff.lecture.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
-import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -12,41 +11,45 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.bitjeju.lms.staff.lecture.model.LectureDao;
 import com.bitjeju.lms.staff.lecture.model.LectureDto;
-import com.bitjeju.login.model.MemberDao;
-import com.bitjeju.login.model.MemberDto;
 
 /**
- * Servlet implementation class LectureListController
+ * Servlet implementation class LectureDetailController
  */
-@WebServlet("/lmsstafflecturelist.bit")
-public class LectureListController extends HttpServlet {
-	
+@WebServlet("/lmsstafflecturedetail.bit")
+public class LectureDetailController extends HttpServlet {
+
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-	
+			
+		int lecture_num = Integer.parseInt(request.getParameter("lecture_num"));
 		LectureDao dao = new LectureDao();
-		ArrayList<LectureDto> list = null;
+		
+		LectureDto bean =null;
 		try {
-			list = dao.selectAll(); //강좌테이블, 멤머테이블 조인한 정보를 모두 가져온다.
+			bean = dao.selectOne(lecture_num);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		request.setAttribute("list", list); //리퀘스트스코프에 list를 저장.
-		request.getRequestDispatcher("staffLectureList.jsp").forward(request, response);//강의목록 페이지이동
+		
+		request.setAttribute("lecture", bean);
+		request.getRequestDispatcher("staffLectureDetail.jsp").forward(request, response);
+	
 	}
-	
-	
 
+	
+	
+	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 
+	
 	}
 
 }

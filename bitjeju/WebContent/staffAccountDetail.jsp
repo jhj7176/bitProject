@@ -30,7 +30,7 @@
 	padding:25px;
 	text-align:left;
 }
-#accountedit,#accountdelete{
+#accountedit,#accountdelete,#accountback{
 	float:right;
     background-color: #000069;
     border:1px solid #000069;
@@ -102,6 +102,7 @@
 
 			</div>
 			<div class="lmscontent">
+			<button id="accountback" onclick="window.history.go(-1)">뒤로</button>			
 			<button id="accountdelete">삭제</button>			
 			<button id="accountedit">수정</button>			
 			</div>

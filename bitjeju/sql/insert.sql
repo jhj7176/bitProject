@@ -28,3 +28,4 @@ insert into member values (member_seq.nextval||member_seq.currval,'text28@email.
 insert into member values (member_seq.nextval||member_seq.currval,'text29@email.com','繹熱2','熱鬼儅',2,'password',01012341261,'FRAMWORK');
 insert into member values (member_seq.nextval||member_seq.currval,'text30@email.com','繹熱2','熱鬼儅',2,'password',01012341262,'FRAMWORK');
 insert into member values (member_seq.nextval||member_seq.currval,'text31@email.com','繹熱2','熱鬼儅',2,'password',01012341263,'FRAMWORK');
+commit;

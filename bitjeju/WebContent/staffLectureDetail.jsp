@@ -9,73 +9,37 @@
 <title>Insert title here</title>
 
 <style type="text/css">
-.lmscontent { /* 제목과 테이블을 전부 감싸는 div */
+.lmscontent {
 	width: 600px;
 	display: block;
 	margin: auto;
+	border-bottom:1px solid #e4e4e4;
 }
-.lmscontent:last-child { /* 이전 다음버튼 감싸는 div 버튼중앙 */
-	width: 600px;
-	display: block;
-	margin: auto;
-	text-align:center;
+#lecturetable{
+	border-collapse:collapse;
 }
-
-#accounttable {
-	margin: auto;
-	width: 600px;
-	border-collapse: collapse;
-	border-bottom: 1px solid #e4e4e4;
-	border-top: 1px solid #e4e4e4;
+#lecturetable tr{
 }
-
-#accounttable tr {
-	text-align: center;
+#lecturetable th{
+	color:#1E3269;
+	padding:30px;
+	border-right:1px solid #e4e4e4;
+	text-align:right;
 }
-
-#accounttable tr:first-child~tr:hover{/* 테이블 첫번째 tr빼고 hover적용  */
-	color: #1E3269;
-	background-color:aliceblue;
+#lecturetable td{
+	padding:25px;
+	text-align:left;
 }
-
-#accounttable th {
-	color: #1E3269;
-	padding: 30px;
-	border-bottom: 1px solid #e4e4e4;
+#lectureedit,#lecturedelete,#lectureback{
+	float:right;
+    background-color: #000069;
+    border:1px solid #000069;
+    color:white;
+    margin: 7px;
+    width: 50px;
+    height: 20px;
 }
 
-#accounttable td {
-	padding: 25px;
-}
-
-#accounttable a {
-	display: block; text-decoration : none;
-	color: black;
-	text-decoration: none;
-}
-
-#accounttable a:hover {
-	font-weight: 500;
-	color: #1E3269;
-}
-
-#accountadd { /* 테이블아래 등록버튼 */
-	float: right;
-	background-color: #000069;
-	border: 1px solid #000069;
-	color: white;
-	margin: 7px;
-	width: 50px;
-	height: 20px;
-}
-#studentprev,#studentnext{/*이전 다음 버튼  */
-	background-color: #000069;
-	border: 1px solid #000069;
-	color: white;
-	margin: 7px;
-	width: 50px;
-	height: 20px;
-}
 </style>
 </head>
 <body>
@@ -103,34 +67,51 @@
 			&nbsp;
 			<!--*************content start****************-->
 			<div class="lmscontent">
-				<h2>계정관리</h2>
-				<h4>회원정보</h4>
-			<div class="lmscontent">
-				<button id="accountadd">등록</button>
-			</div>
+				<h2>강의관리</h2>
+				<h4>강좌개설</h4>
+<!-- 
+private String lecture_name;
+	private Date start_day, end_day;
+	private int num, lecture_room,lecture_num;
+	
 
-				<table id="accounttable">
+
+ -->
+
+					<c:set value="${lecture }" var="bean" />
+				<table id="lecturetable">
 					<tr>
-						<th>회원번호</th>
-						<th>이름</th>
-						<th>구분</th>
+						<th>강좌명</th>
+						<td>${bean.lecture_name }</td>
 					</tr>
-					<c:forEach items="${list }" begin="0" end="5" var="bean">
-						<tr>
-
-							<td>${bean.num }</td>
-							<td><a href="lmsstaffaccountdetail.bit?num=${bean.num}">${bean.name }</a></td>
-							<td>${bean.dept }</td>
-
-						</tr>
-					</c:forEach>
-
+					<tr>
+						<th>강사명</th>
+						<td>${bean.name }</td>
+					</tr>
+					<tr>
+						<th>강의실</th>
+						<td>${bean.lecture_room }</td>
+					</tr>
+					<tr>
+						<th>개강일</th>
+						<td>${bean.start_day }</td>
+					</tr>
+					<tr>
+						<th>종강일</th>
+						<td>${bean.end_day }</td>
+					</tr>
+					<tr>
+						<th></th>
+						<td></td>
+					</tr>
 				</table>
-			</div>
 
+
+			</div>
 			<div class="lmscontent">
-				<button id="studentprev">이전</button>
-				<button id="studentnext">다음</button>
+			<button id="lectureback" onclick="window.history.go(-1)">뒤로</button>			
+			<button id="lecturedelete">삭제</button>			
+			<button id="lectureedit">수정</button>			
 			</div>
 			<!--*************content end******************-->
 			<%@ include file="template/footer.jspf"%>

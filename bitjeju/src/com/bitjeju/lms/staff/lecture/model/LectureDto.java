@@ -4,13 +4,25 @@ import java.sql.Date;
 
 public class LectureDto {
 
-	private String lecture_name;
+	private String lecture_name, name;
 	private Date start_day, end_day;
-	int num, lecture_room;
+	private int num, lecture_room,lecture_num;
 	
 	
 	
 	
+	public String getName() {	
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getLecture_num() {
+		return lecture_num;
+	}
+	public void setLecture_num(int lecture_num) {
+		this.lecture_num = lecture_num;
+	}
 	public String getLecture_name() {
 		return lecture_name;
 	}
