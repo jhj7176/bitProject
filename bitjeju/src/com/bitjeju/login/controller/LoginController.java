@@ -28,7 +28,7 @@ public class LoginController extends HttpServlet {
 			throws ServletException, IOException {
 		
 		request.setCharacterEncoding("utf-8");
-		response.setContentType("application/xml;charset=utf-8");
+		response.setContentType("text/html;charset=utf-8");
 
 		String id = request.getParameter("emailid");
 		String password = request.getParameter("pw");
