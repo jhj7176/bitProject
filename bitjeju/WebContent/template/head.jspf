@@ -50,9 +50,9 @@ $(function (){
 		if($('#emailid').val()=="" || $('#pw').val()==""){//아이디나 비번 입력안한경우.
 			$('#emailid').focus();
 			alert("아이디 혹은 비밀번호를 확인해주세요.");
-
+			return false;
 		}else{
-			<%
+			<%-- <%
 			if(loginfail=="fail"){ 
 				//아이디 비번 입력은 했는데 회원정보와 일치하지 않는 경우
 				//로그인 컨트롤러가 dao를 통해 member테이블과 비교 후 일치 하지 않으면
@@ -61,10 +61,26 @@ $(function (){
 				alert('아이디 혹은 비밀번호를 확인해주세요.');
 			<%	
 			}
-			%>
-		}
-		
-	});
+			%> --%>
+			var param = 'emailid='+$('#emailid').val()+'&pw='+$('#pw').val();
+			$.ajax('login.bit',{
+				'method':'post',
+				'data':param,
+				'success':function(data){
+					console.log('성공');
+					if($('data').find('fail').text()=='fail'){
+					console.log('성공');
+						console.log($('data').find('loginfail').text());
+					alert('아이디 혹인 비밀번호를 확인해주세요');				
+					}
+				}, //success
+				'error':function(data){
+					console.log('실패');
+				}	//error
+			});//ajax
+		}//else
+
+	});//submit
 	
 
 	

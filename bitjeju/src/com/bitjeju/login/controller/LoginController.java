@@ -1,6 +1,7 @@
 package com.bitjeju.login.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 
 import javax.servlet.ServletException;
@@ -27,13 +28,14 @@ public class LoginController extends HttpServlet {
 			throws ServletException, IOException {
 		
 		request.setCharacterEncoding("utf-8");
+		response.setContentType("application/xml;charset=utf-8");
 
 		String id = request.getParameter("emailid");
 		String password = request.getParameter("pw");
 		System.out.println("id = " + id + "  pw = " + password);
 		
 		if (id == null || password == null) {
-			request.setAttribute("login", null);
+			request.setAttribute("login", null);//로그인창 보이게함
 			request.setAttribute("loginFail", "fail");
 			if (session != null) {
 				session.invalidate();
@@ -53,7 +55,11 @@ public class LoginController extends HttpServlet {
 				//fail이 나오면 메인으로 이동. 
 				request.setAttribute("loginFail", bean.getId_email());
 				request.setAttribute("id_err", "id와 pw 정확히 입력하세요");
-				request.getRequestDispatcher("main.jsp").forward(request, response);
+			//	request.getRequestDispatcher("main.jsp").forward(request, response);
+				
+				PrintWriter out = response.getWriter();
+				out.print("<loginfail><fail>fail</fail></loginfail>");
+				out.close();
 				return;
 			}
 
