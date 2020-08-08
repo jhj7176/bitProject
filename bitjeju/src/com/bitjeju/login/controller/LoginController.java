@@ -28,7 +28,7 @@ public class LoginController extends HttpServlet {
 			throws ServletException, IOException {
 		
 		request.setCharacterEncoding("utf-8");
-		response.setContentType("text/html;charset=utf-8");
+		response.setContentType("application/xml;charset=utf-8");
 
 		String id = request.getParameter("emailid");
 		String password = request.getParameter("pw");
@@ -56,7 +56,6 @@ public class LoginController extends HttpServlet {
 				request.setAttribute("loginFail", bean.getId_email());
 				request.setAttribute("id_err", "id와 pw 정확히 입력하세요");
 			//	request.getRequestDispatcher("main.jsp").forward(request, response);
-				
 				PrintWriter out = response.getWriter();
 				out.print("<loginfail><fail>fail</fail></loginfail>");
 				out.close();

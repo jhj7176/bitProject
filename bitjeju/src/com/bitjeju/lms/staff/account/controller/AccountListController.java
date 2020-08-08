@@ -31,16 +31,34 @@ public class AccountListController extends HttpServlet {
 			response.sendRedirect("main.bit");
 			return;
 		}
-		
-		MemberDao dao = new com.bitjeju.login.model.MemberDao();
+
+		String key = request.getParameter("key");
+		String word = request.getParameter("word");
+		if (key == null || key.trim() == "")
+			key = "name";
+		if (word == null || word.trim() == "")
+			word = "";
+		int pageNum;
+		int totalMember=-1;
+		if (request.getParameter("pageNum") != null) {
+			System.out.println(request.getParameter("pageNum"));
+			pageNum = Integer.parseInt(request.getParameter("pageNum").trim());
+		}else {
+			pageNum=1;
+		}
+		MemberDao dao = new MemberDao();
 		ArrayList<MemberDto> list = null;
 		try {
-			list = dao.selectAll(); //회원테이블의 정보를 모두 가져온다.
+			list = dao.selectAll(pageNum,key,word); //회원테이블의 정보를 모두 가져온다.
+			dao = new MemberDao();
+			totalMember = dao.totalMember();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		request.setAttribute("pageNum", pageNum);
 		request.setAttribute("list", list); //리퀘스트스코프에 list = ArrayList<MemberDto> list를 저장.
+		request.setAttribute("totalMember", totalMember); //member 테이블의 총 row 수 
 		request.getRequestDispatcher("staffAccountList.jsp").forward(request, response);//회원정보 페이지이동
 	}
 

@@ -28,7 +28,7 @@ public class LogoutController extends HttpServlet {
 		// TODO Auto-generated method stub
 
 		request.setAttribute("login", null);
-		session=request.getSession();
+		session=request.getSession(false);
 		if (session != null) {
 			session.invalidate();
 		}

@@ -7,18 +7,91 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%@ include file="template/lmshead.jspf"%>
 <title>Insert title here</title>
+<script type="text/javascript">
+var pageNum, key, word, cardinality, start, end, lang;
+pageNum = <%=request.getAttribute("pageNum")%>;
+cardinality = <%=request.getAttribute("totalMember")%>
 
+function pages(){
+	
+	var pageLink='';
+	for(var i=start; i<end; i++){//페이지 링크 번호 5개씩 생성.
+			pageLink+='<span class="page_num"><a href="#">&nbsp;'+i+'&nbsp;</a></span>';
+			console.log(i);
+		}
+			console.log(start,'start');
+	$('<div id="page_num"/>').html(pageLink).appendTo('#pagenum');
+	//페이지링크 문자열을 게시판 테이블 뒤에 삽입. 
+}
+
+$(function(){
+key = "name";
+word = "";
+lang = 5; //한 페이지당 페이지 링크번호 수. 5개 
+	var left = 0;
+	if (cardinality % 5 != 0) {//게시글 나누기 5의 나머지가 있는 경우 1페이지 추가
+		left = 1;
+	}
+	var totalPage = (cardinality - cardinality % 5) / 5 + left;
+	console.log('totalpage',totalPage);
+	start = 1 + parseInt((pageNum - 1) / lang) * lang;
+	end = start + lang; //페이지 번호링크 끝	
+	if (end > totalPage){
+		end = totalPage + 1;
+	}
+	
+	pages();
+	$('#page_num>span>a').css('color','black').css('text-decoration','none').css('text-align','center');
+	
+	if(pageNum/5<=1){
+		$('#studentprev').hide();//prev태그가 1~10페이지일때는 hide
+		}else{
+		$('#studentprev').show();
+		}
+	if(totalPage<end){
+		$('#studentnext').hide();//next태그가 마지막페이지가 있는 곳에서는 hide
+		}else{
+		$('#studentnext').show();
+		}
+	
+	$('#page_num>span>a').each(function(idx, ele){
+		$(this).on('click',function(){//next나 prev아닌 숫자링크 클릭했을 때
+			pageNum=parseInt($(this).text());
+			var paramapage = 'pageNum='+pageNum+'&key='+key+'&word='+word;
+			location.href='lmsstaffaccountlist.bit?'+paramapage;
+			return false; //a태그 이동방지.
+		});//click					
+	});//each
+	$('#studentprev').on('click',function(){
+		start-=5;						//prev눌렀을때 이젠 페이지목록으로. 5칸 이동
+		pageNum=start;				//이전 페이지링크중 제일 앞 페이지번호로 게시판 이동
+		//console.log(parseInt(pageNum), typeof pageNum, typeof start);
+		var paramprev = 'pageNum='+pageNum+'&key='+key+'&word='+word;
+		location.href='lmsstaffaccountlist.bit?'+paramprev;
+	});
+	$('#studentnext').on('click',function(){
+		console.log('넥스트');
+		start+=5;		
+		pageNum=end;				
+		var paramnext = 'pageNum='+pageNum+'&key='+key+'&word='+word;
+		location.href='lmsstaffaccountlist.bit?'+paramnext;
+	});
+	
+});//ready
+</script>
 <style type="text/css">
 .lmscontent { /* 제목과 테이블을 전부 감싸는 div */
 	width: 600px;
 	display: block;
 	margin: auto;
 }
-.lmscontent:last-child { /* 이전 다음버튼 감싸는 div 버튼중앙 */
-	width: 600px;
+#paging .lmscontent { /* 이전 다음버튼 감싸는 div 버튼중앙 */
+	width: 100px;
 	display: block;
 	margin: auto;
 	text-align:center;
+	float:left;
+	font-size: 110%;
 }
 
 #accounttable {
@@ -27,6 +100,7 @@
 	border-collapse: collapse;
 	border-bottom: 1px solid #e4e4e4;
 	border-top: 1px solid #e4e4e4;
+	margin-bottom:10px;
 }
 
 #accounttable tr {
@@ -75,6 +149,11 @@
 	margin: 7px;
 	width: 50px;
 	height: 20px;
+}
+#paging{
+	width:300px;
+	display:block;
+	margin:auto;
 }
 </style>
 </head>
@@ -127,10 +206,14 @@
 
 				</table>
 			</div>
-
-			<div class="lmscontent">
-				<button id="studentprev">이전</button>
+			<div id=paging>			
+			<div class="lmscontent">&nbsp;
+				<button id="studentprev">이전</button>			
+			</div>
+			<div id="pagenum" class="lmscontent"></div>
+			<div class="lmscontent">&nbsp;
 				<button id="studentnext">다음</button>
+			</div>
 			</div>
 			<!--*************content end******************-->
 			<%@ include file="template/footer.jspf"%>

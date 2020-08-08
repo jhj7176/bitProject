@@ -82,7 +82,7 @@
 			&nbsp;
 			<!--*************content start****************-->
 			<form action="lmsstafflectureadd.bit" method="post">
-			<div class="lmscontent">><!--**********lmscontent start**********-->
+			<div class="lmscontent"><!--**********lmscontent start**********-->
 				<h2>강의관리</h2>
 				<h4>강좌개설</h4>
 

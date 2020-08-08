@@ -20,6 +20,7 @@
 	border-collapse: collapse;
 	border-bottom: 1px solid #e4e4e4;
 	border-top: 1px solid #e4e4e4;
+	margin-bottom:10px;
 }
 
 #lecturetable tr {
