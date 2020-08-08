@@ -24,7 +24,8 @@ public class LmsController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		session = request.getSession();
+		session = request.getSession(false);//현재세션이 있으면 가져옴. 없으면 null
+	
 		MemberDto bean = (MemberDto) session.getAttribute("login");
 		String dept = bean.getDept(); // 영업 행정 강사 학생
 		int loginlevel = bean.getLvl(); // 권한레벨

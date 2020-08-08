@@ -1,4 +1,4 @@
-package com.bitjeju.lms.staff.account;
+package com.bitjeju.lms.staff.account.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -15,10 +15,10 @@ import com.bitjeju.login.model.MemberDao;
 import com.bitjeju.login.model.MemberDto;
 
 /**
- * Servlet implementation class ListController
+ * Servlet implementation class AccountDetailController
  */
-@WebServlet("/lmsstaffaccountlist.bit")
-public class AccountListController extends HttpServlet {
+@WebServlet("/lmsstaffaccountdetail.bit")
+public class AccountDetailController extends HttpServlet {
 
 	HttpSession session;
 	/**
@@ -26,17 +26,22 @@ public class AccountListController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		session = request.getSession(false);
+		if(session==null) {
+			response.sendRedirect("main.bit");
+			return;
+		}
+		int num = Integer.parseInt(request.getParameter("num"));
 		MemberDao dao = new com.bitjeju.login.model.MemberDao();
-		ArrayList<MemberDto> list = null;
+		MemberDto bean = null;
 		try {
-			list = dao.selectAll(); //회원테이블의 정보를 모두 가져온다.
+			bean = dao.selectOne(num); //회원테이블의 정보를 1명 가져옴
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		request.setAttribute("list", list); //리퀘스트스코프에 list = ArrayList<MemberDto> list를 저장.
-		request.getRequestDispatcher("staffAccountList.jsp").forward(request, response);//회원정보 페이지이동
+		request.setAttribute("bean", bean); //리퀘스트스코프에 list = ArrayList<MemberDto> list를 저장.
+		request.getRequestDispatcher("staffAccountDetail.jsp").forward(request, response);//회원정보 페이지이동
 	}
 
 	/**
@@ -44,6 +49,11 @@ public class AccountListController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+	
+	
+
+	
 	}
 
+	
 }

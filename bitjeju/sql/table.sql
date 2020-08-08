@@ -37,13 +37,14 @@ create table member(						--회원테이블
 );
 
 select * from MEMBER;
-
+select * from member where dept='수강생';
 
 insert into member values (member_seq.nextval||member_seq.currval, 'tmsisj@email.com','형진','관리자',6,'tmsisj',01012341234,'');
 insert into member values (member_seq.nextval||member_seq.currval, 'text2@email.com','철수2','수강생',2,'password',01012341234,'JAVA');
 insert into member values (member_seq.nextval||member_seq.currval, 'sales@email.com','이영업','영업',4,'password',01012341234, null);
 insert into member values (member_seq.nextval||member_seq.currval, 'staff@email.com','김행정','행정',5,'password',01012341234, null);
 insert into member values (member_seq.nextval||member_seq.currval, 'teacher@email.com','김영조','강사',3,'password',01012341234, null);
+insert into member values (member_seq.nextval||member_seq.currval, 'test@email.com','일반','일반회원',1,'password',01012341234, null);
 
 
 

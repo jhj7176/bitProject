@@ -9,73 +9,37 @@
 <title>Insert title here</title>
 
 <style type="text/css">
-.lmscontent { /* 제목과 테이블을 전부 감싸는 div */
+.lmscontent {
 	width: 600px;
 	display: block;
 	margin: auto;
+	border-bottom:1px solid #e4e4e4;
 }
-.lmscontent:last-child { /* 이전 다음버튼 감싸는 div 버튼중앙 */
-	width: 600px;
-	display: block;
-	margin: auto;
-	text-align:center;
+#accounttable{
+	border-collapse:collapse;
 }
-
-#accounttable {
-	margin: auto;
-	width: 600px;
-	border-collapse: collapse;
-	border-bottom: 1px solid #e4e4e4;
-	border-top: 1px solid #e4e4e4;
+#accounttable tr{
 }
-
-#accounttable tr {
-	text-align: center;
+#accounttable th{
+	color:#1E3269;
+	padding:30px;
+	border-right:1px solid #e4e4e4;
+	text-align:right;
 }
-
-#accounttable tr:first-child~tr:hover{/* 테이블 첫번째 tr빼고 hover적용  */
-	color: #1E3269;
-	background-color:aliceblue;
+#accounttable td{
+	padding:25px;
+	text-align:left;
 }
-
-#accounttable th {
-	color: #1E3269;
-	padding: 30px;
-	border-bottom: 1px solid #e4e4e4;
+#accountedit,#accountdelete{
+	float:right;
+    background-color: #000069;
+    border:1px solid #000069;
+    color:white;
+    margin: 7px;
+    width: 50px;
+    height: 20px;
 }
 
-#accounttable td {
-	padding: 25px;
-}
-
-#accounttable a {
-	display: block; text-decoration : none;
-	color: black;
-	text-decoration: none;
-}
-
-#accounttable a:hover {
-	font-weight: 500;
-	color: #1E3269;
-}
-
-#accountadd { /* 테이블아래 등록버튼 */
-	float: right;
-	background-color: #000069;
-	border: 1px solid #000069;
-	color: white;
-	margin: 7px;
-	width: 50px;
-	height: 20px;
-}
-#studentprev,#studentnext{/*이전 다음 버튼  */
-	background-color: #000069;
-	border: 1px solid #000069;
-	color: white;
-	margin: 7px;
-	width: 50px;
-	height: 20px;
-}
 </style>
 </head>
 <body>
@@ -105,34 +69,41 @@
 			<div class="lmscontent">
 				<h2>계정관리</h2>
 				<h4>회원정보</h4>
-			<div class="lmscontent">
-				<button id="accountadd">등록</button>
-			</div>
 
+
+					<c:set value="${bean }" var="bean" />
 				<table id="accounttable">
 					<tr>
 						<th>회원번호</th>
-						<th>이름</th>
-						<th>구분</th>
+						<td>${bean.num }</td>
 					</tr>
-					<c:forEach items="${list }" begin="0" end="5" var="bean">
-						<tr>
-
-							<td>${bean.num }</td>
-							<td><a href="lmsstaffaccountdetail.bit?num=${bean.num}">${bean.name }</a></td>
-							<td>${bean.dept }</td>
-
-						</tr>
-					</c:forEach>
-
+					<tr>
+						<th>이름</th>
+						<td>${bean.name }</td>
+					</tr>
+					<tr>
+						<th>아이디</th>
+						<td>${bean.id_email }</td>
+					</tr>
+					<tr>
+						<th>구분</th>
+						<td>${bean.dept }</td>
+					</tr>
+					<tr>
+						<th>권한레벨</th>
+						<td>${bean.lvl }</td>
+					</tr>
+					<tr>
+						<th>전화번호</th>
+						<td>${bean.phone }</td>
+					</tr>
 				</table>
 
 
 			</div>
-
 			<div class="lmscontent">
-				<button id="studentprev">이전</button>
-				<button id="studentnext">다음</button>
+			<button id="accountdelete">삭제</button>			
+			<button id="accountedit">수정</button>			
 			</div>
 			<!--*************content end******************-->
 			<%@ include file="template/footer.jspf"%>

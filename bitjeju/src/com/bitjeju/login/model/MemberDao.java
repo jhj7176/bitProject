@@ -102,7 +102,6 @@ public class MemberDao {
 			bean.setName(rs.getString("name"));
 			bean.setDept(rs.getString("dept"));
 			bean.setLvl(rs.getInt("lvl"));
-			bean.setPassword(rs.getString("password"));
 			bean.setPhone(rs.getInt("phone"));
 			bean.setLecture(rs.getString("lecture"));
 			list.add(bean);
@@ -112,5 +111,26 @@ public class MemberDao {
 		if(conn!=null) conn.close();
 		
 		return list;
-	}
+	}//stselectAll()
+	
+	public MemberDto selectOne(int num) throws SQLException {
+		String sql = "select * from member where num=?";
+		MemberDto bean=null;
+		
+		pstmt= conn.prepareStatement(sql);
+		pstmt.setInt(1, num);
+		rs = pstmt.executeQuery();
+		if(rs.next()) {
+			bean = new MemberDto();
+			bean.setnum(rs.getInt("num"));
+			bean.setId_email(rs.getString("id_email"));
+			bean.setName(rs.getString("name"));
+			bean.setDept(rs.getString("dept"));
+			bean.setLvl(rs.getInt("lvl"));
+			bean.setPhone(rs.getInt("phone"));
+			bean.setLecture(rs.getString("lecture"));
+		}
+
+		return bean;
+	}//selectOne
 }
