@@ -2,7 +2,7 @@ select lecture_name, name, lecture_num, num, lecture_room, start_day, end_day fr
 
 
 
-
+delete from lectures where lecture_name='테스트3' and lecture_num=8;
 
 insert into member values (member_seq.nextval||member_seq.currval,'teacher4@email.com','설민석','강사',3,'password',01012341235,null);
 insert into member values (member_seq.nextval||member_seq.currval,'teacher5@email.com','황현필','강사',3,'password',01012341235,null);

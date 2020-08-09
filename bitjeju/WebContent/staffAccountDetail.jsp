@@ -7,7 +7,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%@ include file="template/lmshead.jspf"%>
 <title>Insert title here</title>
-
+<script type="text/javascript">
+var deletenum="${bean.num}";//회원번호
+var deleteemail="${bean.id_email}"
+$(function(){
+	$('#accountdelete').on('click',function(){//회원번호(PK)이용해서 삭제. 
+		location.href='lmsstaffaccountdelete.bit?num='+deletenum+'&emailid='+deleteemail;
+	});
+});
+</script>
 <style type="text/css">
 .lmscontent {
 	width: 600px;
@@ -104,7 +112,10 @@
 			<div class="lmscontent">
 			<button id="accountback" onclick="window.history.go(-1)">뒤로</button>			
 			<button id="accountdelete">삭제</button>			
-			<button id="accountedit">수정</button>			
+<!-- 			<button id="accountedit">수정</button>
+회원정보 수정 삭제가 행정직원에게 주어도 되는지 고민.. 
+
+수강생관리에서 수강생 삭제기능만 넣기. 개인정보는 각자 로그인했을 때 변경. 	 -->		
 			</div>
 			<!--*************content end******************-->
 			<%@ include file="template/footer.jspf"%>

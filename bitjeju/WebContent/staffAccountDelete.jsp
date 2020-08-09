@@ -7,22 +7,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%@ include file="template/lmshead.jspf"%>
 <title>Insert title here</title>
-<script type="text/javascript">
 
-var lecturename ="${lecture.lecture_name}";//el
-var lecturenum ="${lecture.lecture_num}";
 
-$(function(){
-	console.log(lecturename, lecturenum);
-	$('#lectureedit').on('click',function(){//*************수정 서블릿으로
-		location.href='lmsstafflectureedit.bit?lecture_name='+lecturename+'&lecture_num='+lecturenum;
-	});
-	$('#lecturedelete').on('click',function(){//****************삭제 서블릿으로
-		location.href='lmsstafflecturedelete.bit?lecture_name='+lecturename+'&lecture_num='+lecturenum;		
-	});
-});//ready
-
-</script>
 <style type="text/css">
 .lmscontent {
 	width: 600px;
@@ -30,22 +16,22 @@ $(function(){
 	margin: auto;
 	border-bottom:1px solid #e4e4e4;
 }
-#lecturetable{
+#accounttable{
 	border-collapse:collapse;
 }
-#lecturetable tr{
+#accounttable tr{
 }
-#lecturetable th{
+#accounttable th{
 	color:#1E3269;
 	padding:30px;
 	border-right:1px solid #e4e4e4;
 	text-align:right;
 }
-#lecturetable td{
+#accounttable td{
 	padding:25px;
 	text-align:left;
 }
-#lectureedit,#lecturedelete,#lectureback{
+#accountedit,#accountdelete,#accountback{
 	float:right;
     background-color: #000069;
     border:1px solid #000069;
@@ -80,54 +66,32 @@ $(function(){
 		<!--*****************lms메뉴******************-->
 		<div id="content" class="grid6">
 			&nbsp;
+			<form action="lmsstaffaccountdelete.bit" method="post">
 			<!--*************content start****************-->
 			<div class="lmscontent">
-				<h2>강의관리</h2>
-				<h4>강좌정보</h4>
-<!-- 
-private String lecture_name;
-	private Date start_day, end_day;
-	private int num, lecture_room,lecture_num;
-	
+				<h2>계정관리</h2>
+				<h4>회원강퇴</h4>
 
 
- -->
-
-					<c:set value="${lecture }" var="bean" />
-				<table id="lecturetable">
+					<c:set value="${emailid }" var="emailid" />
+				<table id="accounttable">
 					<tr>
-						<th>강좌명</th>
-						<td>${bean.lecture_name }</td>
+						<th>이메일</th>
+						<td>${emailid}</td>
 					</tr>
 					<tr>
-						<th>강사명</th>
-						<td>${bean.name }</td>
-					</tr>
-					<tr>
-						<th>강의실</th>
-						<td>${bean.lecture_room }</td>
-					</tr>
-					<tr>
-						<th>개강일</th>
-						<td>${bean.start_day }</td>
-					</tr>
-					<tr>
-						<th>종강일</th>
-						<td>${bean.end_day }</td>
-					</tr>
-					<tr>
-						<th></th>
-						<td></td>
+						<th>&nbsp;</th>
+						<td>삭제하시겠습니까?</td>
 					</tr>
 				</table>
 
 
 			</div>
 			<div class="lmscontent">
-			<button id="lectureback" onclick="window.history.go(-1)">뒤로</button>			
-			<button id="lecturedelete">삭제</button>			
-			<button id="lectureedit">수정</button>			
+			<button id="accountback" onclick="window.history.go(-1)">뒤로</button>			
+			<button id="accountdelete">삭제</button>			
 			</div>
+			</form>
 			<!--*************content end******************-->
 			<%@ include file="template/footer.jspf"%>
 </body>

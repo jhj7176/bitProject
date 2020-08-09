@@ -77,6 +77,10 @@ lang = 5; //한 페이지당 페이지 링크번호 수. 5개
 		location.href='lmsstaffaccountlist.bit?'+paramnext;
 	});
 	
+	$('#accountadd').on('click',function(){
+		location.href='lmsstaffaccountadd.bit';
+	});
+	
 });//ready
 </script>
 <style type="text/css">

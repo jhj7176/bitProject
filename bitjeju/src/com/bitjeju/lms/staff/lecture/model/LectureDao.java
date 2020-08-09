@@ -125,5 +125,24 @@ public class LectureDao {
 			conn.close();
 
 	}// insert
+	
+	public void deleteLecture(String lecture_name, int lecture_num) throws SQLException {
+		String sql ="delete from lectures where lecture_name=? and lecture_num=?";
+		
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, lecture_name);
+		pstmt.setInt(2, lecture_num);		
+		System.out.println(sql);
+		pstmt.executeQuery();
+		if (pstmt != null)
+			pstmt.close();
+		if (conn != null)
+			conn.close();
+	}//delete
+	
+	public void updateLecture() {
+		String sql = "update lectures set *************  where lecture_num = ?";
+		
+	}
 
 }

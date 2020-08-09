@@ -7,6 +7,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%@ include file="template/lmshead.jspf"%>
 <title>Insert title here</title>
+
+<script type="text/javascript">
+$(function(){});
+</script>
+
 <style type="text/css">
 .lmscontent { /* 제목과 테이블을 전부 감싸는 div */
 	width: 600px;

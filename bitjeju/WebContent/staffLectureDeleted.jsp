@@ -7,22 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%@ include file="template/lmshead.jspf"%>
 <title>Insert title here</title>
-<script type="text/javascript">
 
-var lecturename ="${lecture.lecture_name}";//el
-var lecturenum ="${lecture.lecture_num}";
-
-$(function(){
-	console.log(lecturename, lecturenum);
-	$('#lectureedit').on('click',function(){//*************수정 서블릿으로
-		location.href='lmsstafflectureedit.bit?lecture_name='+lecturename+'&lecture_num='+lecturenum;
-	});
-	$('#lecturedelete').on('click',function(){//****************삭제 서블릿으로
-		location.href='lmsstafflecturedelete.bit?lecture_name='+lecturename+'&lecture_num='+lecturenum;		
-	});
-});//ready
-
-</script>
 <style type="text/css">
 .lmscontent {
 	width: 600px;
@@ -80,55 +65,32 @@ $(function(){
 		<!--*****************lms메뉴******************-->
 		<div id="content" class="grid6">
 			&nbsp;
+			<form action="lmsstafflecturelist.bit">
 			<!--*************content start****************-->
 			<div class="lmscontent">
 				<h2>강의관리</h2>
-				<h4>강좌정보</h4>
+				<h4>강좌삭제</h4>
 <!-- 
 private String lecture_name;
 	private Date start_day, end_day;
 	private int num, lecture_room,lecture_num;
-	
-
-
  -->
-
-					<c:set value="${lecture }" var="bean" />
+				
+				<c:set value="${lecture_name }" var="name"></c:set>	
 				<table id="lecturetable">
 					<tr>
-						<th>강좌명</th>
-						<td>${bean.lecture_name }</td>
-					</tr>
-					<tr>
-						<th>강사명</th>
-						<td>${bean.name }</td>
-					</tr>
-					<tr>
-						<th>강의실</th>
-						<td>${bean.lecture_room }</td>
-					</tr>
-					<tr>
-						<th>개강일</th>
-						<td>${bean.start_day }</td>
-					</tr>
-					<tr>
-						<th>종강일</th>
-						<td>${bean.end_day }</td>
-					</tr>
-					<tr>
-						<th></th>
-						<td></td>
+					
+						<td>삭제가 완료되었습니다.</td>
 					</tr>
 				</table>
 
 
 			</div>
 			<div class="lmscontent">
-			<button id="lectureback" onclick="window.history.go(-1)">뒤로</button>			
-			<button id="lecturedelete">삭제</button>			
-			<button id="lectureedit">수정</button>			
+			<button id="lecturedelete" type="submit">뒤로</button>					
 			</div>
 			<!--*************content end******************-->
+			</form>
 			<%@ include file="template/footer.jspf"%>
 </body>
 </html>

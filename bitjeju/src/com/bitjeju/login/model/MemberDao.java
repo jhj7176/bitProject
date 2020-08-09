@@ -161,20 +161,6 @@ public class MemberDao {
 		return list;
 	}//stselectAll()
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	public MemberDto selectOne(int num) throws SQLException {
 		String sql = "select * from member where num=?";
 		MemberDto bean=null;
@@ -198,4 +184,15 @@ public class MemberDao {
 		
 		return bean;
 	}//selectOne
+	
+	public void deleteOne(int num, String email) throws SQLException {
+		String sql = "delete from member where num=? and id_email=?";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, num);
+		pstmt.setString(2, email);
+		System.out.println(sql);
+		pstmt.executeQuery();
+		if(pstmt!=null) pstmt.close();
+		if(conn!=null) conn.close();
+	}//delete
 }

@@ -7,22 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%@ include file="template/lmshead.jspf"%>
 <title>Insert title here</title>
-<script type="text/javascript">
 
-var lecturename ="${lecture.lecture_name}";//el
-var lecturenum ="${lecture.lecture_num}";
-
-$(function(){
-	console.log(lecturename, lecturenum);
-	$('#lectureedit').on('click',function(){//*************수정 서블릿으로
-		location.href='lmsstafflectureedit.bit?lecture_name='+lecturename+'&lecture_num='+lecturenum;
-	});
-	$('#lecturedelete').on('click',function(){//****************삭제 서블릿으로
-		location.href='lmsstafflecturedelete.bit?lecture_name='+lecturename+'&lecture_num='+lecturenum;		
-	});
-});//ready
-
-</script>
 <style type="text/css">
 .lmscontent {
 	width: 600px;
@@ -83,7 +68,7 @@ $(function(){
 			<!--*************content start****************-->
 			<div class="lmscontent">
 				<h2>강의관리</h2>
-				<h4>강좌정보</h4>
+				<h4>강좌수정</h4>
 <!-- 
 private String lecture_name;
 	private Date start_day, end_day;

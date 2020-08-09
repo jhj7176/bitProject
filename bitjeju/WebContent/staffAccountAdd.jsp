@@ -7,22 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%@ include file="template/lmshead.jspf"%>
 <title>Insert title here</title>
-<script type="text/javascript">
 
-var lecturename ="${lecture.lecture_name}";//el
-var lecturenum ="${lecture.lecture_num}";
-
-$(function(){
-	console.log(lecturename, lecturenum);
-	$('#lectureedit').on('click',function(){//*************수정 서블릿으로
-		location.href='lmsstafflectureedit.bit?lecture_name='+lecturename+'&lecture_num='+lecturenum;
-	});
-	$('#lecturedelete').on('click',function(){//****************삭제 서블릿으로
-		location.href='lmsstafflecturedelete.bit?lecture_name='+lecturename+'&lecture_num='+lecturenum;		
-	});
-});//ready
-
-</script>
 <style type="text/css">
 .lmscontent {
 	width: 600px;
@@ -30,22 +15,33 @@ $(function(){
 	margin: auto;
 	border-bottom:1px solid #e4e4e4;
 }
-#lecturetable{
+#accounttable{
 	border-collapse:collapse;
 }
-#lecturetable tr{
+#accounttable tr{
 }
-#lecturetable th{
+#accounttable th{
 	color:#1E3269;
 	padding:30px;
 	border-right:1px solid #e4e4e4;
 	text-align:right;
 }
-#lecturetable td{
+#accounttable td{
 	padding:25px;
 	text-align:left;
 }
-#lectureedit,#lecturedelete,#lectureback{
+
+#accountemailid,#deptselect,#name,#phone,#accountpw{
+    width: 330px;
+    height: 43px;
+    margin: 7px;
+    border-radius: 5px;
+    border: 1px solid #969696;
+    font-size:120%;
+    text-align:center;
+}
+
+#accountedit,#accountdelete,#accountback{
 	float:right;
     background-color: #000069;
     border:1px solid #000069;
@@ -80,40 +76,53 @@ $(function(){
 		<!--*****************lms메뉴******************-->
 		<div id="content" class="grid6">
 			&nbsp;
+			
+			<form action="lmsstaffaccountadd.bit" method="post" id="accountform">
 			<!--*************content start****************-->
 			<div class="lmscontent">
-				<h2>강의관리</h2>
-				<h4>강좌정보</h4>
+				<h2>계정관리</h2>
+				<h4>직원등록</h4>
 <!-- 
-private String lecture_name;
-	private Date start_day, end_day;
-	private int num, lecture_room,lecture_num;
-	
-
-
+--회원테이블
+	num number primary key, 				--회원번호
+	id_email varchar2(50) unique not null,  --이메일을 아이디로씀
+	name varchar2(15),						--회원이름
+	dept varchar2(20) default '일반회원',		
+	lvl number(1) default 1,				--등급
+	password varchar2(15) not null, 		--비밀번호 영문+숫자조합
+	phone number,							--전화번호
+	lecture varchar2(30),					--강좌명 
  -->
 
-					<c:set value="${lecture }" var="bean" />
-				<table id="lecturetable">
+
+				<table id="accounttable">
 					<tr>
-						<th>강좌명</th>
-						<td>${bean.lecture_name }</td>
+						<th>이메일</th>
+						<td><input type="email" id="accountemailid" name="emailid" placeholder="이메일을 입력하세요."/></td>
 					</tr>
 					<tr>
-						<th>강사명</th>
-						<td>${bean.name }</td>
+						<th>이름</th>
+						<td><input type="text" id="name" name="name" placeholder="이름을 입력하세요."/></td>
 					</tr>
 					<tr>
-						<th>강의실</th>
-						<td>${bean.lecture_room }</td>
+						<th>부서</th>
+						<td>
+						<select id="deptselect">
+						<option selected="selected">영업</option>
+						<option>강사</option>
+						<option>행정</option>
+						<option>회계</option>
+						<option>취업</option>
+						</select>
+						</td>
 					</tr>
 					<tr>
-						<th>개강일</th>
-						<td>${bean.start_day }</td>
+						<th>비밀번호</th>
+						<td><input type="password" id="accountpw" name="pw" placeholder="영문+숫자조합 8~12자리 입니다."/></td>
 					</tr>
 					<tr>
-						<th>종강일</th>
-						<td>${bean.end_day }</td>
+						<th>전화번호</th>
+						<td><input type="tel" name="phone" id="phone"/></td>
 					</tr>
 					<tr>
 						<th></th>
@@ -124,11 +133,12 @@ private String lecture_name;
 
 			</div>
 			<div class="lmscontent">
-			<button id="lectureback" onclick="window.history.go(-1)">뒤로</button>			
-			<button id="lecturedelete">삭제</button>			
-			<button id="lectureedit">수정</button>			
+			<button id="accountback" type="button" onclick="window.history.go(-1)">뒤로</button>			
+			<button id="accountdelete" type="reset">리셋</button>			
+			<button id="accountedit" type="submit">등록</button>			
 			</div>
 			<!--*************content end******************-->
+			</form>
 			<%@ include file="template/footer.jspf"%>
 </body>
 </html>
