@@ -173,7 +173,7 @@ $('#accountform').submit(function(){ //등록버튼 눌렀을 때 이벤트.
 					</tr>
 					<tr>
 						<th>전화번호</th>
-						<td><input type="tel" name="phone" id="phone"/></td>
+						<td><input type="tel" name="phone" id="phone" placeholder="'-' 없이 입력해주세요."/></td>
 					</tr>
 					<tr>
 						<th></th>
