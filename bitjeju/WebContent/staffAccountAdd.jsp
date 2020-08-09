@@ -8,6 +8,57 @@
 <%@ include file="template/lmshead.jspf"%>
 <title>Insert title here</title>
 
+<script type="text/javascript">
+
+var dept='';
+function selected(){
+	$('#deptselect option').each(function(){
+		if($(this).prop('selected')==true){
+			dept = $(this).val();
+			console.log(dept);
+		}
+	});
+}
+
+$(function(){
+	
+$('#accountform').submit(function(){ //등록버튼 눌렀을 때 이벤트.
+	selected();
+	var emailVal = $("#accountemailid").val();//id창에 입력된 값
+	var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+	var memberInfo = 'emailid='+$('#accountemailid').val()+'&pw='+$('#accountpw').val()+'&dept=';
+	memberInfo += dept +'&phone='+$('#phone').val()+'&name='+$('#name').val();
+	console.log(memberInfo);
+	/* 
+		비밀번호는 영문 + 숫자 조합, 8~12자리 
+	*/
+	
+	
+	
+	if($('#accountemailid').val()=="" || $('#accountpw').val()==""||$('#name').val()=="" ||$('#phone').val()==""){
+		alert("모든 정보를 입력해야 합니다.");
+	
+	}else if(emailVal.match(regExp) == null){
+		alert("아이디는 이메일 형식 입니다.");
+	
+	}else if(false){
+		//비밀번호 검증 하기.	
+	}else{
+		$.ajax('lmsstaffaccountadd.bit',{
+			'method':'post',
+			'data':memberInfo,
+			'success':function(data){
+				location.href='lmsstaffaccountlist.bit';//등록성공		
+			} //success
+		});//ajax
+	}//else
+	return false;
+});//submit
+
+
+});//ready
+</script>
+
 <style type="text/css">
 .lmscontent {
 	width: 600px;
