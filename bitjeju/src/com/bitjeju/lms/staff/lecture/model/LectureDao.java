@@ -140,9 +140,24 @@ public class LectureDao {
 			conn.close();
 	}//delete
 	
-	public void updateLecture() {
-		String sql = "update lectures set *************  where lecture_num = ?";
-		
-	}
+	public void updateLecture(int lecture_num,String lecture_name,Date start_day,Date end_day, String name, int lecture_room) throws SQLException {
+		String sql = "update lectures set lecture_name=?,start_day=?,end_day=?,";
+			   sql+= "num=(select num from member where name = ?),lecture_room=? where lecture_num = ?";
+			   			//회원테이블에서 강사의 회원번호를 받아서 update함
+	    pstmt = conn.prepareStatement(sql);
+	    pstmt.setString(1, lecture_name);
+	    pstmt.setDate(2, start_day);
+	    pstmt.setDate(3, end_day);
+	    pstmt.setString(4, name);
+	    pstmt.setInt(5, lecture_room);	
+	    pstmt.setInt(6, lecture_num);
+	    
+		System.out.println(sql);
+		pstmt.executeQuery();
+		if (pstmt != null)
+			pstmt.close();
+		if (conn != null)
+			conn.close();
+	}//update
 
 }

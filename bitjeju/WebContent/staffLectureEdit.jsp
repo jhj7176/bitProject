@@ -8,38 +8,75 @@
 <%@ include file="template/lmshead.jspf"%>
 <title>Insert title here</title>
 
+<script type="text/javascript">
+
+var teacher = "${lecture.name}";
+var lecture_room = "${lecture.lecture_room}";
+$(function(){
+	console.log(teacher, lecture_room);
+	$('#lectureroomselect option').each(function(){ //옵션들중에 일치하는 강의실 찾아서 선택.
+		console.log($(this).val());
+		if($(this).val()==lecture_room){
+			$(this).prop('selected',true);
+		}//if
+	});//each
+	$('#teacherselect option').each(function(){//일치하는 강사를 찾아서 선택.
+		console.log($(this).val());
+		if($(this).val()==teacher){
+			$(this).prop('selected',true);
+		}//if
+	});//each
+});//ready
+
+
+</script>
 <style type="text/css">
 .lmscontent {
 	width: 600px;
 	display: block;
 	margin: auto;
-	border-bottom:1px solid #e4e4e4;
-}
-#lecturetable{
-	border-collapse:collapse;
-}
-#lecturetable tr{
-}
-#lecturetable th{
-	color:#1E3269;
-	padding:30px;
-	border-right:1px solid #e4e4e4;
-	text-align:right;
-}
-#lecturetable td{
-	padding:25px;
-	text-align:left;
-}
-#lectureedit,#lecturedelete,#lectureback{
-	float:right;
-    background-color: #000069;
-    border:1px solid #000069;
-    color:white;
-    margin: 7px;
-    width: 50px;
-    height: 20px;
+	border-bottom: 1px solid #e4e4e4;
 }
 
+#lecturetable {
+	border-collapse: collapse;
+}
+
+#lecturetable tr {
+	
+}
+
+#lecturetable th {
+	color: #1E3269;
+	padding: 30px;
+	border-right: 1px solid #e4e4e4;
+	text-align: right;
+}
+
+#lecturetable td {
+	padding: 25px;
+	text-align: left;
+}
+
+#lecture_name,#start_day,#end_day,#teacherselect,#lectureroomselect{
+    width: 230px;
+    height: 43px;
+    margin: 7px;
+    border-radius: 5px;
+    border: 1px solid #969696;
+    font-size:120%;
+    text-align:center;
+}
+
+#lectureadd, #lectureback {
+	float: right;
+	background-color: #000069;
+	border: 1px solid #000069;
+	color: white;
+	margin: 7px;
+	width: 50px;
+	height: 20px;
+}
 </style>
 </head>
 <body>
@@ -66,53 +103,52 @@
 		<div id="content" class="grid6">
 			&nbsp;
 			<!--*************content start****************-->
-			<div class="lmscontent">
+			<form action="lmsstafflectureedit.bit" method="post">
+			<div class="lmscontent"><!--**********lmscontent start**********-->
 				<h2>강의관리</h2>
 				<h4>강좌수정</h4>
-<!-- 
-private String lecture_name;
-	private Date start_day, end_day;
-	private int num, lecture_room,lecture_num;
-	
-
-
- -->
-
-					<c:set value="${lecture }" var="bean" />
-				<table id="lecturetable">
-					<tr>
-						<th>강좌명</th>
-						<td>${bean.lecture_name }</td>
-					</tr>
-					<tr>
-						<th>강사명</th>
-						<td>${bean.name }</td>
-					</tr>
-					<tr>
-						<th>강의실</th>
-						<td>${bean.lecture_room }</td>
-					</tr>
-					<tr>
-						<th>개강일</th>
-						<td>${bean.start_day }</td>
-					</tr>
-					<tr>
-						<th>종강일</th>
-						<td>${bean.end_day }</td>
-					</tr>
-					<tr>
-						<th></th>
-						<td></td>
-					</tr>
-				</table>
-
-
-			</div>
+					<table id="lecturetable">
+						<tr>
+							<th>강좌명</th>
+							<td><input type="text" name="lecture_name" id="lecture_name"
+								value="${lecture.lecture_name }"/></td>
+						</tr>
+						<tr>
+							<th>강사명</th>
+							<td><select id="teacherselect" name = "name">
+									<option>설민석</option>
+									<option>정민재</option>
+									<option>황현필</option>
+							</select></td>
+						</tr>
+						<tr>
+							<th>강의실</th>
+							<td><select id="lectureroomselect" name="lecture_room">
+									<option>201</option>
+									<option>202</option>
+									<option>203</option>
+							</select></td>
+						</tr>
+						<tr>
+							<th>개강일</th>
+							<td><input type="date" name="start_day" id="start_day" value="${lecture.start_day }"/></td>
+						</tr>
+						<tr>
+							<th>종강일</th>
+							<td><input type="date" name="end_day" id="end_day" value="${lecture.end_day }"/></td>
+						</tr>
+						<tr>
+							<th></th>
+							<td><input type="hidden" id="lecture_num" name="lecture_num" value="${lecture.lecture_num }"/></td>
+						</tr>
+					</table>
+			</div><!--**********lmscontent end**********-->
 			<div class="lmscontent">
-			<button id="lectureback" onclick="window.history.go(-1)">뒤로</button>			
-			<button id="lecturedelete">삭제</button>			
-			<button id="lectureedit">수정</button>			
+				<button id="lectureback" type="button" onclick="window.history.go(-1)">뒤로</button>
+				<button id="lectureadd" type="submit">등록</button>
+
 			</div>
+			</form>
 			<!--*************content end******************-->
 			<%@ include file="template/footer.jspf"%>
 </body>
