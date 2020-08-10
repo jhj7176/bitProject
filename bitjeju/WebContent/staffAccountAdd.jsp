@@ -20,6 +20,17 @@ function selected(){
 	});
 }
 
+function pwCheck(passwordVal){
+		var chek_num = passwordVal.search(/[0-9]/g);
+		var chek_eng = passwordVal.search(/[a-z]/g);
+		if(chek_num<0 || chek_eng<0){
+			return true;
+		}else{
+			return false;
+		}
+	
+}
+
 $(function(){
 	
 $('#accountform').submit(function(){ //등록버튼 눌렀을 때 이벤트.
@@ -32,7 +43,7 @@ $('#accountform').submit(function(){ //등록버튼 눌렀을 때 이벤트.
 	/* 
 		비밀번호는 영문 + 숫자 조합, 8~12자리 
 	*/
-	
+	var passwordVal=$('#accountpw').val();//비밀번호
 	
 	
 	if($('#accountemailid').val()=="" || $('#accountpw').val()==""||$('#name').val()=="" ||$('#phone').val()==""){
@@ -41,8 +52,12 @@ $('#accountform').submit(function(){ //등록버튼 눌렀을 때 이벤트.
 	}else if(emailVal.match(regExp) == null){
 		alert("아이디는 이메일 형식 입니다.");
 	
-	}else if(false){
-		//비밀번호 검증 하기.	
+	}else if(pwCheck(passwordVal)){
+		//비밀번호 검증 하기.	영문이나 숫자가 포함되어야함., 포함되어있으면 false 영어나숫자만 true
+		alert('비밀번호는 영문 + 숫자 조합이어야 합니다.');
+	}else if(passwordVal.length<8 || passwordVal.length>12){
+		//비밀번호 길이는 8자~12자까지. 
+		alert('비밀번호는 8 ~ 12자리 입니다.');	
 	}else{
 		$.ajax('lmsstaffaccountadd.bit',{
 			'method':'post',
