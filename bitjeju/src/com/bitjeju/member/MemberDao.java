@@ -122,7 +122,7 @@ public class MemberDao {
 	}
 
 	public int totalStudent() throws SQLException {
-		String sql = "select count(*) as total from member where dept='¼ö°­»ý'";
+		String sql = "select count(*) as total from member where lvl=2";
 		int totalStudent = -1;
 		pstmt = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery();
