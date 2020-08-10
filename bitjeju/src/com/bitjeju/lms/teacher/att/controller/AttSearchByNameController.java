@@ -14,19 +14,16 @@ import javax.servlet.http.HttpServletResponse;
 import com.bitjeju.lms.teacher.att.model.AttendanceDao;
 import com.bitjeju.lms.teacher.att.model.AttendanceDto;
 
-
-@WebServlet("/lmsteacherattsearch.bit")
-public class AttSearchController extends HttpServlet {
+@WebServlet("/lmsteacherattsearchbyname.bit")
+public class AttSearchByNameController extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Date nalja1=null;
-		Date nalja2=null;
+		String name=null;
 		request.setCharacterEncoding("utf-8");
 		try {
-			nalja1 = Date.valueOf(request.getParameter("nalja1").trim());
-			nalja2 = Date.valueOf(request.getParameter("nalja2").trim());
+			name = request.getParameter("name").trim();
 			AttendanceDao dao=new AttendanceDao();
-			ArrayList<AttendanceDto> list=dao.selectDate(nalja1, nalja2);
+			ArrayList<AttendanceDto> list=dao.selectName(name);
 			request.setAttribute("list", list);
 		} catch (SQLException e) {
 			e.printStackTrace();

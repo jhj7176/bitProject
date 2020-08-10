@@ -138,7 +138,7 @@ private String lecture_name;
 					</tr>
 					<tr>
 						<th>출석률</th>
-						<td><progress id="attRange" name="attRange" max="100"></progress>${bean.attRate()}%</td>
+						<td><progress id="attRange" name="attRange" max="100">${bean.attRate()}%</progress></td>
 <%-- 						<td>${bean.attRate() }</td> --%>
 					</tr>
 					<tr>

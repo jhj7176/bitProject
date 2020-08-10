@@ -45,10 +45,11 @@ public class AttendanceDao {
 		return list;
 	}
 	
+
 	public ArrayList<AttendanceDto> selectDate(Date nalja1, Date nalja2) throws SQLException{
 		ArrayList<AttendanceDto> list=new ArrayList<AttendanceDto>();
 		String sql="select nalja, attendance.num,name,state from attendance,member where attendance.num=member.num"
-				+ " and nalja between ? and ? order by nalja desc";
+				+ " and nalja between ? and ? order by nalja desc, num asc";
 		try {
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setDate(1, nalja1);
@@ -65,7 +66,6 @@ public class AttendanceDao {
 		
 		return list;
 	}
-	
 	public int insertAll(Date nalja,int num,String state) throws SQLException{
 		String sql="insert into attendance values (?,?,?)";
 		try{
@@ -78,6 +78,66 @@ public class AttendanceDao {
 			if(pstmt!=null)pstmt.close();
 			if(conn!=null)conn.close();
 		}
+	}
+	
+	public ArrayList<AttendanceDto> selectName(String name) throws SQLException{
+		ArrayList<AttendanceDto> list=new ArrayList<AttendanceDto>();
+		String sql="select nalja, attendance.num,name,state from attendance,member where attendance.num=member.num"
+				+ " and name=? order by nalja desc, num asc";
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, name);
+			rs=pstmt.executeQuery();
+			while(rs.next()) {
+				list.add(new AttendanceDto(rs.getDate("nalja"),rs.getInt("num"),rs.getString("name"),rs.getString("state")));
+			}
+		}finally {
+			if(rs!=null)rs.close();
+			if(pstmt!=null)pstmt.close();
+			if(conn!=null)conn.close();
+		}
+		
+		return list;
+	}
+
+	public AttendanceDto selectOne(int num, Date nalja) throws SQLException {
+		AttendanceDto bean=null;
+		String sql = " select nalja,num,name,state from attendance natural join member where num=? and nalja=?";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, num);
+		pstmt.setDate(2, nalja);
+		rs = pstmt.executeQuery();
+		try{
+			if (rs.next()) {
+				bean= new AttendanceDto();
+				bean.setNalja(rs.getDate("nalja"));
+				bean.setNum(rs.getInt("num"));
+				bean.setName(rs.getString("name"));
+				bean.setState(rs.getString("state"));
+			}
+		}finally{
+			if (pstmt != null)pstmt.close();
+			if (conn != null)conn.close();
+		}
+		return bean;
+	}
+	
+	
+	public int updateOne(int num, Date nalja , String state) throws SQLException{
+		String sql="update attendance set state=? where num=? and nalja=?";
+		int result=0;
+		PreparedStatement pstmt=null;
+		try{
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			pstmt.setDate(2, nalja);
+			pstmt.setString(3, state);
+			result=pstmt.executeUpdate();
+		}finally{
+			if(pstmt!=null)pstmt.close();
+			if(conn!=null)conn.close();
+		}
+		return result;
 	}
 
 }
