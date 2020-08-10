@@ -24,9 +24,9 @@ function pages(){
 	//페이지링크 문자열을 게시판 테이블 뒤에 삽입. 
 }
 
-$(function(){
 key = "name";
 word = "";
+$(function(){
 lang = 5; //한 페이지당 페이지 링크번호 수. 5개 
 	var left = 0;
 	if (cardinality % 5 != 0) {//게시글 나누기 5의 나머지가 있는 경우 1페이지 추가
@@ -75,11 +75,20 @@ lang = 5; //한 페이지당 페이지 링크번호 수. 5개
 		pageNum=end;				
 		var paramnext = 'pageNum='+pageNum+'&key='+key+'&word='+word;
 		location.href='lmsstaffaccountlist.bit?'+paramnext;
-	});
+	});//click
 	
 	$('#accountadd').on('click',function(){
 		location.href='lmsstaffaccountadd.bit';
-	});
+	});//click
+	
+	$('#search').submit(function(){
+		word=$('#searchword').val();
+		key=$('#searchkey').val();
+		var paramsearch = 'pageNum='+pageNum+'&key='+key+'&word='+word;
+		location.href='lmsstaffaccountlist.bit?'+paramsearch;
+		return false;
+	});//submit
+	
 	
 });//ready
 </script>
@@ -96,9 +105,14 @@ lang = 5; //한 페이지당 페이지 링크번호 수. 5개
 	text-align:center;
 	float:left;
 	font-size: 110%;
-	margin-bottom:300px; /* 푸터와 거리 두기.  */
 }
-
+.lmscontent:last-child{	/*검색창 감싸는 Div  */
+	display:block;
+	margin:auto;
+	clear:both;
+	width:440px;
+	margin-bottom:400px; /* 푸터와 거리 두기.  */
+}
 #accounttable {
 	margin: auto;
 	width: 600px;
@@ -138,7 +152,7 @@ lang = 5; //한 페이지당 페이지 링크번호 수. 5개
 	color: #1E3269;
 }
 
-#accountadd { /* 테이블아래 등록버튼 */
+#accountadd{ /* 테이블아래 등록버튼 */
 	float: right;
 	background-color: #000069;
 	border: 1px solid #000069;
@@ -155,10 +169,39 @@ lang = 5; //한 페이지당 페이지 링크번호 수. 5개
 	width: 50px;
 	height: 20px;
 }
+#searchbtn{
+	float: right;
+	background-color: #000069;
+	border: 1px solid #000069;
+	border-radius:5px;
+	color: white;
+	margin: 7px;
+	width: 50px;
+	height: 33px;
+} 
 #paging{
 	width:300px;
 	display:block;
 	margin:auto;
+}
+#search{}
+#search>select{
+	width: 100px;
+    height: 33px;
+    margin: 7px;
+    border-radius: 5px;
+    border: 1px solid #969696;
+    font-size:120%;
+    text-align:center;
+}
+#search>input{
+	width: 230px;
+    height: 30px;
+    margin: 7px;
+    border-radius: 5px;
+    border: 1px solid #969696;
+    font-size:120%;
+    text-align:center;
 }
 </style>
 </head>
@@ -219,6 +262,17 @@ lang = 5; //한 페이지당 페이지 링크번호 수. 5개
 			<div class="lmscontent">&nbsp;
 				<button id="studentnext">다음</button>
 			</div>
+			</div>
+			<div  class="lmscontent">
+			
+			<form id="search" action="#">	
+				<select id="searchkey">
+				<option value="name" selected="selected">이름</option>
+				<option value="lvl">구분</option>
+				</select>
+				<input type="text" id="searchword" name="searchword"/>
+				<button type="submit" id="searchbtn">찾기</button>
+			</form>
 			</div>
 			<!--*************content end******************-->
 			<%@ include file="template/footer.jspf"%>

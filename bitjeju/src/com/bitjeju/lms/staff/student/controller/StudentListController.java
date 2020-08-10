@@ -31,15 +31,22 @@ public class StudentListController extends HttpServlet {
 			response.sendRedirect("main.bit");
 			return;
 		}
-		MemberDao dao = new com.bitjeju.member.MemberDao();
-		ArrayList<MemberDto> list = null;
+		String key = null;
+		String word = null;
+		try {
+			key = request.getParameter("key"); 
+			word = new String(request.getParameter("word").getBytes("iso-8859-1"), "utf-8");
+		} catch (NullPointerException e) {
+		} finally {
+			if (key == null || key.trim() == "")
+				key = "name";
+			if (word == null || word.trim() == "")
+				word = "";
+		} // finally *****************************회원리스트에서 받은
+			// 검색값***************************
+		//key lecture or name
 		
-		String key = request.getParameter("key");
-		String word = request.getParameter("word");
-		if (key == null || key.trim() == "")
-			key = "name";
-		if (word == null || word.trim() == "")
-			word = "";
+		
 		int pageNum;
 		int totalStudent=-1;
 		if (request.getParameter("pageNum") != null) {
@@ -48,11 +55,15 @@ public class StudentListController extends HttpServlet {
 		}else {
 			pageNum=1;
 		}
+		MemberDao dao = new com.bitjeju.member.MemberDao();
+		ArrayList<MemberDto> list = null;
 		
 		try {
 			list = dao.stuSelectAll(pageNum, key, word); //회원테이블의 정보를 모두 가져온다.
-			dao = new MemberDao();
-			totalStudent = dao.totalStudent();
+				dao = new MemberDao();
+				totalStudent = dao.totalStudent(key, word); //검색안했을 때 전체row반환. 페이징처리때문에.
+			
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

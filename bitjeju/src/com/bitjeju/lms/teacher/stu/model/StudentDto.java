@@ -66,7 +66,12 @@ public class StudentDto {
 				cnt++;	//출석하면 카운트 +1	
 			}//if
 		}//for
-		return cnt*100/attList.size()*1.0;//출석한날/총수업일 
+		double ar = 0;
+		if(attList.size()!=0) {
+			ar = cnt*100/attList.size()*1.0;
+		}
+		
+		return ar;//출석한날/총수업일 
 	}
 	
 	public double classProgress() {//실제 수업일수/전체교육기간

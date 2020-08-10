@@ -32,13 +32,15 @@ public class LmsController extends HttpServlet {
 		System.out.println(loginlevel);
 
 		if (dept.equals("행정")) {
-			request.getRequestDispatcher("staff.jsp").forward(request, response);
+			//request.getRequestDispatcher("staff.jsp").forward(request, response);
+			response.sendRedirect("lmsstaffaccountlist.bit");
 			return;
 		} else if (dept.equals("영업")) {
 			request.getRequestDispatcher("sales.jsp").forward(request, response);
 			return;
 		}else if (dept.equals("강사")) {
-			request.getRequestDispatcher("teacher.jsp").forward(request, response);
+			response.sendRedirect("lmsteacherattendance.bit");
+			//request.getRequestDispatcher("teacher.jsp").forward(request, response);
 			return;
 		}else if (dept.equals("수강생")) {
 			request.getRequestDispatcher("stu.jsp").forward(request, response);

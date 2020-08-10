@@ -4,8 +4,21 @@ public class MemberDto {
 	
 	private String id_email, name, dept, password, lecture;
 	private int num, lvl, phone;
+	private int rownum;
 	
 	
+	public int getNum() {
+		return num;
+	}
+	public void setNum(int num) {
+		this.num = num;
+	}
+	public int getRownum() {
+		return rownum;
+	}
+	public void setRownum(int rownum) {
+		this.rownum = rownum;
+	}
 	public MemberDto(String loginFail) {
 		// TODO Auto-generated constructor stub
 		this.id_email = loginFail;
@@ -64,12 +77,7 @@ public class MemberDto {
 	public void setLecture(String lecture) {
 		this.lecture = lecture;
 	}
-	public int getnum() {
-		return num;
-	}
-	public void setnum(int num) {
-		this.num = num;
-	}
+
 	public int getLvl() {
 		return lvl;
 	}

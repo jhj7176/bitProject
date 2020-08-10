@@ -12,7 +12,7 @@ select * from lectures;
 commit;
 
 
-
+select * from member left outer join grade on member.num = GRADE.num;
 
 select * from lectures where lecture_name=(select lecture from member where num=1010);
 

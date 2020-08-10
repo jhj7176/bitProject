@@ -16,22 +16,22 @@ insert into member values (member_seq.nextval||member_seq.currval,'text26@email.
 insert into member values (member_seq.nextval||member_seq.currval,'text27@email.com','Ã¶¼ö20',2,'password',01012341259,'WEB');
 insert into member values (member_seq.nextval||member_seq.currval,'text28@email.com','Ã¶¼ö21',2,'password',01012341260,'WEB');
 insert into member values (member_seq.nextval||member_seq.currval,'text29@email.com','Ã¶¼ö22',2,'password',01012341261,'WEB');
-insert into member values (member_seq.nextval||member_seq.currval,'text30@email.com','Ã¶¼ö23',2,'password',01012341262,'FRAMEWORK');
-insert into member values (member_seq.nextval||member_seq.currval,'text31@email.com','Ã¶¼ö24',2,'password',01012341263,'FRAMEWORK');
-insert into member values (member_seq.nextval||member_seq.currval,'text32@email.com','Ã¶¼ö25',2,'password',01012341264,'FRAMEWORK');
-insert into member values (member_seq.nextval||member_seq.currval,'text33@email.com','Ã¶¼ö26',2,'password',01012341265,'FRAMEWORK');
-insert into member values (member_seq.nextval||member_seq.currval,'text34@email.com','Ã¶¼ö27',2,'password',01012341266,'FRAMEWORK');
-insert into member values (member_seq.nextval||member_seq.currval,'text35@email.com','Ã¶¼ö28',2,'password',01012341267,'FRAMEWORK');
-insert into member values (member_seq.nextval||member_seq.currval,'text36@email.com','Ã¶¼ö29',2,'password',01012341268,'FRAMEWORK');
-insert into member values (member_seq.nextval||member_seq.currval,'text37@email.com','Ã¶¼ö30',2,'password',01012341269,'FRAMEWORK');
-insert into member values (member_seq.nextval||member_seq.currval,'text38@email.com','Ã¶¼ö31',2,'password',01012341270,'FRAMEWORK');
-insert into member values (member_seq.nextval||member_seq.currval,'text39@email.com','Ã¶¼ö32',2,'password',01012341271,'FRAMEWORK');
-insert into member values (member_seq.nextval||member_seq.currval,'text40@email.com','Ã¶¼ö33',2,'password',01012341272,'FRAMEWORK');
-insert into member values (member_seq.nextval||member_seq.currval,'text41@email.com','Ã¶¼ö34',2,'password',01012341273,'FRAMEWORK');
-insert into member values (member_seq.nextval||member_seq.currval,'text42@email.com','Ã¶¼ö35',2,'password',01012341274,'FRAMEWORK');
+insert into member values (member_seq.nextval||member_seq.currval,'text30@email.com','Ã¶¼ö23',2,'password',01012341262,'UI/UX °³¹ßÀÚ°úÁ¤');
+insert into member values (member_seq.nextval||member_seq.currval,'text31@email.com','Ã¶¼ö24',2,'password',01012341263,'UI/UX °³¹ßÀÚ°úÁ¤');
+insert into member values (member_seq.nextval||member_seq.currval,'text32@email.com','Ã¶¼ö25',2,'password',01012341264,'UI/UX °³¹ßÀÚ°úÁ¤');
+insert into member values (member_seq.nextval||member_seq.currval,'text33@email.com','Ã¶¼ö26',2,'password',01012341265,'UI/UX °³¹ßÀÚ°úÁ¤');
+insert into member values (member_seq.nextval||member_seq.currval,'text34@email.com','Ã¶¼ö27',2,'password',01012341266,'UI/UX °³¹ßÀÚ°úÁ¤');
+insert into member values (member_seq.nextval||member_seq.currval,'text35@email.com','Ã¶¼ö28',2,'password',01012341267,'UI/UX °³¹ßÀÚ°úÁ¤');
+insert into member values (member_seq.nextval||member_seq.currval,'text36@email.com','Ã¶¼ö29',2,'password',01012341268,'»ê¾÷±â»çÃëµæ°úÁ¤A');
+insert into member values (member_seq.nextval||member_seq.currval,'text37@email.com','Ã¶¼ö30',2,'password',01012341269,'»ê¾÷±â»çÃëµæ°úÁ¤A');
+insert into member values (member_seq.nextval||member_seq.currval,'text38@email.com','Ã¶¼ö31',2,'password',01012341270,'»ê¾÷±â»çÃëµæ°úÁ¤A');
+insert into member values (member_seq.nextval||member_seq.currval,'text39@email.com','Ã¶¼ö32',2,'password',01012341271,'»ê¾÷±â»çÃëµæ°úÁ¤A');
+insert into member values (member_seq.nextval||member_seq.currval,'text40@email.com','Ã¶¼ö33',2,'password',01012341272,'»ê¾÷±â»çÃëµæ°úÁ¤A');
+insert into member values (member_seq.nextval||member_seq.currval,'text41@email.com','Ã¶¼ö34',2,'password',01012341273,'»ê¾÷±â»çÃëµæ°úÁ¤A');
+insert into member values (member_seq.nextval||member_seq.currval,'text42@email.com','Ã¶¼ö35',2,'password',01012341274,'»ê¾÷±â»çÃëµæ°úÁ¤A');
 
 
-
+commit;
 insert into GRADE values (88, 70, 78, 79);
 insert into GRADE values (99, 70, 78, 79);
 insert into GRADE values (1010, 88, 86, 89);

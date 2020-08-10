@@ -25,9 +25,9 @@ function pages(){
 	//페이지링크 문자열을 게시판 테이블 뒤에 삽입. 
 }
 
-$(function(){
 key = "name";
-word = "";
+word = ""; //초기값. 페이지 처음 왔을 때 기준.
+$(function(){
 lang = 5; //한 페이지당 페이지 링크번호 수. 5개 
 	var left = 0;
 	if (cardinality % 5 != 0) {//게시글 나누기 5의 나머지가 있는 경우 1페이지 추가
@@ -77,7 +77,18 @@ lang = 5; //한 페이지당 페이지 링크번호 수. 5개
 		pageNum=end;				
 		var paramnext = 'pageNum='+pageNum+'&key='+key+'&word='+word;
 		location.href='lmsstaffstudentlist.bit?'+paramnext;
-	});
+	});//다음 버튼 클릭
+	
+	
+	$('#search').submit(function(){ //검색버튼
+		word=$('#searchword').val();
+		key=$('#searchkey').val();
+		var paramsearch = 'pageNum='+pageNum+'&key='+key+'&word='+word;
+		location.href='lmsstaffstudentlist.bit?'+paramsearch;
+		return false;
+	});//submit
+	
+	
 	
 });//ready
 </script>
@@ -95,9 +106,14 @@ lang = 5; //한 페이지당 페이지 링크번호 수. 5개
 	text-align:center;
 	float:left;
 	font-size: 110%;
-	margin-bottom:400px;/* 푸터와 거리두기  */
 }
-
+.lmscontent:last-child{ /*검색창 감싸는 div  */
+	display:block;
+	margin:auto;
+	clear:both;
+	width:440px;
+	margin-bottom:400px; /* 푸터와 거리 두기.  */
+}
 #studenttable {
 	margin: auto;
 	width: 600px;
@@ -144,11 +160,40 @@ lang = 5; //한 페이지당 페이지 링크번호 수. 5개
 	width: 50px;
 	height: 20px;
 }
-#paging{
+#paging{		/* 페이지링크 감싸는 div */
 	width:300px;
 	display:block;
 	margin:auto;
 }
+#search{}
+#search>select{
+	width: 100px;
+    height: 33px;
+    margin: 7px;
+    border-radius: 5px;
+    border: 1px solid #969696;
+    font-size:120%;
+    text-align:center;
+}
+#search>input{	/*  검색창*/
+	width: 230px;
+    height: 30px;
+    margin: 7px;
+    border-radius: 5px;
+    border: 1px solid #969696;
+    font-size:120%;
+    text-align:center;
+}
+#searchbtn{ /* 검색버튼 */
+	float: right;
+	background-color: #000069;
+	border: 1px solid #000069;
+	border-radius:5px;
+	color: white;
+	margin: 7px;
+	width: 50px;
+	height: 33px;
+} 
 </style>
 </head>
 <body>
@@ -202,6 +247,17 @@ lang = 5; //한 페이지당 페이지 링크번호 수. 5개
 			<div class="lmscontent">&nbsp;
 				<button id="studentnext">다음</button>
 			</div>
+			</div>
+			<div  class="lmscontent">
+			
+			<form id="search" action="#">	
+				<select id="searchkey">
+				<option value="name" selected="selected">이름</option>
+				<option value="lecture">강좌명</option>
+				</select>
+				<input type="text" id="searchword" name="searchword"/>
+				<button type="submit" id="searchbtn">찾기</button>
+			</form>
 			</div>
 			<!--*************content end******************-->
 			<%@ include file="template/footer.jspf"%>

@@ -5,9 +5,18 @@ import java.util.ArrayList;
 
 public class MemberDao {
 
-	Connection conn;
-	ResultSet rs;
-	PreparedStatement pstmt;
+	private Connection conn;
+	private ResultSet rs;
+	private PreparedStatement pstmt;
+	private int rownum;
+	
+	public int getRownum() {
+		return rownum;
+	}
+
+	public void setRownum(int rownum) {
+		this.rownum = rownum;
+	}
 
 	public MemberDao() {
 		// TODO Auto-generated constructor stub
@@ -40,7 +49,7 @@ public class MemberDao {
 		MemberDto bean = null;
 		if (rs.next()) {
 			bean = new MemberDto();
-			bean.setnum(rs.getInt("num"));
+			bean.setNum(rs.getInt("num"));
 			bean.setId_email(rs.getString("id_email"));
 			bean.setName(rs.getString("name"));
 			bean.setDept(rs.getString("dept"));
@@ -88,7 +97,7 @@ public class MemberDao {
 
 		while (rs.next()) {
 			bean = new MemberDto();
-			bean.setnum(rs.getInt("num"));
+			bean.setNum(rs.getInt("num"));
 			bean.setId_email(rs.getString("id_email"));
 			bean.setName(rs.getString("name"));
 			bean.setDept(rs.getString("dept"));
@@ -96,6 +105,9 @@ public class MemberDao {
 			bean.setPhone(rs.getInt("phone"));
 			bean.setLecture(rs.getString("lecture"));
 			list.add(bean);
+			
+				this.rownum = rs.getInt("rwn");
+			
 		} // while
 
 		if (pstmt != null)
@@ -106,8 +118,10 @@ public class MemberDao {
 		return list;
 	}// selectAll
 
-	public int totalMember() throws SQLException {
-		String sql = "select count(*) as total from member";
+	public int totalMember(String key, String word) throws SQLException {//검색할때도 조건에 맞는 모든 row수를 세서 반환.
+		String sql = "select count(*) as total from (select rownum as rwn from ";
+		sql += "(select * from member natural join bitjejudept where " + key + " like '%" + word + "%')) ";
+	//	String sql = "select count(*) as total from member";
 		int totalMember = -1;
 		pstmt = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery();
@@ -121,8 +135,11 @@ public class MemberDao {
 		return totalMember;
 	}
 
-	public int totalStudent() throws SQLException {
-		String sql = "select count(*) as total from member where lvl=2";
+	public int totalStudent(String key, String word) throws SQLException {
+		
+		String sql = "select count(*) as total from (select rownum as rwn from ";
+		sql += "(select * from member natural join bitjejudept where " + key + " like '%" + word + "%' and dept ='수강생')) ";
+		//String sql = "select count(*) as total from member where lvl=2";
 		int totalStudent = -1;
 		pstmt = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery();
@@ -147,13 +164,13 @@ public class MemberDao {
 		String sql = "select * from (select num,id_email, name, dept, lvl, phone, lecture, rownum as rwn from ";
 		sql += "(select * from member natural join bitjejudept where " + key + " like '%" + word + "%' and dept ='수강생')) ";
 		sql += "where rwn between " + startNum + " and " + endNum;
-
+		System.out.println(sql);
 		pstmt = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery();
 
 		while (rs.next()) {
 			bean = new MemberDto();
-			bean.setnum(rs.getInt("num"));
+			bean.setNum(rs.getInt("num"));
 			bean.setId_email(rs.getString("id_email"));
 			bean.setName(rs.getString("name"));
 			bean.setDept(rs.getString("dept"));
@@ -161,6 +178,8 @@ public class MemberDao {
 			bean.setPhone(rs.getInt("phone"));
 			bean.setLecture(rs.getString("lecture"));
 			list.add(bean);
+			
+			this.rownum = rs.getInt("rwn");
 		} // while
 
 		if (pstmt != null)
@@ -188,7 +207,7 @@ public class MemberDao {
 		rs = pstmt.executeQuery();
 		if (rs.next()) {
 			bean = new MemberDto();
-			bean.setnum(rs.getInt("num"));
+			bean.setNum(rs.getInt("num"));
 			bean.setId_email(rs.getString("id_email"));
 			bean.setName(rs.getString("name"));
 			bean.setDept(rs.getString("dept"));
@@ -253,6 +272,7 @@ public class MemberDao {
 			conn.close();
 
 	}// insert
+
 
 }//classEnd
 /*
