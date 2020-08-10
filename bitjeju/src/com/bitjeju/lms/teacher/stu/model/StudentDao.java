@@ -111,6 +111,18 @@ public class StudentDao {
 		if(pstmt!=null)pstmt.close();
 		
 		return bean;
+	}//stuselectONE
+	
+	public void studeleteOne(int num) throws SQLException {
+		String sql ="delete from member where num = ?";
+		
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, num);
+		pstmt.executeQuery();
+
+		if(rs!=null)rs.close();
+		if(pstmt!=null)pstmt.close();
+		
 	}
 	
 	

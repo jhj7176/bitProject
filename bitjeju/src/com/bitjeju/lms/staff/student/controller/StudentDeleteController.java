@@ -13,47 +13,51 @@ import com.bitjeju.lms.teacher.stu.model.StudentDao;
 import com.bitjeju.lms.teacher.stu.model.StudentDto;
 
 /**
- * Servlet implementation class StudentDetailController
+ * Servlet implementation class StudentDeleteController
  */
-@WebServlet("/lmsstaffstudentdetail.bit")
-public class StudentDetailController extends HttpServlet {
+@WebServlet("/lmsstaffstudentdelete.bit")
+public class StudentDeleteController extends HttpServlet {
 
+
+	private int num;
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 
-	 *학생 디테일 페이지에서 필요한 정보.
-	 *출석정보, 성적, 이름, 강좌, 강사명, 강의실, 전화번호.
 	 */
-		private int num;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-		int num = Integer.parseInt(request.getParameter("num"));//학생리스트에서 학생 눌렀을 때 받는 값.
-		this.num = num;
+		int num = Integer.parseInt(request.getParameter("num"));
+		this.num=num;
 		StudentDto bean = null;
 		try {
 			StudentDao dao = new StudentDao();
-			bean =  dao.stuSelectOne(num);
-
-			//이름, 강좌명, 강사명, 강의실, 전화번호, 출석률(Dto attRate()메서드 이용할것.), 성적, 교육기간(개강일,종강일)
-			System.out.println(bean.attRate());
-			System.out.println(bean.cntAtt()+"회 출석");
+			bean = dao.stuSelectOne(num);
 			request.setAttribute("bean", bean);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			response.sendRedirect("staffStudentList.jsp");
+			return;
 		}
-		request.getRequestDispatcher("staffStudentDetail.jsp").forward(request, response);
+		
+		request.getRequestDispatcher("staffStudentDelete.jsp").forward(request, response);
 	}
 
+	
+	
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-
-	
-	
+			
+		try {
+			StudentDao dao = new StudentDao();
+			dao.studeleteOne(num);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		response.sendRedirect("lmsstaffstudentlist.bit");
 	
 	}
 

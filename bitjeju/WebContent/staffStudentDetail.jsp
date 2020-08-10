@@ -10,18 +10,32 @@
 <script type="text/javascript">
 
 var lecturename ="${lecture.lecture_name}";//el
-var lecturenum ="${lecture.lecture_num}";
-var attRate ="${bean.attRate()}";
-var classRate = "${bean.classProgress()}";
+var studentNum ="${bean.num}";
+
+//**********com.bitjeju.lms.teacher.stu.model패키지 내 StudentDto에 있는 method
+//디테일 서블릿에서 StudentDto bean을 받아서 el이용하여 Dto내 메서드 사용.
+var attRate ="${bean.attRate()}";	//출석률
+var classRate = "${bean.classProgress()}"; //수업진행률
+/* var cntAtt = "${bean.cntAtt()}";//출석횟수 studentDto에 method구현해둠.
+var cntLate = "${bean.cntLate()}";//지각횟수
+var cntEaryl = "${bean.cntEarly()}";//조퇴횟수
+var cntAbsent = "${bean.cntAbsent()}";//결석횟수 */
 $(function(){
-	console.log(lecturename, lecturenum);
-	$('#lectureedit').on('click',function(){//*************수정 서블릿으로
+/* 	$('#lectureedit').on('click',function(){//*************수정 서블릿으로
 		location.href='lmsstafflectureedit.bit?lecture_name='+lecturename+'&lecture_num='+lecturenum;
-	});
-	$('#lecturedelete').on('click',function(){//****************삭제 서블릿으로
-		location.href='lmsstafflecturedelete.bit?lecture_name='+lecturename+'&lecture_num='+lecturenum;		
-	});
+	}); */
 	
+	if(attRate>=80){
+		$('#studentdelete').attr('disabled','disabled').css('background-color','gray');
+		//출석률이 80%이상이면 삭제버튼 비활성.
+	}else{
+		$('#studentdelete').removeAttr('disabled');
+		//출석률이 80%미만이면 삭제버튼 비활성화 속성을 삭제. 삭제가능. 
+	}
+	$('#studentdelete').on('click',function(){//****************삭제 서블릿으로
+		location.href='lmsstaffstudentdelete.bit?num='+studentNum;		
+	});
+	console.log(attRate, classRate);
 	$('#attRange').prop('value',attRate);
 	$('#classRange').prop('value',classRate);
 	
@@ -55,7 +69,7 @@ $(function(){
 	padding:25px;
 	text-align:left;
 }
-#lectureedit,#lecturedelete,#lectureback{
+#studentdelete,#studentback{
 	float:right;
     background-color: #000069;
     border:1px solid #000069;
@@ -98,8 +112,8 @@ $(function(){
 			&nbsp;
 			<!--*************content start****************-->
 			<div class="lmscontent">
-				<h2>강의관리</h2>
-				<h4>강좌정보</h4>
+				<h2>수강생 관리</h2>
+				<h4>수강생정보</h4>
 <!-- 
 private String lecture_name;
 	private Date start_day, end_day;
@@ -128,8 +142,17 @@ private String lecture_name;
 						<td>${bean.teacher_name }</td>
 					</tr>
 					<tr>
-						<th>강의실</th>
+						<th>강의실</th>	<!--숫자는 null이면 0으로 출력되므로 조건문처리.  -->
+						<c:choose>
+						<c:when test="${bean.lecture_room ne 0 }">
 						<td>${bean.lecture_room }</td>
+						</c:when>			
+						<c:when test="${bean.lecture_room eq 0 }">
+						<td>${null }</td>						
+						</c:when>
+						</c:choose>
+					
+					
 					</tr>
 					<tr>
 						<th>개강일</th>
@@ -148,25 +171,41 @@ private String lecture_name;
 						<td><progress id="attRange" max="100"></progress>${bean.attRate()}%</td>
 					</tr>
 					<tr>
+						<th>출석</th>
+						<td>${bean.cntAtt() }회</td>
+					</tr>
+					<tr>
+						<th>지각</th>
+						<td>${bean.cntLate() }회</td>
+					</tr>
+					<tr>
+						<th>조퇴</th>
+						<td>${bean.cntEarly() }회</td>
+					</tr>
+					<tr>
+						<th>결석</th>
+						<td>${bean.cntAbsent() }회</td>
+					</tr>
+					<tr>
 						<th>JAVA</th>
-						<td>${bean.exam1 }점</td>
+						<td>${bean.exam1 }</td>
 					</tr>
 					<tr>
 						<th>WEB</th>
-						<td>${bean.exam2 }점</td>
+						<td>${bean.exam2 }</td>
 					</tr>
 					<tr>
 						<th>FRAMEWORK</th>
-						<td>${bean.exam3 }점</td>
+						<td>${bean.exam3 }</td>
 					</tr>
 				</table>
 
 
 			</div>
 			<div class="lmscontent">
-			<button id="lectureback" onclick="window.history.go(-1)">뒤로</button>			
-			<button id="lecturedelete">삭제</button>			
-			<button id="lectureedit">수정</button>			
+			<button id="studentback" onclick="window.history.go(-1)">뒤로</button>			
+			<button id="studentdelete">삭제</button>			
+			
 			</div>
 			<!--*************content end******************-->
 			<%@ include file="template/footer.jspf"%>

@@ -8,10 +8,14 @@ import org.apache.jasper.tagplugins.jstl.core.ForEach;
 public class StudentDto {
 	
 	private int num, lecture_room, lecture_num, exam1, exam2, exam3, phone;
+	//학생 회원번호, 강의실 강좌번호,시험성적, 연락처
 	private Date start_day, end_day;
 	private String name, teacher_name, lecture_name;
+	//학생이름, 강사이름, 강좌명
 	private ArrayList<String> attList;
+	//출석테이블 정보를 담은 리스트
 	private ArrayList<Date> attNaljaList;
+	
 
 
 
@@ -62,15 +66,49 @@ public class StudentDto {
 				cnt++;	//출석하면 카운트 +1	
 			}//if
 		}//for
-		System.out.println(cnt);
-		System.out.println(attList.size());
 		return cnt*100/attList.size()*1.0;//출석한날/총수업일 
 	}
 	
-	public double classProgress() {
+	public double classProgress() {//실제 수업일수/전체교육기간
 		return attList.size()*100/90*1.0;
 	}
 	
+	public int cntAtt() {
+		int cnt=0;
+		for (int i=0 ; i<attList.size();i++) {//리스트 사이즈 = 총 수업들은 일 수 
+			if(attList.get(i).equals("출석")) { 		//총 수업일 중 '출석'한 날
+				cnt++;	//출석하면 카운트 +1	
+			}//if
+		}//for
+		return cnt;
+	}
+	public int cntLate() {
+		int cnt=0;
+		for (int i=0 ; i<attList.size();i++) {//리스트 사이즈 = 총 수업들은 일 수 
+			if(attList.get(i).equals("지각")) { 		//총 수업일 중 '지각'한 날
+				cnt++;	//지각하면 카운트 +1	
+			}//if
+		}//for
+		return cnt;
+	}
+	public int cntEarly() {
+		int cnt=0;
+		for (int i=0 ; i<attList.size();i++) {//리스트 사이즈 = 총 수업들은 일 수 
+			if(attList.get(i).equals("조퇴")) { 		//총 수업일 중 '조퇴'한 날
+				cnt++;	//조퇴하면 카운트 +1	
+			}//if
+		}//for
+		return cnt;
+	}
+	public int cntAbsent() {
+		int cnt=0;
+		for (int i=0 ; i<attList.size();i++) {//리스트 사이즈 = 총 수업들은 일 수 
+			if(attList.get(i).equals("결석")) { 		//총 수업일 중 '결석'한 날
+				cnt++;	//결석하면 카운트 +1	
+			}//if
+		}//for
+		return cnt;
+	}
 
 	
 	
