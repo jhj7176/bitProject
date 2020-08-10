@@ -12,6 +12,7 @@
 var lecturename ="${lecture.lecture_name}";//el
 var lecturenum ="${lecture.lecture_num}";
 var attRate ="${bean.attRate()}";
+var classRate = "${bean.classProgress()}";
 $(function(){
 	console.log(lecturename, lecturenum);
 	$('#lectureedit').on('click',function(){//*************수정 서블릿으로
@@ -22,6 +23,7 @@ $(function(){
 	});
 	
 	$('#attRange').prop('value',attRate);
+	$('#classRange').prop('value',classRate);
 	
 	
 });//ready
@@ -39,6 +41,7 @@ $(function(){
 }
 #lecturetable{
 	border-collapse:collapse;
+	font-size:110%;
 }
 #lecturetable tr{
 }
@@ -61,7 +64,7 @@ $(function(){
     width: 50px;
     height: 20px;
 }
-#attRange{ /* progress bar */
+#attRange,#classRange{ /* progress bar */
 	height:20px;
 	width:300px;
 	background-color:beige;
@@ -137,25 +140,24 @@ private String lecture_name;
 						<td>${bean.end_day }</td>
 					</tr>
 					<tr>
+						<th>수업 진행률</th>
+						<td><progress id="classRange" max="100"></progress>${bean.classProgress()}%</td>
+					</tr>
+					<tr>
 						<th>출석률</th>
-						<td><progress id="attRange" name="attRange" max="100">${bean.attRate()}%</progress></td>
-<%-- 						<td>${bean.attRate() }</td> --%>
+						<td><progress id="attRange" max="100"></progress>${bean.attRate()}%</td>
 					</tr>
 					<tr>
 						<th>JAVA</th>
-						<td>${bean.exam1 }</td>
+						<td>${bean.exam1 }점</td>
 					</tr>
 					<tr>
 						<th>WEB</th>
-						<td>${bean.exam2 }</td>
+						<td>${bean.exam2 }점</td>
 					</tr>
 					<tr>
 						<th>FRAMEWORK</th>
-						<td>${bean.exam3 }</td>
-					</tr>
-					<tr>
-						<th></th>
-						<td></td>
+						<td>${bean.exam3 }점</td>
 					</tr>
 				</table>
 

@@ -67,6 +67,9 @@ public class StudentDto {
 		return cnt*100/attList.size()*1.0;//출석한날/총수업일 
 	}
 	
+	public double classProgress() {
+		return attList.size()*100/90*1.0;
+	}
 	
 
 	
