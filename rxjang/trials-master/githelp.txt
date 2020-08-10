@@ -1,0 +1,28 @@
+git init
+git remote add origin repository drectory
+
+git pull origin master
+
+git status
+git add .
+git commit -m "msg";
+강제 푸시 git push origin +master
+처음에 푸시할 때 git push -u origin master
+
+git commit -m 하기전에
+git config --global user.email
+git config --global user.name
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+git remote add 저장소명 원격저장소url >>다른 원격저장소랑 연결
+
+git clone 원격저장소url >> 현재 디렉터리에 원격저장소 연결된 클론 생성
+
+git branch 브랜치명  >> 브랜치 생성 (로컬)
+git checkout 브랜치명 >> 브랜치로 swich
+
+git checkout -b 브랜치명 >>브랜치 생성 및 스위치
+git branch --set-upstream 저장소명 브랜치명 >> 원격저장소에 브랜치를 추가함.  
+
+git branch -d 브랜치명 >>로컬 삭제
+git push origin :브랜치명 >> 원격저장소에서 삭제

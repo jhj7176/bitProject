@@ -1,4 +1,4 @@
-package com.bitjeju.login.model;
+package com.bitjeju.member;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -29,7 +29,7 @@ public class MemberDao {
 
 	public MemberDto loginValidation(String id, String password) throws SQLException {
 
-		String sql = "select * from member where id_email=? and password=?";
+		String sql = "select num,id_email,name,dept,lvl,password,phone,lecture from member natural join bitjejudept where id_email=? and password=?";
 		// id와 pw 일치하는 회원의 정보를 모두 가져온다.
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, id);
@@ -77,7 +77,7 @@ public class MemberDao {
 //			word = "";
 
 		String sql = "select * from (select num,id_email, name, dept, lvl, phone, lecture, rownum as rwn from ";
-		sql += "(select * from member where " + key + " like '%" + word + "%')) ";
+		sql += "(select * from member natural join bitjejudept where " + key + " like '%" + word + "%')) ";
 		sql += "where rwn between " + startNum + " and " + endNum;
 		System.out.println(sql);
 
@@ -145,7 +145,7 @@ public class MemberDao {
 		int endNum = 5 + (pageNum - 1) * 5;// 페이지당 게시글 수
 
 		String sql = "select * from (select num,id_email, name, dept, lvl, phone, lecture, rownum as rwn from ";
-		sql += "(select * from member where " + key + " like '%" + word + "%' and dept ='수강생')) ";
+		sql += "(select * from member natural join bitjejudept where " + key + " like '%" + word + "%' and dept ='수강생')) ";
 		sql += "where rwn between " + startNum + " and " + endNum;
 
 		pstmt = conn.prepareStatement(sql);
@@ -172,9 +172,17 @@ public class MemberDao {
 	}// stselectAll()
 
 	public MemberDto selectOne(int num) throws SQLException {
-		String sql = "select * from member where num=?";
+		//String sql = "select * from member where num=?";
+		String sql = "select num, id_email, name, dept, lvl, phone, "
+				+ "lecture from member natural join bitjejudept where num=?";
 		MemberDto bean = null;
-
+//.........
+		/*
+		 * String sqldept = "select dept from bitjejudept where lvl=?";
+		 * 
+		 * select num, id_email, name, dept, lvl, phone, lecture from member natural join bitjeju 
+		 * 
+		 * */
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, num);
 		rs = pstmt.executeQuery();
@@ -187,8 +195,9 @@ public class MemberDao {
 			bean.setLvl(rs.getInt("lvl"));
 			bean.setPhone(rs.getInt("phone"));
 			bean.setLecture(rs.getString("lecture"));
+			
 		}
-
+		
 		if (pstmt != null)
 			pstmt.close();
 		if (conn != null)
@@ -226,16 +235,15 @@ public class MemberDao {
 			lvl = 6;
 		}
 		String sql = "insert into member values (member_seq.nextval||member_seq.nextval,";
-		sql += "?,?,?,?,?,?,null)";
+		sql += "?,?,?,?,?,null)";
 //이메일 이름 부서 레벨 비번 전화번호 강좌명 
 
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, emailid);
 		pstmt.setString(2, name);
-		pstmt.setString(3, dept);
-		pstmt.setInt(4, lvl);
-		pstmt.setString(5, pw);
-		pstmt.setInt(6, phone);
+		pstmt.setInt(3, lvl);
+		pstmt.setString(4, pw);
+		pstmt.setInt(5, phone);
 		System.out.println(sql);
 		rs = pstmt.executeQuery();
 

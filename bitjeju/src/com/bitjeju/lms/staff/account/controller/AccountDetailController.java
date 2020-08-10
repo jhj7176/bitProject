@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.bitjeju.login.model.MemberDao;
-import com.bitjeju.login.model.MemberDto;
+import com.bitjeju.member.MemberDao;
+import com.bitjeju.member.MemberDto;
 
 /**
  * Servlet implementation class AccountDetailController
@@ -32,7 +32,7 @@ public class AccountDetailController extends HttpServlet {
 			return;
 		}
 		int num = Integer.parseInt(request.getParameter("num"));
-		MemberDao dao = new com.bitjeju.login.model.MemberDao();
+		MemberDao dao = new com.bitjeju.member.MemberDao();
 		MemberDto bean = null;
 		try {
 			bean = dao.selectOne(num); //회원테이블의 정보를 1명 가져옴

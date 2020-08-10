@@ -28,26 +28,27 @@ create table member(						--회원테이블
 	num number primary key, 				--회원번호
 	id_email varchar2(50) unique not null,  --이메일을 아이디로씀
 	name varchar2(15),						--회원이름
-	dept varchar2(20) default '일반회원',		--회원명
 	lvl number(1) default 1,				--등급
 	password varchar2(15) not null, 		--비밀번호 영문+숫자조합
 	phone number,							--전화번호
 	lecture varchar2(30),					--강좌명 
-	foreign key(dept) references bitjejudept(dept) on delete cascade,
 	foreign key(lvl) references bitjejudept(lvl) on delete cascade
 );
 
 select * from MEMBER;
 select * from member where dept='수강생';
 
-insert into member values (member_seq.nextval||member_seq.currval, 'tmsisj@email.com','형진','관리자',6,'tmsisj',01012341234,'');
-insert into member values (member_seq.nextval||member_seq.currval, 'sales@email.com','이영업','영업',4,'password',01012341234, null);
-insert into member values (member_seq.nextval||member_seq.currval, 'staff@email.com','김행정','행정',5,'password',01012341234, null);
-insert into member values (member_seq.nextval||member_seq.currval, 'teacher@email.com','김영조','강사',3,'password',01012341234, null);
-insert into member values (member_seq.nextval||member_seq.currval, 'test@email.com','일반','일반회원',1,'password',01012341234, null);
+insert into member values (member_seq.nextval||member_seq.currval, 'tmsisj@email.com','형진',6,'tmsisj',01012341234,'');
+insert into member values (member_seq.nextval||member_seq.currval, 'sales@email.com','이영업',4,'password',01012341234, null);
+insert into member values (member_seq.nextval||member_seq.currval, 'staff@email.com','김행정',5,'password',01012341234, null);
+insert into member values (member_seq.nextval||member_seq.currval, 'teacher@email.com','김영조',3,'password',01012341234, null);
+insert into member values (member_seq.nextval||member_seq.currval, 'test@email.com','일반',1,'password',01012341234, null);
 
-insert into member values (member_seq.nextval||member_seq.currval, 'text2@email.com','철수2','수강생',2,'password',01012341234,'JAVA');
+insert into member values (member_seq.nextval||member_seq.currval, 'text2@email.com','철수2',2,'password',01012341234,'JAVA');
 
+insert into member values (member_seq.nextval||member_seq.currval,'teacher4@email.com','설민석',3,'password',01012341235,null);
+insert into member values (member_seq.nextval||member_seq.currval,'teacher5@email.com','황현필',3,'password',01012341235,null);
+insert into member values (member_seq.nextval||member_seq.currval,'teacher6@email.com','정민재',3,'password',01012341235,null);
 
 create table attendance( --출석테이블
 	nalja date not null,

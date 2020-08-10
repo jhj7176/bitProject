@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.websocket.Session;
 
-import com.bitjeju.login.model.MemberDao;
-import com.bitjeju.login.model.MemberDto;
+import com.bitjeju.member.MemberDao;
+import com.bitjeju.member.MemberDto;
 
 @WebServlet("/login.bit")
 public class LoginController extends HttpServlet {

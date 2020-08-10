@@ -8,7 +8,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.bitjeju.login.model.MemberDao;
+
+import com.bitjeju.member.MemberDao;
 
 /**
  * Servlet implementation class AccountDeleteContrller

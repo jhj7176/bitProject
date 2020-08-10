@@ -1,11 +1,9 @@
-package com.bitjeju.login.model;
+package com.bitjeju.member;
 
 public class MemberDto {
 	
 	private String id_email, name, dept, password, lecture;
 	private int num, lvl, phone;
-	
-
 	
 	
 	public MemberDto(String loginFail) {
@@ -16,6 +14,25 @@ public class MemberDto {
 	public MemberDto() {
 		// TODO Auto-generated constructor stub
 	}
+	
+	public MemberDto(int num, String name) {
+		super();
+		this.num = num;
+		this.name = name;
+	}
+
+	public MemberDto(int num, String id_email, String name, int lvl,
+			String password, int phone, String lecture) {
+		super();
+		this.num = num;
+		this.id_email = id_email;
+		this.name = name;
+		this.lvl = lvl;
+		this.password = password;
+		this.phone = phone;
+		this.lecture = lecture;
+	}
+	
 	
 	public String getId_email() {
 		return id_email;

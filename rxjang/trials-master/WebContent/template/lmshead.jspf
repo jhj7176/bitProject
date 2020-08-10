@@ -1,0 +1,220 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<style rel="stylesheet" type="text/css">
+     #header{
+        height: 110px;
+    }
+    .logo{
+        margin: 10px auto;로고위치 밑으로 내림
+    }
+    .logo>img{
+        height : 87px;
+        margin-left: 200px;
+    }
+    #menu{
+        height: 70px;/*메뉴 크기*/
+        border-top: 1px solid #e4e4e4;
+        border-bottom: 1px solid #e4e4e4;
+        width: 100%;
+    }
+    #menu>.grid6>ul{
+        list-style: none;
+        margin: 23px 30px;
+    }
+    #menu>.grid6>ul>li{
+        text-align: center;
+        float: left;
+        width: 130px;
+        padding: 0 40px;
+    }
+    #menu>.grid6>ul>li>a{
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+    }
+    #menu>.grid6>ul>li>a:hover{
+        color:mediumblue;
+    }
+    #contents{/*내용+사이드바*/
+        width: 100%;
+    }
+    #content{
+        border-left: 1px solid #e4e4e4;
+    }
+    #lmsmenu{
+        margin-top: 20px;
+        margin-left: 45px;
+        width: 200px;
+        border:3px solid white;
+/*        background-color: #F6F6F6;*/
+    }
+    .bigletter{
+        font-size: 18px;
+        font-weight: 600;
+    }
+    #lmsmenu>p{
+        line-height: 10px;
+        color: #505050;
+        font-weight: 800;
+        font-size: 21px;
+        border-bottom: 1px solid #e4e4e4;
+        padding-bottom: 30px;
+        padding-left: 40px; 
+    }
+    #lmsmenu>ul{
+        list-style: none;
+        color: #505050;
+    }
+    #lmsmenu>ul>li{
+        padding-bottom: 10px;
+        color: #505050;
+        color: 
+    }
+    #lmsmenu>ul>li>a{
+        text-decoration: none;
+        color: #505050;
+    }
+    #lmsmenu>ul>li>a:hover{
+        color:#000069;
+    }
+    #content{/*로그인창만*/
+        border-right: 1px solid #e4e4e4;
+        height: 1000px;
+    }
+    #signin{/*로그인창 텍스트 패딩*/
+        text-align: center;
+        font-size: 20px;
+        font-weight: 600;
+        padding-top: 50px;
+        padding: 30px;
+        border-bottom: 1px solid #e4e4e4;
+    }
+    #loginmsg{/*  로그인 했을 때 보이는 메세지. XX님환영합니다.  */
+    	font-size:15px;
+    	margin-top:30px;
+    	margin-bottom:13px;
+    	font-weight: 400;
+    	width: 240px;
+    	height: 23px;
+
+    }
+    
+    
+    #emailid, #pw{/*아이디,비밀번호*/
+        width: 230px;
+        height: 23px;
+        margin: 7px;
+        border-radius: 5px;
+        border: 1px solid #969696;
+    }
+    #login{/*로그인버튼*/
+        background-color: #000069;
+        border:1px solid #000069;
+        color:white;
+        margin: 7px;
+        width: 235px;
+        height: 35px;
+    }
+    
+    #logout{/*로그아웃버튼*/
+        background-color: #000069;
+        border:1px solid #000069;
+        color:white;
+        margin: 7px;
+        width: 235px;
+        height: 35px;
+    }
+    
+    #login:hover{
+        background-color: white;
+        color: #000069;
+    }
+    #logout:hover{
+        background-color: white;
+        color: #000069;
+    }
+    #createaccount{/*회원가입버튼*/
+        background-color: #1E3269;
+        border: 1px solid #1E3269;
+        color: white;
+        margin: 5px;
+        width: 235px;
+        height: 35px;
+    }
+    #mypage{/*내정보버튼*/
+        background-color: #1E3269;
+        border: 1px solid #1E3269;
+        color: white;
+        margin: 5px;
+        width: 235px;
+        height: 35px;
+    }
+    #createaccount:hover{
+        background-color: white;
+        color: #1E3269;
+    }
+    #mypage:hover{
+        background-color: white;
+        color: #1E3269;
+    }
+    .gotolms{/*LMS이동버튼*/
+        background-color: #E56D29;
+        border: 1px solid #E56D29;
+        color:white;
+        margin: 5px;
+        width: 235px;
+        height: 35px;
+    }
+    .gotolms:hover{
+        background-color: white;
+        color: #E56D29;
+    }
+    #campus{
+        padding: 15px 60px;
+        border-bottom: 1px solid #e4e4e4;
+    }
+    #campustitle{
+        padding-left: 10px;
+    }
+    #campusinfo>tbody>tr>td{
+        text-align: right;
+    }
+    #open{
+        font-size: 12px;
+        text-align: right;
+    }
+    #signin>p{
+        margin: 0px 10px;
+        text-align: right;
+    }
+    #signin>p>a{
+        font-size: 13px;
+        text-align: right;
+        text-decoration: none;
+        color: #646464;
+    }
+    #signin>p>a:hover{
+        color: black;
+    }
+    #footer{
+        width: 100%;
+        height: 180px;
+        background-color: #e4e4e4;
+        bottom:0px;
+    }
+    #footercon{/*푸터사진+내용*/
+        width: 880px;
+        margin: 20px 380px;
+    }
+    #footer>#footercon>img{
+        float: left;
+        width: 170px;
+        margin-left: 50px;
+    }
+    #footer>#footercon>p{
+        float: right;
+        width: 630px;
+        color:#787878;
+        font-size: 15px;
+    }
+</style>

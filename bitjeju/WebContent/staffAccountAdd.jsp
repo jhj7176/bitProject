@@ -27,8 +27,7 @@ function pwCheck(passwordVal){
 			return true;
 		}else{
 			return false;
-		}
-	
+		}	
 }
 
 $(function(){

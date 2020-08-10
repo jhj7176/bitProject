@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.bitjeju.lms.staff.lecture.model.LectureDao;
 import com.bitjeju.lms.staff.lecture.model.LectureDto;
-import com.bitjeju.login.model.MemberDao;
-import com.bitjeju.login.model.MemberDto;
+import com.bitjeju.member.MemberDao;
+import com.bitjeju.member.MemberDto;
 
 /**
  * Servlet implementation class LectureListController

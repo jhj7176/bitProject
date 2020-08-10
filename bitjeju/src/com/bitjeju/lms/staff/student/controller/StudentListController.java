@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.bitjeju.login.model.MemberDao;
-import com.bitjeju.login.model.MemberDto;
+import com.bitjeju.member.MemberDao;
+import com.bitjeju.member.MemberDto;
 
 /**
  * Servlet implementation class StudentListController
@@ -31,7 +31,7 @@ public class StudentListController extends HttpServlet {
 			response.sendRedirect("main.bit");
 			return;
 		}
-		MemberDao dao = new com.bitjeju.login.model.MemberDao();
+		MemberDao dao = new com.bitjeju.member.MemberDao();
 		ArrayList<MemberDto> list = null;
 		
 		String key = request.getParameter("key");
