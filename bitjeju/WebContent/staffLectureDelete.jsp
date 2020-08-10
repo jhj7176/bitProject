@@ -10,6 +10,7 @@
 
 <style type="text/css">
 .lmscontent {
+	height:1000px;
 	width: 600px;
 	display: block;
 	margin: auto;

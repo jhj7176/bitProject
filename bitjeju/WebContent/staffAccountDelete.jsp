@@ -16,6 +16,9 @@
 	margin: auto;
 	border-bottom:1px solid #e4e4e4;
 }
+#deleteform{
+	margin-bottom:500px;/*푸터와 거리두기  */
+}
 #accounttable{
 	border-collapse:collapse;
 }
@@ -66,7 +69,7 @@
 		<!--*****************lms메뉴******************-->
 		<div id="content" class="grid6">
 			&nbsp;
-			<form action="lmsstaffaccountdelete.bit" method="post">
+			<form id="deleteform" action="lmsstaffaccountdelete.bit" method="post">
 			<!--*************content start****************-->
 			<div class="lmscontent">
 				<h2>계정관리</h2>

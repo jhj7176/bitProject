@@ -95,6 +95,7 @@ lang = 5; //한 페이지당 페이지 링크번호 수. 5개
 	text-align:center;
 	float:left;
 	font-size: 110%;
+	margin-bottom:400px;/* 푸터와 거리두기  */
 }
 
 #studenttable {

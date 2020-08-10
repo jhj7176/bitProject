@@ -10,3 +10,14 @@ insert into member values (member_seq.nextval||member_seq.currval,'teacher6@emai
 select * from member;
 select * from lectures;
 commit;
+
+
+
+
+select * from lectures where lecture_name=(select lecture from member where num=1010);
+
+
+select * from member natural join grade where num =1010;
+select * from attendance where num = 1010;
+
+select lecture_name, lecture_num, lecture_room, name, start_day, end_day from lectures natural join member where lecture_name=(select lecture from member where num=1010);

@@ -8,13 +8,24 @@
 <%@ include file="template/lmshead.jspf"%>
 <title>Insert title here</title>
 <script type="text/javascript">
-var deletenum="${bean.num}";//회원번호
-var deleteemail="${bean.id_email}"
+
+var lecturename ="${lecture.lecture_name}";//el
+var lecturenum ="${lecture.lecture_num}";
+var attRate ="${bean.attRate()}";
 $(function(){
-	$('#accountdelete').on('click',function(){//회원번호(PK)이용해서 삭제. 
-		location.href='lmsstaffaccountdelete.bit?num='+deletenum+'&emailid='+deleteemail;
+	console.log(lecturename, lecturenum);
+	$('#lectureedit').on('click',function(){//*************수정 서블릿으로
+		location.href='lmsstafflectureedit.bit?lecture_name='+lecturename+'&lecture_num='+lecturenum;
 	});
-});
+	$('#lecturedelete').on('click',function(){//****************삭제 서블릿으로
+		location.href='lmsstafflecturedelete.bit?lecture_name='+lecturename+'&lecture_num='+lecturenum;		
+	});
+	
+	$('#attRange').prop('value',attRate);
+	
+	
+});//ready
+
 </script>
 <style type="text/css">
 .lmscontent {
@@ -23,25 +34,25 @@ $(function(){
 	margin: auto;
 	border-bottom:1px solid #e4e4e4;
 }
-.lmscontent:last-child{/*푸터와 거리두기  */
-	margin-bottom:400px;
+.lmscontent:last-child {
+	margin-bottom:300px;
 }
-#accounttable{
+#lecturetable{
 	border-collapse:collapse;
 }
-#accounttable tr{
+#lecturetable tr{
 }
-#accounttable th{
+#lecturetable th{
 	color:#1E3269;
 	padding:30px;
 	border-right:1px solid #e4e4e4;
 	text-align:right;
 }
-#accounttable td{
+#lecturetable td{
 	padding:25px;
 	text-align:left;
 }
-#accountedit,#accountdelete,#accountback{
+#lectureedit,#lecturedelete,#lectureback{
 	float:right;
     background-color: #000069;
     border:1px solid #000069;
@@ -50,6 +61,12 @@ $(function(){
     width: 50px;
     height: 20px;
 }
+#attRange{ /* progress bar */
+	height:20px;
+	width:300px;
+	background-color:beige;
+}
+
 
 </style>
 </head>
@@ -78,47 +95,76 @@ $(function(){
 			&nbsp;
 			<!--*************content start****************-->
 			<div class="lmscontent">
-				<h2>계정관리</h2>
-				<h4>회원정보</h4>
+				<h2>강의관리</h2>
+				<h4>강좌정보</h4>
+<!-- 
+private String lecture_name;
+	private Date start_day, end_day;
+	private int num, lecture_room,lecture_num;
+	
 
+
+ -->
 
 					<c:set value="${bean }" var="bean" />
-				<table id="accounttable">
-					<tr>
-						<th>회원번호</th>
-						<td>${bean.num }</td>
-					</tr>
+				<table id="lecturetable">
 					<tr>
 						<th>이름</th>
 						<td>${bean.name }</td>
 					</tr>
 					<tr>
-						<th>아이디</th>
-						<td>${bean.id_email }</td>
-					</tr>
-					<tr>
-						<th>구분</th>
-						<td>${bean.dept }</td>
-					</tr>
-					<tr>
-						<th>권한레벨</th>
-						<td>${bean.lvl }</td>
-					</tr>
-					<tr>
-						<th>전화번호</th>
+						<th>연락처</th>
 						<td>${bean.phone }</td>
+					</tr>
+					<tr>
+						<th>강좌명</th>
+						<td>${bean.lecture_name }</td>
+					</tr>
+					<tr>
+						<th>강사명</th>
+						<td>${bean.teacher_name }</td>
+					</tr>
+					<tr>
+						<th>강의실</th>
+						<td>${bean.lecture_room }</td>
+					</tr>
+					<tr>
+						<th>개강일</th>
+						<td>${bean.start_day }</td>
+					</tr>
+					<tr>
+						<th>종강일</th>
+						<td>${bean.end_day }</td>
+					</tr>
+					<tr>
+						<th>출석률</th>
+						<td><progress id="attRange" name="attRange" max="100"></progress>${bean.attRate()}%</td>
+<%-- 						<td>${bean.attRate() }</td> --%>
+					</tr>
+					<tr>
+						<th>JAVA</th>
+						<td>${bean.exam1 }</td>
+					</tr>
+					<tr>
+						<th>WEB</th>
+						<td>${bean.exam2 }</td>
+					</tr>
+					<tr>
+						<th>FRAMEWORK</th>
+						<td>${bean.exam3 }</td>
+					</tr>
+					<tr>
+						<th></th>
+						<td></td>
 					</tr>
 				</table>
 
 
 			</div>
 			<div class="lmscontent">
-			<button id="accountback" onclick="window.history.go(-1)">뒤로</button>			
-			<button id="accountdelete">삭제</button>			
-<!-- 			<button id="accountedit">수정</button>
-회원정보 수정 삭제가 행정직원에게 주어도 되는지 고민.. 
-
-수강생관리에서 수강생 삭제기능만 넣기. 개인정보는 각자 로그인했을 때 변경. 	 -->		
+			<button id="lectureback" onclick="window.history.go(-1)">뒤로</button>			
+			<button id="lecturedelete">삭제</button>			
+			<button id="lectureedit">수정</button>			
 			</div>
 			<!--*************content end******************-->
 			<%@ include file="template/footer.jspf"%>

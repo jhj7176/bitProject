@@ -17,6 +17,7 @@ $(function(){});
 	width: 600px;
 	display: block;
 	margin: auto;
+	height:900px;
 }
 
 #lecturetable {

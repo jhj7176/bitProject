@@ -96,6 +96,7 @@ lang = 5; //한 페이지당 페이지 링크번호 수. 5개
 	text-align:center;
 	float:left;
 	font-size: 110%;
+	margin-bottom:300px; /* 푸터와 거리 두기.  */
 }
 
 #accounttable {
@@ -188,7 +189,7 @@ lang = 5; //한 페이지당 페이지 링크번호 수. 5개
 			<div class="lmscontent">
 				<h2>계정관리</h2>
 				<h4>회원정보</h4>
-			<div class="lmscontent">
+			<div class="lmscontentadd">
 				<button id="accountadd">등록</button>
 			</div>
 

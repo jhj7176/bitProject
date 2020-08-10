@@ -15,6 +15,9 @@
 	margin: auto;
 	border-bottom:1px solid #e4e4e4;
 }
+#deletedform{
+	margin-bottom:500px;
+}
 #accounttable{
 	border-collapse:collapse;
 }
@@ -65,7 +68,7 @@
 		<!--*****************lms메뉴******************-->
 		<div id="content" class="grid6">
 			&nbsp;
-			<form action="lmsstaffaccountlist.bit">
+			<form id="deletedform" action="lmsstaffaccountlist.bit">
 			<!--*************content start****************-->
 			<div class="lmscontent">
 				<h2>계정관리</h2>

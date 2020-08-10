@@ -63,14 +63,11 @@ select * from attend where mnum=22;
 
 
 create table grade(
-	mnum number primary key,
+	num number,
 	exam1 number,
 	exam2 number,
 	exam3 number,
-	name varchar2(15),
-	id_email varchar2(50),
-	foreign key(mnum) references member(mnum) on delete cascade,
-	foreign key(id_email) references member(id_email) on delete cascade
+	foreign key(num) references member(mnum) on delete cascade
 );  
 
 create table lectures(
@@ -80,7 +77,7 @@ create table lectures(
 	mnum number,
 	name varchar2(15),
 	lecture_room number,
-	foreign key(mnum) references member(mnum) on delete cascade
+	foreign key(num) references member(num) on delete cascade
 );
 
 create table notice(

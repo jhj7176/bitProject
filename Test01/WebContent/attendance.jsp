@@ -24,13 +24,7 @@ $(function(){
 		
 		$('.nalja').val(selectDate);
 	  console.log(selectDate);
-	  
-/* 	  $('#fin').on('click', function() {
-			$('.temp').each(function() {
-				$(this).click();
-				//$('.form').submit();
-			});//each
-		});//onclick */
+
 		
 		$('.nalja').css('display','none')
 		

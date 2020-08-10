@@ -30,6 +30,9 @@ $(function(){
 	margin: auto;
 	border-bottom:1px solid #e4e4e4;
 }
+.lmscontent:last-child {
+	margin-bottom:300px;
+}
 #lecturetable{
 	border-collapse:collapse;
 }

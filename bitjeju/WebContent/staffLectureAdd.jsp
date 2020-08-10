@@ -15,7 +15,9 @@
 	margin: auto;
 	border-bottom: 1px solid #e4e4e4;
 }
-
+#lectureform{
+	margin-bottom:300px; /*푸터와 거리두기  */
+}
 #lecturetable {
 	border-collapse: collapse;
 }
@@ -81,7 +83,7 @@
 		<div id="content" class="grid6">
 			&nbsp;
 			<!--*************content start****************-->
-			<form action="lmsstafflectureadd.bit" method="post">
+			<form id="lectureform" action="lmsstafflectureadd.bit" method="post">
 			<div class="lmscontent"><!--**********lmscontent start**********-->
 				<h2>강의관리</h2>
 				<h4>강좌개설</h4>

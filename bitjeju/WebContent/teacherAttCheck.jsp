@@ -13,10 +13,18 @@
 
 var selectDate;
 $(function(){
-  document.getElementById('nalja').value = new Date().toISOString().substring(0, 10);
+  document.getElementById('nalja').value = new Date().toISOString().substring(0, 10); 
   selectDate = $('#nalja').val();
   $('.nalja').val(selectDate);
   $('.nalja').css('display','none')
+  
+  $('#nalja').on('change',function(){
+	  selectDate = $('#nalja').val();
+	  $('.nalja').val(selectDate);	  
+  });//on change
+  
+  
+  
 });
 </script>
 <style type="text/css">

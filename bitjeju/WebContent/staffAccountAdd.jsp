@@ -80,6 +80,10 @@ $('#accountform').submit(function(){ //등록버튼 눌렀을 때 이벤트.
 	margin: auto;
 	border-bottom:1px solid #e4e4e4;
 }
+
+#accountform{
+	margin-bottom:400px;
+}
 #accounttable{
 	border-collapse:collapse;
 }

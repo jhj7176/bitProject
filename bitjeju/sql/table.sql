@@ -98,14 +98,14 @@ insert into lectures values ('안드로이드 개발자 과정',sysdate,sysdate,22,401,lec
 create table recruit (--모집공고게시판>>select * from lecture;>>모집공고 업로드하는 form>> 입력>>리쿠르트테이블에 insert
 		
 );
---영업사원>>반배정 메뉴 누르면>> 수강신청생 목록 >>select * from member where lvl=0 and lecture is not null;
+--영업사원>>반배정 메뉴 누르면>> 수강신청생 목록 >>select * from member where lvl<=1 and lecture is not null;
 --일반회원 lvl = 0
 --수료생 --lvl =1
 --수강신청버튼은 레벨이 0인 회원만 누를수있다.
---일반회원이 수강신청 버튼 눌렀을 떄, update member set lecture = '신청한강좌명' where num=1 
+--일반회원이 수강신청 버튼 눌렀을 떄, update member set lecture = '신청한강좌명' where num<=1(수료생or일반회원)
 
 
-
+--예전날짜로 출석체크 업데이트했을때// 오늘날짜로 넘어감. 
 
 
 create table board2(									--기본적인 게시판 테이블
