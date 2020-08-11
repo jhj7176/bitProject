@@ -302,5 +302,24 @@ public class MemberDao {
 		return 1;
 
 	}// signUp
+	
+	public int signUp(String id_email) throws SQLException {
+		
+		String sql="select * from member where id_email=?";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, id_email);
+		rs = pstmt.executeQuery();
+		if(rs.next()) {
+			
+			return -1;
+		}
+		
+		if (pstmt != null)
+			pstmt.close();
+		if (conn != null)
+			conn.close();
+	
+		return 1;
+	}//singUp
 
 }// classEnd

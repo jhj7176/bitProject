@@ -73,7 +73,7 @@
 }
 
 .form-group { /* 약관 테이블 사이 간격 띄우기  */
-	margin-bottom: 100px;
+	margin-bottom: 60px;
 }
 
 .well-sm { /* 약관내용 담은 div 높이조절, 스크롤 */

@@ -31,6 +31,7 @@ public class StudentDeleteController extends HttpServlet {
 		try {
 			StudentDao dao = new StudentDao();
 			bean = dao.stuSelectOne(num);
+			
 			request.setAttribute("bean", bean);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

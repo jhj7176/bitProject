@@ -48,13 +48,15 @@ public class StudentDao {
 		
 		return list;
 	}//selectAll
+
 	
 	public StudentDto stuSelectOne(int num) throws SQLException {
 		
 	//학생디테일페이지 
 	//이름, 강좌명, 강사명, 강의실, 전화번호, 출석률, 성적, 교육기간
 		StudentDto bean = new StudentDto();
-		String sql = "select * from member natural join grade where num =?";//이름 전화번호 강좌 등
+		//String sql = "select * from member natural join grade where num =?";//이름 전화번호 강좌 등
+		String sql ="select * from member full outer join grade on member.num=grade.num where member.num=?";
 		pstmt = conn.prepareStatement(sql);
 		System.out.println(sql);
 		pstmt.setInt(1, num);
@@ -119,7 +121,7 @@ public class StudentDao {
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, num);
 		pstmt.executeQuery();
-
+		System.out.println(sql);
 		if(rs!=null)rs.close();
 		if(pstmt!=null)pstmt.close();
 		

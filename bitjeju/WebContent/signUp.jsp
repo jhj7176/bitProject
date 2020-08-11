@@ -10,7 +10,7 @@
 
 <script type="text/javascript">
 
-
+var overlapCheck;
 
 function pwCheck(passwordVal){
 		var chek_num = passwordVal.search(/[0-9]/g);
@@ -24,7 +24,8 @@ function pwCheck(passwordVal){
 
 $(function(){
 	
-$('#signup').submit(function(){ //등록버튼 눌렀을 때 이벤트.
+$('#signupbtn').on('click',function(){ //등록버튼 눌렀을 때 이벤트.
+	console.log('서브밋');
 	var emailVal = $("#signupemailid").val();//id창에 입력된 값
 	var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
 	var memberInfo = 'emailid='+$('#signupemailid').val()+'&pw='+$('#signuppw').val();
@@ -35,50 +36,66 @@ $('#signup').submit(function(){ //등록버튼 눌렀을 때 이벤트.
 	*/
 	var passwordVal=$('#signuppw').val();//비밀번호
 	
-	
 	if($('#signupemailid').val()=="" || $('#signuppw').val()==""||$('#name').val()=="" ||$('#phone').val()==""){
 		alert("모든 정보를 입력해야 합니다.");
-	
-		return false;
 	}else if(emailVal.match(regExp) == null){
 		alert("아이디는 이메일 형식 입니다.");
-		return false;
 	
 	}else if(pwCheck(passwordVal)){
 		//비밀번호 검증 하기.	영문이나 숫자가 포함되어야함., 포함되어있으면 false 영어나숫자만 true
 		alert('비밀번호는 영문 + 숫자 조합이어야 합니다.');
-		return false;
 	}else if(passwordVal.length<8 || passwordVal.length>12){
 		//비밀번호 길이는 8자~12자까지. 
 		alert('비밀번호는 8 ~ 12자리 입니다.');	
-		return false;
-	}else{
+	}else if($('#overlapCK').text()=='NO'){
+		alert('아이디를 확인해주세요');
 		
-	
+	}else{
+		$.ajax('signup.bit',{
+			'method':'post',
+			'data':memberInfo,
+			'success':function(){
+				location.href='signedup.bit';
+			}//success
+		});//ajax
 		
 	}//else		
+		
+		return false;
 });//submit
 
-$('#overlap').on('click',function(){ // 아이디 중복검사 버튼
-	var chk_id=$('#signupemailid').val()
-	
-	 $.ajax('lmsteacherattupdate.bit',{
-		'method':'post',
-		'data':'num='+pnum+'&nalja='+pnalja,
-		'success':function(){
-			/* location.href="lmsteacherattupdate.bit?num="+pnum+"&nalja="+pnalja; */
-			var date= pnalja;
-			//var url ="lmsteacherattupdate.bit?num="+pnum+"&nalja="+pnalja;	
-			var title="new window";
-			var option = "width=600,height=400,top=200,left=400, toolbar=no,directories=no,scrollbars=no,resizable=no,status=no,menubar=no";
-			window.open("lmsteacherattupdate.bit?num="+pnum+"&nalja="+pnalja,title,option);
-			
-			/* popup(pnum,pnalja); */				  
-			 console.log('성공');
-		} 		
 
-	})//ajax
+
+//$('#signupbtn').attr('disabled','disabled').css('background-color','gray');
+$('#overlap').on('click',function(){ // 아이디 중복검사 버튼
+	var chk_id=$('#signupemailid').val() 
 	
+
+	if(chk_id==''){
+		alert('아이디를 입력해주세요.');
+		return;
+	}else{
+	
+		 $.ajax('overlapcheck.bit',{ //idoverlapcheck.java
+			'method':'post',
+			'data':'id_email='+chk_id,
+			'success':function(data){
+			overlapCheck=$(data).find('overlap').text();
+				if(overlapCheck=='ok'){
+				 console.log('성공',$(data).find('overlap').text());
+				$('#overlapCK').text('OK').css('color','green')
+										  .css('font-weight','500')
+										  .css('font-size','120%');
+				}else if(overlapCheck=='no'){
+				$('#overlapCK').text('NO').css('color','red')
+				  .css('font-weight','500')
+				  .css('font-size','120%');;
+				alert('이미 가입된 아이디 입니다.');
+				}
+			} 		
+	
+		})//ajax
+	}
 	
 });//click
 
@@ -95,7 +112,7 @@ $(this).on('click',function(){
 
 <style type="text/css">
 .lmscontent {
-	width: 600px;
+	width: 700px;
 	display: block;
 	margin: auto;
 	border-bottom:1px solid #e4e4e4;
@@ -121,7 +138,7 @@ $(this).on('click',function(){
 }
 
 #signupemailid,#deptselect,#name,#phone,#signuppw{
-    width: 330px;
+    width: 300px;
     height: 43px;
     margin: 7px;
     border-radius: 5px;
@@ -140,11 +157,11 @@ $(this).on('click',function(){
     height: 20px;
 }
 #overlap{
-	float:right;
     background-color: #000069;
     border:1px solid #000069;
     color:white;
     margin-top : 9px;
+    margin-right: 10px;
     width: 60px;
     height: 43px;
     border-radius:5px;
@@ -199,8 +216,7 @@ $(this).on('click',function(){
 					<tr>
 						<th>이메일</th>
 						<td><input type="email" id="signupemailid" name="emailid" placeholder="이메일을 입력하세요."/>
-						<button type="button" id="overlap">중복</button>
-						
+						<button type="button" id="overlap">중복</button><span id="overlapCK"></span>
 						</td>
 					</tr>
 					<tr>

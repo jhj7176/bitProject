@@ -116,12 +116,12 @@
 }
 
 
-
-.lmscontent:last-child { /*검색창 감싸는 Div  */
+#formdiv { /*검색창 감싸는 Div  */
 	display: block;
 	margin: auto;
 	clear: both;
 	width: 440px;
+	margin-bottom:300px;
 }
 
 #accounttable {
@@ -174,18 +174,33 @@
 	height: 20px;
 }
 #paging {
-	width: 500px;
-	height:35px;
+	width: 300px;
 	display: block;
-	margin: auto;
+	overflow:hidden;
+	margin:auto;
 	
 }
-#paging .lmscontent { /* 이전 다음버튼 감싸는 div 버튼중앙 */
+#paging>.lmscontent { /* 이전 다음버튼 감싸는 div 버튼중앙 */
 	width: 100px;
 	font-size: 110%;
+	
+	
 }
 
-#page_num {
+#paging .lmscontent { /* 이전 다음버튼 감싸는 div 버튼중앙 */
+	font-size: 110%;
+	width: 100px;
+
+	display: block;
+	margin: auto;
+	text-align:center;
+	float:left;
+}
+
+
+.page_num {
+
+	vertical-align:middle;
 }
 
 #studentprev{
@@ -303,7 +318,9 @@
 					<button id="studentnext">다음</button>
 				</div>
 			</div>
-			<div class="lmscontent">
+			
+			
+			<div id="formdiv">
 
 				<form id="search" action="#">
 					<select id="searchkey">

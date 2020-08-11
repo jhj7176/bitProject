@@ -13,6 +13,10 @@ select * from BITJEJUDEPT;
 commit;
 
 
+select * from member where id_email='staff@email.com';
+
+
+
 select * from member full outer join grade on member.num = GRADE.num where num = 4848;
 
 select * from lectures where lecture_name=(select lecture from member where num=1010);
@@ -24,7 +28,7 @@ select * from attendance where num = 1010;
 
 select lecture_name, lecture_num, lecture_room, name, start_day, end_day from lectures natural join member where lecture_name=(select lecture from member where num=1313);
 
-
+select * from member full outer join grade on member.num=grade.num;
 
 insert into member values (member_seq.nextval||member_seq.currval,'tttt','tttt',0,'asdf1234',01011111111,null);
 

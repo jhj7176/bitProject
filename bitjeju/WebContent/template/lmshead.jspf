@@ -49,26 +49,43 @@ $(function (){
 	   
 	});
 		
+	
 	$('#formlogin').submit(function(){ //로그인버튼 눌렀을 때 이벤트.
+		var emailVal = $("#emailid").val();//id창에 입력된 값
+		var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;//정규표현식 이메일
+		var param = 'emailid='+$('#emailid').val()+'&pw='+$('#pw').val();//ajax로 보낼 파라미터 id, pw
 		
 		if($('#emailid').val()=="" || $('#pw').val()==""){//아이디나 비번 입력안한경우.
 			alert("아이디 혹은 비밀번호를 확인해주세요.");
-		}
-<%-- 		<%
-		if(loginfail!=null){
-			if(loginfail.equals("fail")){
-		%>
-		console.log('아이디 비번 입력필요');	
-    	alert('아이디 혹은 비밀번호를 확인해주세요.');
-		<%
-			}
-		}
-		%> --%>
+		}else if(emailVal.match(regExp) == null){ //이메일 양식이 맞는지 클라이언트에서 먼저체크.
+			alert("아이디는 이메일 형식입니다.");			
+		}else{
+			$.ajax('login.bit',{
+				'method':'post',
+				'data':param,
+				'success':function(data){
+ 					if($(data).find('fail').text()=='fail'){
+					console.log('로그인실패')
+					alert('아이디 혹인 비밀번호를 확인해주세요');
+					//id pw를 서버에 보냈으나 회원정보와 일치하지 않음
+						location.replace('main.bit');
+					}else{
+						location.href='main.bit';//login성공
+						//비동기통신이므로 강제로 페이지 이동시켜주지않으면 로그인창이 '환영합니다'로 안바뀜 
+					}
+				} //success
+			});//ajax
+		}//else
+		return false;
+	});//submit
+
+	
+	//createaccount 회원가입 버튼
+	$('#createaccount').on('click',function(){
+		location.href='signupagree.bit'; //********개인정보동의 체크 페이지로 이동
 	});
 	
 });//document.Ready
-
-
 </script>
 
 <style rel="stylesheet" type="text/css">
