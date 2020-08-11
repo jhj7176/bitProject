@@ -27,7 +27,7 @@ $(function (){
 			console.log('로그인필요');	
 	    	alert('로그인이 필요합니다.');
 	    <%
-	   } else if(dto.getLvl()<3){ //로그인되어있는 회원의 권한레벨이 낮으면 접속불가
+	   } else if(dto.getLvl()<2){ //로그인되어있는 회원의 권한레벨이 낮으면 접속불가
 	    %>
 			console.log('권한부족');	
 	    	alert('권한이 부족합니다.');
@@ -70,6 +70,16 @@ $(function (){
 		return false;
 	});//submit
 
+	
+	//createaccount 회원가입 버튼
+	$('#createaccount').on('click',function(){
+		location.href='signupagree.bit'; //********개인정보동의 체크 페이지로 이동
+	});
+	
+	
+	
+	
+	
 });//document.Ready
 	
 
@@ -114,6 +124,8 @@ $(function (){
         border-right: 1px solid #e4e4e4;
         height: 1000px;
     }
+    
+    
     #signin{/*로그인창 텍스트 패딩*/
         text-align: center;
         font-size: 20px;

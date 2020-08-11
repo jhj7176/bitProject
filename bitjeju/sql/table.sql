@@ -14,7 +14,8 @@ create table bitjejudept(
 );
 --부서와 권한레벨을 가진 테이블, 6개의 부서로 나뉜다. 
 
-insert into bitjejudept values ('일반회원',1);
+insert into bitjejudept values ('일반회원',0);
+insert into bitjejudept values ('수료생',1);
 insert into bitjejudept values ('수강생',2);
 insert into bitjejudept values ('강사',3);
 insert into bitjejudept values ('영업',4);
@@ -32,7 +33,9 @@ create table member(						--회원테이블
 	password varchar2(15) not null, 		--비밀번호 영문+숫자조합
 	phone number,							--전화번호
 	lecture varchar2(30),					--강좌명 
-	foreign key(lvl) references bitjejudept(lvl) on delete cascade
+	foreign key(lvl) references bitjejudept(lvl) on delete cascade,
+	foreign key(lvl) references bitjejudept(lvl) on update cascade
+	
 );
 
 select * from MEMBER;

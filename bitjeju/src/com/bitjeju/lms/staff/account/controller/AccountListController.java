@@ -81,7 +81,7 @@ public class AccountListController extends HttpServlet {
 		try {
 			list = dao.selectAll(pageNum, key, word); // 회원테이블의 정보를 모두 가져온다.
 			dao = new MemberDao();
-			totalMember = dao.totalMember(key, word); //검색안했을 때 전체row반환. 페이징처리때문에.
+			totalMember = dao.totalMember(key, word); //.
 			
 
 			System.out.println("총 수 " + totalMember);

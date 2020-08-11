@@ -46,7 +46,6 @@ public class StudentListController extends HttpServlet {
 			// °Ë»ö°ª***************************
 		//key lecture or name
 		
-		
 		int pageNum;
 		int totalStudent=-1;
 		if (request.getParameter("pageNum") != null) {

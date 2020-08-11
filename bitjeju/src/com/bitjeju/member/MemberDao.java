@@ -8,15 +8,6 @@ public class MemberDao {
 	private Connection conn;
 	private ResultSet rs;
 	private PreparedStatement pstmt;
-	private int rownum;
-	
-	public int getRownum() {
-		return rownum;
-	}
-
-	public void setRownum(int rownum) {
-		this.rownum = rownum;
-	}
 
 	public MemberDao() {
 		// TODO Auto-generated constructor stub
@@ -105,9 +96,7 @@ public class MemberDao {
 			bean.setPhone(rs.getInt("phone"));
 			bean.setLecture(rs.getString("lecture"));
 			list.add(bean);
-			
-				this.rownum = rs.getInt("rwn");
-			
+
 		} // while
 
 		if (pstmt != null)
@@ -118,10 +107,10 @@ public class MemberDao {
 		return list;
 	}// selectAll
 
-	public int totalMember(String key, String word) throws SQLException {//검색할때도 조건에 맞는 모든 row수를 세서 반환.
+	public int totalMember(String key, String word) throws SQLException {// 검색할때도 조건에 맞는 모든 row수를 세서 반환.
 		String sql = "select count(*) as total from (select rownum as rwn from ";
 		sql += "(select * from member natural join bitjejudept where " + key + " like '%" + word + "%')) ";
-	//	String sql = "select count(*) as total from member";
+		// String sql = "select count(*) as total from member";
 		int totalMember = -1;
 		pstmt = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery();
@@ -136,10 +125,11 @@ public class MemberDao {
 	}
 
 	public int totalStudent(String key, String word) throws SQLException {
-		
+
 		String sql = "select count(*) as total from (select rownum as rwn from ";
-		sql += "(select * from member natural join bitjejudept where " + key + " like '%" + word + "%' and dept ='수강생')) ";
-		//String sql = "select count(*) as total from member where lvl=2";
+		sql += "(select * from member natural join bitjejudept where " + key + " like '%" + word
+				+ "%' and dept ='수강생')) ";
+		// String sql = "select count(*) as total from member where lvl=2";
 		int totalStudent = -1;
 		pstmt = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery();
@@ -162,7 +152,8 @@ public class MemberDao {
 		int endNum = 5 + (pageNum - 1) * 5;// 페이지당 게시글 수
 
 		String sql = "select * from (select num,id_email, name, dept, lvl, phone, lecture, rownum as rwn from ";
-		sql += "(select * from member natural join bitjejudept where " + key + " like '%" + word + "%' and dept ='수강생')) ";
+		sql += "(select * from member natural join bitjejudept where " + key + " like '%" + word
+				+ "%' and dept ='수강생')) ";
 		sql += "where rwn between " + startNum + " and " + endNum;
 		System.out.println(sql);
 		pstmt = conn.prepareStatement(sql);
@@ -178,8 +169,7 @@ public class MemberDao {
 			bean.setPhone(rs.getInt("phone"));
 			bean.setLecture(rs.getString("lecture"));
 			list.add(bean);
-			
-			this.rownum = rs.getInt("rwn");
+
 		} // while
 
 		if (pstmt != null)
@@ -191,7 +181,7 @@ public class MemberDao {
 	}// stselectAll()
 
 	public MemberDto selectOne(int num) throws SQLException {
-		//String sql = "select * from member where num=?";
+		// String sql = "select * from member where num=?";
 		String sql = "select num, id_email, name, dept, lvl, phone, "
 				+ "lecture from member natural join bitjejudept where num=?";
 		MemberDto bean = null;
@@ -199,9 +189,10 @@ public class MemberDao {
 		/*
 		 * String sqldept = "select dept from bitjejudept where lvl=?";
 		 * 
-		 * select num, id_email, name, dept, lvl, phone, lecture from member natural join bitjeju 
+		 * select num, id_email, name, dept, lvl, phone, lecture from member natural
+		 * join bitjeju
 		 * 
-		 * */
+		 */
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, num);
 		rs = pstmt.executeQuery();
@@ -214,9 +205,9 @@ public class MemberDao {
 			bean.setLvl(rs.getInt("lvl"));
 			bean.setPhone(rs.getInt("phone"));
 			bean.setLecture(rs.getString("lecture"));
-			
+
 		}
-		
+
 		if (pstmt != null)
 			pstmt.close();
 		if (conn != null)
@@ -239,6 +230,7 @@ public class MemberDao {
 	}// delete
 
 	public void insertOne(String emailid, String name, String dept, String pw, int phone) throws SQLException {
+		// 직원등록할때,
 		int lvl = -1;
 		if (dept.equals("강사")) {
 			lvl = 3;
@@ -273,17 +265,42 @@ public class MemberDao {
 
 	}// insert
 
+	public int signUp(String id_email, String name, String password, int phone) throws SQLException {
 
-}//classEnd
-/*
- * insert into bitjejudept values ('일반회원',1); insert into bitjejudept values
- * ('수강생',2); insert into bitjejudept values ('강사',3); insert into bitjejudept
- * values ('영업',4); insert into bitjejudept values ('행정',5); insert into
- * bitjejudept values ('관리자',6); num number primary key, --회원번호 id_email
- * varchar2(50) unique not null, --이메일을 아이디로씀 name varchar2(15), --회원이름 dept
- * varchar2(20) default '일반회원', --회원명 lvl number(1) default 1, --등급 password
- * varchar2(15) not null, --비밀번호 영문+숫자조합 phone number, --전화번호 lecture
- * varchar2(30), --강좌명
- * 
- * 
- */
+		// insert into member values
+		// (member_seq.nextval||member_seq.currval,'teacher6@email.com',
+		// '정민재','강사',3,'password'
+		// ,01012341235,null);
+
+		String sql2 = "select id_email from member where id_email = ?";
+		pstmt = conn.prepareStatement(sql2);
+		pstmt.setString(1, id_email);
+		System.out.println(sql2);
+		rs = pstmt.executeQuery();
+		if(rs.next()) {
+		
+			return -1;
+		}	
+		
+		if (pstmt != null)
+			pstmt.close();
+
+		String sql = "insert into member values (member_seq.nextval||member_seq.currval" + ",?,?,0,?,?,null)";
+
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, id_email);
+		pstmt.setString(2, name);
+		pstmt.setString(3, password);
+		pstmt.setInt(4, phone);
+		System.out.println(sql);
+		pstmt.executeQuery();
+
+		if (pstmt != null)
+			pstmt.close();
+		if (conn != null)
+			conn.close();
+		return 1;
+
+	}// signUp
+
+}// classEnd
