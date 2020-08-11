@@ -1,49 +1,90 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>Insert title here</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>BITCAMP JEJU: LMSê°•ì‚¬-ì¶œì„ìˆ˜ì •</title>
+<style type="text/css">
+	h2 {
+		text-align: center;
+		margin: 30px auto;
+	}
+	#atttable{
+		text-align:center;
+		margin: 20px auto;
+		border-collapse:collapse;
+	}
+	#atttable th{
+		width: 200px;
+		color:#1E3269;
+		padding:10px;
+		border-left:1px solid #e4e4e4;
+		text-align:center;
+	}
+	#atttable td{
+		border-left:1px solid #e4e4e4;
+		padding:20px;
+		text-align:center;
+	}
+	.inputbox{
+		border: 1px solid white;
+		text-align: center;
+		width:100px;
+	}
+	#btn{/*ë²„íŠ¼ ì¡°ì ˆ*/
+	    background-color: #000069;
+	    border:1px solid #000069;
+	    color:white;
+	    width: 50px;
+	    line-height: 20px;
+	}
+	#forbtn{
+		margin:40px auto;
+		text-align:center;
+	}
+</style>
 <c:set value="${bean }" var="bean" />
 <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
 $(function(){
-	$("input:radio[name=state][value=" + '<c:out value="${ bean.state }"/>' + "]").attr("checked","checked");	
-});//»óÅÂ °ª ¹Ş¾Æ¿À±â
+	$("input:radio[name=state][value=" + '<c:out value="${ bean.state }"/>' + "]").attr("checked","checked");//ìƒíƒœ ê°’ ë°›ì•„ì˜¤ê¸°
+});
 </script>
 </head>
 <body>
-	<h1>Ãâ¼® ¼öÁ¤</h1>
-	<form action="lmsteacherattupdate.bit" method="post">
-		<table>
+	<h2>ì¶œì„ ìˆ˜ì •</h2>
+	<form action="lmsteacherattupdate.bit" method="post" id="form">
+		<table id="atttable">
 		<tr>
-			<th>³¯Â¥</th>
-			<td>${bean.nalja }</td>
+			<th>ë‚ ì§œ</th>
+			<td><input type="text" name="nalja" value="${bean.nalja }" class="inputbox" readonly="readonly"></td>
 		</tr>
 		<tr>
-			<th>ÇĞ¹ø</th>
-			<td>${bean.num }</td>
+			<th>í•™ë²ˆ</th>
+			<td><input type="text" name="num" value="${bean.num }" class="inputbox" readonly="readonly"></td>
 		</tr>
 		<tr>
-			<th>ÀÌ¸§</th>
+			<th>ì´ë¦„</th>
 			<td>${bean.name }</td>
 		</tr>
 		<tr>
-			<th>»óÅÂ</th>
+			<th>ìƒíƒœ</th>
 			<td>
-				<label for="ra">Ãâ¼®</label>
-			    <input type="radio" class="state" name="state" value="Ãâ¼®">
-			    <label for="ra">Áö°¢</label>
-			    <input type="radio" class="state" name="state" value="Áö°¢">
-			    <label for="ra">Á¶Åğ</label>
-			    <input type="radio" class="state" name="state" value="Á¶Åğ">
-			    <label for="ra">°á¼®</label>
-			    <input type="radio" class="state" name="state" value="°á¼®">
+				<label for="ra">ì¶œì„</label>
+			    <input type="radio" class="state" name="state" value="ì¶œì„">
+			    <label for="ra">ì§€ê°</label>
+			    <input type="radio" class="state" name="state" value="ì§€ê°">
+			    <label for="ra">ì¡°í‡´</label>
+			    <input type="radio" class="state" name="state" value="ì¡°í‡´">
+			    <label for="ra">ê²°ì„</label>
+			    <input type="radio" class="state" name="state" value="ê²°ì„">
 			</td>
 		</tr>
 		</table>
-		<button type="submit">¼öÁ¤</button>
+		<div id="forbtn">
+			<button type="submit" id="btn">ìˆ˜ì •</button>
+		</div>
 	</form>
 </body>
 </html>

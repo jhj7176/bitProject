@@ -45,6 +45,7 @@ public class AttUpdateController extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		req.getRequestDispatcher("teacherAttUpdateTemp.jsp").forward(req, resp);
 	}
 
 }

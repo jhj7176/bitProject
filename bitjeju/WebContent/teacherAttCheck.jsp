@@ -54,10 +54,10 @@ td{
                 </li>
                 <li class="bigletter">수강생관리</li>
                 <li>
-                    <a href="#">수강생정보</a>    
+                    <a href="lmsteacherstulist.bit">수강생정보</a>    
                 </li>
                 <li>
-                    <a href="#">성적입력</a>    
+                    <a href="lmsteacherstugrade.bit">성적입력</a>    
                 </li>
                 <li>
                     <a href="#" class="bigletter">자료실</a>    
