@@ -53,9 +53,6 @@ public class LoginController extends HttpServlet {
 			if (bean.getId_email().equals("fail")) {
 				//id나 pw가 회원정보와 일치하지 않으면 id에 fail문자열이 담겨온다. 
 				//fail이 나오면 메인으로 이동. 
-				request.setAttribute("loginFail", bean.getId_email());
-				request.setAttribute("id_err", "id와 pw 정확히 입력하세요");
-			//	request.getRequestDispatcher("main.jsp").forward(request, response);
 				PrintWriter out = response.getWriter();
 				out.print("<loginfail><fail>fail</fail></loginfail>");
 				out.close();

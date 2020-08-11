@@ -5,7 +5,13 @@
      <link rel="stylesheet" type="text/css" href="css/bitgrid.css">  
 <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
 
+
+<script type="text/javascript">
+<%-- 
 <%
+	String root = request.getContextPath()+"/";
+	System.out.println("path="+root);
+	pageContext.setAttribute("root", root);
 	MemberDto dto =null; //로그인 컨트롤러에서 setAttribute("login", bean)한 걸 받아옴. 
 	String loginfail = null;
 	try{
@@ -13,34 +19,26 @@
 	loginfail = (String)request.getAttribute("loginFail"); //로그인컨트톨러에서 아이디비번 입력안했을때보내는값
 	System.out.println("fail"+loginfail);
 	System.out.println(dto.getLvl());
-	}catch(NullPointerException e){//홈페이지에 처음 들어가면 null이니까 미리 예외처리해둠
+	}catch(NullPointerException e){
 	}
-%>
-
-<script type="text/javascript">
-
+%> --%>
 $(function (){
-	$('.gotolms').on('click', function(){ //LMS접속 버튼 눌렀을 때 처리
-		<%
-	   if(dto==null){	//세션에 회원정보가 없으면 로그인 필요.
-		%>
+ 	$('.gotolms').on('click', function(){ //LMS접속 버튼 눌렀을 때 처리
+		
+	   if("${login}"==''){	//세션에 회원정보가 없으면 로그인 필요.
 			console.log('로그인필요');	
 	    	alert('로그인이 필요합니다.');
-	    <%
-	   } else if(dto.getLvl()<2){ //로그인되어있는 회원의 권한레벨이 낮으면 접속불가
-	    %>
+	   } else if("${login.lvl}"<2){ //로그인되어있는 회원의 권한레벨이 낮으면 접속불가
+	    
 			console.log('권한부족');	
 	    	alert('권한이 부족합니다.');
-	    <%
 	   } else{ //접속성공
-	    %>
+	    
 			console.log('lms로 이동');	
 			location.href="lms.bit";				
-	    <%
 	   }
-	    %>
-	});
-		
+	});//lms접속버튼
+	
 	$('#formlogin').submit(function(){ //로그인버튼 눌렀을 때 이벤트.
 		var emailVal = $("#emailid").val();//id창에 입력된 값
 		var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;//정규표현식 이메일
@@ -57,7 +55,7 @@ $(function (){
 				'success':function(data){
  					if($(data).find('fail').text()=='fail'){
 					console.log('로그인실패')
-					alert('아이디 혹인 비밀번호를 확인해주세요');
+					alert('아이디와 비밀번호를 확인해주세요');
 					//id pw를 서버에 보냈으나 회원정보와 일치하지 않음
 						location.replace('main.bit');
 					}else{
@@ -75,11 +73,6 @@ $(function (){
 	$('#createaccount').on('click',function(){
 		location.href='signupagree.bit'; //********개인정보동의 체크 페이지로 이동
 	});
-	
-	
-	
-	
-	
 });//document.Ready
 	
 

@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="css/bitgrid.css">
+
 <%@ include file="template/lmshead.jspf" %>
 <meta charset="UTF-8">
 <title>BITCAMP JEJU: LMS강사-출석체크</title>

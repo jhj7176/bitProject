@@ -32,13 +32,15 @@ $(function(){
 </script>
 <style type="text/css">
 .lmscontent {
-	height:1000px;
 	width: 600px;
 	display: block;
 	margin: auto;
 	border-bottom: 1px solid #e4e4e4;
 }
 
+.lmscontent:last-child{
+	margin-bottom:400px;
+}
 #lecturetable {
 	border-collapse: collapse;
 }

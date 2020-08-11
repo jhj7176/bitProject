@@ -22,6 +22,9 @@ function pwCheck(passwordVal){
 		}	
 }
 
+
+
+
 $(function(){
 	
 $('#signupbtn').on('click',function(){ //등록버튼 눌렀을 때 이벤트.
@@ -240,7 +243,6 @@ $(this).on('click',function(){
 			</div>
 			<div class="lmscontent">
 			<button id="signupback" type="button" onclick="window.history.go(-1)">뒤로</button>			
-			<button id="signupreset" type="reset">리셋</button>			
 			<button id="signupbtn" type="submit">등록</button>			
 			</div>
 			<!--*************content end******************-->
