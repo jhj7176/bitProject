@@ -321,5 +321,34 @@ public class MemberDao {
 	
 		return 1;
 	}//singUp
+	
+	public void passwordUpdate(String password, String id_email) throws SQLException {
+		String sql = "update member set password=? where id_email=?";
+		
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, password);
+		pstmt.setString(2, id_email);
+		pstmt.executeQuery();
+		
+		if (pstmt != null)
+			pstmt.close();
+		if (conn != null)
+			conn.close();
+	
+	}
+	public void phoneUpdate(String phone, String id_email) throws SQLException {
+		String sql = "update member set phone=? where id_email=?";
+		
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, phone);
+		pstmt.setString(2, id_email);
+		pstmt.executeQuery();
+		
+		if (pstmt != null)
+			pstmt.close();
+		if (conn != null)
+			conn.close();
+		
+	}
 
 }// classEnd

@@ -10,11 +10,9 @@
 <script type="text/javascript">
 $(function(){
 
-	
-	
-	
-	
-	
+	$('#mypageedit').on('click',function(){	//내정보 수정페이지로 이동
+		location.href='mypageedit.bit';
+	});
 	
 });
 </script>
@@ -43,7 +41,7 @@ $(function(){
 	padding:25px;
 	text-align:left;
 }
-#accountedit,#accountdelete,#accountback{
+#mypageedit,#accountback{
 	float:right;
     background-color: #000069;
     border:1px solid #000069;
@@ -52,7 +50,7 @@ $(function(){
     width: 50px;
     height: 20px;
 }
-#changepw{ /* 비번변경 버튼 */
+#changepw,#changephone{ /* 비번변경 버튼 */
     background-color: #000069;
     border:1px solid #000069;
     color:white;
@@ -62,8 +60,9 @@ $(function(){
     height: 37px;
     border-radius:5px;
 
+
 }
-#mypagepw{/*비밀번호 input  */
+#mypagepw,#mypagephone{/*비밀번호 input  */
     width: 300px;
     height: 35px;
     margin: 7px;
@@ -72,6 +71,7 @@ $(function(){
     font-size:120%;
     text-align:center;
     vertical-align:middle;
+  
 }
 
 </style>
@@ -112,11 +112,6 @@ $(function(){
 						<td>${bean.id_email }</td>
 					</tr>
 					<tr>
-						<th>비밀번호</th>
-						<td><input type="password" id="mypagepw" name="mypagepw" placeholder="영문+숫자 8~12자리입니다."/>
-						<button type="button" id="changepw">변경</button><span id="changepwtxt"></span></td>
-					</tr>
-					<tr>
 						<th>구분</th>
 						<td>${bean.dept }</td>
 					</tr>
@@ -129,7 +124,8 @@ $(function(){
 
 			</div>
 			<div class="lmscontent">
-			<button id="accountback" onclick="window.history.go(-1)">뒤로</button>			
+			<button id="accountback" onclick="window.history.go(-1)">뒤로</button>
+			<button id="mypageedit" type="submit">수정</button>			
 <!-- 			<button id="accountedit">수정</button>
 회원정보 수정 삭제가 행정직원에게 주어도 되는지 고민.. 
 

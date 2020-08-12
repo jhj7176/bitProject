@@ -4,35 +4,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <%@ include file="template/lmshead.jspf" %>
 <meta charset="UTF-8">
 <title>BITCAMP JEJU: LMS강사-출석체크</title>
-<script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
-
 var selectDate;
 $(function(){
-  document.getElementById('nalja').value = new Date().toISOString().substring(0, 10); 
-  selectDate = $('#nalja').val();
-  $('.nalja').val(selectDate);
-  $('.nalja').css('display','none')
-  
-  $('#nalja').on('change',function(){
+	  document.getElementById('nalja').value = new Date().toISOString().substring(0, 10);
 	  selectDate = $('#nalja').val();
-	  $('.nalja').val(selectDate);	  
-  });//on change
-  
-  
-  
-});
+	  $('.nalja').val(selectDate);
+	  $('.nalja').css('display','none')
+	  
+	$('#nalja').on('change',function(){
+		selectDate = $('#nalja').val();
+	  	$('.nalja').val(selectDate);
+	})//날짜 input 클릭
+		
+});//READY
 </script>
 <style type="text/css">
-tr{
-   border:1px solid;
+.lmscontent {
+	width: 600px;
+	display: block;
+	margin: auto;
 }
-td{
-   border:1px solid;
+.lmscontent:last-child {
+	margin-bottom:300px;
+}
+#naljadiv{
+	padding: 10px;
+}
+#atttable{
+	text-align:center;
+	margin: 10px auto;
+	border-collapse:collapse;
+}
+#atttable th{
+	color:#1E3269;
+	padding:10px;
+	border-left:1px solid #e4e4e4;
+	text-align:center;
+}
+#atttable td{
+	border-left:1px solid #e4e4e4;
+	padding:25px;
+	text-align:center;
+}
+#fin{/*버튼 조절*/
+	float: right;
+    background-color: #000069;
+    border:1px solid #000069;
+    color:white;
+    margin: 7px;
+    width: 50px;
+    line-height: 20px;
 }
 </style>
 </head>
@@ -57,7 +82,7 @@ td{
                     <a href="lmsteacherstulist.bit">수강생정보</a>    
                 </li>
                 <li>
-                    <a href="lmsteacherstugrade.bit">성적입력</a>    
+                    <a href="lmsteacherstugrade.bit">성적관리</a>    
                 </li>
                 <li>
                     <a href="#" class="bigletter">자료실</a>    
@@ -69,18 +94,22 @@ td{
         <!--*****************lms메뉴******************-->
        <div  id="content" class="grid6">&nbsp;
        <!--*************content start****************-->
-	   <h1>출석체크</h1>
-	      <label for="nalja">날짜:</label>
+       <div class="lmscontent">
+	   <h2>출결관리</h2>
+	   <h4>출석체크</h4>
+	   <div id="naljadiv">
+	      <label for="nalja">날짜</label>
 	      <input type="date" id="nalja" name="nalja">
+	   </div>
 	   <form method="post" action="lmsteacherattlist.bit">
-	   <c:forEach items="${list}" varStatus="status" var="bean">
-	   <div id="table">
+	   <div id="atttable">
 	      <table>
 	         <tr>
 	            <th>학번</th>
 	            <th>이름</th>
 	            <th>상태</th>
 	         </tr>
+	   <c:forEach items="${list}" varStatus="status" var="bean">
 	         <tr>
 	            <td align ="center" >
 		            ${bean.num }
@@ -92,20 +121,21 @@ td{
 	            </td>
 	            <td>
 		            <label for="ra">출석</label>
-		            <input type="radio" class="state" name="state${bean.num }" value="출석">
-		            <label for="ra">지각</label>
-		            <input type="radio" class="state" name="state${bean.num }" value="지각">
-		            <label for="ra">조퇴</label>
-		            <input type="radio" class="state" name="state${bean.num }" value="조퇴">
-		            <label for="ra">결석</label>
+		            <input type="radio" class="state" name="state${bean.num }" value="출석">&nbsp;
+		            <label for="ra">&nbsp;지각</label>
+		            <input type="radio" class="state" name="state${bean.num }" value="지각">&nbsp;
+		            <label for="ra">&nbsp;조퇴</label>
+		            <input type="radio" class="state" name="state${bean.num }" value="조퇴">&nbsp;
+		            <label for="ra">&nbsp;결석</label>
 		            <input type="radio" class="state" name="state${bean.num }" value="결석">
 	             </td>
 	         </tr>
+	   </c:forEach>
 	      </table>
 	   </div>
-	   </c:forEach>
 	   <button id="fin">완료</button>
 	   </form>
+	   </div>
        <!--*************content end******************-->
 <%@ include file="template/footer.jspf" %>
 </body>

@@ -19,6 +19,14 @@ public class LogoutController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		request.setAttribute("login", null);
+		session=request.getSession(false);
+		if (session != null) {
+			session.invalidate();
+		}
+		//id나 pw가 입력되지않으면 세션있다면 종료, 메인페이지로 forward함.
+		//response.sendRedirect("main.jsp");
+		request.getRequestDispatcher("main.jsp").forward(request, response);
 	}
 
 	/**

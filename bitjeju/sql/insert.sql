@@ -13,6 +13,7 @@ insert into member values (member_seq.nextval||member_seq.currval,'text40@email.
 insert into member values (member_seq.nextval||member_seq.currval,'text41@email.com','철수34',2,'password','01012341234','산업기사취득과정A');
 insert into member values (member_seq.nextval||member_seq.currval,'text42@email.com','철수35',2,'password','01012341234','산업기사취득과정A');
 
+delete from member where lvl=2;
 
 commit;
 insert into GRADE values (88, 70, 78, 79);

@@ -45,7 +45,7 @@ select * from member where dept='수강생';
 insert into member values (member_seq.nextval||member_seq.currval, 'tmsisj@email.com','형진',6,'tmsisj',01012341234,'');
 insert into member values (member_seq.nextval||member_seq.currval, 'sales@email.com','이영업',4,'password',01012341234, null);
 insert into member values (member_seq.nextval||member_seq.currval, 'staff@email.com','김행정',5,'password',01012341234, null);
-insert into member values (member_seq.nextval||member_seq.currval, 'teacher@email.com','김영조',3,'password',01012341234, null);
+insert into member values (member_seq.nextval||member_seq.currval, 'teacher@email.com','김영조',3,'password','01012341234', null);
 insert into member values (member_seq.nextval||member_seq.currval, 'test@email.com','일반',1,'password',01012341234, null);
 
 insert into member values (member_seq.nextval||member_seq.currval, 'text2@email.com','철수2',2,'password',01012341234,'JAVA');
@@ -77,7 +77,7 @@ create table grade(  			--성적테이블
 	num number primary key,		--회원번호로 누군지 식별함. 멤버테이블 num참조
 	exam1 number,				--시험성적
 	exam2 number,
-	exam3 number,
+	exam3 number,					--영엽사원이 수강신청 받아주면 레벨1>>2로 올리고, 성적테이블에 이름과 넘버 insert
 	foreign key(num) references member(num) on delete cascade
 );  
 

@@ -1,4 +1,4 @@
-package com.bitjeju.main;
+package com.bitjeju.mypage.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
