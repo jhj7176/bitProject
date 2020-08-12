@@ -74,6 +74,10 @@ $(function (){
 	$('#createaccount').on('click',function(){
 		location.href='signupagree.bit'; //********개인정보동의 체크 페이지로 이동
 	});
+	//내정보보기 버튼
+	$('#mypage').on('click',function(){
+		location.href='mypage.bit'; //************마이페이지로 이동함
+	});
 });//document.Ready
 	
 

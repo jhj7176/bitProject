@@ -1,34 +1,17 @@
-insert into member values (member_seq.nextval||member_seq.currval,'text12@email.com','철수5',2,'password',01012341244,'JAVA');
-insert into member values (member_seq.nextval||member_seq.currval,'text13@email.com','철수6',2,'password',01012341245,'JAVA');
-insert into member values (member_seq.nextval||member_seq.currval,'text14@email.com','철수7',2,'password',01012341246,'JAVA');
-insert into member values (member_seq.nextval||member_seq.currval,'text15@email.com','철수8',2,'password',01012341247,'JAVA');
-insert into member values (member_seq.nextval||member_seq.currval,'text16@email.com','철수9',2,'password',01012341248,'JAVA');
-insert into member values (member_seq.nextval||member_seq.currval,'text17@email.com','철수10',2,'password',01012341249,'JAVA');
-insert into member values (member_seq.nextval||member_seq.currval,'text18@email.com','철수11',2,'password',01012341250,'JAVA');
-insert into member values (member_seq.nextval||member_seq.currval,'text19@email.com','철수12',2,'password',01012341251,'WEB');
-insert into member values (member_seq.nextval||member_seq.currval,'text20@email.com','철수13',2,'password',01012341252,'WEB');
-insert into member values (member_seq.nextval||member_seq.currval,'text21@email.com','철수14',2,'password',01012341253,'WEB');
-insert into member values (member_seq.nextval||member_seq.currval,'text22@email.com','철수15',2,'password',01012341254,'WEB');
-insert into member values (member_seq.nextval||member_seq.currval,'text23@email.com','철수16',2,'password',01012341255,'WEB');
-insert into member values (member_seq.nextval||member_seq.currval,'text24@email.com','철수17',2,'password',01012341256,'WEB');
-insert into member values (member_seq.nextval||member_seq.currval,'text25@email.com','철수18',2,'password',01012341257,'WEB');
-insert into member values (member_seq.nextval||member_seq.currval,'text26@email.com','철수19',2,'password',01012341258,'WEB');
-insert into member values (member_seq.nextval||member_seq.currval,'text27@email.com','철수20',2,'password',01012341259,'WEB');
-insert into member values (member_seq.nextval||member_seq.currval,'text28@email.com','철수21',2,'password',01012341260,'WEB');
-insert into member values (member_seq.nextval||member_seq.currval,'text29@email.com','철수22',2,'password',01012341261,'WEB');
-insert into member values (member_seq.nextval||member_seq.currval,'text30@email.com','철수23',2,'password',01012341262,'UI/UX 개발자과정');
-insert into member values (member_seq.nextval||member_seq.currval,'text31@email.com','철수24',2,'password',01012341263,'UI/UX 개발자과정');
-insert into member values (member_seq.nextval||member_seq.currval,'text32@email.com','철수25',2,'password',01012341264,'UI/UX 개발자과정');
-insert into member values (member_seq.nextval||member_seq.currval,'text33@email.com','철수26',2,'password',01012341265,'UI/UX 개발자과정');
-insert into member values (member_seq.nextval||member_seq.currval,'text34@email.com','철수27',2,'password',01012341266,'UI/UX 개발자과정');
-insert into member values (member_seq.nextval||member_seq.currval,'text35@email.com','철수28',2,'password',01012341267,'UI/UX 개발자과정');
-insert into member values (member_seq.nextval||member_seq.currval,'text36@email.com','철수29',2,'password',01012341268,'산업기사취득과정A');
-insert into member values (member_seq.nextval||member_seq.currval,'text37@email.com','철수30',2,'password',01012341269,'산업기사취득과정A');
-insert into member values (member_seq.nextval||member_seq.currval,'text38@email.com','철수31',2,'password',01012341270,'산업기사취득과정A');
-insert into member values (member_seq.nextval||member_seq.currval,'text39@email.com','철수32',2,'password',01012341271,'산업기사취득과정A');
-insert into member values (member_seq.nextval||member_seq.currval,'text40@email.com','철수33',2,'password',01012341272,'산업기사취득과정A');
-insert into member values (member_seq.nextval||member_seq.currval,'text41@email.com','철수34',2,'password',01012341273,'산업기사취득과정A');
-insert into member values (member_seq.nextval||member_seq.currval,'text42@email.com','철수35',2,'password',01012341274,'산업기사취득과정A');
+
+insert into member values (member_seq.nextval||member_seq.currval,'text30@email.com','철수23',2,'password','01012341234','UI/UX 개발자과정');
+insert into member values (member_seq.nextval||member_seq.currval,'text31@email.com','철수24',2,'password','01012341234','UI/UX 개발자과정');
+insert into member values (member_seq.nextval||member_seq.currval,'text32@email.com','철수25',2,'password','01012341234','UI/UX 개발자과정');
+insert into member values (member_seq.nextval||member_seq.currval,'text33@email.com','철수26',2,'password','01012341234','UI/UX 개발자과정');
+insert into member values (member_seq.nextval||member_seq.currval,'text34@email.com','철수27',2,'password','01012341234','UI/UX 개발자과정');
+insert into member values (member_seq.nextval||member_seq.currval,'text35@email.com','철수28',2,'password','01012341234','UI/UX 개발자과정');
+insert into member values (member_seq.nextval||member_seq.currval,'text36@email.com','철수29',2,'password','01012341234','산업기사취득과정A');
+insert into member values (member_seq.nextval||member_seq.currval,'text37@email.com','철수30',2,'password','01012341234','산업기사취득과정A');
+insert into member values (member_seq.nextval||member_seq.currval,'text38@email.com','철수31',2,'password','01012341234','산업기사취득과정A');
+insert into member values (member_seq.nextval||member_seq.currval,'text39@email.com','철수32',2,'password','01012341234','산업기사취득과정A');
+insert into member values (member_seq.nextval||member_seq.currval,'text40@email.com','철수33',2,'password','01012341234','산업기사취득과정A');
+insert into member values (member_seq.nextval||member_seq.currval,'text41@email.com','철수34',2,'password','01012341234','산업기사취득과정A');
+insert into member values (member_seq.nextval||member_seq.currval,'text42@email.com','철수35',2,'password','01012341234','산업기사취득과정A');
 
 
 commit;

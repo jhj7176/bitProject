@@ -102,13 +102,7 @@ $('#overlap').on('click',function(){ // 아이디 중복검사 버튼
 	
 });//click
 
-var pnalja = $(this).text();//누른 날짜.
-var pnum = $(this).prev().text();
 
-$(this).on('click',function(){
-	
-		return false;
-});//click
 
 });//ready
 </script>
@@ -142,12 +136,13 @@ $(this).on('click',function(){
 
 #signupemailid,#deptselect,#name,#phone,#signuppw{
     width: 300px;
-    height: 43px;
+    height: 35px;
     margin: 7px;
     border-radius: 5px;
     border: 1px solid #969696;
     font-size:120%;
     text-align:center;
+    vertical-align:middle;
 }
 
 #signupbtn,#signupreset,#signupback{/* 버튼 */
@@ -166,7 +161,7 @@ $(this).on('click',function(){
     margin-top : 9px;
     margin-right: 10px;
     width: 60px;
-    height: 43px;
+    height: 37px;
     border-radius:5px;
 
 }

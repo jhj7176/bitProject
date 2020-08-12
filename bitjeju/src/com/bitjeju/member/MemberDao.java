@@ -46,7 +46,7 @@ public class MemberDao {
 			bean.setDept(rs.getString("dept"));
 			bean.setLvl(rs.getInt("lvl"));
 			bean.setPassword(rs.getString("password"));
-			bean.setPhone(rs.getInt("phone"));
+			bean.setPhone(rs.getString("phone"));
 			bean.setLecture(rs.getString("lecture"));
 
 		} else {
@@ -93,7 +93,7 @@ public class MemberDao {
 			bean.setName(rs.getString("name"));
 			bean.setDept(rs.getString("dept"));
 			bean.setLvl(rs.getInt("lvl"));
-			bean.setPhone(rs.getInt("phone"));
+			bean.setPhone(rs.getString("phone"));
 			bean.setLecture(rs.getString("lecture"));
 			list.add(bean);
 
@@ -166,7 +166,7 @@ public class MemberDao {
 			bean.setName(rs.getString("name"));
 			bean.setDept(rs.getString("dept"));
 			bean.setLvl(rs.getInt("lvl"));
-			bean.setPhone(rs.getInt("phone"));
+			bean.setPhone(rs.getString("phone"));
 			bean.setLecture(rs.getString("lecture"));
 			list.add(bean);
 
@@ -203,7 +203,7 @@ public class MemberDao {
 			bean.setName(rs.getString("name"));
 			bean.setDept(rs.getString("dept"));
 			bean.setLvl(rs.getInt("lvl"));
-			bean.setPhone(rs.getInt("phone"));
+			bean.setPhone(rs.getString("phone"));
 			bean.setLecture(rs.getString("lecture"));
 
 		}
@@ -265,7 +265,7 @@ public class MemberDao {
 
 	}// insert
 
-	public int signUp(String id_email, String name, String password, int phone) throws SQLException {
+	public int signUp(String id_email, String name, String password, String phone) throws SQLException {
 
 		// insert into member values
 		// (member_seq.nextval||member_seq.currval,'teacher6@email.com',
@@ -291,7 +291,7 @@ public class MemberDao {
 		pstmt.setString(1, id_email);
 		pstmt.setString(2, name);
 		pstmt.setString(3, password);
-		pstmt.setInt(4, phone);
+		pstmt.setString(4, phone);
 		System.out.println(sql);
 		pstmt.executeQuery();
 

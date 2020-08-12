@@ -7,10 +7,10 @@ import org.apache.jasper.tagplugins.jstl.core.ForEach;
 
 public class StudentDto {
 	
-	private int num, lecture_room, lecture_num, exam1, exam2, exam3, phone;
+	private int num, lecture_room, lecture_num, exam1, exam2, exam3;
 	//학생 회원번호, 강의실 강좌번호,시험성적, 연락처
 	private Date start_day, end_day;
-	private String name, teacher_name, lecture_name;
+	private String name, teacher_name, lecture_name, phone;
 	//학생이름, 강사이름, 강좌명
 	private ArrayList<String> attList;
 	//출석테이블 정보를 담은 리스트
@@ -19,33 +19,6 @@ public class StudentDto {
 
 
 
-	public StudentDto(int num, int lecture_room, int lecture_num, int exam1, int exam2, int exam3, int phone,
-			Date start_day, Date end_day, String name, String teacher_name, String lecture_name,
-			ArrayList<String> attList, ArrayList<Date> attNaljaList) {
-		super();
-		this.num = num;
-		this.lecture_room = lecture_room;
-		this.lecture_num = lecture_num;
-		this.exam1 = exam1;
-		this.exam2 = exam2;
-		this.exam3 = exam3;
-		this.phone = phone;
-		this.start_day = start_day;
-		this.end_day = end_day;
-		this.name = name;
-		this.teacher_name = teacher_name;
-		this.lecture_name = lecture_name;
-		this.attList = attList;
-		this.attNaljaList = attNaljaList;
-	}
-
-	@Override
-	public String toString() {
-		return "StudentDto [num=" + num + ", lecture_room=" + lecture_room + ", lecture_num=" + lecture_num + ", exam1="
-				+ exam1 + ", exam2=" + exam2 + ", exam3=" + exam3 + ", phone=" + phone + ", start_day=" + start_day
-				+ ", end_day=" + end_day + ", name=" + name + ", teacher_name=" + teacher_name + ", lecture_name="
-				+ lecture_name + ", attList=" + attList + ", attNaljaList=" + attNaljaList + "]";
-	}
 
 	public String getLecture_name() {
 		return lecture_name;
@@ -177,10 +150,10 @@ public class StudentDto {
 	public void setExam3(int exam3) {
 		this.exam3 = exam3;
 	}
-	public int getPhone() {
+	public String getPhone() {
 		return phone;
 	}
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 	public Date getStart_day() {

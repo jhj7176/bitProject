@@ -25,18 +25,19 @@ insert into bitjejudept values ('관리자',6);
 select * from bitjejudept;
 
 create sequence member_seq;
-create table member(						--회원테이블
-	num number primary key, 				--회원번호
-	id_email varchar2(50) unique not null,  --이메일을 아이디로씀
-	name varchar2(15),						--회원이름
-	lvl number(1) default 1,				--등급
-	password varchar2(15) not null, 		--비밀번호 영문+숫자조합
-	phone number,							--전화번호
-	lecture varchar2(30),					--강좌명 
-	foreign key(lvl) references bitjejudept(lvl) on delete cascade,
-	foreign key(lvl) references bitjejudept(lvl) on update cascade
-	
+create table member(					
+	num number primary key, 			
+	id_email varchar2(50) unique not null,
+	name varchar2(15),					
+	lvl number(1) default 0,			
+	password varchar2(15) not null, 	
+	phone varchar2(15),					
+	lecture varchar2(50),					
+	foreign key(lvl) references bitjejudept(lvl)
 );
+
+commit
+
 
 select * from MEMBER;
 select * from member where dept='수강생';

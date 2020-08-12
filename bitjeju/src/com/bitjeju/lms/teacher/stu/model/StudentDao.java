@@ -9,7 +9,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import com.bitjeju.lms.teacher.stu.model.StudentDto;
 import com.bitjeju.member.MemberDto;
 
 public class StudentDao {
@@ -63,7 +62,7 @@ public class StudentDao {
 		rs = pstmt.executeQuery();
 		if(rs.next()) {
 			bean.setNum(rs.getInt("num"));//학생 회원번호
-			bean.setPhone(rs.getInt("phone"));//학생 전화번호
+			bean.setPhone(rs.getString("phone"));//학생 전화번호
 			bean.setLecture_name(rs.getString("lecture"));//듣는 강좌명
 			bean.setName(rs.getString("name"));//학생이름
 			bean.setExam1(rs.getInt("exam1"));

@@ -39,7 +39,7 @@ public class SignUp extends HttpServlet {
 		String name = request.getParameter("name");
 		String id_email = request.getParameter("emailid");
 		String password = request.getParameter("pw");
-		int phone = Integer.parseInt(request.getParameter("phone"));
+		String phone = request.getParameter("phone");
 
 		System.out.println("name=" + name + " email= " + id_email + "password= " + password + "phone= " + phone);
 

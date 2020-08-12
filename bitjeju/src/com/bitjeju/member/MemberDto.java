@@ -2,8 +2,8 @@ package com.bitjeju.member;
 
 public class MemberDto {
 	
-	private String id_email, name, dept, password, lecture;
-	private int num, lvl, phone;
+	private String id_email, name, dept, password, lecture, phone;
+	private int num, lvl;
 	private int rownum;
 	
 	
@@ -19,6 +19,8 @@ public class MemberDto {
 	public void setRownum(int rownum) {
 		this.rownum = rownum;
 	}
+	
+	
 	public MemberDto(String loginFail) {
 		// TODO Auto-generated constructor stub
 		this.id_email = loginFail;
@@ -35,7 +37,7 @@ public class MemberDto {
 	}
 
 	public MemberDto(int num, String id_email, String name, int lvl,
-			String password, int phone, String lecture) {
+			String password, String phone, String lecture) {
 		super();
 		this.num = num;
 		this.id_email = id_email;
@@ -84,10 +86,10 @@ public class MemberDto {
 	public void setLvl(int lvl) {
 		this.lvl = lvl;
 	}
-	public int getPhone() {
+	public String getPhone() {
 		return phone;
 	}
-	public void setPhone(int phone) {
+	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 	
