@@ -98,9 +98,13 @@
 							<th>강사명</th>
 							<td>
 							<select id="teacherselect" name = "name">
+							
 									<c:forEach items ="${teacherList }" var="name">
 									<option>${name }</option>
 									</c:forEach>
+									
+									
+									
 							</select></td>
 						</tr>
 						<tr>

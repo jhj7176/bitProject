@@ -36,7 +36,7 @@ public class LmsController extends HttpServlet {
 			response.sendRedirect("lmsstaffaccountlist.bit");
 			return;
 		} else if (dept.equals("영업")) {
-			request.getRequestDispatcher("sales.jsp").forward(request, response);
+			response.sendRedirect("lmssalesrecruitlist.bit");
 			return;
 		}else if (dept.equals("강사")) {
 			response.sendRedirect("lmsteacherattendance.bit");
