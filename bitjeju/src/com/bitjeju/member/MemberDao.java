@@ -343,12 +343,32 @@ public class MemberDao {
 		pstmt.setString(1, phone);
 		pstmt.setString(2, id_email);
 		pstmt.executeQuery();
-		
 		if (pstmt != null)
 			pstmt.close();
 		if (conn != null)
 			conn.close();
 		
-	}
+	}//updatePhone
+	public void updateLevel(int deptLevel, int num) throws SQLException {
+		String sql = "update member set lvl = ? where num = ?";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, deptLevel);
+		pstmt.setInt(2, num);
+		pstmt.executeQuery();
+		System.out.println(sql);
+		if (pstmt != null)
+			pstmt.close();
+		if (conn != null)
+			conn.close();
+		
+		
+	}//updatelvl
 
+	
+	
+	
+	
 }// classEnd
+
+
+

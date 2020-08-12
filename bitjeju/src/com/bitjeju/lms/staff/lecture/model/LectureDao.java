@@ -159,5 +159,38 @@ public class LectureDao {
 		if (conn != null)
 			conn.close();
 	}//update
+	
+	public ArrayList<String> selectTeacher() throws SQLException{
+		ArrayList<String> list = new ArrayList<String>();
+		String sql = "select name from member where lvl=3";
+		pstmt = conn.prepareStatement(sql);
+		System.out.println(sql);
+		rs = pstmt.executeQuery();
+		while(rs.next()) {
+			list.add(rs.getString("name")); //강사명을 리스트에 추가
+		}//while
+		
+		if (pstmt != null)
+			pstmt.close();
+		if (conn != null)
+			conn.close();
+		return list;
+	}//selectTeacher
+	
+	public void updateLectureToteacher(String name, String lecture_name) throws SQLException {
+		String sql = "update member set lecture = ? where name=? and lvl=3";
+		
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, lecture_name);
+		pstmt.setString(2, name);
+		pstmt.executeQuery(); //강사의 과목컬럼에 개설하는 렉쳐 추가.
+		if (pstmt != null)
+			pstmt.close();
+		if (conn != null)
+			conn.close();
+		
+	}//updateLecturenametoTeacher
+	
+	
 
-}
+}//classEnd

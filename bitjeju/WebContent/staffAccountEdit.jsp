@@ -8,16 +8,22 @@
 <%@ include file="template/lmshead.jspf"%>
 <title>Insert title here</title>
 <script type="text/javascript">
-var deletenum="${bean.num}";//회원번호
-var deleteemail="${bean.id_email}"
+var editnum="${bean.num}";//회원번호
+var editemail="${bean.id_email}";
+var beanlvl = "${bean.lvl}";
+
 $(function(){
-	$('#accountdelete').on('click',function(){//삭제페이지 이동
-		location.href='lmsstaffaccountdelete.bit?num='+deletenum+'&emailid='+deleteemail;
+/* 	$('#accountedit').on('click',function(){//수정페이지 이동. 
+		location.href='lmsstaffaccounteidt.bit?num='+editnum+'&emailid='+editemail;
+	}); */
+	$('#selectlvl option').each(function(){
+		if($(this).val()==beanlvl){ 
+			//select의 옵션들과 현재 회원의 lvl을 비교해서 같은거를 selected로 둔다.
+			$(this).prop('selected', true);
+		}//if
 	});
-	$('#accountedit').on('click',function(){//수정페이지 이동. 
-		location.href='lmsstaffaccountedit.bit?num='+deletenum+'&emailid='+deleteemail;
-	});
-});
+	//each
+});//ready
 </script>
 <style type="text/css">
 .lmscontent {
@@ -54,6 +60,13 @@ $(function(){
     height: 20px;
 }
 
+#selectlvl{
+	border-radius:5px;
+	width:200px;
+	height:40px;
+	text-align:center;
+}
+
 </style>
 </head>
 <body>
@@ -80,6 +93,7 @@ $(function(){
 		<div id="content" class="grid6">
 			&nbsp;
 			<!--*************content start****************-->
+			<form action="lmsstaffaccountedit.bit" method="post">
 			<div class="lmscontent">
 				<h2>계정관리</h2>
 				<h4>회원정보</h4>
@@ -101,7 +115,17 @@ $(function(){
 					</tr>
 					<tr>
 						<th>구분</th>
-						<td>${bean.dept }</td>
+						<td>
+						<select name="accounteditlvl" id="selectlvl">
+							<option value="5">행정</option>
+							<option value="4">영업</option>
+							<option value="3">강사</option>
+							<option value="2">수강생</option>
+							<option value="1">수료생</option>
+							<option value="0">일반회원</option>
+						</select>
+						<input type="hidden" name="num" id="accounteditnum" value="${bean.num }"/>
+						</td>
 					</tr>
 					<tr>
 						<th>권한레벨</th>
@@ -116,14 +140,11 @@ $(function(){
 
 			</div>
 			<div class="lmscontent">
-			<button id="accountback" onclick="window.history.go(-1)">뒤로</button>			
-			<button id="accountdelete">삭제</button>			
-			<button id="accountedit">수정</button>
-<!-- 			
-회원정보 수정 삭제가 행정직원에게 주어도 되는지 고민.. 
-
-수강생관리에서 수강생 삭제기능만 넣기. 개인정보는 각자 로그인했을 때 변경. 	 -->		
+			<button id="accountback" type="button" onclick="window.history.go(-1)">뒤로</button>			
+			<button id="accountedit" type="submit">수정</button>	
 			</div>
+			
+			</form>
 			<!--*************content end******************-->
 			<%@ include file="template/footer.jspf"%>
 </body>

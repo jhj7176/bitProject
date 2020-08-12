@@ -3,6 +3,7 @@ package com.bitjeju.lms.staff.lecture.controller;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.bitjeju.lms.staff.lecture.model.LectureDao;
+import com.bitjeju.member.MemberDao;
 
 /**
  * Servlet implementation class LectureAddController
@@ -25,6 +27,16 @@ public class LectureAddController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		//강좌개설 메뉴를 누르면 GET으로 받아서 입력페이지로 이동***********************
+		//현재 등록되어있는 강사를 보내준다.
+		LectureDao dao = new LectureDao();
+		ArrayList<String> teacherList = null;
+		try {
+			 teacherList = dao.selectTeacher();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		request.setAttribute("teacherList", teacherList); //강좌개설 페이지에 강사목록 리스트 전달
 		request.getRequestDispatcher("staffLectureAdd.jsp").forward(request, response);// 강좌목록 페이지이동
 	}
 
@@ -58,6 +70,8 @@ public class LectureAddController extends HttpServlet {
 			lecture_room = Integer.parseInt(request.getParameter("lecture_room"));
 
 			dao.insertLecture(lecture_name, start_day, end_day, name, lecture_room);
+			dao = new LectureDao();
+			dao.updateLectureToteacher(name, lecture_name); //레벨이3이고 강사이름으로 검색해서 강사의 과목컬럼에 개설강좌 추가.
 			// 강좌테이블에 입력받은 값을 추가.
 		} catch (NullPointerException e) {
 			request.getRequestDispatcher("staffLectureAdd.jsp").forward(request, response);

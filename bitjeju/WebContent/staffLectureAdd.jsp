@@ -96,10 +96,11 @@
 						</tr>
 						<tr>
 							<th>강사명</th>
-							<td><select id="teacherselect" name = "name">
-									<option selected="selected">설민석</option>
-									<option>정민재</option>
-									<option>황현필</option>
+							<td>
+							<select id="teacherselect" name = "name">
+									<c:forEach items ="${teacherList }" var="name">
+									<option>${name }</option>
+									</c:forEach>
 							</select></td>
 						</tr>
 						<tr>
