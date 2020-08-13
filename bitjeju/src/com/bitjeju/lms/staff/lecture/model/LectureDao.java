@@ -30,12 +30,15 @@ public class LectureDao {
 	public ArrayList<LectureDto> selectAll() throws SQLException {
 
 		ArrayList<LectureDto> list = new ArrayList<LectureDto>();
-		String sql = "select * from lectures";
+	//	String sql = "select * from lectures";
+		String sql = "select lecture_name,start_day,end_day,num,lecture_room,lecture_num,recruit_num from lectures full outer join recruit on recruit_num = lecture_num";
+		
+		//String sql2 ="select lecture_name, st":
 		LectureDto bean = null;
 
 		pstmt = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery();
-
+		
 		while (rs.next()) {
 			bean = new LectureDto();
 			bean.setLecture_name(rs.getString("lecture_name"));
@@ -44,6 +47,7 @@ public class LectureDao {
 			bean.setNum(rs.getInt("num"));
 			bean.setLecture_room(rs.getInt("lecture_room"));
 			bean.setLecture_num(rs.getInt("lecture_num"));
+			bean.setRecruit_num(rs.getInt("recruit_num"));
 			list.add(bean);
 		} // while
 
@@ -62,7 +66,7 @@ public class LectureDao {
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setInt(1, lecture_num);
 		rs = pstmt.executeQuery();
-
+		
 		while (rs.next()) {
 			bean = new LectureDto();
 			bean.setLecture_name(rs.getString("lecture_name"));
@@ -73,7 +77,16 @@ public class LectureDao {
 			bean.setLecture_num(rs.getInt("lecture_num"));
 			bean.setName(rs.getString("name"));
 		} // while
-
+		if (pstmt != null)
+			pstmt.close();
+		
+		String sql2 = "select * from recruit where recruit_num = ?";
+		pstmt = conn.prepareStatement(sql2);
+		pstmt.setInt(1, lecture_num);
+		rs = pstmt.executeQuery();
+		if(rs.next()) {
+			bean.setRecruit_num(rs.getInt("recruit_num"));
+		}
 		if (pstmt != null)
 			pstmt.close();
 		if (conn != null)

@@ -95,9 +95,18 @@ $(function(){});
 					<c:forEach items="${list }" var="bean">
 						<tr>
 							<td><a href="lmssalesrecruitdetail.bit?lecture_num=${bean.lecture_num }">${bean.lecture_name }</a></td>
-							<td>없음</td>
-							<%-- <td>${bean.lecture_room }</td> --%>
-
+							
+							<c:choose>
+							<c:when test="${bean.recruit_num eq 0}">
+							<td></td>							
+							</c:when>
+							
+							<c:when test="${bean.recruit_num ne 0}">
+							<td>모집중</td>							
+							</c:when>
+							</c:choose>
+						
+							
 						</tr>
 					</c:forEach>
 

@@ -9,12 +9,12 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 
-var recruitname ="${recruit.recruit_name}";//el
-var recruitnum ="${recruit.recruit_num}";
+var lecturename ="${lecture.lecture_name}";//el
+var lecturenum ="${lecture.lecture_num}";
 
 $(function(){
 	$('#recruitadd').on('click',function(){//*************모집공고 등록 서블릿으로, 모집공고 이름과 모집공고 번호전달.
-		location.href='lmssalesrecruitfile.bit?recruit_name='+recruitname+'&recruit_num='+recruitnum;
+		location.href='lmssalesrecruitfile.bit?lecture_num='+lecturenum;
 	}); 
 
 });//ready
@@ -82,7 +82,7 @@ $(function(){
 			&nbsp;
 			<!--*************content start****************-->
 			<div class="lmscontent">
-				<h2>강의관리</h2>
+				<h2>모집공고</h2>
 				<h4>강좌정보</h4>
 <!-- 
 private String lecture_name;
@@ -117,7 +117,7 @@ private String lecture_name;
 					</tr>
 					<tr>
 						<th>모집공고</th><!-- recruit테이블에서 모집공고 정보 받아오기 -->
-						<td><a href="lmssalesrecruitfiledetail.bit">머신러닝 딥러닝을 이용한 거북선 건조 전문가 양성 과정</a></td>
+						<td><a href="lmssalesrecruitfiledetail.bit?recruit_num=${bean.recruit_num}">모집공고 바로가기</a></td>
 					</tr>
 					<tr>
 						<th>모집상태</th><!-- recruit테이블에서 모집공고 정보 받아오기 -->
@@ -133,7 +133,6 @@ private String lecture_name;
 			</div>
 			<div class="lmscontent">
 			<button id="recruitback" onclick="window.history.go(-1)">뒤로</button>			
-			<button id="recruitdelete">삭제</button>			
 			<button id="recruitadd">등록</button>			
 			</div>
 			<!--*************content end******************-->

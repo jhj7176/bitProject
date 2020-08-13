@@ -41,7 +41,7 @@
 </script>
 <style type="text/css">
 .lmscontent {
-	width: 600px;
+	width: 800px;
 	display: block;
 	margin: auto;
 	border-bottom: 1px solid #e4e4e4;
@@ -61,9 +61,10 @@
 
 #recruittable th {
 	color: #1E3269;
-	padding: 30px;
+	padding: 10px;
 	border-right: 1px solid #e4e4e4;
 	text-align: right;
+	vertical-align:top;
 }
 
 #recruittable td {
@@ -150,15 +151,15 @@
 				<form action="lmssalesrecruitfile.bit" method="post" enctype="application/x-www-form-urlencoded">
 				<table id="recruittable">
 					<tr>
+					<c:set value="${recruit }" var="bean"></c:set>
 						<th>모집공고</th>
-						<td>모집공고 이름 받아오기</td>
+						<td>${bean.recruit_file_name}</td>
 					</tr>
 
 					<tr>
 						<th>내용</th>
-						<td>업로드한 파일 이름 받아오기
-
-						
+						<td>
+						<img alt="" src="recruit/${bean.recruit_file_name }">
 						</td>
 					</tr>
 

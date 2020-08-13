@@ -1,12 +1,13 @@
+drop sequence member_seq;
+drop sequence lectures_seq;
+drop sequence recruit_seq;
 drop table grade;
 drop table board2;
 drop table lectures;
 drop table attendance;
-drop table member;--member테이블의 num을 다른데서 참조하므로 항상 drop을 마지막에 해줘야함
-drop table bitjejudept;
-drop sequence member_seq;
-drop sequence lectures_seq;
-drop sequence recruit_seq;
+drop table recruit;
+drop table member;
+drop table bitjejudept;--다른데서 참조하므로 항상 drop을 마지막에 해줘야함
 
 
 create table bitjejudept(
@@ -83,7 +84,7 @@ create table grade(  			--성적테이블
 );  
 
 create sequence lectures_seq;
-create table lectures(								--강좌테이블
+create table lectures(								--강좌테이블 A1 B2 C3
 	lecture_name varchar2(50),			--강좌명
 	start_day date,									--교육기간
 	end_day date,
@@ -93,21 +94,22 @@ create table lectures(								--강좌테이블
 	foreign key(num) references member(num) on delete cascade
 );
 
+select lecture_name,start_day,end_day,num,lecture_room,lecture_num,recruit_num from lectures full outer join recruit on recruit_num = lecture_num;
 
 insert into lectures values ('산업기사취득과정A',sysdate,sysdate,22,401,lectures_seq.nextval);
 insert into lectures values ('UI/UX 개발자 과정',sysdate,sysdate,22,401,lectures_seq.nextval);
 insert into lectures values ('안드로이드 개발자 과정',sysdate,sysdate,22,401,lectures_seq.nextval);
 
 
-create sequence recruit_seq;
+
 create table recruit (--모집공고게시판>>select * from lecture;>>모집공고 업로드하는 form>> 입력>>리쿠르트테이블에 insert
-	recruit_name varchar2(150) not null,
 	recruit_file_name varchar2(200),
-	recruit_state varchar2(20), --공고없음, 모집전 ,모집중, 모집마감??
-	recruit_num number primary key,
+	recruit_num number primary key,	
 	foreign key(recruit_num) references lectures(lecture_num)
 );
-
+insert into recruit values ('naver.png', 1);
+select * from recruit;
+select * from recruit natural join lectures where recruit_num = lecture_num;
 --영업사원>>반배정 메뉴 누르면>> 수강신청생 목록 >>select * from member where lvl<=1 and lecture is not null;
 --일반회원 lvl = 0
 --수료생 --lvl =1

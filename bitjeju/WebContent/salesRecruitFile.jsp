@@ -128,7 +128,7 @@
 		</div>
 		<!--*****************lms메뉴******************-->
 		<div id="content" class="grid6">
-				<form action="lmssalesrecruitfile.bit" method="post" enctype="application/x-www-form-urlencoded">
+				<form action="lmssalesrecruitfile.bit" method="post" enctype="multipart/form-data">
 			&nbsp;
 			<!--*************content start****************-->
 			<div class="lmscontent">
@@ -143,26 +143,12 @@ private String lecture_name;
 
  -->
 
-				<c:set value="${recruit }" var="bean" />
+				<c:set value="${lecture }" var="bean" />
 				<table id="recruittable">
 					<tr>
 						<th>강좌명</th>
-						<td id="lecture_td">&nbsp;&nbsp;${bean.lecture_name }거북선 제조과정A</td>
-					</tr>
-					<tr>
-						<th>모집공고</th>
-						<td><input type="text" name="recruit_name" id="recruit_name"
-							placeholder="모집공고 제목을 입력하세요." /></td>
-					</tr>
-					
-					<tr>
-						<th>모집상태</th>
-						<td>
-						<select id="recruit_state" name="recruit_state">
-						<option>모집 중</option>
-						<option>모집 마감</option>
-						</select>
-						</td>
+						<td id="lecture_td">&nbsp;&nbsp;${bean.lecture_name }
+						<input type="hidden" name="lecture_name" id="lecture_name" value="${bean.lecture_name }"/></td>
 					</tr>
 					
 					<tr>
@@ -177,15 +163,16 @@ private String lecture_name;
 						<td></td>
 					</tr>
 				</table>
+				
 
 
 			</div>
 			<div class="lmscontent">
 				<button id="recruitback" onclick="window.history.go(-1)">뒤로</button>
-				<button id="recruitedit" type="button">수정</button>
 				<button id="recruitadd" type="submit">등록</button>
 			</div>
 				</form>
+		
 			<!--*************content end******************-->
 			<%@ include file="template/footer.jspf"%>
 </body>

@@ -37,7 +37,7 @@ select * from member full outer join grade on member.num=grade.num where member.
 insert into member values (member_seq.nextval||member_seq.currval,'tttt','tttt',0,'asdf1234',01011111111,null);
 
 
-
+select * from recruit where recruit_num=1;
 
 
 

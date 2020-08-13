@@ -6,11 +6,17 @@ public class LectureDto {
 
 	private String lecture_name, name;
 	private Date start_day, end_day;
-	private int num, lecture_room,lecture_num;
+	private int num, lecture_room,lecture_num, recruit_num;
 	
 	
 	
 	
+	public int getRecruit_num() {
+		return recruit_num;
+	}
+	public void setRecruit_num(int recruit_num) {
+		this.recruit_num = recruit_num;
+	}
 	public String getName() {	
 		return name;
 	}
@@ -29,7 +35,7 @@ public class LectureDto {
 	public void setLecture_name(String lecture_name) {
 		this.lecture_name = lecture_name;
 	}
-	public Date getStart_day() {
+	public Date getStart_day() {	
 		return start_day;
 	}
 	public void setStart_day(Date start_day) {
@@ -53,6 +59,7 @@ public class LectureDto {
 	public void setLecture_room(int lecture_room) {
 		this.lecture_room = lecture_room;
 	}
+	
 	
 	
 	
