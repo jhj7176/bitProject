@@ -1,0 +1,190 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="css/bitgrid.css">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<%@ include file="template/lmshead.jspf"%>
+<title>Insert title here</title>
+<script type="text/javascript">
+
+
+	$(function() {
+		console.log(lecturename, lecturenum);
+		$('#recruitadd').on(
+				'click',
+				function() {//*************모집공고 파일업로드 서블릿으로
+					location.href = 'lmsstafflectureedit.bit?lecture_name='
+							+ lecturename + '&lecture_num=' + lecturenum;
+				});
+		$('#recruitedit').on(
+				'click',
+				function() {//*************수정 서블릿으로
+					location.href = 'lmsstafflectureedit.bit?lecture_name='
+							+ lecturename + '&lecture_num=' + lecturenum;
+				});
+		$('#recruitdelete').on(
+				'click',
+				function() {//****************삭제 서블릿으로
+					location.href = 'lmsstafflecturedelete.bit?lecture_name='
+							+ lecturename + '&lecture_num=' + lecturenum;
+				});
+
+		var fileTarget = $('#recruitfile');
+		fileTarget.on('change', function() { // 값이 변경되면
+			var cur = $("#recruittable input[type='file']").val();
+			$(".upload-name").val(cur);
+		});
+
+	});//ready
+</script>
+<style type="text/css">
+.lmscontent {
+	width: 600px;
+	display: block;
+	margin: auto;
+	border-bottom: 1px solid #e4e4e4;
+}
+
+.lmscontent:last-child {
+	margin-bottom: 300px;
+}
+
+#recruittable {
+	border-collapse: collapse;
+}
+
+#recruittable tr {
+	
+}
+
+#recruittable th {
+	color: #1E3269;
+	padding: 30px;
+	border-right: 1px solid #e4e4e4;
+	text-align: right;
+}
+
+#recruittable td {
+	padding: 25px;
+	text-align: left;
+}
+
+
+#recruit_name, .upload-name { /* form input */
+	width: 330px;
+	height: 43px;
+	margin: 7px;
+	border-radius: 5px;
+	border: 1px solid #969696;
+	font-size: 120%;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#recruitadd, #recruitedit, #recruitdelete, #recruitback {
+	float: right;
+	background-color: #000069;
+	border: 1px solid #000069;
+	color: white;
+	margin: 7px;
+	width: 50px;
+	height: 20px;
+}
+
+#recruittable input[type="file"] {
+	position: absolute;
+	width: 0;
+	height: 0;
+	padding: 0;
+	overflow: hidden;
+	border: 0;
+}
+
+#recruittable label {
+	display: inline-block;
+	padding: 10px;
+	color: gray;
+	vertical-align: middle;
+	background-color: #fdfdfd;
+	cursor: pointer;
+	border: 1px solid gray;
+	border-radius: 5px;
+}
+
+/* named upload */
+</style>
+</head>
+<body>
+	<%@ include file="template/lmsheader.jspf"%>
+	<%@ include file="template/menu.jspf"%>
+	<div id="contents">
+		<!--*****************lms메뉴******************-->
+		<div class="grid2">
+			<div id="lmsmenu">
+				<p>영업</p>
+				<ul>
+					<li class="bigletter">모집공고</li>
+					<li><a href="lmssalesrecruitlist.bit">강좌정보</a></li>
+					<li class="bigletter">강좌배정</li>
+					<li><a href="#">수강생정보</a></li>
+					<!-- 					<li><a href="lmsstafflecturelist.bit">강좌정보</a></li>
+					<li class="bigletter">수강생관리</li>
+					<li><a href="lmsstaffstudentlist.bit">수강생정보</a></li> -->
+					<li></li>
+				</ul>
+			</div>
+		</div>
+		<!--*****************lms메뉴******************-->
+		<div id="content" class="grid6">
+			&nbsp;
+			<!--*************content start****************-->
+			<div class="lmscontent">
+				<h2>강의관리</h2>
+				<h4>강좌정보</h4>
+	
+
+
+			
+				<form action="lmssalesrecruitfile.bit" method="post" enctype="application/x-www-form-urlencoded">
+				<table id="recruittable">
+					<tr>
+						<th>모집공고</th>
+						<td>모집공고 이름 받아오기</td>
+					</tr>
+
+					<tr>
+						<th>내용</th>
+						<td>업로드한 파일 이름 받아오기
+
+						
+						</td>
+					</tr>
+
+					<tr>
+						<th></th>
+						<td></td>
+					</tr>
+				</table>
+				</form>
+
+
+			</div>
+			<div class="lmscontent">
+				<button id="recruitback" onclick="window.history.go(-1)">뒤로</button>
+				<button id="recruitdelete">삭제</button>
+				<button id="recruitedit">수정</button>
+			</div>
+			<!--*************content end******************-->
+			<%@ include file="template/footer.jspf"%>
+</body>
+</html>
+<!-- 
+-1번라인의 charset, pageEncoding 5번라인의 charset모두 utf-8로 맞춰주세요.
+-2번의 doctype도 다지우고 위처럼 html만 남겨주세요.
+-content내부에 content와 sidebar로 나눔 ->content에 작업하면됩니다.
+-sidebar에서 사용하고 있는 id: #signin #emailid #pw #login #createccount #gotolms #campus #campusinfo #classinfo #open
+-footer에서 사용하고있는 id: #footercon
+위의 아이디들은 작업시 사용하지 마세요 이름바꾸고 싶으면 저와 의논바람
+ -->

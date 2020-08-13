@@ -6,6 +6,7 @@ drop table member;--member테이블의 num을 다른데서 참조하므로 항상 drop을 마지막�
 drop table bitjejudept;
 drop sequence member_seq;
 drop sequence lectures_seq;
+drop sequence recruit_seq;
 
 
 create table bitjejudept(
@@ -98,10 +99,15 @@ insert into lectures values ('UI/UX 개발자 과정',sysdate,sysdate,22,401,lectures
 insert into lectures values ('안드로이드 개발자 과정',sysdate,sysdate,22,401,lectures_seq.nextval);
 
 
-
+create sequence recruit_seq;
 create table recruit (--모집공고게시판>>select * from lecture;>>모집공고 업로드하는 form>> 입력>>리쿠르트테이블에 insert
-		
+	recruit_name varchar2(150) not null,
+	recruit_file_name varchar2(200),
+	recruit_state varchar2(20), --공고없음, 모집전 ,모집중, 모집마감??
+	recruit_num number primary key,
+	foreign key(recruit_num) references lectures(lecture_num)
 );
+
 --영업사원>>반배정 메뉴 누르면>> 수강신청생 목록 >>select * from member where lvl<=1 and lecture is not null;
 --일반회원 lvl = 0
 --수료생 --lvl =1

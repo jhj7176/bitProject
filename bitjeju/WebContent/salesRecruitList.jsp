@@ -94,7 +94,7 @@ $(function(){});
 					</tr>
 					<c:forEach items="${list }" var="bean">
 						<tr>
-							<td><a href="lmsstafflecturedetail.bit?lecture_num=${bean.lecture_num }">${bean.lecture_name }</a></td>
+							<td><a href="lmssalesrecruitdetail.bit?lecture_num=${bean.lecture_num }">${bean.lecture_name }</a></td>
 							<td>없음</td>
 							<%-- <td>${bean.lecture_room }</td> --%>
 

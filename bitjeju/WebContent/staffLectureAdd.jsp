@@ -123,10 +123,8 @@
 							<th>종강일</th>
 							<td><input type="date" name="end_day" id="end_day"/></td>
 						</tr>
-						<tr>
-							<th></th>
-							<td></td>
-						</tr>
+
+
 					</table>
 			</div><!--**********lmscontent end**********-->
 			<div class="lmscontent">

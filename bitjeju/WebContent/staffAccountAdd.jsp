@@ -100,7 +100,7 @@ $('#accountform').submit(function(){ //등록버튼 눌렀을 때 이벤트.
 	text-align:left;
 }
 
-#accountemailid,#deptselect,#name,#phone,#accountpw{
+#accountemailid,#deptselect,#name,#phone,#accountpw{ /* form input */
     width: 330px;
     height: 43px;
     margin: 7px;
@@ -110,7 +110,7 @@ $('#accountform').submit(function(){ //등록버튼 눌렀을 때 이벤트.
     text-align:center;
 }
 
-#accountedit,#accountdelete,#accountback{
+#accountedit,#accountdelete,#accountback{/*  수정삭제뒤로가기 버튼 */
 	float:right;
     background-color: #000069;
     border:1px solid #000069;

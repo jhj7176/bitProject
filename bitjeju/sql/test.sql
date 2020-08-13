@@ -11,11 +11,15 @@ select * from member;
 select * from lectures;
 select * from BITJEJUDEPT;
 commit;
+name, num, lecture, lecture_name, lecture_room, lecture_num, start_day, end_day
+
+select * from member full outer join lectures on member.num=lectures.num;
+select * from member full outer join lectures on member.num=lectures.num where lecture_name = (select lecture from member where num = 수강생번호);
 
 
 select * from member where id_email='staff@email.com';
 
-
+update member set lecture = '거북선 제조과정A' where num = 66;
 
 select * from member full outer join grade on member.num = GRADE.num where num = 4848;
 
