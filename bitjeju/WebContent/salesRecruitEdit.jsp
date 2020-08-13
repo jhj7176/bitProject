@@ -9,28 +9,25 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 
-var recruit_num = "${recruit.recruit_num }";
 
 	$(function() {
 
-		$('#recruitedit').on(
-				'click',
-				function() {//*************수정 서블릿으로
-					location.href = 'lmssalesrecruitedit.bit?recruit_num='
-							+ recruit_num;
-				});
-		$('#recruitdelete').on(
-				'click',
-				function() {//****************삭제 서블릿으로
-					location.href = 'lmssalesrecruitdelete.bit?recruit_num='+ recruit_num;
-				});
+		$('#recruitedit').on('click',function(){// 모집공고 파일 수정 서블릿으로 이동.
+				/*location.href='lmssalesrecruitfiledit';  */
+		});
 
+
+		var fileTarget = $('#recruitfile');
+		fileTarget.on('change', function() { // 값이 변경되면
+			var cur = $("#recruittable input[type='file']").val();
+			$(".upload-name").val(cur);
+		});
 
 	});//ready
 </script>
 <style type="text/css">
 .lmscontent {
-	width: 800px;
+	width: 600px;
 	display: block;
 	margin: auto;
 	border-bottom: 1px solid #e4e4e4;
@@ -50,10 +47,9 @@ var recruit_num = "${recruit.recruit_num }";
 
 #recruittable th {
 	color: #1E3269;
-	padding: 10px;
+	padding: 30px;
 	border-right: 1px solid #e4e4e4;
 	text-align: right;
-	vertical-align:top;
 }
 
 #recruittable td {
@@ -62,7 +58,7 @@ var recruit_num = "${recruit.recruit_num }";
 }
 
 
-#recruit_name, .upload-name { /* form input */
+#recruit_name, .upload-name, #recruit_state { /* form input */
 	width: 330px;
 	height: 43px;
 	margin: 7px;
@@ -73,7 +69,7 @@ var recruit_num = "${recruit.recruit_num }";
 	vertical-align: middle;
 }
 
-#recruitadd, #recruitedit, #recruitdelete, #recruitback {
+#recruitedit, #recruitedit, #recruitdelete, #recruitback {
 	float: right;
 	background-color: #000069;
 	border: 1px solid #000069;
@@ -92,6 +88,10 @@ var recruit_num = "${recruit.recruit_num }";
 	border: 0;
 }
 
+#recruittable label:hover {
+	background-color:#000069;
+	color:white;
+}
 #recruittable label {
 	display: inline-block;
 	padding: 10px;
@@ -101,9 +101,6 @@ var recruit_num = "${recruit.recruit_num }";
 	cursor: pointer;
 	border: 1px solid gray;
 	border-radius: 5px;
-}
-#recruit_img{
-	width:700px;
 }
 
 /* named upload */
@@ -131,27 +128,26 @@ var recruit_num = "${recruit.recruit_num }";
 		</div>
 		<!--*****************lms메뉴******************-->
 		<div id="content" class="grid6">
+				<form action="lmssalesrecruitedit.bit" method="post" enctype="multipart/form-data">
 			&nbsp;
 			<!--*************content start****************-->
 			<div class="lmscontent">
-				<h2>강의관리</h2>
-				<h4>강좌정보</h4>
-	
+				<h2>모집공고</h2>
+				<h4>모집공고 수정</h4>
 
-
-			
+				<c:set value="${lecture }" var="bean" />
 				<table id="recruittable">
 					<tr>
-					<c:set value="${recruit }" var="bean"></c:set>
-						<th>모집공고</th>
-						<td>${bean.recruit_file_name}</td>
+						<th>강좌명</th>
+						<td id="lecture_td">&nbsp;&nbsp;${bean.lecture_name }
+						<input type="hidden" name="lecture_name" id="lecture_name" value="${bean.lecture_name }"/></td>
 					</tr>
-
+					
 					<tr>
-						<th>내용</th>
-						<td>
-						<img id="recruit_img" alt="" src="recruit/${bean.recruit_file_name }">
-						</td>
+						<th>첨부파일</th>
+						<td><input class="upload-name" value="" placeholder="파일선택" />
+							<label for="recruitfile">업로드</label> <input type="file"
+							id="recruitfile" name = "recruitfile"/></td>
 					</tr>
 
 					<tr>
@@ -159,14 +155,16 @@ var recruit_num = "${recruit.recruit_num }";
 						<td></td>
 					</tr>
 				</table>
+				
 
 
 			</div>
 			<div class="lmscontent">
 				<button id="recruitback" onclick="window.history.go(-1)">뒤로</button>
-				<button id="recruitdelete">삭제</button>
-				<button id="recruitedit">수정</button>
+				<button id="recruitedit" type="submit">수정</button>
 			</div>
+				</form>
+		
 			<!--*************content end******************-->
 			<%@ include file="template/footer.jspf"%>
 </body>

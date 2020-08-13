@@ -68,6 +68,34 @@ public class RecruitDao {
 
 	}// recruitupload
 
+	
+	public void updateRecruit(String lecture_name, String file_name) throws SQLException {
+		String sql2 = "select lecture_num from lectures where lecture_name = ?";
+		pstmt = conn.prepareStatement(sql2);
+		pstmt.setString(1, lecture_name);
+		rs = pstmt.executeQuery();
+		System.out.println(sql2);
+		int lecture_num = -1;
+		if (rs.next()) {
+			lecture_num = rs.getInt("lecture_num");
+		}
+		if (pstmt != null)
+			pstmt.close();
+
+		String sql = "update recruit set recruit_file_name=? where recruit_num=? ";
+		System.out.println(sql);
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, file_name);
+		pstmt.setInt(2, lecture_num);
+		pstmt.executeQuery();
+
+		if (pstmt != null)
+			pstmt.close();
+		if (conn != null)
+			conn.close();
+	}//update
+	
+	
 	public ArrayList<RecruitDto> selectAll() throws SQLException {
 
 //		create table recruit (--모집공고게시판>>select * from lecture;>>모집공고 업로드하는 form>> 입력>>리쿠르트테이블에 insert
@@ -93,7 +121,7 @@ public class RecruitDao {
 			conn.close();
 
 		return recruitList;
-	}
+	}//selectAll
 
 	public RecruitDto selectOne(int recruit_num) {
 		RecruitDto bean = null;
@@ -125,6 +153,31 @@ public class RecruitDao {
 			}
 		}
 		return bean;
-	}
+	}//selectone
+	
+	public void deleteOne(int recruit_num) {
+		
+		String sql ="delete from recruit where recruit_num = ?";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, recruit_num);
+			pstmt.executeQuery();
+			System.out.println(sql);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			try {
+				if(pstmt!=null) pstmt.close();
+				if(conn!=null) conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}//finally
+		
+		
+	}//delete
 
 }

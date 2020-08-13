@@ -16,8 +16,8 @@ var recruit_num = "${recruit.recruit_num }";
 		$('#recruitedit').on(
 				'click',
 				function() {//*************수정 서블릿으로
-					location.href = 'lmssalesrecruitedit.bit?recruit_num='
-							+ recruit_num;
+					location.href = 'lmssalesrecruitedit.bit?lecture_name='
+							+ lecturename + '&lecture_num=' + lecturenum;
 				});
 		$('#recruitdelete').on(
 				'click',
@@ -53,12 +53,12 @@ var recruit_num = "${recruit.recruit_num }";
 	padding: 10px;
 	border-right: 1px solid #e4e4e4;
 	text-align: right;
-	vertical-align:top;
 }
 
 #recruittable td {
 	padding: 25px;
 	text-align: left;
+	vertical-align:top;
 }
 
 
@@ -102,9 +102,6 @@ var recruit_num = "${recruit.recruit_num }";
 	border: 1px solid gray;
 	border-radius: 5px;
 }
-#recruit_img{
-	width:700px;
-}
 
 /* named upload */
 </style>
@@ -133,40 +130,25 @@ var recruit_num = "${recruit.recruit_num }";
 		<div id="content" class="grid6">
 			&nbsp;
 			<!--*************content start****************-->
+				<form action="lmssalesrecruitdelete.bit" method="post">
 			<div class="lmscontent">
 				<h2>강의관리</h2>
 				<h4>강좌정보</h4>
-	
-
-
 			
 				<table id="recruittable">
 					<tr>
-					<c:set value="${recruit }" var="bean"></c:set>
 						<th>모집공고</th>
-						<td>${bean.recruit_file_name}</td>
-					</tr>
-
-					<tr>
-						<th>내용</th>
-						<td>
-						<img id="recruit_img" alt="" src="recruit/${bean.recruit_file_name }">
-						</td>
-					</tr>
-
-					<tr>
-						<th></th>
-						<td></td>
+						<td>삭제하시겠습니까?<input type="hidden" name="recruit_num" value="${recruit_num }"/></td>
 					</tr>
 				</table>
 
 
 			</div>
 			<div class="lmscontent">
-				<button id="recruitback" onclick="window.history.go(-1)">뒤로</button>
-				<button id="recruitdelete">삭제</button>
-				<button id="recruitedit">수정</button>
+				<button id="recruitback" type="button" onclick="window.history.go(-1)">뒤로</button>
+				<button id="recruitdelete" type="submit">삭제</button>
 			</div>
+				</form>
 			<!--*************content end******************-->
 			<%@ include file="template/footer.jspf"%>
 </body>

@@ -11,12 +11,21 @@
 
 var lecturename ="${lecture.lecture_name}";//el
 var lecturenum ="${lecture.lecture_num}";
+var recruitnum ="${lecture.recruit_num}";
+
 
 $(function(){
 	$('#recruitadd').on('click',function(){//*************모집공고 등록 서블릿으로, 모집공고 이름과 모집공고 번호전달.
 		location.href='lmssalesrecruitfile.bit?lecture_num='+lecturenum;
 	}); 
-
+	console.log(recruitnum);	
+	$('#lecturetable td>a').on('click',function(){
+		if(recruitnum==0){
+			alert('모집공고가 없습니다.');
+			return false;
+		}
+	});
+	
 });//ready
 
 </script>
@@ -44,6 +53,16 @@ $(function(){
 #lecturetable td{
 	padding:25px;
 	text-align:left;
+}
+#lecturetable td>a{
+	text-decoration:none;
+	color:#000069;
+	font-size:110%;
+	
+}
+#lecturetable td>a:hover{
+	font-weight:600;
+	
 }
 #recruitadd,#recruitedit,#recruitdelete,#recruitback{
 	float:right;
@@ -121,7 +140,15 @@ private String lecture_name;
 					</tr>
 					<tr>
 						<th>모집상태</th><!-- recruit테이블에서 모집공고 정보 받아오기 -->
-						<td>모집중</td>
+							<c:choose>
+							<c:when test="${bean.recruit_num eq 0}">
+							<td>X</td>							
+							</c:when>
+							
+							<c:when test="${bean.recruit_num ne 0}">
+							<td>모집중</td>							
+							</c:when>
+							</c:choose>
 					</tr>
 					<tr>
 						<th></th>

@@ -41,8 +41,8 @@ select * from recruit where recruit_num=1;
 
 
 
-
-
+delete from recruit;
+commit;
 
 
 
