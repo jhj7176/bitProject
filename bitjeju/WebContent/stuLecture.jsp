@@ -14,6 +14,23 @@
 .lmscontent:last-child {
 	margin-bottom:300px;
 }
+#lecturetable{
+	text-align:center;
+	margin: 50px auto;
+	border-collapse:collapse;
+	font-size:110%;
+}
+#lecturetable th{
+	width: 200px;
+	color:#1E3269;
+	padding:10px;
+	text-align:center;
+	border-right:1px solid #e4e4e4;
+}
+#lecturetable td{
+	padding:20px;
+	text-align:center;
+}
 </style>
 </head>
 <body>
@@ -29,7 +46,7 @@
                     <a href="lmsstugrade.bit">성적조회</a>    
                 </li>
                 <li class="bigletter">
-                    <a href="lmsstuattdetail.bit">출결조회</a>    
+                    <a href="lmsstuattendance.bit">출결조회</a>    
                 </li>
                 <li class="bigletter">
                     <a href="lmsstulecture.bit">수강정보</a>    
@@ -46,6 +63,29 @@
        <!--*************content start****************-->
        <div class="lmscontent">
        <h2>수강정보</h2>
+       <c:set value="${bean }" var="bean" />
+       		<table id="lecturetable">
+					<tr>
+						<th>강좌명</th>
+						<td>${bean.lecture_name }</td>
+					</tr>
+					<tr>
+						<th>강사명</th>
+						<td>${bean.name }</td>
+					</tr>
+					<tr>
+						<th>강의실</th>
+						<td>${bean.lecture_room }</td>
+					</tr>
+					<tr>
+						<th>개강일</th>
+						<td>${bean.start_day }</td>
+					</tr>
+					<tr>
+						<th>종강일</th>
+						<td>${bean.end_day }</td>
+					</tr>
+       		</table>
        </div>
        <!--*************content end******************-->
 <%@ include file="template/footer.jspf" %>

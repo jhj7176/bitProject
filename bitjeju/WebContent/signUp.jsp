@@ -6,7 +6,7 @@
 <link rel="stylesheet" type="text/css" href="css/bitgrid.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%@ include file="template/lmshead.jspf"%>
-<title>Insert title here</title>
+<title>BITCAMP JEJU: 회원가입</title>
 
 <script type="text/javascript">
 
@@ -38,6 +38,7 @@ $('#signupbtn').on('click',function(){ //등록버튼 눌렀을 때 이벤트.
 		비밀번호는 영문 + 숫자 조합, 8~12자리 
 	*/
 	var passwordVal=$('#signuppw').val();//비밀번호
+	var signuppw2 = $('#signuppw2').val();	//비밀번호2
 	
 	if($('#signupemailid').val()=="" || $('#signuppw').val()==""||$('#name').val()=="" ||$('#phone').val()==""){
 		alert("모든 정보를 입력해야 합니다.");
@@ -53,6 +54,8 @@ $('#signupbtn').on('click',function(){ //등록버튼 눌렀을 때 이벤트.
 	}else if($('#overlapCK').text()=='NO'){
 		alert('아이디를 확인해주세요');
 		
+	}else if(passwordVal!=signuppw2){
+		alert('비밀번호가 일치하지 않습니다.');	
 	}else{
 		$.ajax('signup.bit',{
 			'method':'post',
@@ -66,6 +69,26 @@ $('#signupbtn').on('click',function(){ //등록버튼 눌렀을 때 이벤트.
 		
 		return false;
 });//submit
+
+
+
+$('#signuppw2').on('keyup',function(){
+	signuppw1 = $('#signuppw').val();		//비밀번호1
+	signuppw2 = $('#signuppw2').val();		//비밀번호2
+	if(signuppw1==signuppw2){
+		$('#changepwtxt').text('OK').css('font-size','130%')
+		.css('color','green').css('vertical-align','middle');
+	}else if(signuppw2==''){
+		$('#changepwtxt').text('');
+	}else{
+		$('#changepwtxt').text('NO').css('font-size','130%')
+		.css('color','red').css('vertical-align','middle');
+	}
+});
+
+
+
+
 
 
 
@@ -134,7 +157,7 @@ $('#overlap').on('click',function(){ // 아이디 중복검사 버튼
 	text-align:left;
 }
 
-#signupemailid,#deptselect,#name,#phone,#signuppw{
+#signupemailid,#deptselect,#name,#phone,#signuppw,#signuppw2{
     width: 300px;
     height: 35px;
     margin: 7px;
@@ -224,6 +247,10 @@ $('#overlap').on('click',function(){ // 아이디 중복검사 버튼
 					<tr>
 						<th>비밀번호</th>
 						<td><input type="password" id="signuppw" name="pw" placeholder="영문+숫자조합 8~12자리 입니다."/></td>
+					</tr>
+					<tr>
+						<th>비밀번호확인</th>
+						<td><input type="password" id="signuppw2" name="pw" placeholder="영문+숫자조합 8~12자리 입니다."/><span id="changepwtxt"></span></td>
 					</tr>
 					<tr>
 						<th>전화번호</th>

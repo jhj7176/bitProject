@@ -16,7 +16,6 @@ import javax.servlet.http.HttpServletResponse;
 import com.bitjeju.lms.teacher.att.model.AttendanceDao;
 import com.bitjeju.lms.teacher.att.model.AttendanceDto;
 
-
 @WebServlet("/lmsteacherattlist.bit")
 public class AttListController extends HttpServlet {
 
@@ -29,7 +28,6 @@ public class AttListController extends HttpServlet {
       } catch (SQLException e) {
          e.printStackTrace();
       }
-      
       request.getRequestDispatcher("teacherAttList.jsp").forward(request, response);
       
    }

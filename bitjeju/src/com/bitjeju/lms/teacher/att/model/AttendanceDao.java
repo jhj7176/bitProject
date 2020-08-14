@@ -83,10 +83,12 @@ public class AttendanceDao {
 	public ArrayList<AttendanceDto> selectName(String name) throws SQLException{
 		ArrayList<AttendanceDto> list=new ArrayList<AttendanceDto>();
 		String sql="select nalja, attendance.num,name,state from attendance,member where attendance.num=member.num"
-				+ " and name=? order by nalja desc, num asc";
+				+ " and name like ? order by nalja desc, num asc";
+		
+		String searchName = "%"+name+"%";
 		try {
 			pstmt=conn.prepareStatement(sql);
-			pstmt.setString(1, name);
+			pstmt.setString(1, searchName);
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
 				list.add(new AttendanceDto(rs.getDate("nalja"),rs.getInt("num"),rs.getString("name"),rs.getString("state")));
@@ -122,16 +124,16 @@ public class AttendanceDao {
 		return bean;
 	}
 	
-	
 	public int updateOne(int num, Date nalja , String state) throws SQLException{
 		String sql="update attendance set state=? where num=? and nalja=?";
 		int result=0;
+		System.out.println("state = "+state);
 		PreparedStatement pstmt=null;
 		try{
 			pstmt=conn.prepareStatement(sql);
-			pstmt.setInt(1, num);
-			pstmt.setDate(2, nalja);
-			pstmt.setString(3, state);
+			pstmt.setString(1, state);
+			pstmt.setInt(2, num);
+			pstmt.setDate(3, nalja);
 			result=pstmt.executeUpdate();
 		}finally{
 			if(pstmt!=null)pstmt.close();

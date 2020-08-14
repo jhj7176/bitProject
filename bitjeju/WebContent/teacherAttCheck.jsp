@@ -99,7 +99,7 @@ $(function(){
 	   <h4>출석체크</h4>
 	   <div id="naljadiv">
 	      <label for="nalja">날짜</label>
-	      <input type="date" id="nalja" name="nalja">
+	      <input type="date" id="nalja" name="nalja" readonly="readonly">
 	   </div>
 	   <form method="post" action="lmsteacherattlist.bit">
 	   <div id="atttable">
@@ -121,13 +121,13 @@ $(function(){
 	            </td>
 	            <td>
 		            <label for="ra">출석</label>
-		            <input type="radio" class="state" name="state${bean.num }" value="출석">&nbsp;
+		            <input required="required"  type="radio" class="state" name="state${bean.num }" value="출석">&nbsp;
 		            <label for="ra">&nbsp;지각</label>
-		            <input type="radio" class="state" name="state${bean.num }" value="지각">&nbsp;
+		            <input  required="required"  type="radio" class="state" name="state${bean.num }" value="지각">&nbsp;
 		            <label for="ra">&nbsp;조퇴</label>
-		            <input type="radio" class="state" name="state${bean.num }" value="조퇴">&nbsp;
+		            <input  required="required"  type="radio" class="state" name="state${bean.num }" value="조퇴">&nbsp;
 		            <label for="ra">&nbsp;결석</label>
-		            <input type="radio" class="state" name="state${bean.num }" value="결석">
+		            <input  required="required"  type="radio" class="state" name="state${bean.num }" value="결석">
 	             </td>
 	         </tr>
 	   </c:forEach>

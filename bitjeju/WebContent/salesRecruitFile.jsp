@@ -6,7 +6,7 @@
 <link rel="stylesheet" type="text/css" href="css/bitgrid.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%@ include file="template/lmshead.jspf"%>
-<title>Insert title here</title>
+<title>BITCAMP JEJU: LMS영업-모집공고</title>
 <script type="text/javascript">
 
 
@@ -132,8 +132,8 @@
 			&nbsp;
 			<!--*************content start****************-->
 			<div class="lmscontent">
-				<h2>강의관리</h2>
-				<h4>강좌정보</h4>
+				<h2>모집공고</h2>
+				<h4>모집공고 첨부</h4>
 				<!-- 
 private String lecture_name;
 	private Date start_day, end_day;

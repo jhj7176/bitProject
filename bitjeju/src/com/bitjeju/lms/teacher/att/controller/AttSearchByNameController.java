@@ -22,6 +22,8 @@ public class AttSearchByNameController extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		try {
 			name = request.getParameter("name").trim();
+			
+			System.out.println(name);
 			AttendanceDao dao=new AttendanceDao();
 			ArrayList<AttendanceDto> list=dao.selectName(name);
 			request.setAttribute("list", list);

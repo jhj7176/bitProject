@@ -6,7 +6,9 @@
 <link rel="stylesheet" type="text/css" href="css/bitgrid.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%@ include file="template/lmshead.jspf"%>
-<title>Insert title here</title>
+
+
+<title>BITCAMP JEJU: LMS행정-강좌수정</title>
 
 <script type="text/javascript">
 
@@ -118,10 +120,11 @@ $(function(){
 						</tr>
 						<tr>
 							<th>강사명</th>
-							<td><select id="teacherselect" name = "name">
-									<option>설민석</option>
-									<option>정민재</option>
-									<option>황현필</option>
+							<td>
+							<select id="teacherselect" name = "name">
+									<c:forEach items ="${teacherList }" var="name">
+									<option>${name }</option>
+									</c:forEach>
 							</select></td>
 						</tr>
 						<tr>

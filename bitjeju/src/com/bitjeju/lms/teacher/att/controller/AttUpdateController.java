@@ -36,6 +36,8 @@ public class AttUpdateController extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
+	
+		req.setCharacterEncoding("utf-8");
 		int num=Integer.parseInt(req.getParameter("num"));
 		Date nalja = Date.valueOf(req.getParameter("nalja"));
 		String state=req.getParameter("state");

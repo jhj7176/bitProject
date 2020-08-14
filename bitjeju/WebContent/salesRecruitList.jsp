@@ -6,8 +6,7 @@
 <link rel="stylesheet" type="text/css" href="css/bitgrid.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%@ include file="template/lmshead.jspf"%>
-<title>Insert title here</title>
-
+<title>BITCAMP JEJU: LMS영업-모집공고</title>
 <script type="text/javascript">
 $(function(){});
 </script>
@@ -68,8 +67,8 @@ $(function(){});
 				<ul>
 					<li class="bigletter">모집공고</li>
 					<li><a href="lmssalesrecruitlist.bit">강좌정보</a></li>
-					<li class="bigletter">강좌배정</li>
-					<li><a href="#">수강생정보</a></li>
+					<li class="bigletter">수강생 관리</li>
+					<li><a href="lmssalesassign.bit">강좌배정</a></li>
 <!-- 					<li><a href="lmsstafflecturelist.bit">강좌정보</a></li>
 					<li class="bigletter">수강생관리</li>
 					<li><a href="lmsstaffstudentlist.bit">수강생정보</a></li> -->

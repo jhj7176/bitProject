@@ -8,7 +8,7 @@
 <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
 $(function(){
-	opener.parent.location='http://localhost:8080/trials/lmsteacherattlist.bit';
+	opener.parent.location='http://localhost:8080/bitjeju/lmsteacherattlist.bit';
 	window.close();
 });
 </script>

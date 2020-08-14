@@ -39,8 +39,9 @@ insert into member values (member_seq.nextval||member_seq.currval,'tttt','tttt',
 
 select * from recruit where recruit_num=1;
 
+update member set lecture = '영업assign테스트' where name = '신짱구';
 
-
+select * from (select num,lecture_name,name,start_day,lvl, rownum as rwn from (select m.num, name,lecture_name,start_day,lvl from member m inner join lectures l on m.lecture=l.lecture_name where lvl<3 and name like '%%')) where rwn between 1 and 5 order by lvl asc;
 delete from recruit;
 commit;
 

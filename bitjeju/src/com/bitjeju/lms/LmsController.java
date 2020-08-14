@@ -43,7 +43,7 @@ public class LmsController extends HttpServlet {
 			//request.getRequestDispatcher("teacher.jsp").forward(request, response);
 			return;
 		}else if (dept.equals("¼ö°­»ý")) {
-			response.sendRedirect("stuGrade.jsp");
+			response.sendRedirect("lmsstugrade.bit");
 			return;
 		}
 

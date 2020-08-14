@@ -9,7 +9,7 @@
 
 
 <%@ include file="template/head.jspf" %>
-<title>Insert title here</title>
+<title>BITCAMP JEJU</title>
 </head>
 <body>
 <%@ include file="template/header.jspf" %>

@@ -6,8 +6,7 @@
 <link rel="stylesheet" type="text/css" href="css/bitgrid.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%@ include file="template/lmshead.jspf"%>
-<title>Insert title here</title>
-
+<title>BITCAMP JEJU: LMS행정-계정관리</title>
 <style type="text/css">
 .lmscontent {
 	width: 600px;

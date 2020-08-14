@@ -14,8 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.bitjeju.lms.teacher.att.model.AttendanceDao;
 import com.bitjeju.lms.teacher.att.model.AttendanceDto;
 
-
-@WebServlet("/lmsteacherattsearch.bit")
+@WebServlet("/lmsteacherattsearchbydate.bit")
 public class AttSearchByDateController extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

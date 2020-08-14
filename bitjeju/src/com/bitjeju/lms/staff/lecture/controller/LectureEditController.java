@@ -3,6 +3,7 @@ package com.bitjeju.lms.staff.lecture.controller;
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,8 +28,12 @@ public class LectureEditController extends HttpServlet {
 		int lecture_num = Integer.parseInt(request.getParameter("lecture_num"));
 		LectureDao dao = new LectureDao();
 		LectureDto lecture = null;
+		ArrayList<String> teacherList = null;
 		try {
 			lecture = dao.selectOne(lecture_num);
+			dao = new LectureDao();
+			teacherList = dao.selectTeacher();
+			request.setAttribute("teacherList", teacherList);
 			request.setAttribute("lecture", lecture);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

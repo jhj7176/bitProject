@@ -8,9 +8,29 @@ public class LectureDto {
 	private Date start_day, end_day;
 	private int num, lecture_room,lecture_num, recruit_num;
 	
+
+
+	
+	public LectureDto(int num, int lecture_room, int lecture_num,
+			String lecture_name, String name, Date start_day, Date end_day) {
+		super();
+		this.num = num;
+		this.lecture_room = lecture_room;
+		this.lecture_num = lecture_num;
+		this.lecture_name = lecture_name;
+		this.name = name;
+		this.start_day = start_day;
+		this.end_day = end_day;
+	}
+
 	
 	
-	
+	public LectureDto() {
+		// TODO Auto-generated constructor stub
+	}
+
+
+
 	public int getRecruit_num() {
 		return recruit_num;
 	}
