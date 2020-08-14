@@ -1,0 +1,1444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" always-add-relationships="true" generalizations="true" realizations="true" 
+  associations="true" dependencies="true" nesting-relationships="true" router="FAN">  
+  <package id="1" language="java" name="com.bitjeju.lms.sales.assign.contoller" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/sales/assign/contoller" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="13008" y="164"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="2" language="java" name="com.bitjeju.lms.teacher.att.model" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/teacher/att/model" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="12067" y="357"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="3" language="java" name="com.bitjeju.lms.teacher.stu.controller" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/teacher/stu/controller" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3638" y="164"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="4" language="java" name="com.bitjeju.lms.student.grade.model.StuGradeDto" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/student/grade/model/StuGradeDto.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="4239" y="1536"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="com.bitjeju.lms.teacher.stu.controller.StuListController" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/teacher/stu/controller/StuListController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="5147" y="188"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="com.bitjeju.lms.staff.lecture.model.LectureDao" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/staff/lecture/model/LectureDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="14963" y="1178"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="com.bitjeju.lms.sales.recruit.model.RecruitDto" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/sales/recruit/model/RecruitDto.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="13013" y="907"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="8" language="java" name="com.bitjeju.lms.student.lecture.controller" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/student/lecture/controller" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2789" y="164"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="9" language="java" name="com.bitjeju.mypage.controller.MypageController" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/mypage/controller/MypageController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="4165" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="com.bitjeju.lms.staff.account.controller.AccountDeleteContrller" 
+    project="bitjeju" file="/bitjeju/src/com/bitjeju/lms/staff/account/controller/AccountDeleteContrller.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="5801" y="215"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="com.bitjeju.lms.staff.account.controller.AccountDetailController" 
+    project="bitjeju" file="/bitjeju/src/com/bitjeju/lms/staff/account/controller/AccountDetailController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="5473" y="206"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="com.bitjeju.lms.student.attendance.model.StuAttDto" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/student/attendance/model/StuAttDto.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2267" y="2081"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="com.bitjeju.lms.teacher.stu.controller.AttStuListController" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/teacher/stu/controller/AttStuListController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="9155" y="188"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="com.bitjeju.lms.staff.lecture.controller.LectureAddController" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/staff/lecture/controller/LectureAddController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="14578" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="com.bitjeju.lms.staff.student.controller.StudentDeleteController" 
+    project="bitjeju" file="/bitjeju/src/com/bitjeju/lms/staff/student/controller/StudentDeleteController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="10137" y="206"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="16" language="java" name="com.bitjeju.lms.sales.recruit.model" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/sales/recruit/model" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="13646" y="357"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="17" language="java" name="com.bitjeju.lms.staff.lecture.controller" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/staff/lecture/controller" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3078" y="164"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="18" language="java" name="com.bitjeju.lms.sales.assign.model" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/sales/assign/model" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="13360" y="357"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="19" language="java" name="com.bitjeju.member" project="bitjeju" file="/bitjeju/src/com/bitjeju/member" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="4301" y="766"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="20" language="java" name="com.bitjeju.lms.teacher.att.model.AttendanceDto" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/teacher/att/model/AttendanceDto.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="11407" y="925"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="com.bitjeju.lms.sales.assign.model.AssignDao" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/sales/assign/model/AssignDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="16550" y="476"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="22" language="java" name="com.bitjeju.main" project="bitjeju" file="/bitjeju/src/com/bitjeju/main" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="594" y="164"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="23" language="java" name="com.bitjeju.login.controller.LoginController" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/login/controller/LoginController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="4493" y="206"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="com.bitjeju.lms.teacher.att.controller.AttSearchByDateController" 
+    project="bitjeju" file="/bitjeju/src/com/bitjeju/lms/teacher/att/controller/AttSearchByDateController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="11121" y="188"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="25" language="java" name="com.bitjeju.lms.teacher.grade.controller" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/teacher/grade/controller" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3155" y="357"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="26" language="java" name="com.bitjeju.lms.sales.assign.contoller.AssginStuDetailController" 
+    project="bitjeju" file="/bitjeju/src/com/bitjeju/lms/sales/assign/contoller/AssginStuDetailController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="9809" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="com.bitjeju.lms.sales.recruit.controller.RecruitDeleteController" 
+    project="bitjeju" file="/bitjeju/src/com/bitjeju/lms/sales/recruit/controller/RecruitDeleteController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="12377" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="28" language="java" name="com.bitjeju.lms.staff.student.controller.StudentListController" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/staff/student/controller/StudentListController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="4821" y="206"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" name="com.bitjeju.signup.controller.SignUpError" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/signup/controller/SignUpError.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="837" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="com.bitjeju.lms.teacher.stu.controller.StuDetailController" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/teacher/stu/controller/StuDetailController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="10465" y="206"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="31" language="java" name="com.bitjeju.lms" project="bitjeju" file="/bitjeju/src/com/bitjeju/lms" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="4136" y="357"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="32" language="java" name="com.bitjeju.lms.sales.recruit.controller.RecruitFileController" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/sales/recruit/controller/RecruitFileController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="13922" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="33" language="java" name="com.bitjeju.mypage.controller.MypageEditPhoneController" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/mypage/controller/MypageEditPhoneController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="6129" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="34" language="java" name="com.bitjeju.lms.sales.recruit.model.RecruitDao" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/sales/recruit/model/RecruitDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="13011" y="444"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="35" language="java" name="com.bitjeju.lms.sales.recruit.controller.RecruitDetailController" 
+    project="bitjeju" file="/bitjeju/src/com/bitjeju/lms/sales/recruit/controller/RecruitDetailController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="14250" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="36" language="java" name="com.bitjeju.lms.staff.student.controller" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/staff/student/controller" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3359" y="164"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="37" language="java" name="com.bitjeju.mypage.controller" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/mypage/controller" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="6409" y="164"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="38" language="java" name="com.bitjeju.lms.student.attendance.controller.StuAttListController" 
+    project="bitjeju" file="/bitjeju/src/com/bitjeju/lms/student/attendance/controller/StuAttListController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1941" y="399"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="39" language="java" name="com.bitjeju.lms.staff.account.controller.AccountAddController" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/staff/account/controller/AccountAddController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="6689" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="40" language="java" name="com.bitjeju.lms.student.grade.controller.StuGradeController" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/student/grade/controller/StuGradeController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3792" y="399"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="41" language="java" name="com.bitjeju.signup.controller.IDoverlapCheck" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/signup/controller/IDoverlapCheck.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="7017" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="42" language="java" name="com.bitjeju.lms.teacher.stu.model.StudentDto" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/teacher/stu/model/StudentDto.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="9767" y="1240"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="43" language="java" name="com.bitjeju.login.controller" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/login/controller" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="8600" y="164"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="44" language="java" name="com.bitjeju.lms.teacher.att.controller.AttListController" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/teacher/att/controller/AttListController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="10793" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="45" language="java" name="com.bitjeju.lms.teacher.grade.model" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/teacher/grade/model" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3145" y="766"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="46" language="java" name="com.bitjeju.lms.sales.recruit.controller.RecruitEditController" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/sales/recruit/controller/RecruitEditController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="13311" y="206"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="47" language="java" name="com.bitjeju.lms.student.attendance.model.StuAttDao" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/student/attendance/model/StuAttDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1986" y="826"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="48" language="java" name="com.bitjeju.lms.teacher.att.controller.AttSearchByNameController" 
+    project="bitjeju" file="/bitjeju/src/com/bitjeju/lms/teacher/att/controller/AttSearchByNameController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="11777" y="188"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="49" language="java" name="com.bitjeju.lms.student.attendance.controller" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/student/attendance/controller" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2589" y="357"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="50" language="java" name="com.bitjeju.lms.teacher.stu.model.StudentDao" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/teacher/stu/model/StudentDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="9431" y="426"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="51" language="java" name="com.bitjeju.lms.sales.recruit.controller.RecruitListController" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/sales/recruit/controller/RecruitListController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="15562" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="52" language="java" name="com.bitjeju.lms.teacher.att.controller" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/teacher/att/controller" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="12077" y="164"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="53" language="java" name="com.bitjeju.lms.teacher.grade.model.GradeDto" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/teacher/grade/model/GradeDto.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3382" y="1991"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="54" language="java" name="com.bitjeju.mypage.controller.MypageEditValidationController" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/mypage/controller/MypageEditValidationController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="7345" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="55" language="java" name="com.bitjeju.lms.staff.account.controller.AccountEditController" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/staff/account/controller/AccountEditController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="8329" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="56" language="java" name="com.bitjeju.signup.controller.SignedUp" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/signup/controller/SignedUp.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1165" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="57" language="java" name="com.bitjeju.lms.student.grade.model.StuGradeDao" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/student/grade/model/StuGradeDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="4108" y="817"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="58" language="java" name="com.bitjeju.lms.staff.lecture.model.LectureDto" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/staff/lecture/model/LectureDto.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="14235" y="1272"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="59" language="java" name="com.bitjeju.lms.staff.lecture.controller.LectureDetailController" 
+    project="bitjeju" file="/bitjeju/src/com/bitjeju/lms/staff/lecture/controller/LectureDetailController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="15890" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="60" language="java" name="com.bitjeju.signup.controller.SignUp" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/signup/controller/SignUp.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="7673" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="61" language="java" name="com.bitjeju.member.MemberDto" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/member/MemberDto.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="4942" y="1415"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="62" language="java" name="com.bitjeju.lms.staff.lecture.controller.LectureListController" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/staff/lecture/controller/LectureListController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="16218" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="63" language="java" name="com.bitjeju.member.MemberDao" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/member/MemberDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="5968" y="1226"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="64" language="java" name="com.bitjeju.lms.teacher.att.model.AttendanceDao" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/teacher/att/model/AttendanceDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="11152" y="453"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="65" language="java" name="com.bitjeju.lms.staff.lecture.controller.LectureEditController" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/staff/lecture/controller/LectureEditController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="16546" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="66" language="java" name="com.bitjeju.lms.staff.student.controller.StudentDetailController" 
+    project="bitjeju" file="/bitjeju/src/com/bitjeju/lms/staff/student/controller/StudentDetailController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="9481" y="206"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="67" language="java" name="com.bitjeju.lms.staff.account.controller" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/staff/account/controller" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="8850" y="164"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="68" language="java" name="com.bitjeju.lms.sales.assign.model.AssignDto" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/sales/assign/model/AssignDto.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="16553" y="1046"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="69" language="java" name="com.bitjeju.lms.student.attendance.controller.StuAttDetailController" 
+    project="bitjeju" file="/bitjeju/src/com/bitjeju/lms/student/attendance/controller/StuAttDetailController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2267" y="381"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="70" language="java" name="com.bitjeju.lms.student.grade.model" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/student/grade/model" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="5365" y="766"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="71" language="java" name="com.bitjeju.lms.staff.lecture.model" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/staff/lecture/model" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2880" y="357"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="72" language="java" name="com.bitjeju.main.MainController" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/main/MainController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1493" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="73" language="java" name="com.bitjeju.lms.teacher.att.controller.AttUpdateController" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/teacher/att/controller/AttUpdateController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="11449" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="74" language="java" name="com.bitjeju.lms.sales.assign.contoller.AssignStuUpdateController" 
+    project="bitjeju" file="/bitjeju/src/com/bitjeju/lms/sales/assign/contoller/AssignStuUpdateController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="16874" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="75" language="java" name="com.bitjeju.lms.sales.recruit.controller.RecruitFileDetailController" 
+    project="bitjeju" file="/bitjeju/src/com/bitjeju/lms/sales/recruit/controller/RecruitFileDetailController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="12705" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="76" language="java" name="com.bitjeju.lms.sales.recruit.controller" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/sales/recruit/controller" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="13616" y="164"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="77" language="java" name="com.bitjeju.lms.student.grade.controller" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/student/grade/controller" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="5335" y="357"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="78" language="java" name="com.bitjeju.lms.sales.assign.contoller.AssignListController" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/sales/assign/contoller/AssignListController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="17202" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="79" language="java" name="com.bitjeju.lms.staff.lecture.controller.LectureDeleteController" 
+    project="bitjeju" file="/bitjeju/src/com/bitjeju/lms/staff/lecture/controller/LectureDeleteController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="14906" y="215"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="80" language="java" name="com.bitjeju.lms.student.lecture.controller.StuLectureController" 
+    project="bitjeju" file="/bitjeju/src/com/bitjeju/lms/student/lecture/controller/StuLectureController.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="15234" y="206"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="81" language="java" name="com.bitjeju.mypage.controller.MypageEdit" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/mypage/controller/MypageEdit.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1821" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="82" language="java" name="com.bitjeju.lms.staff.account.controller.AccountListController" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/staff/account/controller/AccountListController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="8001" y="206"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="83" language="java" name="com.bitjeju.lms.teacher.grade.model.GradeDao" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/teacher/grade/model/GradeDao.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3396" y="826"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="84" language="java" name="com.bitjeju.signup.controller.SignUpAgree" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/signup/controller/SignUpAgree.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2149" y="197"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="85" language="java" name="com.bitjeju.lms.LmsController" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/LmsController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="4714" y="399"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="86" language="java" name="com.bitjeju.login.controller.LogoutController" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/login/controller/LogoutController.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2477" y="206"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <package id="87" language="java" name="com.bitjeju.lms.student.attendance.model" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/student/attendance/model" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="2579" y="766"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="88" language="java" name="com.bitjeju.signup.controller" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/signup/controller" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3888" y="164"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <package id="89" language="java" name="com.bitjeju.lms.teacher.stu.model" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/teacher/stu/model" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="4380" y="357"/>    
+    <display autosize="true" stereotype="true" sort-features="false" accessors="true"/>  
+  </package>  
+  <class id="90" language="java" name="com.bitjeju.lms.teacher.grade.controller.GradeController" project="bitjeju" 
+    file="/bitjeju/src/com/bitjeju/lms/teacher/grade/controller/GradeController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="3464" y="390"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <dependency id="91">    
+    <bendpoint x="4930" y="332"/>    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="61"/>  
+  </dependency>  
+  <dependency id="92">    
+    <end type="SOURCE" refId="74"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <dependency id="93">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="50"/>  
+  </dependency>  
+  <dependency id="94">    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="95">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="71"/>  
+  </dependency>  
+  <dependency id="96">    
+    <end type="SOURCE" refId="64"/>    
+    <end type="TARGET" refId="20"/>  
+  </dependency>  
+  <dependency id="97">    
+    <bendpoint x="6833" y="332"/>    
+    <end type="SOURCE" refId="67"/>    
+    <end type="TARGET" refId="61"/>  
+  </dependency>  
+  <dependency id="98">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="45"/>  
+  </dependency>  
+  <dependency id="99">    
+    <end type="SOURCE" refId="40"/>    
+    <end type="TARGET" refId="57"/>  
+  </dependency>  
+  <dependency id="100">    
+    <end type="SOURCE" refId="21"/>    
+    <end type="TARGET" refId="68"/>  
+  </dependency>  
+  <dependency id="101">    
+    <end type="SOURCE" refId="65"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="102">    
+    <end type="SOURCE" refId="55"/>    
+    <end type="TARGET" refId="63"/>  
+  </dependency>  
+  <dependency id="103">    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="63"/>  
+  </dependency>  
+  <dependency id="104">    
+    <end type="SOURCE" refId="85"/>    
+    <end type="TARGET" refId="61"/>  
+  </dependency>  
+  <dependency id="105">    
+    <bendpoint x="5137" y="332"/>    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="58"/>  
+  </dependency>  
+  <dependency id="106">    
+    <end type="SOURCE" refId="77"/>    
+    <end type="TARGET" refId="57"/>  
+  </dependency>  
+  <dependency id="107">    
+    <end type="SOURCE" refId="49"/>    
+    <end type="TARGET" refId="87"/>  
+  </dependency>  
+  <dependency id="108">    
+    <bendpoint x="10989" y="332"/>    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="20"/>  
+  </dependency>  
+  <dependency id="109">    
+    <end type="SOURCE" refId="67"/>    
+    <end type="TARGET" refId="63"/>  
+  </dependency>  
+  <dependency id="110">    
+    <end type="SOURCE" refId="82"/>    
+    <end type="TARGET" refId="63"/>  
+  </dependency>  
+  <dependency id="111">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="63"/>  
+  </dependency>  
+  <dependency id="112">    
+    <bendpoint x="6976" y="332"/>    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="61"/>  
+  </dependency>  
+  <dependency id="113">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="19"/>  
+  </dependency>  
+  <dependency id="114">    
+    <end type="SOURCE" refId="37"/>    
+    <end type="TARGET" refId="63"/>  
+  </dependency>  
+  <dependency id="115">    
+    <end type="SOURCE" refId="89"/>    
+    <end type="TARGET" refId="61"/>  
+  </dependency>  
+  <dependency id="116">    
+    <bendpoint x="4888" y="332"/>    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="61"/>  
+  </dependency>  
+  <dependency id="117">    
+    <bendpoint x="4242" y="332"/>    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="19"/>  
+  </dependency>  
+  <dependency id="118">    
+    <bendpoint x="6536" y="332"/>    
+    <end type="SOURCE" refId="67"/>    
+    <end type="TARGET" refId="19"/>  
+  </dependency>  
+  <dependency id="119">    
+    <bendpoint x="4029" y="332"/>    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="61"/>  
+  </dependency>  
+  <dependency id="120">    
+    <end type="SOURCE" refId="57"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="121">    
+    <bendpoint x="11478" y="332"/>    
+    <end type="SOURCE" refId="48"/>    
+    <end type="TARGET" refId="20"/>  
+  </dependency>  
+  <dependency id="122">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="63"/>  
+  </dependency>  
+  <dependency id="123">    
+    <end type="SOURCE" refId="59"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="124">    
+    <bendpoint x="14607" y="332"/>    
+    <end type="SOURCE" refId="80"/>    
+    <end type="TARGET" refId="58"/>  
+  </dependency>  
+  <dependency id="125">    
+    <end type="SOURCE" refId="83"/>    
+    <end type="TARGET" refId="53"/>  
+  </dependency>  
+  <dependency id="126">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="61"/>  
+  </dependency>  
+  <dependency id="127">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="50"/>  
+  </dependency>  
+  <dependency id="128">    
+    <end type="SOURCE" refId="49"/>    
+    <end type="TARGET" refId="61"/>  
+  </dependency>  
+  <dependency id="129">    
+    <end type="SOURCE" refId="78"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <dependency id="130">    
+    <end type="SOURCE" refId="46"/>    
+    <end type="TARGET" refId="34"/>  
+  </dependency>  
+  <dependency id="131">    
+    <end type="SOURCE" refId="38"/>    
+    <end type="TARGET" refId="47"/>  
+  </dependency>  
+  <dependency id="132">    
+    <bendpoint x="4951" y="332"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="58"/>  
+  </dependency>  
+  <dependency id="133">    
+    <bendpoint x="6515" y="332"/>    
+    <end type="SOURCE" refId="55"/>    
+    <end type="TARGET" refId="61"/>  
+  </dependency>  
+  <dependency id="134">    
+    <end type="SOURCE" refId="60"/>    
+    <end type="TARGET" refId="63"/>  
+  </dependency>  
+  <dependency id="135">    
+    <bendpoint x="4050" y="332"/>    
+    <end type="SOURCE" refId="36"/>    
+    <end type="TARGET" refId="19"/>  
+  </dependency>  
+  <dependency id="136">    
+    <end type="SOURCE" refId="36"/>    
+    <end type="TARGET" refId="63"/>  
+  </dependency>  
+  <dependency id="137">    
+    <bendpoint x="13951" y="332"/>    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="58"/>  
+  </dependency>  
+  <dependency id="138">    
+    <end type="SOURCE" refId="47"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
+  <dependency id="139">    
+    <bendpoint x="2999" y="741"/>    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="53"/>  
+  </dependency>  
+  <dependency id="140">    
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="61"/>  
+  </dependency>  
+  <dependency id="141">    
+    <bendpoint x="1837" y="741"/>    
+    <end type="SOURCE" refId="38"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
+  <dependency id="142">    
+    <bendpoint x="2296" y="741"/>    
+    <end type="SOURCE" refId="49"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
+  <dependency id="143">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="144">    
+    <bendpoint x="12263" y="332"/>    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="42"/>  
+  </dependency>  
+  <dependency id="145">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="50"/>  
+  </dependency>  
+  <dependency id="146">    
+    <bendpoint x="4221" y="332"/>    
+    <end type="SOURCE" refId="36"/>    
+    <end type="TARGET" refId="61"/>  
+  </dependency>  
+  <dependency id="147">    
+    <end type="SOURCE" refId="36"/>    
+    <end type="TARGET" refId="89"/>  
+  </dependency>  
+  <dependency id="148">    
+    <end type="SOURCE" refId="79"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="149">    
+    <end type="SOURCE" refId="76"/>    
+    <end type="TARGET" refId="16"/>  
+  </dependency>  
+  <dependency id="150">    
+    <bendpoint x="12242" y="332"/>    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <dependency id="151">    
+    <bendpoint x="11642" y="332"/>    
+    <end type="SOURCE" refId="52"/>    
+    <end type="TARGET" refId="20"/>  
+  </dependency>  
+  <dependency id="152">    
+    <end type="SOURCE" refId="49"/>    
+    <end type="TARGET" refId="47"/>  
+  </dependency>  
+  <dependency id="153">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="154">    
+    <bendpoint x="2134" y="741"/>    
+    <end type="SOURCE" refId="69"/>    
+    <end type="TARGET" refId="12"/>  
+  </dependency>  
+  <dependency id="155">    
+    <end type="SOURCE" refId="77"/>    
+    <end type="TARGET" refId="19"/>  
+  </dependency>  
+  <dependency id="156">    
+    <end type="SOURCE" refId="43"/>    
+    <end type="TARGET" refId="63"/>  
+  </dependency>  
+  <dependency id="157">    
+    <bendpoint x="4909" y="332"/>    
+    <end type="SOURCE" refId="36"/>    
+    <end type="TARGET" refId="42"/>  
+  </dependency>  
+  <dependency id="158">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="63"/>  
+  </dependency>  
+  <dependency id="159">    
+    <bendpoint x="5158" y="332"/>    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="61"/>  
+  </dependency>  
+  <dependency id="160">    
+    <end type="SOURCE" refId="38"/>    
+    <end type="TARGET" refId="61"/>  
+  </dependency>  
+  <dependency id="161">    
+    <bendpoint x="3522" y="741"/>    
+    <end type="SOURCE" refId="90"/>    
+    <end type="TARGET" refId="53"/>  
+  </dependency>  
+  <dependency id="162">    
+    <bendpoint x="14935" y="332"/>    
+    <end type="SOURCE" refId="59"/>    
+    <end type="TARGET" refId="58"/>  
+  </dependency>  
+  <dependency id="163">    
+    <bendpoint x="10002" y="332"/>    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="42"/>  
+  </dependency>  
+  <dependency id="164">    
+    <end type="SOURCE" refId="36"/>    
+    <end type="TARGET" refId="50"/>  
+  </dependency>  
+  <dependency id="165">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="89"/>  
+  </dependency>  
+  <dependency id="166">    
+    <bendpoint x="15099" y="332"/>    
+    <end type="SOURCE" refId="62"/>    
+    <end type="TARGET" refId="58"/>  
+  </dependency>  
+  <dependency id="167">    
+    <bendpoint x="5179" y="332"/>    
+    <end type="SOURCE" refId="37"/>    
+    <end type="TARGET" refId="19"/>  
+  </dependency>  
+  <dependency id="168">    
+    <end type="SOURCE" refId="76"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="169">    
+    <bendpoint x="4993" y="332"/>    
+    <end type="SOURCE" refId="28"/>    
+    <end type="TARGET" refId="61"/>  
+  </dependency>  
+  <dependency id="170">    
+    <end type="SOURCE" refId="63"/>    
+    <end type="TARGET" refId="61"/>  
+  </dependency>  
+  <dependency id="171">    
+    <bendpoint x="9674" y="332"/>    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="42"/>  
+  </dependency>  
+  <dependency id="172">    
+    <end type="SOURCE" refId="66"/>    
+    <end type="TARGET" refId="50"/>  
+  </dependency>  
+  <dependency id="173">    
+    <end type="SOURCE" refId="88"/>    
+    <end type="TARGET" refId="63"/>  
+  </dependency>  
+  <dependency id="174">    
+    <end type="SOURCE" refId="77"/>    
+    <end type="TARGET" refId="70"/>  
+  </dependency>  
+  <dependency id="175">    
+    <end type="SOURCE" refId="76"/>    
+    <end type="TARGET" refId="71"/>  
+  </dependency>  
+  <dependency id="176">    
+    <bendpoint x="6380" y="332"/>    
+    <end type="SOURCE" refId="82"/>    
+    <end type="TARGET" refId="61"/>  
+  </dependency>  
+  <dependency id="177">    
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="63"/>  
+  </dependency>  
+  <dependency id="178">    
+    <bendpoint x="6401" y="332"/>    
+    <end type="SOURCE" refId="43"/>    
+    <end type="TARGET" refId="19"/>  
+  </dependency>  
+  <dependency id="179">    
+    <bendpoint x="13134" y="332"/>    
+    <end type="SOURCE" refId="46"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <dependency id="180">    
+    <end type="SOURCE" refId="69"/>    
+    <end type="TARGET" refId="47"/>  
+  </dependency>  
+  <dependency id="181">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="58"/>  
+  </dependency>  
+  <dependency id="182">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="21"/>  
+  </dependency>  
+  <dependency id="183">    
+    <bendpoint x="5014" y="332"/>    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="61"/>  
+  </dependency>  
+  <dependency id="184">    
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="19"/>  
+  </dependency>  
+  <dependency id="185">    
+    <bendpoint x="13155" y="332"/>    
+    <end type="SOURCE" refId="80"/>    
+    <end type="TARGET" refId="61"/>  
+  </dependency>  
+  <dependency id="186">    
+    <end type="SOURCE" refId="73"/>    
+    <end type="TARGET" refId="64"/>  
+  </dependency>  
+  <dependency id="187">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="63"/>  
+  </dependency>  
+  <dependency id="188">    
+    <end type="SOURCE" refId="90"/>    
+    <end type="TARGET" refId="61"/>  
+  </dependency>  
+  <dependency id="189">    
+    <bendpoint x="4539" y="332"/>    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="61"/>  
+  </dependency>  
+  <dependency id="190">    
+    <end type="SOURCE" refId="51"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="191">    
+    <end type="SOURCE" refId="90"/>    
+    <end type="TARGET" refId="83"/>  
+  </dependency>  
+  <dependency id="192">    
+    <end type="SOURCE" refId="46"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="193">    
+    <end type="SOURCE" refId="33"/>    
+    <end type="TARGET" refId="63"/>  
+  </dependency>  
+  <dependency id="194">    
+    <bendpoint x="9556" y="332"/>    
+    <end type="SOURCE" refId="66"/>    
+    <end type="TARGET" refId="42"/>  
+  </dependency>  
+  <dependency id="195">    
+    <bendpoint x="3845" y="741"/>    
+    <end type="SOURCE" refId="40"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="196">    
+    <end type="SOURCE" refId="50"/>    
+    <end type="TARGET" refId="61"/>  
+  </dependency>  
+  <dependency id="197">    
+    <end type="SOURCE" refId="80"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="198">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="63"/>  
+  </dependency>  
+  <dependency id="199">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="63"/>  
+  </dependency>  
+  <dependency id="200">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="201">    
+    <bendpoint x="13504" y="332"/>    
+    <end type="SOURCE" refId="76"/>    
+    <end type="TARGET" refId="58"/>  
+  </dependency>  
+  <dependency id="202">    
+    <bendpoint x="13197" y="332"/>    
+    <end type="SOURCE" refId="76"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <dependency id="203">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="89"/>  
+  </dependency>  
+  <dependency id="204">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="50"/>  
+  </dependency>  
+  <dependency id="205">    
+    <bendpoint x="14771" y="332"/>    
+    <end type="SOURCE" refId="51"/>    
+    <end type="TARGET" refId="58"/>  
+  </dependency>  
+  <dependency id="206">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="18"/>  
+  </dependency>  
+  <dependency id="207">    
+    <end type="SOURCE" refId="75"/>    
+    <end type="TARGET" refId="34"/>  
+  </dependency>  
+  <dependency id="208">    
+    <bendpoint x="4972" y="332"/>    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="42"/>  
+  </dependency>  
+  <dependency id="209">    
+    <bendpoint x="13176" y="332"/>    
+    <end type="SOURCE" refId="46"/>    
+    <end type="TARGET" refId="58"/>  
+  </dependency>  
+  <dependency id="210">    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="211">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="64"/>  
+  </dependency>  
+  <dependency id="212">    
+    <end type="SOURCE" refId="48"/>    
+    <end type="TARGET" refId="64"/>  
+  </dependency>  
+  <dependency id="213">    
+    <end type="SOURCE" refId="62"/>    
+    <end type="TARGET" refId="6"/>  
+  </dependency>  
+  <dependency id="214">    
+    <bendpoint x="5965" y="332"/>    
+    <end type="SOURCE" refId="37"/>    
+    <end type="TARGET" refId="61"/>  
+  </dependency>  
+  <dependency id="215">    
+    <end type="SOURCE" refId="89"/>    
+    <end type="TARGET" refId="19"/>  
+  </dependency>  
+  <dependency id="216">    
+    <end type="SOURCE" refId="77"/>    
+    <end type="TARGET" refId="61"/>  
+  </dependency>  
+  <dependency id="217">    
+    <bendpoint x="9838" y="332"/>    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="42"/>  
+  </dependency>  
+  <dependency id="218">    
+    <bendpoint x="10968" y="332"/>    
+    <end type="SOURCE" refId="44"/>    
+    <end type="TARGET" refId="20"/>  
+  </dependency>  
+  <dependency id="219">    
+    <bendpoint x="12749" y="332"/>    
+    <end type="SOURCE" refId="75"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <dependency id="220">    
+    <bendpoint x="3966" y="332"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="19"/>  
+  </dependency>  
+  <dependency id="221">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="50"/>  
+  </dependency>  
+  <dependency id="222">    
+    <bendpoint x="11314" y="332"/>    
+    <end type="SOURCE" refId="73"/>    
+    <end type="TARGET" refId="20"/>  
+  </dependency>  
+  <dependency id="223">    
+    <bendpoint x="14115" y="332"/>    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="58"/>  
+  </dependency>  
+  <dependency id="224">    
+    <end type="SOURCE" refId="44"/>    
+    <end type="TARGET" refId="64"/>  
+  </dependency>  
+  <dependency id="225">    
+    <end type="SOURCE" refId="52"/>    
+    <end type="TARGET" refId="64"/>  
+  </dependency>  
+  <dependency id="226">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="71"/>  
+  </dependency>  
+  <dependency id="227">    
+    <end type="SOURCE" refId="54"/>    
+    <end type="TARGET" refId="63"/>  
+  </dependency>  
+  <dependency id="228">    
+    <bendpoint x="3987" y="332"/>    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="61"/>  
+  </dependency>  
+  <dependency id="229">    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="7"/>  
+  </dependency>  
+  <dependency id="230">    
+    <end type="SOURCE" refId="41"/>    
+    <end type="TARGET" refId="63"/>  
+  </dependency>  
+  <dependency id="231">    
+    <bendpoint x="4518" y="332"/>    
+    <end type="SOURCE" refId="88"/>    
+    <end type="TARGET" refId="19"/>  
+  </dependency>  
+  <dependency id="232">    
+    <end type="SOURCE" refId="49"/>    
+    <end type="TARGET" refId="19"/>  
+  </dependency>  
+  <dependency id="233">    
+    <bendpoint x="17001" y="332"/>    
+    <end type="SOURCE" refId="78"/>    
+    <end type="TARGET" refId="68"/>  
+  </dependency>  
+  <dependency id="234">    
+    <bendpoint x="6726" y="332"/>    
+    <end type="SOURCE" refId="43"/>    
+    <end type="TARGET" refId="61"/>  
+  </dependency>  
+  <dependency id="235">    
+    <bendpoint x="15263" y="332"/>    
+    <end type="SOURCE" refId="65"/>    
+    <end type="TARGET" refId="58"/>  
+  </dependency>  
+  <dependency id="236">    
+    <end type="SOURCE" refId="52"/>    
+    <end type="TARGET" refId="2"/>  
+  </dependency>  
+  <dependency id="237">    
+    <bendpoint x="13218" y="332"/>    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="68"/>  
+  </dependency>  
+  <dependency id="238">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="50"/>  
+  </dependency>  
+  <dependency id="239">    
+    <end type="SOURCE" refId="76"/>    
+    <end type="TARGET" refId="34"/>  
+  </dependency>  
+  <dependency id="240">    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="34"/>  
+  </dependency>  
+  <dependency id="241">    
+    <end type="SOURCE" refId="27"/>    
+    <end type="TARGET" refId="34"/>  
+  </dependency>  
+  <dependency id="242">    
+    <end type="SOURCE" refId="40"/>    
+    <end type="TARGET" refId="61"/>  
+  </dependency>  
+  <dependency id="243">    
+    <end type="SOURCE" refId="50"/>    
+    <end type="TARGET" refId="42"/>  
+  </dependency>  
+  <dependency id="244">    
+    <bendpoint x="5219" y="741"/>    
+    <end type="SOURCE" refId="77"/>    
+    <end type="TARGET" refId="4"/>  
+  </dependency>  
+  <dependency id="245">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="63"/>  
+  </dependency>  
+  <dependency id="246">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="83"/>  
+  </dependency>  
+  <dependency id="247">    
+    <bendpoint x="4008" y="332"/>    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="19"/>  
+  </dependency>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
