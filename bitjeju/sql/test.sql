@@ -45,10 +45,13 @@ select * from (select num,lecture_name,name,start_day,lvl, rownum as rwn from (s
 delete from recruit;
 commit;
 
+select * from member;
+select grade.num,exam1,exam2,exam3, name from grade, (select num,name from  member where lvl=2 and lecture =
+(select lecture from member where num = 55)) m where grade.num=m.num;
 
 
 
 
-
+update member set lecture = '영업assign테스트' where name ='장영희';
 
 

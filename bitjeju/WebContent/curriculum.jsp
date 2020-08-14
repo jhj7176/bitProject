@@ -39,7 +39,7 @@
 }
 
 </style>
-<title>BITCAMP JEJU: LMS강사</title>
+<title>BITCAMP JEJU: 교육과정</title>
 </head>
 <body>
 	<%@ include file="template/header.jspf"%>
@@ -48,15 +48,11 @@
 		<!--*****************lms메뉴******************-->
 		<div class="grid2">
 			<div id="lmsmenu">
-				<p>강사</p>
+				<p>교육과정</p>
 				<ul>
-					<li class="bigletter">출결관리</li>
-					<li><a href="lmsteacherattendance.bit">출석체크</a></li>
-					<li><a href="lmsteacherattlist.bit">출석조회</a></li>
-					<li class="bigletter">수강생관리</li>
-					<li><a href="#">수강생정보</a></li>
-					<li><a href="#">성적입력</a></li>
-					<li><a href="#" class="bigletter">자료실</a></li>
+					<li class="bigletter">강좌정보</li>
+				<!-- 	<li><a href="lmsteacherattendance.bit">모집공고</a></li> -->
+
 					<li></li>
 				</ul>
 			</div>

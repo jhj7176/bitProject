@@ -4,28 +4,10 @@
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
  <link rel="stylesheet" type="text/css" href="css/bitgrid.css">   
 <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
-
-<%-- <%
-	String root = request.getContextPath()+"/";
-	System.out.println("path="+root);
-	pageContext.setAttribute("root", root);
-	MemberDto dto =null; //로그인 컨트롤러에서 setAttribute("login", bean)한 걸 받아옴. 
-	String loginfail = null;
-	try{
-	dto = (MemberDto)session.getAttribute("login");
-	loginfail = (String)request.getAttribute("loginFail"); //로그인컨트톨러에서 아이디비번 입력안했을때보내는값
-	System.out.println("fail"+loginfail);
-	System.out.println(dto.getLvl());
-	}catch(NullPointerException e){
-	}
-%>
- --%>
 <script type="text/javascript">
 
-
-$(function (){
- 	$('.gotolms').on('click', function(){ //LMS접속 버튼 눌렀을 때 처리
-		
+function goToLms(){ //LMS접속 버튼 눌렀을 때 처리
+	
 	   if("${login}"==''){	//세션에 회원정보가 없으면 로그인 필요.
 			console.log('로그인필요');	
 	    	alert('로그인이 필요합니다.');
@@ -38,7 +20,29 @@ $(function (){
 			console.log('lms로 이동');	
 			location.href="lms.bit";				
 	   }
-	});//lms접속버튼
+	}
+function goToHome(){
+	location.href='main.bit';
+}
+
+$(function (){
+	
+	//http://localhost:8080/bitjeju/lmssalesrecruitlist.bit
+	//28번째 문자 이후부터
+	var url_here = window.location.href;
+	console.log(url_here); //현재페이지 url매핑주소
+	if(url_here.includes('lms',28)){ //현재 url에 lms가 있다면 lms페이지이므로 lms접속버튼을 메인화면으로 나가는 버튼으로 바꾼다
+		$('#bitcampHome').text('BitCamp')
+	}else{
+		$('.gotolms').text('LMS system');
+	}
+	
+	if($('.gotolms').text()=='LMS system'){
+ 	$('.gotolms').on('click', goToLms);//lms접속버튼
+	}else if($('.gotolms').text()=='BitCamp'){
+ 	$('.gotolms').on('click', goToHome);//메인화면으로 나가기.
+	}
+	
 	
 	$('#formlogin').submit(function(){ //로그인버튼 눌렀을 때 이벤트.
 		var emailVal = $("#emailid").val();//id창에 입력된 값
@@ -69,7 +73,6 @@ $(function (){
 		return false;
 	});//submit
 
-	
 	//createaccount 회원가입 버튼
 	$('#createaccount').on('click',function(){
 		location.href='signupagree.bit'; //********개인정보동의 체크 페이지로 이동
@@ -78,6 +81,7 @@ $(function (){
 	$('#mypage').on('click',function(){
 		location.href='mypage.bit'; //************마이페이지로 이동함
 	});
+
 });//document.Ready
 	
 
@@ -262,7 +266,7 @@ $(function (){
         text-align: right;
     }
     #open{
-        font-size: 12px;
+        font-size: 11px;
         text-align: right;
     }
     #signin>p{

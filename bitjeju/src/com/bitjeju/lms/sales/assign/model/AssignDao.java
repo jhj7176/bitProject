@@ -52,7 +52,7 @@ public class AssignDao {
 		
 		String sql ="select * from (select num,lecture_name,name,start_day,lvl, rownum as rwn from (select m.num, name,"
 				+ "lecture_name,start_day,lvl from member m inner join lectures l on m.lecture=l.lecture_name where "
-				+ "lvl<3 and name like '%"+word+"%')) where rwn between "+startNum+" and "+endNum +" order by lvl asc";
+				+ "lvl<3 and m.lecture is not null and name like '%"+word+"%')) where rwn between "+startNum+" and "+endNum +" order by lvl asc";
 		
 		System.out.println(sql);
 

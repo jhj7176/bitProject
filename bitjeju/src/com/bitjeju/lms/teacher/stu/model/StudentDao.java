@@ -68,8 +68,9 @@ public class StudentDao {
 			bean.setExam1(rs.getInt("exam1"));
 			bean.setExam2(rs.getInt("exam2"));//성적들
 			bean.setExam3(rs.getInt("exam3"));
+			bean.setId_email(rs.getString("id_email"));
+			System.out.println(rs.getString("id_email"));
 		}
-		if(rs!=null)rs.close();
 		if(pstmt!=null)pstmt.close();
 		
 		
@@ -88,7 +89,6 @@ public class StudentDao {
 			bean.setLecture_room(rs.getInt("lecture_room"));//강의실
 			bean.setLecture_num(rs.getInt("lecture_num"));//강좌 고유번호
 		}
-		if(rs!=null)rs.close();
 		if(pstmt!=null)pstmt.close();
 		
 		
@@ -108,8 +108,8 @@ public class StudentDao {
 		bean.setAttNaljaList(attNaljaList);
 
 		
-		if(rs!=null)rs.close();
 		if(pstmt!=null)pstmt.close();
+		if(conn!=null)conn.close();
 		
 		return bean;
 	}//stuselectONE

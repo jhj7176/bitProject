@@ -4,7 +4,7 @@
         <div class="grid6">
             <ul>
                 <li><a href="#">비트캠프</a></li>
-                <li><a href="#">교육과정</a></li>
+                <li><a href="curriculum.jsp">교육과정</a></li>
                 <li><a href="#">취업지원</a></li>
                 <li><a href="#">고객센터</a></li>
             </ul>

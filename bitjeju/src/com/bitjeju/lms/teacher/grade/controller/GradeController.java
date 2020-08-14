@@ -10,18 +10,24 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.bitjeju.lms.teacher.grade.model.GradeDao;
 import com.bitjeju.lms.teacher.grade.model.GradeDto;
+import com.bitjeju.member.MemberDto;
 
 @WebServlet("/lmsteacherstugrade.bit")
 public class GradeController extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-		   try {
+		 
+		HttpSession session = request.getSession(false);
+		MemberDto bean = (MemberDto)session.getAttribute("login");
+
+		try {
 	         GradeDao dao=new GradeDao();
-	         ArrayList<GradeDto> list=dao.selectAll();
+	         ArrayList<GradeDto> list=dao.selectAll(bean.getNum());
 	         request.setAttribute("list", list);
 	      } catch (SQLException e) {
 	         e.printStackTrace();

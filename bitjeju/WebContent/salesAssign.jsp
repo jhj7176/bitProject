@@ -105,8 +105,10 @@
 </style>
 <script type="text/javascript">
 var pageNum, word, cardinality, start, end, lang;
-pageNum = <%=request.getAttribute("pageNum")%>;
-cardinality = <%=request.getAttribute("totalStudent")%>
+
+pageNum="${pageNum}";
+cardinality="${cardinality}";
+
 function pages(){	
 	var pageLink='';
 	for(var i=start; i<end; i++){//페이지 링크 번호 5개씩 생성.

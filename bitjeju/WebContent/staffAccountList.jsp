@@ -11,11 +11,9 @@
 
 <script type="text/javascript">
 	var pageNum, key, word, cardinality, start, end, lang;
-	pageNum =
-<%=request.getAttribute("pageNum")%>
-	;
-	cardinality =
-<%=request.getAttribute("totalMember")%>
+	pageNum = "${pageNum}";
+	cardinality = "${totalMember}";
+
 	function pages() {
 
 		var pageLink = '';

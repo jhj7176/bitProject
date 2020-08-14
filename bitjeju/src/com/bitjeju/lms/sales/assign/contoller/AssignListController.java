@@ -30,7 +30,6 @@ public class AssignListController extends HttpServlet {
 			//word=request.getParameter("word");
 			System.out.println("1st "+word);
 		}catch(NullPointerException e){
-			e.printStackTrace();
 		}finally{
 			if(word==null||word.trim()=="")word="";
 			System.out.println("2nd "+word);

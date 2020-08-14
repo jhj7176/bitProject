@@ -8,17 +8,6 @@
 <%@ include file="template/lmshead.jspf"%>
 <title>BITCAMP JEJU: 회원가입</title>
 
-<script type="text/javascript">
-
-
-$(function(){
-	
-
-
-});//ready
-
-</script>
-
 <style type="text/css">
 .lmscontent {
 	width: 600px;
@@ -108,15 +97,11 @@ $(function(){
 	phone number,							--전화번호
 	lecture varchar2(30),					--강좌명 
  -->
-
-
 				<table id="signuptable">
 					<tr>
 						<th></th>
 						<td>가입이 완료되었습니다.</td>
 					</tr>
-
-
 					<tr>
 						<th></th>
 						<td></td>

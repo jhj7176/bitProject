@@ -27,7 +27,7 @@
 	         	<br/><br/>
 	           <button id="logout" type="submit">로그아웃</button>
 	           <button id="mypage" type="button">내정보</button>
-	           <button class="gotolms" type="button">LMS system</button>
+	           <button id ="bitcampHome" class="gotolms" type="button">LMS system</button>
 	 	  </form>
 	    	
 	    

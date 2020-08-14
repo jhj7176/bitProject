@@ -67,7 +67,7 @@ $(function(){});
 				<ul>
 					<li class="bigletter">모집공고</li>
 					<li><a href="lmssalesrecruitlist.bit">강좌정보</a></li>
-					<li class="bigletter">수강생 관리</li>
+					<li class="bigletter">수강생관리</li>
 					<li><a href="lmssalesassign.bit">강좌배정</a></li>
 <!-- 					<li><a href="lmsstafflecturelist.bit">강좌정보</a></li>
 					<li class="bigletter">수강생관리</li>

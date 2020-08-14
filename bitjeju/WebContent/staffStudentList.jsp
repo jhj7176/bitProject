@@ -13,9 +13,9 @@
 <script type="text/javascript">
 
 var pageNum, key, word, cardinality, start, end, lang;
-pageNum = <%=request.getAttribute("pageNum")%>;
-cardinality = <%=request.getAttribute("totalStudent")%>
 
+pageNum = "${pageNum}";
+cardinality = "${totalStudent}"
 function pages(){
 	
 	var pageLink='';

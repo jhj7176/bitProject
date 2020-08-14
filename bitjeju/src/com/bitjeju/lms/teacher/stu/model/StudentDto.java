@@ -10,7 +10,7 @@ public class StudentDto {
 	private int num, lecture_room, lecture_num, exam1, exam2, exam3;
 	//학생 회원번호, 강의실 강좌번호,시험성적, 연락처
 	private Date start_day, end_day;
-	private String name, teacher_name, lecture_name, phone;
+	private String name, teacher_name, lecture_name, phone, id_email;
 	//학생이름, 강사이름, 강좌명
 	private ArrayList<String> attList;
 	//출석테이블 정보를 담은 리스트
@@ -19,6 +19,14 @@ public class StudentDto {
 
 
 
+
+	public String getId_email() {
+		return id_email;
+	}
+
+	public void setId_email(String id_email) {
+		this.id_email = id_email;
+	}
 
 	public String getLecture_name() {
 		return lecture_name;
