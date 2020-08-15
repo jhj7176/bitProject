@@ -9,8 +9,7 @@
 var pageNum, key, word, cardinality, start, end, lang;
 
 pageNum = "${pageNum}";
-cardinality ="${totalStudent}";
-
+cardinality = "${totalStudent}";
 
 function pages(){	
 	var pageLink='';
@@ -92,6 +91,12 @@ lang = 5; //한 페이지당 페이지 링크번호 수. 5개
 	width: 600px;
 	display: block;
 	margin: auto;
+}
+#lecname{
+	color: #787878;
+	font-size:14px;
+	font-weight:bold;
+	line-height:15px;
 }
 #paging .lmscontent { /* 이전 다음버튼 감싸는 div 버튼중앙 */
 	width: 100px;
@@ -190,7 +195,7 @@ lang = 5; //한 페이지당 페이지 링크번호 수. 5개
    <!--*****************lms메뉴******************-->
        <div class="grid2">
         <div id="lmsmenu">
-            <p>강사</p>
+             <p>강사<br><span id="lecname">${login.lecture }</span></p>
             <ul>
                 <li class="bigletter">출결관리</li>
                 <li>
@@ -214,7 +219,7 @@ lang = 5; //한 페이지당 페이지 링크번호 수. 5개
         </div>
        </div>
         <!--*****************lms메뉴******************-->
-       <div id="content" class="grid6">&nbsp;
+       <div  id="content" class="grid6">&nbsp;
        <!--*************content start****************-->
       	<div class="lmscontent">
 				<h2>수강생관리</h2>
@@ -235,24 +240,23 @@ lang = 5; //한 페이지당 페이지 링크번호 수. 5개
 				</table>
 			</div>
 			<div id=paging>			
-			<div class="lmscontent">&nbsp;
-				<button id="studentprev">이전</button>			
-			</div>
-			<div id="pagenum" class="lmscontent"></div>
-			<div class="lmscontent">&nbsp;
-				<button id="studentnext">다음</button>
-			</div>
+				<div class="lmscontent">&nbsp;
+					<button id="studentprev">이전</button>			
+				</div>
+				<div id="pagenum" class="lmscontent"></div>
+				<div class="lmscontent">&nbsp;
+					<button id="studentnext">다음</button>
+				</div>
 			</div>
 			<div  class="lmscontent">
-			
-			<form id="search" action="#">	
+				<form id="search" action="#">	
 				<select id="searchkey">
 				<option value="name" selected="selected">이름</option>
 				<option value="lecture">강좌명</option>
 				</select>
 				<input type="text" id="searchword" name="searchword"/>
 				<button type="submit" id="searchbtn">찾기</button>
-			</form>
+				</form>
 			</div>
        <!--*************content end******************-->
 <%@ include file="template/footer.jspf" %>

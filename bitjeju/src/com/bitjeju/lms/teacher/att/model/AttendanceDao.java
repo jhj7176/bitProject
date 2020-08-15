@@ -26,12 +26,13 @@ public class AttendanceDao {
 		}
 		conn=DriverManager.getConnection(url, user, password);
 	}
-	
-	public ArrayList<AttendanceDto> selectAll() throws SQLException{
+	public ArrayList<AttendanceDto> selectAll(int num) throws SQLException{
 		ArrayList<AttendanceDto> list=new ArrayList<AttendanceDto>();
-		String sql="select nalja, attendance.num,name,state from attendance,member where attendance.num=member.num order by nalja desc";
+		String sql="select nalja, attendance.num,name,state from attendance,member where attendance.num=member.num "
+				+ "and lecture=(select lecture from member where num=?) order by nalja desc, num asc";
 		try {
 			pstmt=conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
 				list.add(new AttendanceDto(rs.getDate("nalja"),rs.getInt("num"),rs.getString("name"),rs.getString("state")));
@@ -44,16 +45,17 @@ public class AttendanceDao {
 		
 		return list;
 	}
-	
 
-	public ArrayList<AttendanceDto> selectDate(Date nalja1, Date nalja2) throws SQLException{
+	public ArrayList<AttendanceDto> selectDate(Date nalja1, Date nalja2, int num) throws SQLException{
 		ArrayList<AttendanceDto> list=new ArrayList<AttendanceDto>();
-		String sql="select nalja, attendance.num,name,state from attendance,member where attendance.num=member.num"
-				+ " and nalja between ? and ? order by nalja desc, num asc";
+		String sql="select nalja, attendance.num,name,state from attendance,member where attendance.num=member.num "
+				+ "and nalja between ? and ? and lecture=(select lecture from member where num=?) "
+				+ "order by nalja desc, num asc";
 		try {
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setDate(1, nalja1);
 			pstmt.setDate(2, nalja2);
+			pstmt.setInt(3, num);
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
 				list.add(new AttendanceDto(rs.getDate("nalja"),rs.getInt("num"),rs.getString("name"),rs.getString("state")));
@@ -66,6 +68,7 @@ public class AttendanceDao {
 		
 		return list;
 	}
+	
 	public int insertAll(Date nalja,int num,String state) throws SQLException{
 		String sql="insert into attendance values (?,?,?)";
 		try{
@@ -80,15 +83,14 @@ public class AttendanceDao {
 		}
 	}
 	
-	public ArrayList<AttendanceDto> selectName(String name) throws SQLException{
+	public ArrayList<AttendanceDto> selectName(String name,int num) throws SQLException{
 		ArrayList<AttendanceDto> list=new ArrayList<AttendanceDto>();
-		String sql="select nalja, attendance.num,name,state from attendance,member where attendance.num=member.num"
-				+ " and name like ? order by nalja desc, num asc";
-		
-		String searchName = "%"+name+"%";
+		String sql="select nalja, attendance.num,name,state from attendance,member where attendance.num=member.num "
+				+ "and name=? and lecture=(select lecture from member where num=?) order by nalja desc, num asc";
 		try {
 			pstmt=conn.prepareStatement(sql);
-			pstmt.setString(1, searchName);
+			pstmt.setString(1, name);
+			pstmt.setInt(2, num);
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
 				list.add(new AttendanceDto(rs.getDate("nalja"),rs.getInt("num"),rs.getString("name"),rs.getString("state")));
@@ -101,6 +103,7 @@ public class AttendanceDao {
 		
 		return list;
 	}
+	
 
 	public AttendanceDto selectOne(int num, Date nalja) throws SQLException {
 		AttendanceDto bean=null;

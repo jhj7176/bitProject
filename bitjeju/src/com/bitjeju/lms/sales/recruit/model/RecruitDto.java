@@ -1,11 +1,30 @@
 package com.bitjeju.lms.sales.recruit.model;
 
+import java.sql.Date;
+
 public class RecruitDto {
 
 	private String recruit_name, recruit_file_name, recruit_state;
 	private int recruit_num;
+	private Date start_day, end_day;
 
 	
+	public Date getStart_day() {
+		return start_day;
+	}
+
+	public void setStart_day(Date start_day) {
+		this.start_day = start_day;
+	}
+
+	public Date getEnd_day() {
+		return end_day;
+	}
+
+	public void setEnd_day(Date end_day) {
+		this.end_day = end_day;
+	}
+
 	public RecruitDto() {
 		// TODO Auto-generated constructor stub
 	}
@@ -17,11 +36,16 @@ public class RecruitDto {
 		this.recruit_state = recruit_state;
 		this.recruit_num = recruit_num;
 	}
+
+
+	
 	@Override
 	public String toString() {
 		return "RecruitDto [recruit_name=" + recruit_name + ", recruit_file_name=" + recruit_file_name
-				+ ", recruit_state=" + recruit_state + ", recruit_num=" + recruit_num + "]";
+				+ ", recruit_state=" + recruit_state + ", recruit_num=" + recruit_num + ", start_day=" + start_day
+				+ ", end_day=" + end_day + "]";
 	}
+
 	public String getRecruit_name() {
 		return recruit_name;
 	}
@@ -46,8 +70,8 @@ public class RecruitDto {
 	public void setRecruit_num(int recruit_num) {
 		this.recruit_num = recruit_num;
 	}
-	
-	
+
+
 
 }
 

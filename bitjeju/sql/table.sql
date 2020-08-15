@@ -105,7 +105,7 @@ insert into lectures values ('안드로이드 개발자 과정',sysdate,sysdate,22,401,lec
 create table recruit (--모집공고게시판>>select * from lecture;>>모집공고 업로드하는 form>> 입력>>리쿠르트테이블에 insert
 	recruit_file_name varchar2(200),
 	recruit_num number primary key,	
-	foreign key(recruit_num) references lectures(lecture_num)
+	foreign key(recruit_num) references lectures(lecture_num) on delete cascade
 );
 insert into recruit values ('naver.png', 1);
 select * from recruit;

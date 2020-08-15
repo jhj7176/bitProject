@@ -14,11 +14,18 @@ $(function(){
 	  selectDate = $('#nalja').val();
 	  $('.nalja').val(selectDate);
 	  $('.nalja').css('display','none')
-	  
-	$('#nalja').on('change',function(){
-		selectDate = $('#nalja').val();
-	  	$('.nalja').val(selectDate);
-	})//날짜 input 클릭
+		var temp=$('.listnalja').text().substring(0, 10);
+	  if(temp==selectDate){
+		  $('#attchecktable').hide();
+		  $('#naljadiv').hide();
+		  $('#fin').hide();
+		  $('#attlist').show();
+	  }else{0
+		  $('#attchecktable').show();
+		  $('#naljadiv').show();
+		  $('#fin').show();
+		  $('#attlist').hide();		  
+	  }
 		
 });//READY
 </script>
@@ -31,21 +38,30 @@ $(function(){
 .lmscontent:last-child {
 	margin-bottom:300px;
 }
+#lecname{
+	color: #787878;
+	font-size:14px;
+	font-weight:bold;
+	line-height:15px;
+}
 #naljadiv{
 	padding: 10px;
 }
-#atttable{
+#nalja{	
+	border:1px solid white;
+}
+#atttable,#attlist{
 	text-align:center;
 	margin: 10px auto;
 	border-collapse:collapse;
 }
-#atttable th{
+#atttable th,#attlist th{
 	color:#1E3269;
 	padding:10px;
 	border-left:1px solid #e4e4e4;
 	text-align:center;
 }
-#atttable td{
+#atttable td,#attlist td{
 	border-left:1px solid #e4e4e4;
 	padding:25px;
 	text-align:center;
@@ -68,7 +84,7 @@ $(function(){
    <!--*****************lms메뉴******************-->
        <div class="grid2">
         <div id="lmsmenu">
-            <p>강사</p>
+            <p>강사<br><span id="lecname">${login.lecture }</span></p>
             <ul>
                 <li class="bigletter">출결관리</li>
                 <li>
@@ -99,11 +115,11 @@ $(function(){
 	   <h4>출석체크</h4>
 	   <div id="naljadiv">
 	      <label for="nalja">날짜</label>
-	      <input type="date" id="nalja" name="nalja" readonly="readonly">
+	      <input type="date" id="nalja" name="nalja" readonly>
 	   </div>
 	   <form method="post" action="lmsteacherattlist.bit">
 	   <div id="atttable">
-	      <table>
+	      <table id="attchecktable">
 	         <tr>
 	            <th>학번</th>
 	            <th>이름</th>
@@ -121,16 +137,32 @@ $(function(){
 	            </td>
 	            <td>
 		            <label for="ra">출석</label>
-		            <input required="required"  type="radio" class="state" name="state${bean.num }" value="출석">&nbsp;
+		            <input type="radio" class="state" name="state${bean.num }" value="출석" required>&nbsp;
 		            <label for="ra">&nbsp;지각</label>
-		            <input  required="required"  type="radio" class="state" name="state${bean.num }" value="지각">&nbsp;
+		            <input type="radio" class="state" name="state${bean.num }" value="지각">&nbsp;
 		            <label for="ra">&nbsp;조퇴</label>
-		            <input  required="required"  type="radio" class="state" name="state${bean.num }" value="조퇴">&nbsp;
+		            <input type="radio" class="state" name="state${bean.num }" value="조퇴">&nbsp;
 		            <label for="ra">&nbsp;결석</label>
-		            <input  required="required"  type="radio" class="state" name="state${bean.num }" value="결석">
+		            <input type="radio" class="state" name="state${bean.num }" value="결석">
 	             </td>
 	         </tr>
 	   </c:forEach>
+	      </table>
+	      <table id="attlist">
+	      		<tr>
+	      			<th>날짜</th>
+					<th>학번</th>
+					<th>이름</th>
+					<th>상태</th>
+	      		</tr>
+	      		<c:forEach items="${list2}" var="list2">
+	      		<tr>
+					<td class="listnalja">${list2.nalja }</td>
+					<td>${list2.num }</td>
+					<td>${list2.name }</td>
+					<td>${list2.state }</td>
+	      		</tr>
+	      		</c:forEach>
 	      </table>
 	   </div>
 	   <button id="fin">완료</button>

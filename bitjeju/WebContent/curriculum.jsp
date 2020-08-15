@@ -8,6 +8,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%@ include file="template/lmshead.jspf"%>
 
+
+<script type="text/javascript">
+
+function curriDetail(idx){
+	location.href='curriculumdetail.bit?idx='+idx;
+}
+
+$(function(){
+
+    
+});
+
+</script>
 <style type="text/css">
 #header .grid3{
 	margin-top:40px;
@@ -19,23 +32,81 @@
 	margin:auto;
 	width:750px;
 }
-
-.col-xs-4{
-	width:250px;
-	height:300px;
+.title_bar {/* 국비지원 */
+	margin-left:20px;
+    background-color: #041d79;
+    width: 4px;
+    height: 19px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.col-xs-4{ /*강좌들 전체  */
+	width:235px;
+	height:380px;
 	float:left;
 	display:block;
 	overflow:hidden;
 }
-.thumbnail{
-	width:240px;
-	height:280px;
+.thumbnail{/* 강좌 전체 */
+	width:215px;
+	height:340px;
+	border: 1px solid rgb(221, 221, 221);
+	border-radius: 5px;
+	transition-duration: 1s;
 }
-.thumbnail:hover{
-	background-color:aliceblue;
+.thumbnail:hover{		/* 강좌 테두리 반짝 */
+	transition-duration: 1s;
+	border: 1px solid rgb(255, 170, 0);
+	box-shadow:rgb(255, 204, 102) 0px 0px 6px;
+}
+.text-left,.caption{
+	padding-left:10px;
+}
+.text-left>small{/* 교육기간 */
+	color:#191919;
+	font-weight:bold;
+	padding-right: 5px;
+}
+.orange{
+	padding-left: 5px;
+}
+.thumbnail>img{ /* 강좌 이미지 */
+	display:block;
+	margin:auto;	
+}
+.thumbnail > .caption > h3 { /* 이미지아래 강좌이름 */
+	color:#191919;
+    font-size: 15px;
+    font-weight: 900;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    line-height: 1.4;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 183px;
+    height: 38px;
+}
+
+.box-tag-normal{
+}
+
+.box-tag {				/* 제주센터 */
+	font-weight:bold;
+    position: absolute;
+    margin-left:8px;
+    font-size: 15px;
+    height: 23px;
+    text-align: center;
+    width: 75px;
+    background-color: black;
+    color:white;
+}
+
+#content{
+	height:1100px;
 }
 #footer{
-	margin-top:400px;
+	/* margin-top:400px; */
 }
 
 </style>
@@ -61,11 +132,6 @@
 		<div id="content" class="grid6">
 			&nbsp;
 			<!--*************content start****************-->
-
-
-
-
-
 			<h4>
 				<strong><span class="title_bar"></span><span class="bigletter"
 					style="color: #041b78">&nbsp;&nbsp;국비지원&nbsp;과정</span></strong>
@@ -73,181 +139,26 @@
 	
 		<div id="lecturecontent">
 		<!-- ***********col-xs-4를 foreach로 db에서 모집공고 받아와서 반복.**************** -->
-<%-- 		<c:forEach items="${login }">
 		
+ 		<c:forEach items="${lecture}" var="bean">
+		<c:set value="${bean.recruit_num }" var="idx"></c:set>
 		<div class="col-xs-4">
-			<div class="thumbnail" data-id="21" data-page="1"
-				onclick="course_go(this, '국비지원과정');"
-				onmouseenter="box_enter_animation(this);"
-				onmouseleave="box_leave_animation(this);"
-				style="border: 1px solid rgb(221, 221, 221);">
+			<div class="thumbnail"  onclick="curriDetail(${idx})">
 				<div class="box-tag box-tag-normal">제주센터</div>
-				<img src="img/logo.png"><!-- 강좌이미지 모집공고이미지 -->
+				<img src="img/curriAD3.png"><!-- 강좌이미지 모집공고이미지 -->
 				<div class="caption">
-					<h3>${강좌이름 }</h3>
+					<h3>${bean.recruit_name }</h3>
 				</div>
 				<div class="text-left price-bar">
-					<small>개강일</small>&#124;<span class="orange">${개강일 }</span><br />
-					<small>교육기간</small>&#124;<br>${ 개강일}~${종강일 }
+					<small>개강일</small>&#124;<span class="orange">${bean.start_day }</span><br />
+					<small>교육기간</small>&#124;<br>${bean.start_day}~${bean.end_day }
 				</div>
 			</div>
 		</div>
 		
 		</c:forEach>
-		 --%>
-		<div class="col-xs-4">
-			<div class="thumbnail" data-id="21" data-page="1"
-				onclick="course_go(this, '국비지원과정');"
-				onmouseenter="box_enter_animation(this);"
-				onmouseleave="box_leave_animation(this);"
-				style="border: 1px solid rgb(221, 221, 221);">
-				<div class="box-tag box-tag-normal">서초본원</div>
-				<img src="img/logo.png">
-				<div class="caption">
-					<h3>디지털컨버전스 기반 UIUX Front 전문 개발자 양성과정 B</h3>
-				</div>
-				<div class="text-left price-bar">
-					<small>개강일</small>&#124;<span class="orange">2020-08-17</span><br />
-					<small>교육기간</small>&#124;<br>2020-08-17~2021-01-27
-				</div>
-			</div>
-		</div>
-		<div class="col-xs-4">
-			<div class="thumbnail" data-id="54" data-page="1"
-				onclick="course_go(this, '국비지원과정');"
-				onmouseenter="box_enter_animation(this);"
-				onmouseleave="box_leave_animation(this);"
-				style="border: 1px solid rgb(221, 221, 221);">
-				<div class="box-tag box-tag-normal">서초본원</div>
-				<img src="img/logo.png">
-				<div class="caption">
-					<h3>머신러닝 딥러닝을 이용한 AI 전문가 양성 과정</h3>
-				</div>
-				<div class="text-left price-bar">
-					<small>개강일</small>&#124;<span class="orange">2020-08-24</span><br />
-					<small>교육기간</small>&#124;<br>2020-08-24~2020-11-04
-				</div>
-			</div>
-		</div>
-		<div class="col-xs-4">
-			<div class="thumbnail" data-id="59" data-page="1"
-				onclick="course_go(this, '국비지원과정');"
-				onmouseenter="box_enter_animation(this);"
-				onmouseleave="box_leave_animation(this);"
-				style="border: 1px solid rgb(221, 221, 221);">
-				<div class="box-tag box-tag-normal">종로센터</div>
-				<img src="img/logo.png">
-				<div class="caption">
-					<h3>디지털컨버전스 기반 Framework 전문 개발자 양성과정</h3>
-				</div>
-				<div class="text-left price-bar">
-					<small>개강일</small>&#124;<span class="orange">2020-08-25</span><br />
-					<small>교육기간</small>&#124;<br>2020-08-25~2021-02-04
-				</div>
-			</div>
-		</div>
-		<div class="col-xs-4">
-			<div class="thumbnail" data-id="13" data-page="1"
-				onclick="course_go(this, '국비지원과정');"
-				onmouseenter="box_enter_animation(this);"
-				onmouseleave="box_leave_animation(this);"
-				style="border: 1px solid rgb(221, 221, 221);">
-				<div class="box-tag box-tag-normal">서초본원</div>
-				<img src="img/logo.png">
-				<div class="caption">
-					<h3>디지털컨버전스 기반 자바(JAVA)응용SW개발자 양성과정</h3>
-				</div>
-				<div class="text-left price-bar">
-					<small>개강일</small>&#124;<span class="orange">2020-09-01</span><br />
-					<small>교육기간</small>&#124;<br>2020-09-01~2021-02-15
-				</div>
-			</div>
-		</div>
-		<div class="col-xs-4">
-			<div class="thumbnail" data-id="28" data-page="1"
-				onclick="course_go(this, '국비지원과정');"
-				onmouseenter="box_enter_animation(this);"
-				onmouseleave="box_leave_animation(this);"
-				style="border: 1px solid rgb(221, 221, 221);">
-				<div class="box-tag box-tag-normal">강남센터</div>
-				<img src="img/logo.png">
-				<div class="caption">
-					<h3>디지털컨버전스 기반 Framework 전문 개발자 양성과정</h3>
-				</div>
-				<div class="text-left price-bar">
-					<small>개강일</small>&#124;<span class="orange">2020-09-01</span><br />
-					<small>교육기간</small>&#124;<br>2020-09-01~2021-02-15
-				</div>
-			</div>
-		</div>
-		<div class="col-xs-4">
-			<div class="thumbnail" data-id="55" data-page="1"
-				onclick="course_go(this, '국비지원과정');"
-				onmouseenter="box_enter_animation(this);"
-				onmouseleave="box_leave_animation(this);"
-				style="border: 1px solid rgb(221, 221, 221);">
-				<div class="box-tag box-tag-normal">신촌센터</div>
-				<img src="img/logo.png">
-				<div class="caption">
-					<h3>디지털컨버전스 기반 UIUX Front 전문 개발자 양성과정B</h3>
-				</div>
-				<div class="text-left price-bar">
-					<small>개강일</small>&#124;<span class="orange">2020-09-07</span><br />
-					<small>교육기간</small>&#124;<br>2020-09-07~2021-02-19
-				</div>
-			</div>
-		</div>
-		<div class="col-xs-4">
-			<div class="thumbnail" data-id="61" data-page="1"
-				onclick="course_go(this, '국비지원과정');"
-				onmouseenter="box_enter_animation(this);"
-				onmouseleave="box_leave_animation(this);"
-				style="border: 1px solid rgb(221, 221, 221);">
-				<div class="box-tag box-tag-normal">종로센터</div>
-				<img src="img/logo.png">
-				<div class="caption">
-					<h3>디지털컨버전스기반 융합기술을 활용한sw 웹 개발자 양성과정 A</h3>
-				</div>
-				<div class="text-left price-bar">
-					<small>개강일</small>&#124;<span class="orange">2020-09-16</span><br />
-					<small>교육기간</small>&#124;<br>2020-09-16~2021-03-03
-				</div>
-			</div>
-		</div>
-		<div class="col-xs-4">
-			<div class="thumbnail" data-id="22" data-page="1"
-				onclick="course_go(this, '국비지원과정');"
-				onmouseenter="box_enter_animation(this);"
-				onmouseleave="box_leave_animation(this);"
-				style="border: 1px solid rgb(221, 221, 221);">
-				<div class="box-tag box-tag-normal">서초본원</div>
-				<img src="img/logo.png">
-				<div class="caption">
-					<h3>프론트엔드 개발을 위한 UIUX전문가 과정 B</h3>
-				</div>
-				<div class="text-left price-bar">
-					<small>개강일</small>&#124;<span class="orange">2020-10-19</span><br />
-					<small>교육기간</small>&#124;<br>2020-10-19~2021-03-30
-				</div>
-			</div>
-		</div>
-		<div class="col-xs-4">
-			<div class="thumbnail" data-id="29" data-page="1"
-				onclick="course_go(this, '국비지원과정');"
-				onmouseenter="box_enter_animation(this);"
-				onmouseleave="box_leave_animation(this);"
-				style="border: 1px solid rgb(221, 221, 221);">
-				<div class="box-tag box-tag-normal">서초본원</div>
-				<img src="img/logo.png">
-				<div class="caption">
-					<h3>디지털컨버전스 기반 Framework 전문 개발자 양성과정</h3>
-				</div>
-				<div class="text-left price-bar">
-					<small>개강일</small>&#124;<span class="orange">2020-11-02</span><br />
-					<small>교육기간</small>&#124;<br>2020-11-02~2021-04-13
-				</div>
-			</div>
-		</div>
+
+
 		
 <!-- ***********col-xs-4를 foreach로 db에서 모집공고 받아와서 반복.**************** -->
 

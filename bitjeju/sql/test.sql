@@ -50,7 +50,7 @@ select grade.num,exam1,exam2,exam3, name from grade, (select num,name from  memb
 (select lecture from member where num = 55)) m where grade.num=m.num;
 
 
-
+select * from recruit natural join lectures where recruit_num=lecture_num;
 
 update member set lecture = '영업assign테스트' where name ='장영희';
 

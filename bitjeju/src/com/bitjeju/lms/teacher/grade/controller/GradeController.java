@@ -1,9 +1,9 @@
 package com.bitjeju.lms.teacher.grade.controller;
 
-
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Enumeration;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -16,18 +16,22 @@ import com.bitjeju.lms.teacher.grade.model.GradeDao;
 import com.bitjeju.lms.teacher.grade.model.GradeDto;
 import com.bitjeju.member.MemberDto;
 
+
+
+
 @WebServlet("/lmsteacherstugrade.bit")
 public class GradeController extends HttpServlet {
-	
+	HttpSession session;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-		 
-		HttpSession session = request.getSession(false);
-		MemberDto bean = (MemberDto)session.getAttribute("login");
-
-		try {
+		session=request.getSession(false);
+		   request.setCharacterEncoding("utf-8");
+		   MemberDto bean2=(MemberDto) session.getAttribute("login");
+		   int num=bean2.getNum();
+		   System.out.print("num: "+num);
+		   try {
 	         GradeDao dao=new GradeDao();
-	         ArrayList<GradeDto> list=dao.selectAll(bean.getNum());
+	         ArrayList<GradeDto> list=dao.selectAll(num);
 	         request.setAttribute("list", list);
 	      } catch (SQLException e) {
 	         e.printStackTrace();

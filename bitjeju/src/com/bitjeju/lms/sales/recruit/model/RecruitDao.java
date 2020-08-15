@@ -68,7 +68,6 @@ public class RecruitDao {
 
 	}// recruitupload
 
-	
 	public void updateRecruit(String lecture_name, String file_name) throws SQLException {
 		String sql2 = "select lecture_num from lectures where lecture_name = ?";
 		pstmt = conn.prepareStatement(sql2);
@@ -93,9 +92,8 @@ public class RecruitDao {
 			pstmt.close();
 		if (conn != null)
 			conn.close();
-	}//update
-	
-	
+	}// update
+
 	public ArrayList<RecruitDto> selectAll() throws SQLException {
 
 //		create table recruit (--모집공고게시판>>select * from lecture;>>모집공고 업로드하는 form>> 입력>>리쿠르트테이블에 insert
@@ -121,7 +119,7 @@ public class RecruitDao {
 			conn.close();
 
 		return recruitList;
-	}//selectAll
+	}// selectAll
 
 	public RecruitDto selectOne(int recruit_num) {
 		RecruitDto bean = null;
@@ -132,13 +130,13 @@ public class RecruitDao {
 			pstmt.setInt(1, recruit_num);
 			System.out.println(sql);
 			rs = pstmt.executeQuery();
-			if(rs.next()) {
-				bean= new RecruitDto();
+			if (rs.next()) {
+				bean = new RecruitDto();
 				bean.setRecruit_file_name(rs.getString("recruit_file_name"));
 				bean.setRecruit_num(recruit_num);
 			}
-			
-		} catch (SQLException e) {  
+
+		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
@@ -153,12 +151,80 @@ public class RecruitDao {
 			}
 		}
 		return bean;
-	}//selectone
-	
+	}// selectone
+
+	public ArrayList<RecruitDto> curriculumList() {
+
+		ArrayList<RecruitDto> list = new ArrayList<RecruitDto>();
+		String sql = "select * from recruit natural join lectures where recruit_num=lecture_num";
+		RecruitDto bean = null;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				bean = new RecruitDto();
+				bean.setRecruit_file_name(rs.getString("recruit_file_name"));
+				bean.setRecruit_num(rs.getInt("recruit_num"));
+				bean.setRecruit_name(rs.getString("lecture_name"));
+				bean.setEnd_day(rs.getDate("end_day"));
+				bean.setStart_day(rs.getDate("start_day"));
+				list.add(bean);
+				System.out.println(bean.toString());
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return list;
+	}
+
+	public RecruitDto selectCurriculum(int recruit_num) {
+		RecruitDto bean = null;
+		String sql = "select * from (select * from recruit natural join lectures "
+				+ "where recruit_num=lecture_num) where recruit_num = ?";		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, recruit_num);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				bean = new RecruitDto();
+				bean.setRecruit_file_name(rs.getString("recruit_file_name"));
+				bean.setRecruit_num(rs.getInt("recruit_num"));
+				bean.setRecruit_name(rs.getString("lecture_name"));
+				bean.setEnd_day(rs.getDate("end_day"));
+				bean.setStart_day(rs.getDate("start_day"));
+				System.out.println(bean.toString());
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return bean;
+	}
 	public void deleteOne(int recruit_num) {
-		
-		String sql ="delete from recruit where recruit_num = ?";
-		
+
+		String sql = "delete from recruit where recruit_num = ?";
+
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, recruit_num);
@@ -167,17 +233,18 @@ public class RecruitDao {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}finally {
+		} finally {
 			try {
-				if(pstmt!=null) pstmt.close();
-				if(conn!=null) conn.close();
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}//finally
-		
-		
-	}//delete
+		} // finally
+
+	}// delete
 
 }

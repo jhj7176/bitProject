@@ -23,6 +23,12 @@
 .lmscontent:last-child {
 	margin-bottom:300px;
 }
+#lecname{
+	color: #787878;
+	font-size:14px;
+	font-weight:bold;
+	line-height:15px;
+}
 #lecturetable{
 	border-collapse:collapse;
 	font-size:110%;
@@ -62,7 +68,7 @@
    <!--*****************lms메뉴******************-->
        <div class="grid2">
         <div id="lmsmenu">
-            <p>강사</p>
+             <p>강사<br><span id="lecname">${login.lecture }</span></p>
             <ul>
                 <li class="bigletter">출결관리</li>
                 <li>
@@ -86,8 +92,7 @@
         </div>
        </div>
 		<!--*****************lms메뉴******************-->
-		<div id="content" class="grid6">
-			&nbsp;
+		<div id="content" class="grid6">&nbsp;
 			<!--*************content start****************-->
 			<div class="lmscontent">
 				<h2>수강생 관리</h2>

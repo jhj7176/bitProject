@@ -364,7 +364,29 @@ public class MemberDao {
 		
 	}//updatelvl
 
-	
+	public void enrolment(String lecture, int num) {
+		String sql = "update member set lecture = ? where num = ?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, lecture);
+			pstmt.setInt(2, num);
+			pstmt.executeQuery();
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally{
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}//finally
+	}//enrolment
 	
 	
 	

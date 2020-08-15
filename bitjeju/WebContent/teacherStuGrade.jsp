@@ -13,6 +13,12 @@
 	.lmscontent:last-child {
 	margin-bottom:300px;
 	}
+	#lecname{
+		color: #787878;
+		font-size:14px;
+		font-weight:bold;
+		line-height:15px;
+	}
 	.grade{
 		border: 1px solid white;
 		text-align: center;
@@ -45,7 +51,7 @@ function pressEnter(){
     }
 }
 </script>
-<title>BITCAMP JEJU: LMS강사:성적입력</title>
+<title>BITCAMP JEJU: LMS강사-성적입력</title>
 </head>
 <body>
 <%@ include file="template/lmsheader.jspf" %>
@@ -54,7 +60,7 @@ function pressEnter(){
    <!--*****************lms메뉴******************-->
        <div class="grid2">
         <div id="lmsmenu">
-            <p>강사</p>
+             <p>강사<br><span id="lecname">${login.lecture }</span></p>
             <ul>
                 <li class="bigletter">출결관리</li>
                 <li>
