@@ -32,7 +32,7 @@ public class AttListController extends HttpServlet {
          AttendanceDao dao=new AttendanceDao();
          ArrayList<AttendanceDto> list=dao.selectAll(num);
          request.setAttribute("list", list);
-         request.setAttribute("login", bean2);
+       //  request.setAttribute("login", bean2);
       } catch (SQLException e) {
          e.printStackTrace();
       }

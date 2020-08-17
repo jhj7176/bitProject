@@ -40,6 +40,10 @@
 	text-align: left;
 }
 
+#lectureroomselect option,#teacherselect option{
+	text-align:center;
+}
+
 #lecture_name,#start_day,#end_day,#teacherselect,#lectureroomselect{
     width: 230px;
     height: 43px;
@@ -58,6 +62,11 @@
 	margin: 7px;
 	width: 50px;
 	height: 20px;
+}
+#lectureadd:hover, #lectureback:hover {
+		background-color:white;
+		color:#000069;
+		cursor: pointer;
 }
 </style>
 </head>

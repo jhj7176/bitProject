@@ -14,7 +14,7 @@
 	           <button id="createaccount" type="button">회원가입</button>
 	           <button class="gotolms" type="button">LMS system</button>
 	 	  </form>
-	 	   <p><a href="#">아이디/비밀번호 찾기</a></p>
+	 	   <p><a href="accountfind.bit">아이디/비밀번호 찾기</a></p>
   		</c:when>
 	    <c:when test="${not empty login}">
 

@@ -33,6 +33,11 @@
     width: 50px;
     line-height: 20px;
 }
+.btn:hover{
+	cursor: pointer;
+	background-color: white;
+	color:#000069;
+}
 #attendtable{
 	text-align:center;
 	margin: 20px auto;

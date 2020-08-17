@@ -51,13 +51,6 @@ public class RecruitFileController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-	
-		
-		
-		  
-
-		
-		
 		String path = request.getRealPath("./recruit");
 		File file = new File(path);
 		

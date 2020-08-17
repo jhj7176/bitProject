@@ -61,7 +61,11 @@ $(function(){
     width: 50px;
     height: 20px;
 }
-
+#lectureedit:hover,#lecturedelete:hover,#lectureback:hover{
+		background-color:white;
+		color:#000069;
+		cursor: pointer;
+}
 </style>
 </head>
 <body>

@@ -30,7 +30,7 @@ public class AttStuListController extends HttpServlet {
 		   System.out.print("num: "+num);
 		try {
 			StudentDao dao=new StudentDao();
-			 AttendanceDao dao2=new AttendanceDao();
+			AttendanceDao dao2=new AttendanceDao();
 			ArrayList<MemberDto> list=dao.selectAll();
 			ArrayList<AttendanceDto> list2=dao2.selectAll(num);
 			request.setAttribute("list", list);

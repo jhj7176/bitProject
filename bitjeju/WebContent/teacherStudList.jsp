@@ -143,6 +143,7 @@ lang = 5; //한 페이지당 페이지 링크번호 수. 5개
 #studenttable a:hover {
 	font-weight: 500;
 	color: #1E3269;
+	
 }
 #studentprev, #studentnext { /* 테이블 아래 이전,다음버튼 */
 	background-color: #000069;
@@ -186,6 +187,11 @@ lang = 5; //한 페이지당 페이지 링크번호 수. 5개
 	width: 50px;
 	line-height: 25px;
 } 
+#searchbtn:hover{ /* 검색버튼 */
+	cursor: pointer;
+	background-color: white;
+	color:#000069;
+}
 </style>
 </head>
 <body>

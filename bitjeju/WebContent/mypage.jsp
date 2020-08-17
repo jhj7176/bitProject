@@ -52,17 +52,10 @@ $(function(){
     width: 50px;
     height: 20px;
 }
-#changepw,#changephone{ /* 비번변경 버튼 */
-    background-color: #000069;
-    border:1px solid #000069;
-    color:white;
-    margin-top : 9px;
-    margin-right: 10px;
-    width: 60px;
-    height: 37px;
-    border-radius:5px;
-
-
+#mypageedit:hover,#accountback:hover{
+	background-color:white;
+	color:#000069;
+	cursor: pointer;
 }
 #mypagepw,#mypagephone{/*비밀번호 input  */
     width: 300px;
@@ -75,7 +68,11 @@ $(function(){
     vertical-align:middle;
   
 }
-
+#header .grid3{
+	margin-top:40px;
+	position:relative;
+	
+}
 </style>
 </head>
 <body>

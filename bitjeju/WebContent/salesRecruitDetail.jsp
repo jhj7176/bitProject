@@ -62,6 +62,7 @@ $(function(){
 }
 #lecturetable td>a:hover{
 	font-weight:600;
+	cursor: pointer;
 	
 }
 #recruitadd,#recruitedit,#recruitdelete,#recruitback{
@@ -73,7 +74,11 @@ $(function(){
     width: 50px;
     height: 20px;
 }
-
+#recruitadd:hover,#recruitback:hover{
+		background-color:white;
+		color:#000069;
+		cursor: pointer;
+}
 </style>
 </head>
 <body>

@@ -168,7 +168,7 @@ $('#overlap').on('click',function(){ // 아이디 중복검사 버튼
     vertical-align:middle;
 }
 
-#signupbtn,#signupreset,#signupback{/* 버튼 */
+#signupbtn,#signupback{/* 버튼 */
 	float:right;
     background-color: #000069;
     border:1px solid #000069;
@@ -176,6 +176,11 @@ $('#overlap').on('click',function(){ // 아이디 중복검사 버튼
     margin: 7px;
     width: 50px;
     height: 20px;
+}
+#signupbtn:hover,#signupback:hover{/* 버튼 */
+	background-color:white;
+	color:#000069;
+	cursor: pointer;
 }
 #overlap{
     background-color: #000069;
@@ -187,6 +192,11 @@ $('#overlap').on('click',function(){ // 아이디 중복검사 버튼
     height: 37px;
     border-radius:5px;
 
+}
+#overlap:hover{
+	background-color:white;
+	color:#000069;
+	cursor: pointer;
 }
 #header .grid3{
 	margin-top:40px;

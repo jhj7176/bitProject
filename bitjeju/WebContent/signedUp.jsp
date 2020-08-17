@@ -45,7 +45,7 @@
     text-align:center;
 }
 
-#signupbtn,#signupreset,#signupback{
+#signupback{
 	float:right;
     background-color: #000069;
     border:1px solid #000069;
@@ -53,6 +53,11 @@
     margin: 7px;
     width: 50px;
     height: 20px;
+}
+#signupback:hover{
+	background-color:white;
+	color:#000069;
+	cursor: pointer;
 }
 #header .grid3{
 	margin-top:40px;

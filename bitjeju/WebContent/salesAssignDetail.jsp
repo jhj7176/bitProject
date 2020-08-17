@@ -56,6 +56,7 @@
 .stuname:hover {
 	color: #1E3269;
 	background-color: aliceblue;
+	cursor: pointer;
 }
 
 #selectlecture {
@@ -72,7 +73,11 @@
 	width: 50px;
 	line-height: 20px;
 }
-
+#assignback:hover{
+	background-color:white;
+	color:#000069;
+	cursor: pointer;
+}
 #paging { /* 페이지링크 감싸는 div */
 	width: 300px;
 	display: block;

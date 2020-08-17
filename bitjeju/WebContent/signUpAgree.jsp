@@ -71,7 +71,11 @@
 	width: 50px;
 	height: 20px;
 }
-
+#agreebtn:hover, #agreeback:hover {
+	background-color:white;
+	color:#000069;
+	cursor: pointer;
+}
 .form-group { /* 약관 테이블 사이 간격 띄우기  */
 	margin-bottom: 60px;
 }

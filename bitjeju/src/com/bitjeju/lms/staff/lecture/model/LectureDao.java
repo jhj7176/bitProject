@@ -31,11 +31,12 @@ public class LectureDao {
 
 		ArrayList<LectureDto> list = new ArrayList<LectureDto>();
 	//	String sql = "select * from lectures";
-		String sql = "select lecture_name,start_day,end_day,num,lecture_room,lecture_num,recruit_num from lectures full outer join recruit on recruit_num = lecture_num";
+		String sql = "select lecture_name,start_day,end_day,num,lecture_room,lecture_num,recruit_num "
+				+ "from lectures full outer join recruit on recruit_num = lecture_num";
 		
 		//String sql2 ="select lecture_name, st":
 		LectureDto bean = null;
-
+		System.out.println(sql);
 		pstmt = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery();
 		

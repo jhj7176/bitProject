@@ -54,4 +54,4 @@ select * from recruit natural join lectures where recruit_num=lecture_num;
 
 update member set lecture = '영업assign테스트' where name ='장영희';
 
-
+select nalja, attendance.num,name,state from attendance,member where attendance.num=member.num and lecture=(select lecture from member where num=3232) order by nalja desc, num asc;

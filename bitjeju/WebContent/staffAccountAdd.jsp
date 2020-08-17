@@ -119,7 +119,11 @@ $('#accountform').submit(function(){ //등록버튼 눌렀을 때 이벤트.
     width: 50px;
     height: 20px;
 }
-
+#accountedit:hover,#accountdelete:hover,#accountback:hover{/*  수정삭제뒤로가기 버튼 */
+		background-color:white;
+		color:#000069; 
+		cursor: pointer;
+}
 </style>
 </head>
 <body>

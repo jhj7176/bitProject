@@ -20,7 +20,7 @@ $(function(){
 		  $('#naljadiv').hide();
 		  $('#fin').hide();
 		  $('#attlist').show();
-	  }else{0
+	  }else{
 		  $('#attchecktable').show();
 		  $('#naljadiv').show();
 		  $('#fin').show();
@@ -74,6 +74,11 @@ $(function(){
     margin: 7px;
     width: 50px;
     line-height: 20px;
+}
+#fin:hover{/*버튼 조절*/
+	cursor: pointer;
+	background-color: white;
+	color:#000069;
 }
 </style>
 </head>

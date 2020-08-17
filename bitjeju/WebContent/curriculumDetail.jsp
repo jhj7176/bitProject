@@ -64,6 +64,7 @@ $(function(){
 #enrolment:hover{
 	color:#1E3269;
 	background-color: white;
+	cursor: pointer;
 	
 }
 #recruittable {
@@ -110,7 +111,11 @@ $(function(){
 	width: 50px;
 	height: 20px;
 }
-
+#recruitback:hover{
+	color:#1E3269;
+	background-color: white;
+	cursor: pointer;
+}
 #recruittable input[type="file"] {
 	position: absolute;
 	width: 0;

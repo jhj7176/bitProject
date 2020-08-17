@@ -164,7 +164,7 @@
 	color: #1E3269;
 }
 
-#accountadd { /* 테이블아래 등록버튼 */
+#accountadd { /* 등록버튼 */
 	float: right;
 	background-color: #000069;
 	border: 1px solid #000069;
@@ -172,6 +172,10 @@
 	margin: 7px;
 	width: 50px;
 	height: 20px;
+}
+#accountadd:hover { /* 등록버튼 */
+		background-color:white;
+		color:#000069;
 }
 #paging {
 	width: 300px;
@@ -231,8 +235,10 @@
 	width: 50px;
 	height: 33px;
 }
-
-
+#searchbtn:hover{
+		background-color:white;
+		color:#000069;
+}
 #search {
 	
 }

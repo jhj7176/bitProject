@@ -11,7 +11,6 @@
 
 <style type="text/css">
 .lmscontent {
-	height:1000px;
 	width: 600px;
 	display: block;
 	margin: auto;
@@ -40,6 +39,11 @@
     margin: 7px;
     width: 50px;
     height: 20px;
+}
+#lectureback:hover{
+	background-color:white;
+	color:#000069;
+	cursor: pointer;
 }
 
 </style>

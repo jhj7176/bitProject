@@ -64,7 +64,10 @@ $(function(){
     width: 50px;
     height: 20px;
 }
-
+#mypagesubmit:hover,#mypageback:hover{
+	background-color:white;
+	color:#000069;
+}
 </style>
 </head>
 <body>

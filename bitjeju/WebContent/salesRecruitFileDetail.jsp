@@ -82,7 +82,11 @@ var recruit_num = "${recruit.recruit_num }";
 	width: 50px;
 	height: 20px;
 }
-
+#recruitedit:hover, #recruitdelete:hover, #recruitback:hover {
+		background-color:white;
+		color:#000069;
+		cursor: pointer;
+}
 #recruittable input[type="file"] {
 	position: absolute;
 	width: 0;

@@ -35,6 +35,7 @@ $(function(){});
 #lecturetable tr:first-child ~tr:hover { /* 테이블 첫번째 tr빼고 hover적용  */
 	color: #1E3269;
 	background-color: aliceblue;
+	cursor: pointer;
 }
 
 #lecturetable th {

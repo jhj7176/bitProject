@@ -133,7 +133,7 @@ $(function(){
 	padding:25px;
 	text-align:left;
 }
-#accountedit, #accountdelete,#accountback{
+#accountback{
 	float:right;
     background-color: #000069;
     border:1px solid #000069;
@@ -141,6 +141,10 @@ $(function(){
     margin: 7px;
     width: 50px;
     height: 20px;
+}
+#accountback:hover{
+	background-color:white;
+	color:#000069;
 }
 
 #changepw,#changephone{   /* 비번변경 버튼 */
@@ -150,11 +154,13 @@ $(function(){
     margin-top : 9px;
     margin-right: 10px;
     width: 60px;
-    height: 39px;
+    height: 35px;
     border-radius:5px;
     float:left;
-
-
+}
+#changepw:hover,#changephone:hover{
+	background-color:white;
+	color:#000069;
 }
 #mypagepw1,#mypagepw2,#mypagephone{/*비밀번호 input  */
     width: 300px;

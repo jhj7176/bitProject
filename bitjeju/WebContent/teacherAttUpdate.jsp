@@ -39,6 +39,11 @@
 	    width: 50px;
 	    line-height: 20px;
 	}
+	#btn:hover{/*버튼 조절*/
+		cursor: pointer;
+		background-color: white;
+		color:#000069;
+	}
 	#forbtn{
 		margin:40px auto;
 		text-align:center;

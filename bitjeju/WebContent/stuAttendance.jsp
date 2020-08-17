@@ -48,6 +48,7 @@
     background-color: white;
     border:1px solid #000069;
     color:#000069;	
+    cursor: pointer;
 }
 </style>
 <script type="text/javascript">

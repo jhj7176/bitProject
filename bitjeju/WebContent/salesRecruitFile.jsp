@@ -78,7 +78,11 @@
 	width: 50px;
 	height: 20px;
 }
-
+#recruitadd:hover,#recruitback:hover {
+		background-color:white;
+		color:#000069;
+		cursor: pointer;
+}
 #recruittable input[type="file"] {
 	position: absolute;
 	width: 0;
@@ -91,6 +95,7 @@
 #recruittable label:hover {
 	background-color:#000069;
 	color:white;
+	cursor: pointer;
 }
 #recruittable label {
 	display: inline-block;

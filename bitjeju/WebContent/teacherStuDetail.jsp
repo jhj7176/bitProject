@@ -54,6 +54,11 @@
     width: 50px;
     height: 20px;
 }
+#studentdelete:hover,#studentback:hover{
+	cursor: pointer;
+	background-color: white;
+	color:#000069;
+}
 #attRange,#classRange{ /* progress bar */
 	height:20px;
 	width:300px;

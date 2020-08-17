@@ -58,6 +58,10 @@
 	    width: 50px;
 	    line-height: 20px;
 	}
+	.btn:hover{
+		background-color:white;
+		color:#000069;	
+	}
 	#studentprev, #studentnext { /* 테이블 아래 이전,다음버튼 */
 		background-color: #000069;
 		border: 1px solid #000069;
@@ -65,6 +69,11 @@
 		margin: 7px;
 		width: 50px;
 		height: 20px;
+	}
+	#studentprev:hover, #studentnext:hover { /* 테이블 아래 이전,다음버튼 */
+		background-color:white;
+		color:#000069;
+		cursor: pointer;
 	}
 	#paging{		/* 페이지링크 감싸는 div */
 		width:300px;
@@ -102,6 +111,11 @@
 		width: 50px;
 		line-height: 25px;
 	} 
+	#searchbtn:hover{ /* 검색버튼 */
+	background-color:white;
+	color:#000069;
+	cursor: pointer;
+	}
 </style>
 <script type="text/javascript">
 var pageNum, word, cardinality, start, end, lang;
