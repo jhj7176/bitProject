@@ -8,18 +8,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class PwFormController
+ * Servlet implementation class IdFormController
  */
-@WebServlet("/pwform.bit")
-public class PwFormController extends HttpServlet {
+@WebServlet("/idform.bit")
+public class IdFormController extends HttpServlet {
+
+
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		request.getRequestDispatcher("accountFindPw.jsp").forward(request, response);
+		request.getRequestDispatcher("accountFindId.jsp").forward(request, response);
 	}
+
+
 
 
 }

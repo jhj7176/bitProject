@@ -32,20 +32,6 @@ public class FindDao {
 	
 	public FindDao(){
 		// TODO Auto-generated constructor stub
-		prop = new Properties();
-		prop.put("mail.smtp.host", "smtp.gmail.com");
-		prop.put("mail.smtp.port", 465);
-		prop.put("mail.smtp.auth", "true");
-		prop.put("mail.smtp.ssl.enable", "true");
-		prop.put("mail.smtp.ssl.trust", "smtp.gmail.com");
-		session = Session.getDefaultInstance(prop, new javax.mail.Authenticator() {
-			protected PasswordAuthentication getPasswordAuthentication() {
-				return new PasswordAuthentication(user, password);
-			}
-		});// session
-		
-		
-
 		String driver = "oracle.jdbc.OracleDriver";
 		String url = "jdbc:oracle:thin:@localhost:1521:xe";
 		String user = "scott";
@@ -65,6 +51,34 @@ public class FindDao {
 		
 	}// constructor
 
+	public String findEmail(String name, String phone) {
+		String sql = "select id_email from member where name =? and phone = ?";
+		String id_email = null;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, name);
+			pstmt.setString(2, phone);
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				id_email = rs.getString("id_email");
+			}//if
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			try {
+				if(pstmt!=null) pstmt.close();
+				if(conn!=null) conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}			
+		}//finally
+		return id_email;
+	}//findEmail
+	
+	
 	public void sendEmail(String id_email, String name) {
 		String user_password = null;
 		
@@ -83,7 +97,19 @@ public class FindDao {
 			System.out.println(name);
 			System.out.println(user_password);
 			
-	
+			prop = new Properties();
+			prop.put("mail.smtp.host", "smtp.gmail.com");
+			prop.put("mail.smtp.port", 465);
+			prop.put("mail.smtp.auth", "true");
+			prop.put("mail.smtp.ssl.enable", "true");
+			prop.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+			session = Session.getDefaultInstance(prop, new javax.mail.Authenticator() {
+				protected PasswordAuthentication getPasswordAuthentication() {
+					return new PasswordAuthentication(user, password);
+				}
+			});// session
+			
+			
 			MimeMessage message = new MimeMessage(session);
 			message.setFrom(new InternetAddress(user));
 			// 수신자메일주소
@@ -116,6 +142,6 @@ public class FindDao {
 			
 		}
 		
-	}
+	}//sendPW
 	
 }// class

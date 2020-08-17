@@ -11,13 +11,13 @@
 
 <script type="text/javascript">
 	$(function() {
-
-		$('#idfind').on('click', function() { //이메일 아이디 찾기로 이동
-			location.href = 'idform.bit';
+		$('#accountfindform').on('submit',function(){
+			if($('.findphone').val() == ''|| $('.findname').val() == ''){
+				alert('모든 정보를 입력해주세요.');
+				return false;
+			}
 		});
-		$('#pwfind').on('click', function() { //비밀번호 찾기로 이동
-			location.href = 'pwform.bit';
-		});
+		
 
 	});
 </script>
@@ -59,7 +59,7 @@
 	text-align: left;
 }
 
-#mypageedit, #accountback {
+#pwfindbtn, #accountback {
 	float: right;
 	background-color: #000069;
 	border: 1px solid #000069;
@@ -69,7 +69,7 @@
 	height: 20px;
 }
 
-#mypageedit:hover, #accountback:hover {
+#pwfindbtn:hover, #accountback:hover {
 	background-color: white;
 	color: #000069;
 	cursor: pointer;
@@ -93,7 +93,7 @@
 	cursor: pointer;
 }
 
-#mypagepw, #mypagephone { /*비밀번호 input  */
+.findname, .findphone { /*비밀번호 input  */
 	width: 300px;
 	height: 35px;
 	margin: 7px;
@@ -122,6 +122,7 @@
 			</div>
 		</div>
 		<!--*****************lms메뉴******************-->
+		<form action="findid.bit" method="post" id="accountfindform">
 		<div id="content" class="grid6">
 			&nbsp;
 			<!--*************content start****************-->
@@ -132,19 +133,23 @@
 
 				<table id="accounttable">
 					<tr>
-						<td><button id="idfind">아이디 찾기</button></td>
+						<th>이름</th>
+						<td><input type=text name="findname" class="findname"/></td>
 					</tr>
 					<tr>
-						<td><button id="pwfind">비밀번호 찾기</button></td>
+						<th>전화번호</th>
+						<td><input type="tel" name="findphone" class="findphone"/></td>
 					</tr>
 				</table>
 
 
 			</div>
 			<div class="lmscontent">
-				<button id="accountback" onclick="window.history.go(-1)">뒤로</button>
+				<button id="accountback" type="button" onclick="window.history.go(-1)">뒤로</button>
+				<button id="idfindbtn" type="submit">확인</button>
 
 			</div>
+			</form>
 			<!--*************content end******************-->
 			<%@ include file="template/footer.jspf"%>
 </body>

@@ -60,7 +60,7 @@
 				<p>계정관리</p>
 				<ul>
 					<li class="bigletter">계정관리</li>
-					<li><a href="lmsstaffaccountlist.bit">계정찾기</a></li>
+					<li><a href="accountfind.bit">계정찾기</a></li>
 
 					<li></li>
 				</ul>
