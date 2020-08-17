@@ -1,6 +1,10 @@
 drop sequence member_seq;
 drop sequence lectures_seq;
 drop sequence recruit_seq;
+drop sequence notice_seq;
+drop sequence dataroom_seq;
+drop table dataroom;
+drop table notice;
 drop table grade;
 drop table board2;
 drop table lectures;
@@ -120,16 +124,41 @@ select * from recruit natural join lectures where recruit_num = lecture_num;
 --예전날짜로 출석체크 업데이트했을때// 오늘날짜로 넘어감. 
 
 
-create table board2(									--기본적인 게시판 테이블
-	num number primary key,
-	title varchar2(100) not null,
-	writer varchar2(50) not null,
-	wtime date,
-	content varchar2(3000),
-	ref number,
-	serial number,
-	lev	number,
-	filename varchar2(255)
+--create table board2(									--기본적인 게시판 테이블
+--	num number primary key,
+--	title varchar2(100) not null,
+--	writer varchar2(50) not null,
+--	wtime date,
+--	content varchar2(3000),
+--	ref number,
+--	serial number,
+--	lev	number,
+--	filename varchar2(255)
+--);
+
+--자료실 게시판 강사
+create sequence dataroom_seq;
+
+create table dataroom(
+	drNum number primary key,
+	drTitle varchar2(200) default '제목없음',
+	num number,
+	drDate date,
+	fileName varchar2(300),
+	drContent varchar2(2048),
+	foreign key (num) references member(num)
+);
+
+
+ --공지사항 게시판
+create sequence notice_seq;
+create table notice(                          
+   ntnum number primary key,
+   title varchar2(100) not null,
+   num number,
+   wtime date,
+   content varchar2(3000),
+   foreign key (num) references member(num)
 );
 
 

@@ -46,7 +46,7 @@
                     <a href="lmsstugrade.bit">성적조회</a>    
                 </li>
                 <li class="bigletter">
-                    <a href="lmsstuattendance.bit">출결조회</a>    
+                    <a href="lmsstuattlist.bit">출결조회</a>    
                 </li>
                 <li class="bigletter">
                     <a href="lmsstulecture.bit">수강정보</a>    
