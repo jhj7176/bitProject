@@ -6,7 +6,7 @@
 <link rel="stylesheet" type="text/css" href="css/bitgrid.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%@ include file="template/lmshead.jspf"%>
-<title>BITCAMP JEJU: 마이페이지</title>>
+<title>BITCAMP JEJU: 마이페이지</title>
 <script type="text/javascript">
 
 function pwCheck(passwordVal){
@@ -193,19 +193,24 @@ $(function(){
     float:left;
   
 }
+#header .grid3{
+	margin-top:40px;
+	position:relative;
+	
+}
 </style>
 </head>
 <body>
-	<%@ include file="template/lmsheader.jspf"%>
+	<%@ include file="template/header.jspf"%>
 	<%@ include file="template/menu.jspf"%>
 	<div id="contents">
 		<!--*****************lms메뉴******************-->
 		<div class="grid2">
 			<div id="lmsmenu">
-				<p>마이페이지</p>
+				<p>내정보</p>
 				<ul>
 					<li class="bigletter">계정관리</li>
-					<li><a href="lmsstaffaccountlist.bit">회원정보</a></li>
+					<li><a href="mypage.bit">회원정보</a></li>
 
 					<li></li>
 				</ul>
@@ -220,7 +225,7 @@ $(function(){
 				<h4>회원정보</h4>
 
 
-					<c:set value="${login }" var="bean" />
+					<c:set value="${bean }" var="bean" />
 				<table id="accounttable">
 					<tr>
 						<th>이름</th>

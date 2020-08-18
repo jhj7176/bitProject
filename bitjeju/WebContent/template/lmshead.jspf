@@ -141,14 +141,21 @@ $(function (){
         font-size: 18px;
         font-weight: 600;
     }
+    
     #lmsmenu>p{
-        line-height: 10px;
-        color: #505050;
-        font-weight: 800;
-        font-size: 21px;
-        border-bottom: 1px solid #e4e4e4;
-        padding-bottom: 30px;
-        padding-left: 40px; 
+       line-height: 30px;
+       color: #505050;
+       font-weight: 800;
+       font-size: 21px;
+       border-bottom: 1px solid #e4e4e4;
+       padding-bottom: 10px;
+       padding-left: 40px; 
+    }
+    #lecname{
+	    color: #787878;
+		font-size:14px;
+		font-weight:bold;
+		line-height:15px;
     }
     #lmsmenu>ul{
         list-style: none;
@@ -157,7 +164,7 @@ $(function (){
     #lmsmenu>ul>li{
         padding-bottom: 10px;
         color: #505050;
-        color: 
+
     }
     #lmsmenu>ul>li>a{
         text-decoration: none;

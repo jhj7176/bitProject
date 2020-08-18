@@ -10,14 +10,38 @@
 
 <%@ include file="template/head.jspf" %>
 <title>BITCAMP JEJU</title>
+
+<script type="text/javascript">
+var cnt = 1;
+function carousel(){
+	
+	$('#carouselImg').fadeOut(1000,function(){
+		if(cnt==5)cnt=1;	
+		$('#carouselImg').fadeIn(1000).attr('src','img/'+cnt+'.jpg');
+	});
+	cnt++;	
+	setTimeout(carousel, 3000);
+}
+
+$(function(){
+	carousel();
+	
+	
+	
+});
+
+
+</script>
 </head>
 <body>
 <%@ include file="template/header.jspf" %>
 <%@ include file="template/menu.jspf" %>
    <div id="carousel" class="gird12">
-       <img src="img/forc.jpg">
+       <img id ="carouselImg" src="img/forc.jpg">
    </div><!--carousel-->
    <div id="contents">
+   
+   
        <div class="grid2">&nbsp;</div>
        <div  id="content" class="grid6">&nbsp;
        <!--*************content start****************-->

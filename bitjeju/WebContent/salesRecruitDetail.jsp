@@ -12,11 +12,27 @@
 var lecturename ="${lecture.lecture_name}";//el
 var lecturenum ="${lecture.lecture_num}";
 var recruitnum ="${lecture.recruit_num}";
-
-
+var start_day = "${lecture.start_day}";
+/* 2020-08-04 */
+function parseDate(str) {
+    var y = str.substr(0, 4);//년
+    var m = str.substr(5, 2);//월
+    var d = str.substr(8, 2);//일
+    return new Date(y,m-1,d);//날짜타입으로 반환ㄴ
+}
+/* 	console.log(new Date());
+	console.log(parseDate('2020-08-13'));
+	console.log(new Date()>new Date('2020','07','30')); //false */
 $(function(){
 	$('#recruitadd').on('click',function(){//*************모집공고 등록 서블릿으로, 모집공고 이름과 모집공고 번호전달.
-		location.href='lmssalesrecruitfile.bit?lecture_num='+lecturenum;
+		/* 
+		new Date() 오늘날짜// start_day 비교하기(현재문자열)
+		*/
+		if(new Date()<parseDate(start_day)){  //개강 날짜가 오늘보다 더 뒤의 날짜일 때만 모집공고 등록가능.
+			location.href='lmssalesrecruitfile.bit?lecture_num='+lecturenum;
+		}else{
+			alert('개강날짜가 지났습니다.');
+		}		
 	}); 
 	console.log(recruitnum);	
 	$('#lecturetable td>a').on('click',function(){

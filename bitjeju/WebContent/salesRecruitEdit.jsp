@@ -60,7 +60,7 @@
 
 #recruit_name, .upload-name, #recruit_state { /* form input */
 	width: 330px;
-	height: 43px;
+	height: 20px;
 	margin: 7px;
 	border-radius: 5px;
 	border: 1px solid #969696;
@@ -98,6 +98,7 @@
 	cursor: pointer;
 }
 #recruittable label {
+	line-height:4px;
 	display: inline-block;
 	padding: 10px;
 	color: gray;

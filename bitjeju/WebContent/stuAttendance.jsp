@@ -50,6 +50,10 @@
     color:#000069;	
     cursor: pointer;
 }
+#classRange,#attRange{
+	width:250px;
+	background-color:beige;
+}
 </style>
 <script type="text/javascript">
 	var attRate ="${bean.attRate()}";	//출석률

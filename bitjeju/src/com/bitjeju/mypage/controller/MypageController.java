@@ -54,7 +54,6 @@ public class MypageController extends HttpServlet {
 		MemberDao dao = new MemberDao();
 		MemberDto bean = null;
 		
-		
 		try {
 			bean = dao.loginValidation(id, password);
 
@@ -66,7 +65,7 @@ public class MypageController extends HttpServlet {
 				 * rd.forward(request, response);
 				 */
 			} else {		
-				
+				request.setAttribute("bean", bean);
 				request.getRequestDispatcher("mypage.jsp").forward(request, response);
 
 			}

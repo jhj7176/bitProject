@@ -77,10 +77,10 @@ $(function(){
 		<!--*****************lms메뉴******************-->
 		<div class="grid2">
 			<div id="lmsmenu">
-				<p>마이페이지</p>
+				<p>내정보</p>
 				<ul>
-					<li class="bigletter">회원정보</li>
-					<li><a href="lmsstaffaccountlist.bit"> </a></li>
+					<li class="bigletter">게정관리</li>
+					<li><a href="mypage.bit">회원정보</a></li>
 
 				</ul>
 			</div>

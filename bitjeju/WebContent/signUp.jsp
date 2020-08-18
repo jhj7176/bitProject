@@ -48,7 +48,7 @@ $('#signupbtn').on('click',function(){ //등록버튼 눌렀을 때 이벤트.
 	}else if(passwordVal.length<8 || passwordVal.length>12){
 		//비밀번호 길이는 8자~12자까지. 
 		alert('비밀번호는 8 ~ 12자리 입니다.');	
-	}else if($('#overlapCK').text()=='NO'){
+	}else if($('#overlapCK').text()=='불일치'){
 		alert('아이디를 확인해주세요');
 		
 	}else if(passwordVal!=signuppw2){
@@ -74,15 +74,15 @@ $('#signuppw').on('keyup',function(){
 	signuppw2 = $('#signuppw2').val();		//비밀번호2
 
 	if(signuppw1==signuppw2&&!(pwCheck(signuppw2))){ //영문숫자조합이면서 두 비번이 같을때만 OK
-		$('#changepwtxt').text('OK').css('font-size','130%')
+		$('#changepwtxt').text('일치').css('font-size','130%')
 		.css('color','green').css('vertical-align','middle');
 	}else if(signuppw2==''){
 		$('#changepwtxt').text('');
 	}else if(pwCheck(signuppw2)){	//영문숫자조합아닐때.
-		$('#changepwtxt').text('NO').css('font-size','130%')
+		$('#changepwtxt').text('불일치').css('font-size','130%')
 		.css('color','red').css('vertical-align','middle');
 	}else{
-		$('#changepwtxt').text('NO').css('font-size','130%')
+		$('#changepwtxt').text('불일치').css('font-size','130%')
 		.css('color','red').css('vertical-align','middle');
 	}
 });//keyup 비밀번호1
@@ -91,15 +91,15 @@ $('#signuppw2').on('keyup',function(){
 	signuppw1 = $('#signuppw').val();		//비밀번호1
 	signuppw2 = $('#signuppw2').val();		//비밀번호2
 	if(signuppw1==signuppw2&&!(pwCheck(signuppw2))){ //영문숫자조합이면서 두 비번이 같을때만 OK
-		$('#changepwtxt').text('OK').css('font-size','130%')
+		$('#changepwtxt').text('일치').css('font-size','130%')
 		.css('color','green').css('vertical-align','middle');
 	}else if(signuppw2==''){
 		$('#changepwtxt').text('');
 	}else if(pwCheck(signuppw2)){	//영문숫자조합아닐때.
-		$('#changepwtxt').text('NO').css('font-size','130%')
+		$('#changepwtxt').text('불일치').css('font-size','130%')
 		.css('color','red').css('vertical-align','middle');
 	}else{
-		$('#changepwtxt').text('NO').css('font-size','130%')
+		$('#changepwtxt').text('불일치').css('font-size','130%')
 		.css('color','red').css('vertical-align','middle');
 	}
 });

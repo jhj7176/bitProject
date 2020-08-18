@@ -30,21 +30,30 @@ $(function(){
 #lecturecontent{
 	display:block;
 	margin:auto;
+	margin-top:40px;
 	width:750px;
 }
 .title_bar {/* 국비지원 */
-	margin-left:20px;
-    background-color: #041d79;
+    background-color: darkblue;
     width: 4px;
     height: 19px;
     display: inline-block;
+    margin-left: 60px;
     vertical-align: middle;
+}
+.title_letter{
+	color: darkblue;
+	font-size: 18px;
+	font-weight: 600;
+	display: inline;
+	vertical-align: middle;
 }
 .col-xs-4{ /*강좌들 전체  */
 	width:235px;
 	height:380px;
 	float:left;
 	display:block;
+	margin:auto;
 	overflow:hidden;
 }
 .thumbnail{/* 강좌 전체 */
@@ -130,21 +139,19 @@ $(function(){
 			</div>
 		</div>
 		<!--*****************lms메뉴******************-->
-		<div id="content" class="grid6">
-			&nbsp;
-			<!--*************content start****************-->
-			<h4>
-				<strong><span class="title_bar"></span><span class="bigletter"
-					style="color: #041b78">&nbsp;&nbsp;국비지원&nbsp;과정</span></strong>
-			</h4>
-	
+		<div id="content" class="grid6">&nbsp;
+<!--*************content start****************-->
+			<div>
+			<span class="title_bar">&nbsp;</span>
+      		<div class="title_letter" >&nbsp;&nbsp;국비지원 교육</div>
+			</div>
 		<div id="lecturecontent">
 		<!-- ***********col-xs-4를 foreach로 db에서 모집공고 받아와서 반복.**************** -->
 		
  		<c:forEach items="${lecture}" var="bean">
 		<c:set value="${bean.recruit_num }" var="idx"></c:set>
 		<div class="col-xs-4">
-			<div class="thumbnail"  onclick="curriDetail(${idx})">
+			<div class="thumbnail" onclick="curriDetail(${idx})">
 				<div class="box-tag box-tag-normal">제주센터</div>
 				<img src="img/curriAD3.png"><!-- 강좌이미지 모집공고이미지 -->
 				<div class="caption">

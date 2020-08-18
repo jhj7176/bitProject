@@ -10,10 +10,13 @@
 
 
 <script type="text/javascript">
+
+var num="${bean.num}";
+
 $(function(){
 
 	$('#mypageedit').on('click',function(){	//내정보 수정페이지로 이동
-		location.href='mypageedit.bit';
+		location.href='mypageedit.bit?idx='+num;
 	});
 	
 });
@@ -76,16 +79,16 @@ $(function(){
 </style>
 </head>
 <body>
-	<%@ include file="template/lmsheader.jspf"%>
+	<%@ include file="template/header.jspf"%>
 	<%@ include file="template/menu.jspf"%>
 	<div id="contents">
 		<!--*****************lms메뉴******************-->
 		<div class="grid2">
 			<div id="lmsmenu">
-				<p>마이페이지</p>
+				<p>내정보</p>
 				<ul>
 					<li class="bigletter">계정관리</li>
-					<li><a href="lmsstaffaccountlist.bit">회원정보</a></li>
+					<li><a href="mypage.bit">회원정보</a></li>
 
 					<li></li>
 				</ul>
@@ -100,7 +103,7 @@ $(function(){
 				<h4>회원정보</h4>
 
 
-					<c:set value="${login }" var="bean" />
+					<c:set value="${bean }" var="bean" />
 				<table id="accounttable">
 					<tr>
 						<th>이름</th>

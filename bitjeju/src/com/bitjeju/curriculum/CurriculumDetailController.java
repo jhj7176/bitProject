@@ -1,4 +1,4 @@
-package com.bitjeju.main.curriculum;
+package com.bitjeju.curriculum;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
