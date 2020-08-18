@@ -11,14 +11,6 @@
 
 <script type="text/javascript">
 	$(function() {
-		$('#accountfindform').on('submit',function(){
-			if($('.findphone').val() == ''|| $('.findname').val() == ''){
-				alert('모든 정보를 입력해주세요.');
-				return false;
-			}
-		});
-		
-
 	});
 </script>
 <style type="text/css">
@@ -55,11 +47,11 @@
 }
 
 #accounttable td {
-	padding: 10px;
+	padding: 30px;
 	text-align: left;
 }
 
-#idfindbtn, #accountback {
+#pwfindbtn, #accountback {
 	float: right;
 	background-color: #000069;
 	border: 1px solid #000069;
@@ -69,7 +61,7 @@
 	height: 20px;
 }
 
-#idfindbtn:hover, #accountback:hover {
+#pwfindbtn:hover, #accountback:hover {
 	background-color: white;
 	color: #000069;
 	cursor: pointer;
@@ -122,7 +114,6 @@
 			</div>
 		</div>
 		<!--*****************lms메뉴******************-->
-		<form action="findid.bit" method="post" id="accountfindform">
 		<div id="content" class="grid6">
 			&nbsp;
 			<!--*************content start****************-->
@@ -133,23 +124,18 @@
 
 				<table id="accounttable">
 					<tr>
-						<th>이름</th>
-						<td><input type=text name="findname" class="findname"/></td>
+						<th>ID</th>
+						<td>${id_email }</td>
 					</tr>
-					<tr>
-						<th>전화번호</th>
-						<td><input type="tel" name="findphone" class="findphone"/></td>
-					</tr>
+
 				</table>
 
 
 			</div>
 			<div class="lmscontent">
 				<button id="accountback" type="button" onclick="window.history.go(-1)">뒤로</button>
-				<button id="idfindbtn" type="submit">확인</button>
 
 			</div>
-			</form>
 			<!--*************content end******************-->
 			<%@ include file="template/footer.jspf"%>
 </body>

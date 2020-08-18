@@ -29,13 +29,32 @@ $(function(){
 	var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
 	
 	
+	$('#mypagepw1').on('keyup',function(){
+		mypagepw1 = $('#mypagepw1').val();		//바꾸는 비밀번호
+		mypagepw2 = $('#mypagepw2').val();		//바꾸는 비밀번호
+		if(mypagepw1==mypagepw2&&!pwCheck(mypagepw1)){
+			$('#changepwtxt').text('OK').css('font-size','130%')
+			.css('color','green').css('line-height','50px');
+		}else if(mypagepw1==''&&mypagepw2==''){
+			$('#changepwtxt').text('')
+		}else{
+			$('#changepwtxt').text('NO').css('font-size','130%')
+			.css('color','red').css('line-height','50px');
+		}
+	});
+	
+	
+	
 	$('#mypagepw2').on('keyup',function(){
 		mypagepw1 = $('#mypagepw1').val();		//바꾸는 비밀번호
 		mypagepw2 = $('#mypagepw2').val();		//바꾸는 비밀번호
-		if(mypagepw1==mypagepw2){
+		if(mypagepw1==mypagepw2&&!pwCheck(mypagepw1)){
 			$('#changepwtxt').text('OK').css('font-size','130%')
 			.css('color','green').css('line-height','50px');
-		}else{
+		}else if(mypagepw1==''&&mypagepw2==''){
+			$('#changepwtxt').text('')
+		}
+		else{
 			$('#changepwtxt').text('NO').css('font-size','130%')
 			.css('color','red').css('line-height','50px');
 		}

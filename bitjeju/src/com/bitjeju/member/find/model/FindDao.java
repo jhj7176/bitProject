@@ -52,7 +52,8 @@ public class FindDao {
 	}// constructor
 
 	public String findEmail(String name, String phone) {
-		String sql = "select id_email from member where name =? and phone = ?";
+		System.out.println(name+phone);
+		String sql = "select id_email from member where name =? and phone =?";
 		String id_email = null;
 		try {
 			pstmt = conn.prepareStatement(sql);

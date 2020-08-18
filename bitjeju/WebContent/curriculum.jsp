@@ -58,6 +58,7 @@ $(function(){
 	transition-duration: 1s;
 	border: 1px solid rgb(255, 170, 0);
 	box-shadow:rgb(255, 204, 102) 0px 0px 6px;
+	cursor:pointer;
 }
 .text-left,.caption{
 	padding-left:10px;

@@ -8,21 +8,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.bitjeju.member.MemberDao;
+import com.bitjeju.member.find.model.FindDao;
 
 /**
  * Servlet implementation class FindIdController
  */
 @WebServlet("/findid.bit")
 public class FindIdController extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public FindIdController() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -36,15 +28,15 @@ public class FindIdController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+		request.setCharacterEncoding("utf-8");
 		String name = request.getParameter("findname");
 		String phone = request.getParameter("findphone");
 		
-		MemberDao dao= new MemberDao();
-		
-		
-		
-		
+		FindDao dao = new FindDao();
+		String id_email = dao.findEmail(name, phone);//찾은 아이디 반환
+		System.out.println(id_email);
+		request.setAttribute("id_email", id_email);//아이디 전달 
+		request.getRequestDispatcher("accountFoundId.jsp").forward(request, response);
 	}
 
 }
