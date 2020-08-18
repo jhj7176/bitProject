@@ -14,7 +14,14 @@ import javax.servlet.http.HttpServletResponse;
 public class IntroController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
 			throws ServletException, IOException {
-		int aTag = Integer.parseInt(req.getParameter("a"));
+		
+		int aTag=-1;
+		
+		try {
+			aTag = Integer.parseInt(req.getParameter("a"));
+		} catch (NumberFormatException e) {
+			// TODO Auto-generated catch block
+		}
 		
 		req.setAttribute("a", aTag);
 		req.getRequestDispatcher("intro.jsp").forward(req, resp);

@@ -94,7 +94,7 @@ $(function (){
 	
 	
 	//비트캠프 메뉴 클릭 시 
-	$('#bitcamp-menu').on('mouseover',function(){
+	$('#bitcamp-menu>a').on('mouseenter',function(){
 		$(this).append($('#bit-menu-sub1'));
 		$('#bit-menu-sub1').stop().fadeIn(function(){
 			$(this).css('display','block');
@@ -104,16 +104,21 @@ $(function (){
 	$('#bit-menu-sub1').on('mouseleave',function(){
 		$('#bit-menu-sub1').stop().fadeOut();
 	});
+	
 	//비트캠프 하위메뉴 클릭시
 	$('#bit-menu-sub1>ul>li').each(function(idx,ele){
-		
 		$(this).on('click',function(){
 			var aTag=(idx+1);
-				location.href='intro.bit?a='+aTag;
-		
+			location.href='intro.bit?a='+aTag;
 			return false;
 		});
+		
+		$(this).on('mouseenter',function(){
+			$(this).css('color','#000069').css('font-weight','600');
+		});
+		
 	});
+	
 });//document.Ready
 	
 
@@ -318,7 +323,12 @@ $(function (){
 	}
 	#bit-menu-sub1>ul>li{
 		diplay:block;
+		margin-left:-40px;
 		padding:10px;	
+		text-indent: 40px;
+	}
+	#bit-menu-sub1>ul>li:hover{
+		background-color:#eeeeee;
 	}
 	#bit-menu-sub1>ul>li>a{
 		text-decoration:none;

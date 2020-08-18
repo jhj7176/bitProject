@@ -114,7 +114,7 @@ $(document).ready(function(){
 	kakaoMap();
 	
 	if(aTag==1){
-		$('#intro-a-1').get(0).click(); 
+		//$('#intro-a-1').get(0).click(); 
 	}else if(aTag==2){
 		$('#intro-a-2').get(0).click(); 
 	}else if(aTag==3){
@@ -310,7 +310,7 @@ $(document).ready(function(){
 				<p>비트캠프</p>
 				<ul>
 					<li class="bigletter"><a id="intro-a-1"  href="#intro_table">학원소개</a></li>
-					<li class="bigletter"><a id="intro-a-2"  href="#Tab">연혁</a></li>
+					<li class="bigletter"><a id="intro-a-2"  href="#years">연혁</a></li>
 					<li class="bigletter"><a id="intro-a-3"  href="#teacher-intro">강사진소개</a></li>
 					<li class="bigletter"><a id="intro-a-4"  href="#bitcampMap">오시는길</a></li>
 					<li></li>
@@ -329,7 +329,7 @@ $(document).ready(function(){
       		<img alt="" src="img/bitcamp_intro.png"/>
       		</div>
 		</div>
-		<div>
+		<div id="years">
 			<span class="bar">&nbsp;</span>
       		<div class="text">&nbsp;&nbsp;연 혁</div>
 		</div>
