@@ -61,10 +61,13 @@ $(function(){
 	height:340px;
 	border: 1px solid rgb(221, 221, 221);
 	border-radius: 5px;
-	transition-duration: 1s;
+	transition-duration: 600ms;
+	display:block;
+	margin:auto;
+	margin-top:3px;
 }
 .thumbnail:hover{		/* 강좌 테두리 반짝 */
-	transition-duration: 1s;
+	transition-duration: 600ms;
 	border: 1px solid rgb(255, 170, 0);
 	box-shadow:rgb(255, 204, 102) 0px 0px 6px;
 	cursor:pointer;

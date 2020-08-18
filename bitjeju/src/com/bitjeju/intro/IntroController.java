@@ -14,8 +14,10 @@ import javax.servlet.http.HttpServletResponse;
 public class IntroController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
 			throws ServletException, IOException {
-		RequestDispatcher rd = req.getRequestDispatcher("intro.jsp");
-		rd.forward(req, resp);
+		int aTag = Integer.parseInt(req.getParameter("a"));
+		
+		req.setAttribute("a", aTag);
+		req.getRequestDispatcher("intro.jsp").forward(req, resp);
 	}
 
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) 

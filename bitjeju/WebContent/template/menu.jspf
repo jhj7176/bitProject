@@ -3,7 +3,15 @@
         <div class="grid3">&nbsp;</div>
         <div class="grid6">
             <ul>
-                <li><a href="intro.bit">비트캠프</a></li>
+                <li id="bitcamp-menu"><a href="intro.bit">비트캠프</a>
+                			<div id="bit-menu-sub1">
+			<ul>
+			<li><a href="#">학원소개</a></li>
+			<li><a href="#">연혁</a></li>
+			<li><a href="#">강사진소개</a></li>
+			<li><a href="#">오시는길</a></li>
+			</ul>
+			</div></li>
                 <li><a href="curriculum.bit">교육과정</a></li>
                 <li><a href="#">취업지원</a></li>
                 <li><a href="#">고객센터</a></li>

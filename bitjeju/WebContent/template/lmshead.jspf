@@ -82,6 +82,34 @@ $(function (){
 		location.href='mypage.bit'; //************마이페이지로 이동함
 	});
 
+	
+	
+	
+	
+	
+	
+	//비트캠프 하위메뉴
+	$('#bitcamp-menu').on('mouseover',function(){
+		$(this).append($('#bit-menu-sub1'));
+		$('#bit-menu-sub1').stop().fadeIn(function(){
+			$(this).css('display','block');
+		});
+		
+	});//비트캠프 하위메뉴 
+	$('#bit-menu-sub1').on('mouseleave',function(){
+		$('#bit-menu-sub1').stop().fadeOut();
+	});
+	
+	//비트캠프 하위메뉴 클릭시
+	$('#bit-menu-sub1>ul>li').each(function(idx,ele){
+		
+		$(this).on('click',function(){
+			var aTag=(idx+1);
+				location.href='intro.bit?a='+aTag;
+		
+			return false;
+		});
+	});
 });//document.Ready
 	
 
@@ -310,4 +338,39 @@ $(function (){
         color:#787878;
         font-size: 15px;
     }
+    
+    	/* 비트캠프 서브메뉴 */
+    	
+
+
+	#bit-menu-sub1{
+		z-index:10;
+		position:absolute;
+		display:none;
+		margin-top:-30px;		
+		width:200px;		
+	}
+	#bit-menu-sub1>ul{
+		margin-top:40px;
+		border-radius:5px;
+		border:1px solid #dddddd;
+		overflow:hidden;
+		width:150px;
+		list-style:none;
+		text-align:left;	
+		background-color:white;
+	}
+	#bit-menu-sub1>ul>li{
+		diplay:block;
+		padding:10px;	
+	}
+	#bit-menu-sub1>ul>li>a{
+		text-decoration:none;
+		color:black;
+	}
+	#bit-menu-sub1>ul>li>a:hover{
+		color:#000069;
+		font-weight:600;
+		
+	}
 </style>

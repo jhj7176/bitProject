@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%@ include file="template/lmshead.jspf" %>
 <script type="text/javascript" src="js/jquery-1.12.4.js"></script>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=ae7d0ee23b3febdcacf598483653bc52"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=73c965258ca816cf5049ccb3b335741e"></script>
 <script type="text/javascript">
 function Tabs(){
 	$('#Tab>ul>li').each(function(idx, ele){ /*하나 누를때마다 눌린 탭과 나머지탭의 border와 배경색, 이벤트 변경, 이미지 로드*/
@@ -104,13 +104,27 @@ function kakaoMap(){
 
 
 }
+var aTag = "${a}";
 $(document).ready(function(){  
+	console.log(aTag);
 	Stu();
 	Tabs();
 	$('#Tab>.tab_list>li:nth-child(1)').click();
 	$('#teacher>.tab_teacher_list>li:nth-child(1)').click();
 	kakaoMap();
+	
+	if(aTag==1){
+		$('#intro-a-1').get(0).click(); 
+	}else if(aTag==2){
+		$('#intro-a-2').get(0).click(); 
+	}else if(aTag==3){
+		$('#intro-a-3').get(0).click(); 
+	}else if(aTag==4){
+		$('#intro-a-4').get(0).click();
+	}
+	
 });
+
 
 </script>
 <style type="text/css">
@@ -120,7 +134,7 @@ $(document).ready(function(){
 		
 	}
 	.bar{
-		background-color: darkblue;
+		background-color: #000069;
 		width: 4px;
 		height: 19px;
 		display: inline-block;
@@ -143,6 +157,9 @@ $(document).ready(function(){
 		margin-bottom:40px;	
 		width:700px;
 	}	
+	
+	
+	/*연혁 탭  */
 	#Tab{
 	
 		margin: auto;
@@ -189,7 +206,7 @@ $(document).ready(function(){
 		margin:auto;
 	}		
 	
-			
+	/* 강사진 소개 탭 */
 	#teacher{
 		margin: auto;
 		margin-top:40px;
@@ -229,6 +246,8 @@ $(document).ready(function(){
 		margin:auto;
 	
 	}
+	
+	/* 카카오 지도 api */
 	#map{
 		margin-top: 50px;
 		margin-bottom:10px;
@@ -257,6 +276,7 @@ $(document).ready(function(){
 		text-align:left;
 	
 	}
+	/* 제일 위로 이동 */
 	#moveTop{
 		width:40px;
 		height:20px;
@@ -276,6 +296,7 @@ $(document).ready(function(){
 		text-decoration:none;
 		color:black;
 	}
+	
 </style>
 <title>Insert title here</title>
 </head>
@@ -288,13 +309,14 @@ $(document).ready(function(){
 			<div id="lmsmenu">
 				<p>비트캠프</p>
 				<ul>
-					<li class="bigletter"><a href="#intro_table">학원소개</a></li>
-					<li class="bigletter"><a href="#Tab">연혁</a></li>
-					<li class="bigletter"><a href="#teacher-intro">강사진</a></li>
-					<li class="bigletter"><a href="#bitcampMap">오시는길</a></li>
+					<li class="bigletter"><a id="intro-a-1"  href="#intro_table">학원소개</a></li>
+					<li class="bigletter"><a id="intro-a-2"  href="#Tab">연혁</a></li>
+					<li class="bigletter"><a id="intro-a-3"  href="#teacher-intro">강사진소개</a></li>
+					<li class="bigletter"><a id="intro-a-4"  href="#bitcampMap">오시는길</a></li>
 					<li></li>
 				</ul>
 			</div>
+			
 		</div>
         <!--*****************비트캠프 메뉴******************-->
        <div id="content" class="grid6">&nbsp;
@@ -343,7 +365,7 @@ $(document).ready(function(){
       	</div>
       	<div id="bitcampMap">	
 			<div id="div_map">
-		<div id ="map"></div>
+		<div id ="map"></div><!-- 지도가 들어가는 곳  -->
 		<div id="map_info">
 		
 		<table id="mapTable">
