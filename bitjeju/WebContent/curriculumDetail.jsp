@@ -10,38 +10,37 @@
 
 
 <script type="text/javascript">
-var loginLvl = "${login.lvl}";
-var lecture = "${recruit.recruit_name }";
-$(function(){	
+	var loginLvl = "${login.lvl}";
+	var lecture = "${recruit.recruit_name }";
+	$(function() {
 
-	$('#enrolment').on('click',function(){
-		if(loginLvl==''){
-			alert('로그인이 필요합니다.');
-		}else if(loginLvl==2){
-			alert('이미 수강중인 강좌가 있습니다.');
-		}else if(loginLvl>=3){
-			alert('신청대상이 아닙니다.');
-		}else{
-			var param = 'lecture='+lecture;
-			$.ajax('enrolment.bit',{
-				'method':'post',
-				'data':param,
-				'success':function(){
-					alert('수강신청이 완료되었습니다.');
-				}//success
-			});//ajax
-		}//else
-	});//click
-    
-});
+		$('#enrolment').on('click', function() {
+			if (loginLvl == '') {
+				alert('로그인이 필요합니다.');
+			} else if (loginLvl == 2) {
+				alert('이미 수강중인 강좌가 있습니다.');
+			} else if (loginLvl >= 3) {
+				alert('신청대상이 아닙니다.');
+			} else {
+				var param = 'lecture=' + lecture;
+				$.ajax('enrolment.bit', {
+					'method' : 'post',
+					'data' : param,
+					'success' : function() {
+						alert('수강신청이 완료되었습니다.');
+					}//success
+				});//ajax
+			}//else
+		});//click
 
+	});
 </script>
 <style type="text/css">
-#header .grid3{
-	margin-top:40px;
-	position:relative;
-	
+#header .grid3 {
+	margin-top: 40px;
+	position: relative;
 }
+
 .lmscontent {
 	width: 800px;
 	display: block;
@@ -52,23 +51,52 @@ $(function(){
 .lmscontent:last-child {
 	margin-bottom: 300px;
 }
-#enrolment{/* 수강신청버튼 */
-        background-color: #1E3269;
-        border: 1px solid #1E3269;
-        color: white;
-        margin: 5px;
-        width: 150px;
-        height: 35px;
-        border-radius:5px;
+
+.currintro {
+	margin-top: 40px; width : 800px;
+	height: 250px;
+	width: 800px;
+	border:0px;
 }
-#enrolment:hover{
-	color:#1E3269;
+
+.currintro div {
+	margin-left:20px;
+	float: left;	
+}
+#currintro-table{
+	margin-bottom:20px;
+	width:500px;
+}
+#currintro-table td{
+	color:rgb(51, 51, 51);
+}
+#currintro-table .b{
+	font-size:125%;
+}
+.graycolor{
+	color:#3c3c3c;
+}
+.orange{
+	color: #E56D29;
+}
+#enrolment { /* 수강신청버튼 */
+	background-color: #E56D29;
+	border: 1px solid #E56D29;
+	color: white;
+	margin: 5px;
+	width: 150px;
+	height: 35px;
+	border-radius: 5px;
+}
+
+#enrolment:hover {
+	color: #E56D29;
 	background-color: white;
 	cursor: pointer;
-	
 }
+
 #recruittable {
-	font-size:140%;
+	font-size: 140%;
 	border-collapse: collapse;
 }
 
@@ -80,16 +108,17 @@ $(function(){
 	color: #1E3269;
 	padding: 10px;
 	text-align: center;
-		border-bottom: 1px solid #e4e4e4;
+	border-bottom: 1px solid #e4e4e4;
 }
-#recruittable th+th+th{
-	text-align:right;
+
+#recruittable th+th+th {
+	text-align: right;
 }
+
 #recruittable td {
 	padding: 25px;
 	text-align: left;
 }
-
 
 #recruit_name, .upload-name { /* form input */
 	width: 330px;
@@ -111,11 +140,13 @@ $(function(){
 	width: 50px;
 	height: 20px;
 }
-#recruitback:hover{
-	color:#1E3269;
+
+#recruitback:hover {
+	color: #1E3269;
 	background-color: white;
 	cursor: pointer;
 }
+
 #recruittable input[type="file"] {
 	position: absolute;
 	width: 0;
@@ -136,14 +167,14 @@ $(function(){
 	border-radius: 5px;
 }
 
-#recruit_img{
-	width:700px;
+#recruit_img {
+	width: 700px;
 }
 
-#footer{
+#footer {
 	/* margin-top:400px; */
+	
 }
-
 </style>
 <title>BITCAMP JEJU: 교육과정</title>
 </head>
@@ -157,7 +188,7 @@ $(function(){
 				<p>교육과정</p>
 				<ul>
 					<li class="bigletter">강좌정보</li>
-				<!-- 	<li><a href="lmsteacherattendance.bit">모집공고</a></li> -->
+					<!-- 	<li><a href="lmsteacherattendance.bit">모집공고</a></li> -->
 
 					<li></li>
 				</ul>
@@ -167,20 +198,54 @@ $(function(){
 		<div id="content" class="grid6">
 			&nbsp;
 			<!--*************content start****************-->
+			<c:set value="${recruit }" var="bean"></c:set>
+			<div class="lmscontent currintro">
+
+
+				<div>
+					<img alt="" src="img/curriAD3.png" />
+				</div>
+				<div>
+					<table id="currintro-table">
+						<tr>
+							<td colspan="2"><span class="b graycolor">제주센터</span></td>
+						</tr>
+						<tr>
+							<td colspan="2"><strong><span class="b">${bean.recruit_name }</span></strong></td>
+						</tr>
+						<tr>
+							<td><b>개강일</b></td>
+							<td>&#124; <span class="orange"><strong>${bean.start_day }</strong></span></td>
+						</tr>
+						<tr>
+							<td><b>교육기간</b></td>
+							<td>&#124; ${bean.start_day }~${bean.end_day } (월 ~ 금 9:30 ~ 18:10)</td>
+						</tr>
+						<tr>
+							<td><b>지원자격</b></td>
+							<td>&#124; 고용보험에 가입되어 있지 않은 취업 준비생 또는 실업자</td>
+						</tr>
+					</table>
+				</div>
+				<div>
+					<button id="enrolment">수강신청</button>
+				</div>
+
+
+			</div>
+
 			<div class="lmscontent">
-				<h2>모집공고</h2>
-				<h4>&nbsp;</h4>
-				<button id="enrolment">수강신청</button>
-	
 
 
-			
+
+
+
 				<table id="recruittable">
-					<c:set value="${recruit }" var="bean"></c:set>
+					
 					<tr>
-						<th colspan="2">${bean.recruit_name }</th>
+						<th colspan="2">&nbsp;</th>
 					</tr>
-<%-- 					<tr>
+					<%-- 					<tr>
 						<th>개강일</th>
 						<td><strong>${bean.start_day }</strong></td>
 					</tr>
@@ -194,10 +259,9 @@ $(function(){
 					</tr> --%>
 
 					<tr>
-					
-						<td colspan="2">
-						<img id="recruit_img" alt="" src="recruit/${bean.recruit_file_name }">
-						</td>
+
+						<td colspan="2"><img id="recruit_img" alt=""
+							src="recruit/${bean.recruit_file_name }"></td>
 					</tr>
 
 					<tr>
@@ -211,10 +275,10 @@ $(function(){
 			<div class="lmscontent">
 				<button id="recruitback" onclick="window.history.go(-1)">뒤로</button>
 			</div>
-			
-			
-			
-			
+
+
+
+
 			<!--*************content end******************-->
 			<%@ include file="template/footer.jspf"%>
 </body>

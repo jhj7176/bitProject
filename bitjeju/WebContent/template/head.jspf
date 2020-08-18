@@ -112,11 +112,6 @@ $(function (){
 			location.href='intro.bit?a='+aTag;
 			return false;
 		});
-		
-		$(this).on('mouseenter',function(){
-			$(this).css('color','#000069').css('font-weight','600');
-		});
-		
 	});
 	
 });//document.Ready
@@ -326,6 +321,7 @@ $(function (){
 		margin-left:-40px;
 		padding:10px;	
 		text-indent: 40px;
+		font-weight:lighter;
 	}
 	#bit-menu-sub1>ul>li:hover{
 		background-color:#eeeeee;
@@ -333,10 +329,5 @@ $(function (){
 	#bit-menu-sub1>ul>li>a{
 		text-decoration:none;
 		color:black;
-	}
-	#bit-menu-sub1>ul>li>a:hover{
-		color:#000069;
-		font-weight:600;
-		
 	}
 </style>
