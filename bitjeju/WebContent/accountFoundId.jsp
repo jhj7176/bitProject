@@ -59,6 +59,7 @@
 	margin: 7px;
 	width: 50px;
 	height: 20px;
+	line-height:20px;
 }
 
 #pwfindbtn:hover, #accountback:hover {

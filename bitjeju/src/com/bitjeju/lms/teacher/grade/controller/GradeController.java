@@ -1,5 +1,6 @@
 package com.bitjeju.lms.teacher.grade.controller;
 
+
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -15,8 +16,6 @@ import javax.servlet.http.HttpSession;
 import com.bitjeju.lms.teacher.grade.model.GradeDao;
 import com.bitjeju.lms.teacher.grade.model.GradeDto;
 import com.bitjeju.member.MemberDto;
-
-
 
 
 @WebServlet("/lmsteacherstugrade.bit")
@@ -51,19 +50,31 @@ public class GradeController extends HttpServlet {
 		try {
 			GradeDao dao;
 			if(req.getParameter("grade1") != null){
-				grade1=Integer.parseInt(req.getParameter("grade1").trim());
+				if((req.getParameter("grade1").trim())==null||(req.getParameter("grade1").trim())==""){
+					grade1=0;
+				}else{
+					grade1=Integer.parseInt(req.getParameter("grade1").trim());					
+				}
 				exam="exam1";
 				dao=new GradeDao();
 				dao.updateOne(num, exam, grade1);
 			}
 			if(req.getParameter("grade2") != null){
-				grade2=Integer.parseInt(req.getParameter("grade2").trim());
+				if((req.getParameter("grade2").trim())==null||(req.getParameter("grade2").trim())==""){
+					grade2=0;
+				}else{
+					grade2=Integer.parseInt(req.getParameter("grade2").trim());					
+				}
 				exam="exam2";
 				 dao=new GradeDao();
 				dao.updateOne(num, exam, grade2);
 			}
 			if(req.getParameter("grade3") != null){
-				grade3=Integer.parseInt(req.getParameter("grade3").trim());
+				if((req.getParameter("grade3").trim())==null||(req.getParameter("grade3").trim())==""){
+					grade3=0;
+				}else{
+					grade3=Integer.parseInt(req.getParameter("grade3").trim());					
+				}
 				exam="exam3";
 				dao=new GradeDao();
 				dao.updateOne(num, exam, grade3);
@@ -76,3 +87,4 @@ public class GradeController extends HttpServlet {
 		
 	}
 }
+

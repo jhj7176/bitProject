@@ -27,6 +27,9 @@
 	position:relative;
 	
 }
+#content{
+	height:650px;
+}
 .lmscontent {
 	width: 600px;
 	display: block;
@@ -50,7 +53,7 @@
 #accounttable th {
 	color: #1E3269;
 	padding: 30px;
-	border-right: 1px solid #e4e4e4;
+	/* border-right: 1px solid #e4e4e4; */
 	text-align: right;
 }
 
@@ -67,6 +70,7 @@
 	margin: 7px;
 	width: 50px;
 	height: 20px;
+	line-height:20px;
 }
 
 #idfindbtn:hover, #accountback:hover {
@@ -94,12 +98,12 @@
 }
 
 .findname, .findphone { /*비밀번호 input  */
-	width: 300px;
-	height: 35px;
+	width: 280px;
+	height: 25px;
 	margin: 7px;
 	border-radius: 5px;
 	border: 1px solid #969696;
-	font-size: 120%;
+	font-size: 90%;
 	text-align: center;
 	vertical-align: middle;
 }
@@ -134,11 +138,11 @@
 				<table id="accounttable">
 					<tr>
 						<th>이름</th>
-						<td><input type=text name="findname" class="findname"/></td>
+						<td><input type=text name="findname" class="findname" placeholder="이름을 입력해주세요."/></td>
 					</tr>
 					<tr>
 						<th>전화번호</th>
-						<td><input type="tel" name="findphone" class="findphone"/></td>
+						<td><input type="tel" name="findphone" class="findphone" placeholder="전화번호를 입력해주세요."/></td>
 					</tr>
 				</table>
 

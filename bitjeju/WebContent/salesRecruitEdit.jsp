@@ -19,8 +19,13 @@
 
 		var fileTarget = $('#recruitfile');
 		fileTarget.on('change', function() { // 값이 변경되면
-			var cur = $("#recruittable input[type='file']").val();
-			$(".upload-name").val(cur);
+			var cur = $("#recruitfile").val();
+			$(".recruit-img").val(cur);
+		});
+		var thumbnailTarget = $('#recruit-thumbnail');
+		thumbnailTarget.on('change', function() { // 값이 변경되면
+			var cur = $('#recruit-thumbnail').val();
+			$(".thumbnail-name").val(cur);
 		});
 
 	});//ready
@@ -59,12 +64,12 @@
 
 
 #recruit_name, .upload-name, #recruit_state { /* form input */
-	width: 330px;
+	width: 300px;
 	height: 20px;
 	margin: 7px;
 	border-radius: 5px;
 	border: 1px solid #969696;
-	font-size: 120%;
+	font-size: 90%;
 	text-align: center;
 	vertical-align: middle;
 }
@@ -149,11 +154,17 @@
 						<input type="hidden" name="lecture_name" id="lecture_name" value="${bean.lecture_name }"/></td>
 					</tr>
 					
+<!-- 					<tr>
+						<th>썸네일</th>
+						<td><input class="upload-name thumbnail-name" value="" placeholder="파일선택" />
+							<label for="recruit-thumbnail">업로드</label> 
+							<input type="file" id="recruit-thumbnail" name = "recruit-thumbnail"/></td>
+					</tr> -->
 					<tr>
-						<th>첨부파일</th>
-						<td><input class="upload-name" value="" placeholder="파일선택" />
-							<label for="recruitfile">업로드</label> <input type="file"
-							id="recruitfile" name = "recruitfile"/></td>
+						<th>모집공고</th>
+						<td><input class="upload-name recruit-img" value="" placeholder="파일선택" />
+							<label for="recruitfile">업로드</label> 
+							<input type="file" id="recruitfile" name = "recruitfile"/></td>
 					</tr>
 
 					<tr>

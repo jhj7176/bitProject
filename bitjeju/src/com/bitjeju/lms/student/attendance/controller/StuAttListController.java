@@ -15,7 +15,7 @@ import com.bitjeju.lms.student.attendance.model.StuAttDto;
 import com.bitjeju.member.MemberDto;
 
 
-@WebServlet("/lmsstuattlist.bit")
+@WebServlet("/lmsstuattendance.bit")
 public class StuAttListController extends HttpServlet {
 	HttpSession session;
 	

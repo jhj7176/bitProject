@@ -218,7 +218,7 @@ lang = 5; //한 페이지당 페이지 링크번호 수. 5개
                     <a href="lmsteacherstugrade.bit">성적관리</a>    
                 </li>
                 <li>
-                    <a href="#" class="bigletter">자료실</a>    
+                    <a href="lmsteacherDataroom.bit" class="bigletter">자료실</a>    
                 </li>
                 <li></li>
             </ul>

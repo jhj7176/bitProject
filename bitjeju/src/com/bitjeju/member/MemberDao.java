@@ -245,7 +245,7 @@ public class MemberDao {
 		} else if (dept.equals("관리자")) { // 부서에 따라 레벨 자동부여
 			lvl = 6;
 		}
-		String sql = "insert into member values (member_seq.nextval||member_seq.nextval,";
+		String sql = "insert into member values (member_seq.nextval,";
 		sql += "?,?,?,?,?,null)";
 //이메일 이름 부서 레벨 비번 전화번호 강좌명 
 
@@ -285,7 +285,7 @@ public class MemberDao {
 		if (pstmt != null)
 			pstmt.close();
 
-		String sql = "insert into member values (member_seq.nextval||member_seq.currval" + ",?,?,0,?,?,null)";
+		String sql = "insert into member values (member_seq.nextval" + ",?,?,0,?,?,null)";
 
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, id_email);

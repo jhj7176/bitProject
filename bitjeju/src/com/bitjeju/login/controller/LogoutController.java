@@ -26,7 +26,8 @@ public class LogoutController extends HttpServlet {
 		}
 		//id나 pw가 입력되지않으면 세션있다면 종료, 메인페이지로 forward함.
 		//response.sendRedirect("main.jsp");
-		request.getRequestDispatcher("main.jsp").forward(request, response);
+		//request.getRequestDispatcher("main.jsp").forward(request, response);
+		response.sendRedirect("main.bit");
 	}
 
 	/**
@@ -42,7 +43,8 @@ public class LogoutController extends HttpServlet {
 		}
 		//id나 pw가 입력되지않으면 세션있다면 종료, 메인페이지로 forward함.
 		//response.sendRedirect("main.jsp");
-		request.getRequestDispatcher("main.jsp").forward(request, response);
+		response.sendRedirect("main.bit");
+///		request.getRequestDispatcher("main.jsp").forward(request, response);
 		
 		
 	}

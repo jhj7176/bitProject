@@ -81,7 +81,7 @@ $(function(){
 	cursor: pointer;
 	
 }
-#recruitadd,#recruitedit,#recruitdelete,#recruitback{
+#recruitadd,#recruitedit,#recruitdelete,#recruitback{ /* 아래쪽버튼들 */
 	float:right;
     background-color: #000069;
     border:1px solid #000069;
@@ -89,6 +89,7 @@ $(function(){
     margin: 7px;
     width: 50px;
     height: 20px;
+    line-height:20px;
 }
 #recruitadd:hover,#recruitback:hover{
 		background-color:white;
@@ -163,7 +164,7 @@ private String lecture_name;
 						<th>모집상태</th><!-- recruit테이블에서 모집공고 정보 받아오기 -->
 							<c:choose>
 							<c:when test="${bean.recruit_num eq 0}">
-							<td>X</td>							
+							<td>&nbsp;</td>							
 							</c:when>
 							
 							<c:when test="${bean.recruit_num ne 0}">

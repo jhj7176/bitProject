@@ -59,12 +59,12 @@
 
 
 #recruit_name, .upload-name, #recruit_state { /* form input */
-	width: 330px;
+	width: 300px;
 	height: 20px;
 	margin: 7px;
 	border-radius: 5px;
 	border: 1px solid #969696;
-	font-size: 120%;
+	font-size: 90%;
 	text-align: center;
 	vertical-align: middle;
 }
@@ -77,6 +77,7 @@
 	margin: 7px;
 	width: 50px;
 	height: 20px;
+	line-height:20px;
 }
 #recruitadd:hover,#recruitback:hover {
 		background-color:white;

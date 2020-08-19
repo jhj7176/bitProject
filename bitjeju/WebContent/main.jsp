@@ -31,6 +31,19 @@ function curriDetail(idx){									/* 강좌div클릭 시 idx받아서 해당강
 $(function(){
 	carousel();
 	
+	
+	//.lecture-name:hover{
+//	text-decoration-line:underline;
+
+	
+	$('.thumbnail').each(function(idx, ele){
+		$(this).on('mouseenter',function(){
+			$(this).find('.lecture-name').css('text-decoration-line','underline');		
+		});//enter
+		$(this).on('mouseleave',function(){
+			$(this).find('.lecture-name').css('text-decoration-line','none');		
+		});//leave
+	});//each
 });//ready
 
 
@@ -79,6 +92,7 @@ $(function(){
 	box-shadow:rgb(255, 204, 102) 0px 0px 6px;
 	cursor:pointer;
 }
+
 .text-left,.caption{
 	padding-left:10px;
 }
@@ -167,13 +181,24 @@ $(function(){
 				<c:forEach items="${lecture}" var="bean">
 					<c:set value="${bean.recruit_num }" var="idx"></c:set>
 					<div class="col-xs-4">
+					
+					
 						<div class="thumbnail" onclick="curriDetail(${idx})">
+						
+						
 							<div class="box-tag box-tag-normal">제주센터</div>
+							
+							
 							<img src="img/curriAD3.png">
 							<!-- 강좌이미지 모집공고이미지 -->
+							
+							
 							<div class="caption">
-								<h3>${bean.recruit_name }</h3>
+								<h3><span class="lecture-name">${bean.recruit_name }</span></h3>
 							</div>
+							
+							
+							
 							<div class="text-left price-bar">
 							<table id="edu-duration">
 							<tr>

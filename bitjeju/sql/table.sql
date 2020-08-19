@@ -11,8 +11,10 @@ drop table lectures;
 drop table attendance;
 drop table recruit;
 drop table member;
-drop table bitjejudept;--다른데서 참조하므로 항상 drop을 마지막에 해줘야함
+drop table bitjejudept;
+--다른데서 참조하므로 항상 drop을 마지막에 해줘야함
 
+select * from tab
 
 create table bitjejudept(
 	dept varchar2(20) primary key,
@@ -48,17 +50,17 @@ commit
 select * from MEMBER;
 select * from member where dept='수강생';
 
-insert into member values (member_seq.nextval||member_seq.currval, 'tmsisj@email.com','형진',6,'tmsisj',01012341234,'');
-insert into member values (member_seq.nextval||member_seq.currval, 'sales@email.com','이영업',4,'password',01012341234, null);
-insert into member values (member_seq.nextval||member_seq.currval, 'staff@email.com','김행정',5,'password',01012341234, null);
-insert into member values (member_seq.nextval||member_seq.currval, 'teacher@email.com','김영조',3,'password','01012341234', null);
-insert into member values (member_seq.nextval||member_seq.currval, 'test@email.com','일반',1,'password',01012341234, null);
+insert into member values (member_seq.nextval,'tmsisj@email.com','형진',6,'tmsisj','01012341234','');
+insert into member values (member_seq.nextval,'sales@email.com','이영업',4,'password','01012341234', null);
+insert into member values (member_seq.nextval,'staff@email.com','김행정',5,'password','01012341234', null);
+insert into member values (member_seq.nextval,'teacher@email.com','김영조',3,'password','01012341234', null);
+insert into member values (member_seq.nextval,'test@email.com','일반',1,'password','01012341234', null);
 
-insert into member values (member_seq.nextval||member_seq.currval, 'text2@email.com','철수2',2,'password',01012341234,'JAVA');
+insert into member values (member_seq.nextval,'text2@email.com','철수2',2,'password','01012341234','JAVA');
 
-insert into member values (member_seq.nextval||member_seq.currval,'teacher4@email.com','설민석',3,'password',01012341235,null);
-insert into member values (member_seq.nextval||member_seq.currval,'teacher5@email.com','황현필',3,'password',01012341235,null);
-insert into member values (member_seq.nextval||member_seq.currval,'teacher6@email.com','정민재',3,'password',01012341235,null);
+insert into member values (member_seq.nextval,'teacher4@email.com','설민석',3,'password','01012341235',null);
+insert into member values (member_seq.nextval,'teacher5@email.com','황현필',3,'password','01012341235',null);
+insert into member values (member_seq.nextval,'teacher6@email.com','정민재',3,'password','01012341235',null);
 
 create table attendance( --출석테이블
 	nalja date not null,
@@ -105,8 +107,8 @@ insert into lectures values ('UI/UX 개발자 과정',sysdate,sysdate,22,401,lectures
 insert into lectures values ('안드로이드 개발자 과정',sysdate,sysdate,22,401,lectures_seq.nextval);
 
 
-
-create table recruit (--모집공고게시판>>select * from lecture;>>모집공고 업로드하는 form>> 입력>>리쿠르트테이블에 insert
+--모집공고게시판>>select * from lecture;>>모집공고 업로드하는 form>> 입력>>리쿠르트테이블에 insert
+create table recruit (
 	recruit_file_name varchar2(200),
 	recruit_num number primary key,	
 	foreign key(recruit_num) references lectures(lecture_num) on delete cascade
@@ -148,7 +150,7 @@ create table dataroom(
 	drContent varchar2(2048),
 	foreign key (num) references member(num)
 );
-
+select * from dataroom;
 
  --공지사항 게시판
 create sequence notice_seq;

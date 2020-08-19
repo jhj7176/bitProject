@@ -16,9 +16,15 @@
 				alert('모든 정보를 입력해주세요.');
 				return false;
 			}
+			$('#waiting').css('display','block');
+			$('#waiting').append('<span id="waitingMsg">메일 전송 중...</span>');
+		
+		
 		});
 		
-
+		
+		
+		
 	});
 </script>
 <style type="text/css">
@@ -26,6 +32,9 @@
 	margin-top:40px;
 	position:relative;
 	
+}
+#content{
+	height:650px;
 }
 .lmscontent {
 	width: 600px;
@@ -50,7 +59,7 @@
 #accounttable th {
 	color: #1E3269;
 	padding: 30px;
-	border-right: 1px solid #e4e4e4;
+	/* border-right: 1px solid #e4e4e4; */
 	text-align: right;
 }
 
@@ -67,6 +76,7 @@
 	margin: 7px;
 	width: 50px;
 	height: 20px;
+	line-height:20px;
 }
 
 #pwfindbtn:hover, #accountback:hover {
@@ -94,14 +104,24 @@
 }
 
 .findname, .findemail { /*비밀번호 input  */
-	width: 300px;
-	height: 35px;
+	width: 280px;
+	height: 25px;
 	margin: 7px;
 	border-radius: 5px;
 	border: 1px solid #969696;
-	font-size: 120%;
+	font-size: 90%;
 	text-align: center;
-	vertical-align: middle;
+}
+#waiting{
+	width:400px;
+	height:50px;
+	display:none;
+	margin:auto;
+	margin-top:40px;
+	text-align:center;
+}
+#waitingMsg{
+	font-size:120%;
 }
 </style>
 </head>
@@ -134,11 +154,11 @@
 				<table id="accounttable">
 					<tr>
 						<th>이메일</th>
-						<td><input type="email" name="findemail" class="findemail"/></td>
+						<td><input type="email" name="findemail" class="findemail" placeholder="이메일을 입력해주세요."/></td>
 					</tr>
 					<tr>
 						<th>이름</th>
-						<td><input type="text" name="findname" class="findname"/></td>
+						<td><input type="text" name="findname" class="findname" placeholder="이름을 입력해주세요."/></td>
 					</tr>
 				</table>
 
@@ -150,6 +170,7 @@
 
 			</div>
 			</form>
+			<div id="waiting"></div>
 			<!--*************content end******************-->
 			<%@ include file="template/footer.jspf"%>
 </body>

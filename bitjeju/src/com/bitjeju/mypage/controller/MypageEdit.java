@@ -18,15 +18,12 @@ import com.bitjeju.member.MemberDto;
 @WebServlet("/mypageedit.bit")
 public class MypageEdit extends HttpServlet {
 
-
+	private int num;
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
-		int num = Integer.parseInt(request.getParameter("idx"));
-		System.out.println(num+"<<회원번호");
 		MemberDao dao = new MemberDao();
 		MemberDto bean = null;
 		
@@ -46,6 +43,12 @@ public class MypageEdit extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
+		int num = Integer.parseInt(request.getParameter("idx"));
+		System.out.println(num+"<<회원번호");
+		this.num=num;
+
+	
 	}
 
 }

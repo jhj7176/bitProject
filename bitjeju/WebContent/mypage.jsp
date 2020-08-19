@@ -12,14 +12,21 @@
 <script type="text/javascript">
 
 var num="${bean.num}";
-
 $(function(){
-
 	$('#mypageedit').on('click',function(){	//내정보 수정페이지로 이동
-		location.href='mypageedit.bit?idx='+num;
-	});
-	
-});
+		//location.href='mypageedit.bit?idx='+num;
+		$.ajax('mypageedit.bit',{
+			'method':'post',
+			'data':'idx='+num,
+			'success':function(data){
+				location.href='mypageedit.bit';
+			},//success
+			'error':function(data){
+				alert('수정에 실패했습니다.');
+			}//error
+		});//ajax
+	});//click
+});//ready
 </script>
 <style type="text/css">
 .lmscontent {
@@ -54,6 +61,7 @@ $(function(){
     margin: 7px;
     width: 50px;
     height: 20px;
+    line-height:20px;
 }
 #mypageedit:hover,#accountback:hover{
 	background-color:white;
@@ -117,9 +125,10 @@ $(function(){
 						<th>구분</th>
 						<td>${bean.dept }</td>
 					</tr>
+					    <c:set var="phoneNum" value="${bean.phone}" />
 					<tr>
 						<th>전화번호</th>
-						<td>${bean.phone }</td>
+						<td>${fn:substring(phoneNum,0,3) }-${fn:substring(phoneNum,3,7) }-${fn:substring(phoneNum,7,11) }</td>
 					</tr>
 				</table>
 
@@ -128,10 +137,19 @@ $(function(){
 			<div class="lmscontent">
 			<button id="accountback" onclick="window.history.go(-1)">뒤로</button>
 			<button id="mypageedit" type="submit">수정</button>			
-<!-- 			<button id="accountedit">수정</button>
-회원정보 수정 삭제가 행정직원에게 주어도 되는지 고민.. 
+			
 
-수강생관리에서 수강생 삭제기능만 넣기. 개인정보는 각자 로그인했을 때 변경. 	 -->		
+<!-- 
+  @ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %> --jstl함수 선언.
+               </tr>
+               
+                     <c:set var="phoneNum" value="${bean.phone}" />
+               
+                   <td>${fn:substring(phoneNum,0,3) }-${fn:substring(phoneNum,3,7) }-${fn:substring(phoneNum,7,11) }</td>
+               </tr>
+
+
+-->		
 			</div>
 			<!--*************content end******************-->
 			<%@ include file="template/footer.jspf"%>

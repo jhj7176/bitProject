@@ -85,6 +85,7 @@ public class RecruitFileController extends HttpServlet {
 		}
 		
 		String file_name = mpReq.getFilesystemName("recruitfile");//历厘等颇老疙
+		String thumbnail_file_name = mpReq.getFilesystemName("thumbnail-name");//历厘等颇老疙
 		
 		System.out.println(lecture_name); 
 		System.out.println(file_name);

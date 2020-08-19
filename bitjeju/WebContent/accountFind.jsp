@@ -31,16 +31,21 @@
 	width: 600px;
 	display: block;
 	margin: auto;
-	border-bottom: 1px solid #e4e4e4;
+	/* border-bottom: 1px solid #e4e4e4; */
 }
 
 .lmscontent:last-child { /*푸터와 거리두기  */
 	margin-bottom: 400px;
 }
-
+.lmscontent h2{
+	color:rgb(51, 51, 51);
+	margin-bottom:40px;
+}
 #accounttable {
-	width:600px;
+	width:400px;
 	border-collapse: collapse;
+	border:1px solid #e4e4e4;
+	margin:auto;
 }
 
 #accounttable tr {
@@ -67,6 +72,7 @@
 	margin: 7px;
 	width: 50px;
 	height: 20px;
+	line-height:20px;
 }
 
 #mypageedit:hover, #accountback:hover {
@@ -76,8 +82,8 @@
 }
 
 #idfind, #pwfind {
-	background-color: #000069;
-	border: 1px solid #000069;
+	background-color: #1E3269;
+	border: 1px solid #1E3269;
 	color: white;
 	display:block;
 	margin-left: auto;
@@ -89,20 +95,10 @@
 
 #idfind:hover, #pwfind:hover {
 	background-color: white;
-	color: #000069;
+	color: #1E3269;
 	cursor: pointer;
 }
 
-#mypagepw, #mypagephone { /*비밀번호 input  */
-	width: 300px;
-	height: 35px;
-	margin: 7px;
-	border-radius: 5px;
-	border: 1px solid #969696;
-	font-size: 120%;
-	text-align: center;
-	vertical-align: middle;
-}
 </style>
 </head>
 <body>
@@ -142,7 +138,7 @@
 
 			</div>
 			<div class="lmscontent">
-				<button id="accountback" onclick="window.history.go(-1)">뒤로</button>
+				<!-- <button id="accountback" onclick="window.history.go(-1)">뒤로</button> -->
 
 			</div>
 			<!--*************content end******************-->

@@ -88,7 +88,7 @@ $(function(){
 #attRange,#classRange{ /* progress bar */
 	height:20px;
 	width:300px;
-	background-color:beige;
+/* 	background-color:beige; */
 }
 
 

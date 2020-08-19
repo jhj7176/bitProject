@@ -67,22 +67,20 @@ $('#signupbtn').on('click',function(){ //등록버튼 눌렀을 때 이벤트.
 		return false;
 });//submit
 
-
-
 $('#signuppw').on('keyup',function(){
 	signuppw1 = $('#signuppw').val();	//비밀번호1
 	signuppw2 = $('#signuppw2').val();		//비밀번호2
 
 	if(signuppw1==signuppw2&&!(pwCheck(signuppw2))){ //영문숫자조합이면서 두 비번이 같을때만 OK
-		$('#changepwtxt').text('일치').css('font-size','130%')
+		$('#changepwtxt').text('일치').css('font-size','90%')
 		.css('color','green').css('vertical-align','middle');
 	}else if(signuppw2==''){
 		$('#changepwtxt').text('');
 	}else if(pwCheck(signuppw2)){	//영문숫자조합아닐때.
-		$('#changepwtxt').text('불일치').css('font-size','130%')
+		$('#changepwtxt').text('불일치').css('font-size','90%')
 		.css('color','red').css('vertical-align','middle');
 	}else{
-		$('#changepwtxt').text('불일치').css('font-size','130%')
+		$('#changepwtxt').text('불일치').css('font-size','90%')
 		.css('color','red').css('vertical-align','middle');
 	}
 });//keyup 비밀번호1
@@ -91,15 +89,15 @@ $('#signuppw2').on('keyup',function(){
 	signuppw1 = $('#signuppw').val();		//비밀번호1
 	signuppw2 = $('#signuppw2').val();		//비밀번호2
 	if(signuppw1==signuppw2&&!(pwCheck(signuppw2))){ //영문숫자조합이면서 두 비번이 같을때만 OK
-		$('#changepwtxt').text('일치').css('font-size','130%')
+		$('#changepwtxt').text('일치').css('font-size','90%')
 		.css('color','green').css('vertical-align','middle');
 	}else if(signuppw2==''){
 		$('#changepwtxt').text('');
 	}else if(pwCheck(signuppw2)){	//영문숫자조합아닐때.
-		$('#changepwtxt').text('불일치').css('font-size','130%')
+		$('#changepwtxt').text('불일치').css('font-size','90%')
 		.css('color','red').css('vertical-align','middle');
 	}else{
-		$('#changepwtxt').text('불일치').css('font-size','130%')
+		$('#changepwtxt').text('불일치').css('font-size','90%')
 		.css('color','red').css('vertical-align','middle');
 	}
 });
@@ -176,15 +174,16 @@ $('#overlap').on('click',function(){ // 아이디 중복검사 버튼
 	text-align:left;
 }
 
-#signupemailid,#deptselect,#name,#phone,#signuppw,#signuppw2{
-    width: 300px;
-    height: 35px;
+#signupemailid,#deptselect,#name,#phone,#signuppw,#signuppw2{  /* input들 */
+    width: 250px;
+    height: 25px;
     margin: 7px;
     border-radius: 5px;
     border: 1px solid #969696;
-    font-size:120%;
+    font-size:90%;
     text-align:center;
     vertical-align:middle;
+    
 }
 
 #signupbtn,#signupback{/* 버튼 */
@@ -195,6 +194,7 @@ $('#overlap').on('click',function(){ // 아이디 중복검사 버튼
     margin: 7px;
     width: 50px;
     height: 20px;
+    line-height:20px;
 }
 #signupbtn:hover,#signupback:hover{/* 버튼 */
 	background-color:white;
@@ -207,8 +207,10 @@ $('#overlap').on('click',function(){ // 아이디 중복검사 버튼
     color:white;
     margin-top : 9px;
     margin-right: 10px;
-    width: 60px;
-    height: 37px;
+    width: 50px;
+    height: 25px;
+    line-height:20px;
+    font-size:90%;
     border-radius:5px;
 
 }

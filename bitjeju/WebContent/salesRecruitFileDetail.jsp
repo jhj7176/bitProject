@@ -81,6 +81,7 @@ var recruit_num = "${recruit.recruit_num }";
 	margin: 7px;
 	width: 50px;
 	height: 20px;
+	line-height:20px;
 }
 #recruitedit:hover, #recruitdelete:hover, #recruitback:hover {
 		background-color:white;

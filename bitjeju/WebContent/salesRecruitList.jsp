@@ -98,7 +98,7 @@ $(function(){});
 							
 							<c:choose>
 							<c:when test="${bean.recruit_num eq 0}">
-							<td>X</td>							
+							<td>&nbsp;</td>							
 							</c:when>
 							
 							<c:when test="${bean.recruit_num ne 0}">

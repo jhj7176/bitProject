@@ -71,7 +71,7 @@ public class LectureAddController extends HttpServlet {
 
 			dao.insertLecture(lecture_name, start_day, end_day, name, lecture_room);
 			dao = new LectureDao();
-			dao.updateLectureToteacher(name, lecture_name); //레벨이3이고 강사이름으로 검색해서 강사의 과목컬럼에 개설강좌 추가.
+		//	dao.updateLectureToteacher(name, lecture_name); //레벨이3이고 강사이름으로 검색해서 강사의 과목컬럼에 개설강좌 추가.
 			// 강좌테이블에 입력받은 값을 추가.
 		} catch (NullPointerException e) {
 			request.getRequestDispatcher("staffLectureAdd.jsp").forward(request, response);

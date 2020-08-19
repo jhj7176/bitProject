@@ -16,7 +16,15 @@ function curriDetail(idx){
 }
 
 $(function(){
-
+	
+	$('.thumbnail').each(function(idx, ele){
+		$(this).on('mouseenter',function(){
+			$(this).find('.lecture-name').css('text-decoration-line','underline');		
+		});//enter
+		$(this).on('mouseleave',function(){
+			$(this).find('.lecture-name').css('text-decoration-line','none');		
+		});//leave
+	});//each
     
 });
 
@@ -158,7 +166,7 @@ $(function(){
 				<div class="box-tag box-tag-normal">제주센터</div>
 				<img src="img/curriAD3.png"><!-- 강좌이미지 모집공고이미지 -->
 				<div class="caption">
-					<h3>${bean.recruit_name }</h3>
+					<h3><span class="lecture-name">${bean.recruit_name }</span></h3>
 				</div>
 				<div class="text-left price-bar">
 					<small>개강일</small>&#124;<span class="orange">${bean.start_day }</span><br />

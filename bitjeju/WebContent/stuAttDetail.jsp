@@ -41,10 +41,10 @@
     background-color: white;
     border:1px solid #000069;
     color:#000069;	
-    cursor: pointer;
 }
 </style>
 <script type="text/javascript">
+
 	
 </script>
 </head>
@@ -55,19 +55,19 @@
    <!--*****************lms메뉴******************-->
        <div class="grid2">
         <div id="lmsmenu">
-            <p>수강생</p>
+            <p>수강생<br><span id="lecname">${login.lecture }</span></p>
             <ul>
                 <li class="bigletter">
                     <a href="lmsstugrade.bit">성적조회</a>    
                 </li>
                 <li class="bigletter">
-                    <a href="lmsstuattlist.bit">출결조회</a>    
+                    <a href="lmsstuattendance.bit">출결조회</a>    
                 </li>
                 <li class="bigletter">
                     <a href="lmsstulecture.bit">수강정보</a>    
                 </li>
                 <li class="bigletter">
-                    <a href="" class="bigletter">자료실</a>    
+                    <a href="lmsstudataroom.bit" class="bigletter">자료실</a>    
                 </li>
                 <li></li>
             </ul>

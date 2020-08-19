@@ -34,12 +34,12 @@ $(function(){
 		mypagepw2 = $('#mypagepw2').val();		//바꾸는 비밀번호
 		if(mypagepw1==mypagepw2&&!pwCheck(mypagepw1)){
 			$('#changepwtxt').text('OK').css('font-size','130%')
-			.css('color','green').css('line-height','50px');
+			.css('color','green').css('line-height','40px');
 		}else if(mypagepw1==''&&mypagepw2==''){
 			$('#changepwtxt').text('')
 		}else{
 			$('#changepwtxt').text('NO').css('font-size','130%')
-			.css('color','red').css('line-height','50px');
+			.css('color','red').css('line-height','40px');
 		}
 	});
 	
@@ -50,13 +50,13 @@ $(function(){
 		mypagepw2 = $('#mypagepw2').val();		//바꾸는 비밀번호
 		if(mypagepw1==mypagepw2&&!pwCheck(mypagepw1)){
 			$('#changepwtxt').text('OK').css('font-size','130%')
-			.css('color','green').css('line-height','50px');
+			.css('color','green').css('line-height','40px');
 		}else if(mypagepw1==''&&mypagepw2==''){
 			$('#changepwtxt').text('')
 		}
 		else{
 			$('#changepwtxt').text('NO').css('font-size','130%')
-			.css('color','red').css('line-height','50px');
+			.css('color','red').css('line-height','40px');
 		}
 	});
 	
@@ -160,6 +160,7 @@ $(function(){
     margin: 7px;
     width: 50px;
     height: 20px;
+    line-height:20px;
 }
 #accountback:hover{
 	background-color:white;
@@ -172,23 +173,26 @@ $(function(){
     color:white;
     margin-top : 9px;
     margin-right: 10px;
-    width: 60px;
-    height: 35px;
+    width: 50px;
+    height: 25px;
+    font-size:90%;
     border-radius:5px;
     float:left;
+    ling-height:25px;
 }
 #changepw:hover,#changephone:hover{
 	background-color:white;
 	color:#000069;
 }
 #mypagepw1,#mypagepw2,#mypagephone{/*비밀번호 input  */
-    width: 300px;
-    height: 35px;
+    width: 250px;
+    height: 25px;
     margin: 7px;
     border-radius: 5px;
     border: 1px solid #969696;
-    font-size:120%;
+    font-size:90%;
     text-align:center;
+    line-height:25px;
     vertical-align:middle;
     float:left;
   
@@ -239,7 +243,7 @@ $(function(){
 						<th>비밀번호</th>
 						<td><input type="password" id="mypagepw1" name="mypagepw" placeholder="영문+숫자 8~12자리입니다."/><button type="button" id="changepw">변경</button></td>
 					</tr>
-					<tr>
+					<tr>	
 						<th>비밀번호확인</th>
 						<td><input type="password" id="mypagepw2" name="mypagepw" placeholder="영문+숫자 8~12자리입니다."/><span id="changepwtxt"></span></td>
 					</tr>
@@ -252,7 +256,16 @@ $(function(){
 						<td><input type="text" name="mypagephone" id="mypagephone"  placeholder="'-' 없이 입력해주세요." value=" ${bean.phone }"/><button type="button" id="changephone">변경</button></td>
 					</tr>
 				</table>
+<!--  
+               </tr>
+               
+                     <c:set var="phoneNum" value="${bean.phone}" />
+               
+                   <td>${fn:substring(phoneNum,0,3) }-${fn:substring(phoneNum,3,7) }-${fn:substring(phoneNum,7,11) }</td>
+               </tr>
 
+
+-->
 
 			</div>
 			<div class="lmscontent">
