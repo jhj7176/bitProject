@@ -18,9 +18,23 @@
 			}
 			$('#waiting').css('display','block');
 			$('#waiting').append('<span id="waitingMsg">메일 전송 중...</span>');
+			//전송 중이라는 메세지 띄움
+			
+			
+			var param = 'findemail='+$('.findemail').val()+'&findname='+$('.findname').val();
+			//입력한 패스워드, 이름. 파라미터 변수에 저장.
+			$.ajax('findpw.bit',{
+				'method':'post',
+				'data':param
+			});//ajax
+			//비동기로 메일전송을 시켜둔다.
+			//메일 전송이 느려서 전송컨트로러에 파라미터 전송 후 페이지 이동은 따로 시켜줌.
+			
+			location.href='findpw.bit';
+			//메일전송은 비동기로 시켜두고 일단 메일전송했다는 페이지로 이동시킴.
 		
-		
-		});
+			return false;//폼태그 서브밋 방지
+		});//submit
 		
 		
 		

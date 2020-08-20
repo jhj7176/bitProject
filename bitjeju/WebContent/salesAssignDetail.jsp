@@ -32,12 +32,12 @@
 	color: #1E3269;
 	padding: 30px;
 	border-right: 1px solid #e4e4e4;
-	text-align:right;
+	text-align: right;
 }
 
 #assigntable td {
 	padding: 30px;
-	text-align:left;
+	text-align: left;
 }
 
 .lecturename {
@@ -73,11 +73,13 @@
 	width: 50px;
 	line-height: 20px;
 }
-#assignback:hover{
-	background-color:white;
-	color:#000069;
+
+#assignback:hover {
+	background-color: white;
+	color: #000069;
 	cursor: pointer;
 }
+
 #paging { /* 페이지링크 감싸는 div */
 	width: 300px;
 	display: block;
@@ -177,16 +179,17 @@
 							<th>교육기간</th>
 							<c:choose>
 								<c:when test="${not empty bean.start_day}">
-									<td>${bean.start_day } ~ ${bean.end_day }</td>
+									<td>${bean.start_day }~ ${bean.end_day }</td>
 								</c:when>
 								<c:when test="${empty bean.start_day }">
 									<td></td>
 								</c:when>
 							</c:choose>
 						</tr>
+						<c:set var="phoneNum" value="${bean.phone}" />
 						<tr>
-							<th>연락처</th>
-							<td>${bean.phone }</td>
+							<th>전화번호</th>
+							<td>${fn:substring(phoneNum,0,3) }-${fn:substring(phoneNum,3,7) }-${fn:substring(phoneNum,7,11) }</td>
 						</tr>
 						<tr>
 							<th>이메일</th>
@@ -198,7 +201,7 @@
 				<!-- assigntable end -->
 			</div>
 			<div class="lmscontent">
-				<button id="assignback"  class="btn" onclick="window.history.go(-1)">뒤로</button>
+				<button id="assignback" class="btn" onclick="window.history.go(-1)">뒤로</button>
 			</div>
 		</div>
 		<!-- lmscotent end -->

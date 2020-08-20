@@ -65,10 +65,11 @@ $(function (){
 					console.log('로그인실패')
 					alert('아이디와 비밀번호를 확인해주세요');
 					//id pw를 서버에 보냈으나 회원정보와 일치하지 않음
-						location.replace('main.bit');
+						//location.replace('main.bit');
 					}else{
-						location.href='main.bit';//login성공
+						//location.href='main.bit';//login성공
 						//비동기통신이므로 강제로 페이지 이동시켜주지않으면 로그인창이 '환영합니다'로 안바뀜 
+						location.reload(true);
 					}
 				} //success
 			});//ajax

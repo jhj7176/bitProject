@@ -10,88 +10,94 @@
 <title>BITCAMP JEJU: LMS행정-수강생정보</title>
 
 <script type="text/javascript">
+	var lecturename = "${lecture.lecture_name}";//el
+	var studentNum = "${bean.num}";
 
-var lecturename ="${lecture.lecture_name}";//el
-var studentNum ="${bean.num}";
+	//**********com.bitjeju.lms.teacher.stu.model패키지 내 StudentDto에 있는 method
+	//디테일 서블릿에서 StudentDto bean을 받아서 el이용하여 Dto내 메서드 사용.
+	var attRate = "${bean.attRate()}"; //출석률
+	var classRate = "${bean.classProgress()}"; //수업진행률
+	/* var cntAtt = "${bean.cntAtt()}";//출석횟수 studentDto에 method구현해둠.
+	 var cntLate = "${bean.cntLate()}";//지각횟수
+	 var cntEaryl = "${bean.cntEarly()}";//조퇴횟수
+	 var cntAbsent = "${bean.cntAbsent()}";//결석횟수 */
 
-//**********com.bitjeju.lms.teacher.stu.model패키지 내 StudentDto에 있는 method
-//디테일 서블릿에서 StudentDto bean을 받아서 el이용하여 Dto내 메서드 사용.
-var attRate ="${bean.attRate()}";	//출석률
-var classRate = "${bean.classProgress()}"; //수업진행률
-/* var cntAtt = "${bean.cntAtt()}";//출석횟수 studentDto에 method구현해둠.
-var cntLate = "${bean.cntLate()}";//지각횟수
-var cntEaryl = "${bean.cntEarly()}";//조퇴횟수
-var cntAbsent = "${bean.cntAbsent()}";//결석횟수 */
-$(function(){
-/* 	$('#lectureedit').on('click',function(){//*************수정 서블릿으로
-		location.href='lmsstafflectureedit.bit?lecture_name='+lecturename+'&lecture_num='+lecturenum;
-	}); */
-	
-	if(attRate>=80){
-		$('#studentdelete').attr('disabled','disabled').css('background-color','gray');
-		//출석률이 80%이상이면 삭제버튼 비활성.
-	}else{
-		$('#studentdelete').removeAttr('disabled');
-		//출석률이 80%미만이면 삭제버튼 비활성화 속성을 삭제. 삭제가능. 
-	}
-	$('#studentdelete').on('click',function(){//****************삭제 서블릿으로
-		location.href='lmsstaffstudentdelete.bit?num='+studentNum;		
-	});
-	console.log(attRate, classRate);
-	$('#attRange').prop('value',attRate);
-	$('#classRange').prop('value',classRate);
-	
-	
-});//ready
+	$(function() {
+		/* 	$('#lectureedit').on('click',function(){//*************수정 서블릿으로
+		 location.href='lmsstafflectureedit.bit?lecture_name='+lecturename+'&lecture_num='+lecturenum;
+		 }); */
 
+		if (attRate >= 80) {
+			$('#studentdelete').attr('disabled', 'disabled').css(
+					'background-color', 'gray');
+			//출석률이 80%이상이면 삭제버튼 비활성.
+		} else {
+			$('#studentdelete').removeAttr('disabled');
+			//출석률이 80%미만이면 삭제버튼 비활성화 속성을 삭제. 삭제가능. 
+		}
+		$('#studentdelete').on('click', function() {//****************삭제 서블릿으로
+			location.href = 'lmsstaffstudentdelete.bit?num=' + studentNum;
+		});
+		console.log(attRate, classRate);
+		$('#attRange').prop('value', attRate);
+		$('#classRange').prop('value', classRate);
+
+	});//ready
 </script>
 <style type="text/css">
 .lmscontent {
 	width: 600px;
 	display: block;
 	margin: auto;
-	border-bottom:1px solid #e4e4e4;
+	border-bottom: 1px solid #e4e4e4;
 }
+
 .lmscontent:last-child {
-	margin-bottom:300px;
-}
-#lecturetable{
-	border-collapse:collapse;
-	font-size:110%;
-}
-#lecturetable tr{
-}
-#lecturetable th{
-	color:#1E3269;
-	padding:30px;
-	border-right:1px solid #e4e4e4;
-	text-align:right;
-}
-#lecturetable td{
-	padding:25px;
-	text-align:left;
-}
-#studentdelete,#studentback{
-	float:right;
-    background-color: #000069;
-    border:1px solid #000069;
-    color:white;
-    margin: 7px;
-    width: 50px;
-    height: 20px;
-}
-#studentdelete:hover,#studentback:hover{
-		background-color:white;
-		color:#000069;
-		cursor: pointer;
-}
-#attRange,#classRange{ /* progress bar */
-	height:20px;
-	width:300px;
-/* 	background-color:beige; */
+	margin-bottom: 300px;
 }
 
+#lecturetable {
+	border-collapse: collapse;
+	font-size: 110%;
+}
 
+#lecturetable tr {
+	
+}
+
+#lecturetable th {
+	color: #1E3269;
+	padding: 30px;
+	border-right: 1px solid #e4e4e4;
+	text-align: right;
+}
+
+#lecturetable td {
+	padding: 25px;
+	text-align: left;
+}
+
+#studentdelete, #studentback {
+	float: right;
+	background-color: #000069;
+	border: 1px solid #000069;
+	color: white;
+	margin: 7px;
+	width: 50px;
+	height: 20px;
+}
+
+#studentdelete:hover, #studentback:hover {
+	background-color: white;
+	color: #000069;
+	cursor: pointer;
+}
+
+#attRange, #classRange { /* progress bar */
+	height: 20px;
+	width: 300px;
+	/* 	background-color:beige; */
+}
 </style>
 </head>
 <body>
@@ -121,7 +127,7 @@ $(function(){
 			<div class="lmscontent">
 				<h2>수강생 관리</h2>
 				<h4>수강생정보</h4>
-<!-- 
+				<!-- 
 private String lecture_name;
 	private Date start_day, end_day;
 	private int num, lecture_room,lecture_num;
@@ -130,16 +136,18 @@ private String lecture_name;
 
  -->
 
-					<c:set value="${bean }" var="bean" />
+				<c:set value="${bean }" var="bean" />
 				<table id="lecturetable">
 					<tr>
 						<th>이름</th>
 						<td>${bean.name }</td>
 					</tr>
+					<c:set var="phoneNum" value="${bean.phone}" />
 					<tr>
-						<th>연락처</th>
-						<td>${bean.phone }</td>
+						<th>전화번호</th>
+						<td>${fn:substring(phoneNum,0,3) }-${fn:substring(phoneNum,3,7) }-${fn:substring(phoneNum,7,11) }</td>
 					</tr>
+
 					<tr>
 						<th>강좌명</th>
 						<td>${bean.lecture_name }</td>
@@ -149,17 +157,18 @@ private String lecture_name;
 						<td>${bean.teacher_name }</td>
 					</tr>
 					<tr>
-						<th>강의실</th>	<!--숫자는 null이면 0으로 출력되므로 조건문처리.  -->
+						<th>강의실</th>
+						<!--숫자는 null이면 0으로 출력되므로 조건문처리.  -->
 						<c:choose>
-						<c:when test="${bean.lecture_room ne 0 }">
-						<td>${bean.lecture_room }</td>
-						</c:when>			
-						<c:when test="${bean.lecture_room eq 0 }">
-						<td>${null }</td>						
-						</c:when>
+							<c:when test="${bean.lecture_room ne 0 }">
+								<td>${bean.lecture_room }</td>
+							</c:when>
+							<c:when test="${bean.lecture_room eq 0 }">
+								<td>${null }</td>
+							</c:when>
 						</c:choose>
-					
-					
+
+
 					</tr>
 					<tr>
 						<th>개강일</th>
@@ -210,9 +219,9 @@ private String lecture_name;
 
 			</div>
 			<div class="lmscontent">
-			<button id="studentback" onclick="window.history.go(-1)">뒤로</button>			
-			<button id="studentdelete">삭제</button>			
-			
+				<button id="studentback" onclick="window.history.go(-1)">뒤로</button>
+				<button id="studentdelete">삭제</button>
+
 			</div>
 			<!--*************content end******************-->
 			<%@ include file="template/footer.jspf"%>

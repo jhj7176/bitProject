@@ -37,8 +37,10 @@ public class EndingLectureController extends HttpServlet {
 		
 		
 		LectureDao dao = new LectureDao();
-		dao.deleteLecture(name);//멤버테이블에 강사의 과목컬럼에 과목 입력. 개강
-
+		dao.deleteLecture(name);//멤버테이블에 강사의 과목컬럼에 과목 삭제 종강
+		//해당과목을 수강하는 학생들의 출석, 성적 정보도 삭제 필요. 
+		//해당학생들을 수강생(2)에서 수료생(1)으로 전환 필요
+		
 		response.setContentType("application/xml;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		out.print("<result>ending</result>");

@@ -16,12 +16,6 @@
 .lmscontent:last-child {
 	margin-bottom:300px;
 }
-#lecname{
-	color: #787878;
-	font-size:14px;
-	font-weight:bold;
-	line-height:15px;
-}
 #searchbyname{
 	width: 100px;
 }
@@ -32,6 +26,12 @@
     margin: 7px;
     width: 50px;
     line-height: 20px;
+    cursor:pointer;
+}
+.btn:hover{
+    cursor:pointer;
+	background-color:white;
+	color:#000069;
 }
 #attendtable{
 	text-align:center;

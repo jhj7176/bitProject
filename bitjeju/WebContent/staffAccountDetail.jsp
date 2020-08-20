@@ -10,56 +10,70 @@
 
 
 <script type="text/javascript">
-var deletenum="${bean.num}";//회원번호
-var deleteemail="${bean.id_email}"
-$(function(){
-	$('#accountdelete').on('click',function(){//삭제페이지 이동
-		location.href='lmsstaffaccountdelete.bit?num='+deletenum+'&emailid='+deleteemail;
+	var deletenum = "${bean.num}";//회원번호
+	var deleteemail = "${bean.id_email}"
+	$(function() {
+		$('#accountdelete').on(
+				'click',
+				function() {//삭제페이지 이동
+					location.href = 'lmsstaffaccountdelete.bit?num='
+							+ deletenum + '&emailid=' + deleteemail;
+				});
+		$('#accountedit').on(
+				'click',
+				function() {//수정페이지 이동. 
+					location.href = 'lmsstaffaccountedit.bit?num=' + deletenum
+							+ '&emailid=' + deleteemail;
+				});
 	});
-	$('#accountedit').on('click',function(){//수정페이지 이동. 
-		location.href='lmsstaffaccountedit.bit?num='+deletenum+'&emailid='+deleteemail;
-	});
-});
 </script>
 <style type="text/css">
 .lmscontent {
 	width: 600px;
 	display: block;
 	margin: auto;
-	border-bottom:1px solid #e4e4e4;
+	border-bottom: 1px solid #e4e4e4;
 }
-.lmscontent:last-child{/*푸터와 거리두기  */
-	margin-bottom:400px;
+
+.lmscontent:last-child { /*푸터와 거리두기  */
+	margin-bottom: 400px;
 }
-#accounttable{
-	border-collapse:collapse;
+
+#accounttable {
+	border-collapse: collapse;
 }
-#accounttable tr{
+
+#accounttable tr {
+	
 }
-#accounttable th{
-	color:#1E3269;
-	padding:30px;
-	border-right:1px solid #e4e4e4;
-	text-align:right;
+
+#accounttable th {
+	color: #1E3269;
+	padding: 30px;
+	border-right: 1px solid #e4e4e4;
+	text-align: right;
 }
-#accounttable td{
-	padding:25px;
-	text-align:left;
+
+#accounttable td {
+	padding: 25px;
+	text-align: left;
 }
-#accountedit,#accountdelete,#accountback{
-	float:right;
-    background-color: #000069;
-    border:1px solid #000069;
-    color:white;
-    margin: 7px;
-    width: 50px;
-    height: 20px;
-    line-height:20px;
+
+#accountedit, #accountdelete, #accountback {
+	float: right;
+	background-color: #000069;
+	border: 1px solid #000069;
+	color: white;
+	margin: 7px;
+	width: 50px;
+	height: 20px;
+	line-height: 20px;
 }
-#accountedit:hover,#accountdelete:hover,#accountback:hover{
-		background-color:white;
-		color:#000069;
-		cursor: pointer;
+
+#accountedit:hover, #accountdelete:hover, #accountback:hover {
+	background-color: white;
+	color: #000069;
+	cursor: pointer;
 }
 </style>
 </head>
@@ -92,7 +106,7 @@ $(function(){
 				<h4>회원정보</h4>
 
 
-					<c:set value="${bean }" var="bean" />
+				<c:set value="${bean }" var="bean" />
 				<table id="accounttable">
 					<tr>
 						<th>회원번호</th>
@@ -114,22 +128,24 @@ $(function(){
 						<th>권한레벨</th>
 						<td>${bean.lvl }</td>
 					</tr>
+					<c:set var="phoneNum" value="${bean.phone}" />
 					<tr>
 						<th>전화번호</th>
-						<td>${bean.phone }</td>
+						<td>${fn:substring(phoneNum,0,3) }-${fn:substring(phoneNum,3,7) }-${fn:substring(phoneNum,7,11) }</td>
 					</tr>
+
 				</table>
 
 
 			</div>
 			<div class="lmscontent">
-			<button id="accountback" onclick="window.history.go(-1)">뒤로</button>			
-			<button id="accountdelete">삭제</button>			
-			<button id="accountedit">수정</button>
-<!-- 			
+				<button id="accountback" onclick="window.history.go(-1)">뒤로</button>
+				<button id="accountdelete">삭제</button>
+				<button id="accountedit">수정</button>
+				<!-- 			
 회원정보 수정 삭제가 행정직원에게 주어도 되는지 고민.. 
 
-수강생관리에서 수강생 삭제기능만 넣기. 개인정보는 각자 로그인했을 때 변경. 	 -->		
+수강생관리에서 수강생 삭제기능만 넣기. 개인정보는 각자 로그인했을 때 변경. 	 -->
 			</div>
 			<!--*************content end******************-->
 			<%@ include file="template/footer.jspf"%>
