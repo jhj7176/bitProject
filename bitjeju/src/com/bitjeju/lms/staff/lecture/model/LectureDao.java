@@ -184,7 +184,7 @@ public class LectureDao {
 			pstmt.setString(2, name);
 			System.out.println(sql);
 			pstmt.executeQuery();
-			
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -198,7 +198,7 @@ public class LectureDao {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}//finally
+		} // finally
 	}// update
 
 	public void deleteLecture(String name) {
@@ -221,12 +221,10 @@ public class LectureDao {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}//finally
-		
-		
+		} // finally
+
 	}
-	
-	
+
 	public ArrayList<String> selectTeacher() throws SQLException {
 		ArrayList<String> list = new ArrayList<String>();
 		String sql = "select name from member where lvl=3";
@@ -283,5 +281,76 @@ public class LectureDao {
 		}
 		return bean;
 	}
+
+	public void deleteStuInfo(String lecture) {
+		/*
+		 * 
+		 * //해당과목을 수강하는 학생들의 출석, 성적 정보도 삭제 필요. //해당학생들을 수강생(2)에서 수료생(1)으로 전환 필요 /*
+		 * delete from attendance, grade
+		 * 
+		 * where num = (select num from member where lecture = ? and lvl = 2)
+		 * 
+		 * 
+		 * 
+		 */
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		String sql1 = "select num from member where lecture = ? and lvl = 2"; // 종강하는 강좌를 듣는 수강생들의 회원번호들.
+		String sql2 = "delete from attendance where num in ("; // 수강생 데이터 삭제.
+		String sql3 = "delete from grade where num in (";
+		String sql4 = "update member set lvl = 1 where num in ("; // 수강생을 수료생으로 변경.
+		// where num in ( ????? );
+		try {
+			pstmt = conn.prepareStatement(sql1);
+			System.out.println(sql1);
+			pstmt.setString(1, lecture);
+			rs = pstmt.executeQuery();
+			int cnt = 0;
+			while (rs.next()) {
+				cnt++;
+				if (cnt == 1) {
+					sql2 += rs.getInt("num");
+					sql3 += rs.getInt("num");
+					sql4 += rs.getInt("num");
+				} else {
+					// list.add(rs.getInt("num")); //종강하는 강좌를 듣는 수강생들의 회원번호들.
+					sql2 += "," + rs.getInt("num");
+					sql3 += "," + rs.getInt("num");
+					sql4 += "," + rs.getInt("num");
+				}
+			} // while
+			sql2 += ")";
+			sql3 += ")";
+			sql4 += ")";
+			System.out.println(sql2);
+			if (pstmt != null)
+				pstmt.close();
+
+			pstmt = conn.prepareStatement(sql2);
+			pstmt.executeQuery();
+			if (pstmt != null)
+				pstmt.close();
+			pstmt = conn.prepareStatement(sql3);
+			pstmt.executeQuery();
+			if (pstmt != null)
+				pstmt.close();
+			pstmt = conn.prepareStatement(sql4);
+			pstmt.executeQuery();
+			System.out.println(sql4);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} // finally
+
+	}// deleteStuInfo
 
 }// classEnd

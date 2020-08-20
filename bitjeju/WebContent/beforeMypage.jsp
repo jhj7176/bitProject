@@ -67,6 +67,7 @@ $(function(){
 #mypagesubmit:hover,#mypageback:hover{
 	background-color:white;
 	color:#000069;
+	cursor: pointer;
 }
 </style>
 </head>

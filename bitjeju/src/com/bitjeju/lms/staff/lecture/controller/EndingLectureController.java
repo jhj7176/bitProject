@@ -40,7 +40,16 @@ public class EndingLectureController extends HttpServlet {
 		dao.deleteLecture(name);//멤버테이블에 강사의 과목컬럼에 과목 삭제 종강
 		//해당과목을 수강하는 학생들의 출석, 성적 정보도 삭제 필요. 
 		//해당학생들을 수강생(2)에서 수료생(1)으로 전환 필요
-		
+		/*
+		 * delete from attendance, grade 
+		 * 
+		 * where num = (select num from member where lecture = ? and lvl = 2) 
+		 * 
+		 * 
+		 * 
+		 */
+		dao = new LectureDao();
+		dao.deleteStuInfo(lecture);
 		response.setContentType("application/xml;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		out.print("<result>ending</result>");

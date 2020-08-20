@@ -135,7 +135,7 @@ $(function (){
     #menu>.grid6>ul>li{
         text-align: center;
         float: left;
-        width: 100px;
+        width: 130px;
         /*width:130px; 노트북용 가로 100px 해상도 받아서 동적처리하기. */
         padding: 0 40px;
     }

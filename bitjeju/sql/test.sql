@@ -63,14 +63,16 @@ select nalja, attendance.num,name,state from attendance,member where attendance.
 
 update member set lecture = 'ºñÆ®Ä·ÇÁ ±âº»A' where name='Á¤¹ÎÀç';
 
+delete from attendance as a inner join grade as g on a.num=g.num where num = (select num from member where lecture = ? and lvl = 2) 
 
+select * from attendance at natural join grade gr;
 
+on at.num = gr.num;
 
+delete from attendance, grade where num = 4242;
 
-
-
-
-
+select * from grade;
+select * from attendance;
 
 
 
