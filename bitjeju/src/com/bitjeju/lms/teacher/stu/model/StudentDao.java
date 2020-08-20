@@ -1,5 +1,6 @@
 package com.bitjeju.lms.teacher.stu.model;
 
+
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
@@ -32,7 +33,7 @@ public class StudentDao {
 	
 	public ArrayList<MemberDto> selectAll(String lecture) throws SQLException{
 		ArrayList<MemberDto> list=new ArrayList<MemberDto>();
-		String sql="select * from member where lvl=2 and lecture=?";
+		String sql="select * from member where lvl=2 and lecture=? ";
 		try {
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, lecture);
@@ -64,6 +65,7 @@ public class StudentDao {
 		if(rs.next()) {
 			bean.setNum(rs.getInt("num"));//학생 회원번호
 			bean.setPhone(rs.getString("phone"));//학생 전화번호
+			bean.setId_email(rs.getString("id_email"));
 			bean.setLecture_name(rs.getString("lecture"));//듣는 강좌명
 			bean.setName(rs.getString("name"));//학생이름
 			bean.setExam1(rs.getInt("exam1"));
@@ -175,7 +177,7 @@ public class StudentDao {
 			if (conn != null)
 				conn.close();
 			return totalStudent;
-		}
+	}
 	
 	
 }

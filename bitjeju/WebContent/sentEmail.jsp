@@ -40,6 +40,7 @@
     margin: 7px;
     width: 50px;
     height: 20px;
+    line-height:20px;
 }
 #accountback:hover{
 		background-color:white;
@@ -81,7 +82,7 @@
 				</table>
 			</div>
 			<div class="lmscontent">
-			<button id="accountdelete" type="submit">뒤로</button>				
+			<button id="accountback" type="submit">뒤로</button>				
 			</div>
 			</form>
 			<!--*************content end******************-->

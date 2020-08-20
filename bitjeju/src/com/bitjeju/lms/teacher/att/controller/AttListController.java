@@ -18,25 +18,42 @@ import com.bitjeju.lms.teacher.att.model.AttendanceDao;
 import com.bitjeju.lms.teacher.att.model.AttendanceDto;
 import com.bitjeju.member.MemberDto;
 
-
 @WebServlet("/lmsteacherattlist.bit")
 public class AttListController extends HttpServlet {
 	HttpSession session;
    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		session=request.getSession(false);
+	   session=request.getSession(false);
 	   request.setCharacterEncoding("utf-8");
 	   MemberDto bean2=(MemberDto) session.getAttribute("login");
 	   int num=bean2.getNum();
-	   System.out.print("num: "+num);
+	   System.out.print("AttListController,num: "+num);
+	   int pageNum;
+	   int totalList=-1;
+	   int classStu=-1;
+	   if (request.getParameter("pageNum") != null) {
+			System.out.println("pageNum:"+request.getParameter("pageNum"));
+			pageNum = Integer.parseInt(request.getParameter("pageNum").trim());
+	   }else {
+			pageNum=1;
+			System.out.println("pageNum :"+pageNum);
+		}
+	   ArrayList<AttendanceDto> list=null;
+	   AttendanceDao dao=null;
 	   try {
-         AttendanceDao dao=new AttendanceDao();
-         ArrayList<AttendanceDto> list=dao.selectAll(num);
-         request.setAttribute("list", list);
-       //  request.setAttribute("login", bean2);
+         dao=new AttendanceDao();
+         list=dao.selectAll(pageNum,num);
+         dao=new AttendanceDao();
+         totalList=dao.totalList(num);
+         dao=new AttendanceDao();
+         classStu=dao.classStu(num);
       } catch (SQLException e) {
          e.printStackTrace();
       }
-      
+	   request.setAttribute("classStu", classStu);
+	  request.setAttribute("pageNum", pageNum);
+	  request.setAttribute("totalList", totalList);
+	  request.setAttribute("list", list);
+	  request.setAttribute("login", bean2);
       request.getRequestDispatcher("teacherAttList.jsp").forward(request, response);
       
    }

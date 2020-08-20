@@ -56,6 +56,10 @@
 		text-align: center;
 		vertical-align: middle;
 	}
+	textarea{
+		resize: none;
+		height: 400px;
+	}
 	#drtable label {
 		display: inline-block;
 		padding: 10px;
@@ -98,6 +102,13 @@ $(function() {
 		var cur = $("#drtable input[type='file']").val();
 		$(".upload-name").val(cur);
 	});
+		var str = document.getElementById("textarea").value;//줄바꿈을 <br/>로
+		str = str.replace(/(?:\r\n|\r|\n)/g, '<br/>');
+		document.getElementById("textarea").value = str;
+		
+		var str2 = document.getElementById("textarea").value;//<br>을 줄바꿈으로
+		str2 = str2.replace(/(<br>|<br\/>|<br \/>)/g, '\r\n');
+		document.getElementById("textarea").value = str2;
 });
 </script>
 <title>BITCAMP JEJU: LMS강사-자료실 작성페이지</title>
@@ -146,7 +157,7 @@ $(function() {
 	       			<td><input type="text" name="drTitle" maxlength="200" class="drTitle"></td>
 	       		</tr>
 	       		<tr>
-	       			<td colspan="2"><textarea maxlength="2048" name="drContent"></textarea></td>
+	       			<td colspan="2"><textarea maxlength="2048" name="drContent" id="textarea"></textarea></td>
 	       		</tr>
 	       		<tr>
 	       			<th>첨부파일</th>

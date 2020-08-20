@@ -10,8 +10,7 @@
 
 <script type="text/javascript">
 
-var overlapCheck,signuppw1,signuppw2;
-var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+var overlapCheck;
 
 function pwCheck(passwordVal){
 		var chek_num = passwordVal.search(/[0-9]/g);
@@ -22,12 +21,11 @@ function pwCheck(passwordVal){
 			return false;
 		}	
 }
-
 $(function(){
-	
 $('#signupbtn').on('click',function(){ //등록버튼 눌렀을 때 이벤트.
 	console.log('서브밋');
 	var emailVal = $("#signupemailid").val();//id창에 입력된 값
+	var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
 	var memberInfo = 'emailid='+$('#signupemailid').val()+'&pw='+$('#signuppw').val();
 	memberInfo += '&phone='+$('#phone').val()+'&name='+$('#name').val();
 	console.log(memberInfo);
@@ -48,7 +46,7 @@ $('#signupbtn').on('click',function(){ //등록버튼 눌렀을 때 이벤트.
 	}else if(passwordVal.length<8 || passwordVal.length>12){
 		//비밀번호 길이는 8자~12자까지. 
 		alert('비밀번호는 8 ~ 12자리 입니다.');	
-	}else if($('#overlapCK').text()=='불일치'){
+	}else if($('#overlapCK').text()=='NO'){
 		alert('아이디를 확인해주세요');
 		
 	}else if(passwordVal!=signuppw2){
@@ -62,65 +60,45 @@ $('#signupbtn').on('click',function(){ //등록버튼 눌렀을 때 이벤트.
 			}//success
 		});//ajax
 		
-	}//else		
-		
+	}//else			
 		return false;
 });//submit
 
 $('#signuppw').on('keyup',function(){
-	signuppw1 = $('#signuppw').val();	//비밀번호1
-	signuppw2 = $('#signuppw2').val();		//비밀번호2
-
-	if(signuppw1==signuppw2&&!(pwCheck(signuppw2))){ //영문숫자조합이면서 두 비번이 같을때만 OK
-		$('#changepwtxt').text('일치').css('font-size','90%')
-		.css('color','green').css('vertical-align','middle');
-	}else if(signuppw2==''){
-		$('#changepwtxt').text('');
-	}else if(pwCheck(signuppw2)){	//영문숫자조합아닐때.
-		$('#changepwtxt').text('불일치').css('font-size','90%')
-		.css('color','red').css('vertical-align','middle');
+	signuppw1 = $('#signuppw').val();		//비밀번호1
+	if(pwCheck(signuppw1)){
+		$('#passwordCheck').text('비밀번호는 영문+숫자 조합이어야 합니다').css('font-size','80%')
+		.css('color','red').css('vertical-align','middle').css('padding-left','10px');
+	}else if(signuppw1.length<8||signuppw1.length>12){
+		$('#passwordCheck').text('비밀번호는 8~12 자리입니다').css('font-size','80%')
+		.css('color','red').css('vertical-align','middle').css('padding-left','10px');
 	}else{
-		$('#changepwtxt').text('불일치').css('font-size','90%')
-		.css('color','red').css('vertical-align','middle');
+		$('#passwordCheck').text('	');
 	}
-});//keyup 비밀번호1
+});
 
 $('#signuppw2').on('keyup',function(){
 	signuppw1 = $('#signuppw').val();		//비밀번호1
 	signuppw2 = $('#signuppw2').val();		//비밀번호2
-	if(signuppw1==signuppw2&&!(pwCheck(signuppw2))){ //영문숫자조합이면서 두 비번이 같을때만 OK
-		$('#changepwtxt').text('일치').css('font-size','90%')
-		.css('color','green').css('vertical-align','middle');
-	}else if(signuppw2==''){
+	if(signuppw2==''){
 		$('#changepwtxt').text('');
-	}else if(pwCheck(signuppw2)){	//영문숫자조합아닐때.
-		$('#changepwtxt').text('불일치').css('font-size','90%')
-		.css('color','red').css('vertical-align','middle');
+	}else if((signuppw1==signuppw2)&&(signuppw2!=null)){
+		$('#changepwtxt').text('OK').css('font-size','130%')
+		.css('color','green').css('vertical-align','middle');
 	}else{
-		$('#changepwtxt').text('불일치').css('font-size','90%')
+		$('#changepwtxt').text('NO').css('font-size','130%')
 		.css('color','red').css('vertical-align','middle');
-	}
-});
-
-
-
-$('#signupemailid').on('keyup',function(){ //이메일 지우면 NO나 OK글자 지우기
-	var chk_id=$('#signupemailid').val();
-	if(chk_id==''){
-		$('#overlapCK').text('');
 	}
 });
 
 //$('#signupbtn').attr('disabled','disabled').css('background-color','gray');
 $('#overlap').on('click',function(){ // 아이디 중복검사 버튼
-	var chk_id=$('#signupemailid').val() //email 입력창 값
+	var chk_id=$('#signupemailid').val() 
+	
 	if(chk_id==''){
 		alert('아이디를 입력해주세요.');
 		return;
-	}else  if(chk_id.match(regExp) == null){
-		alert('아이디는 이메일 형식입니다.');
 	}else{
-	
 		 $.ajax('overlapcheck.bit',{ //idoverlapcheck.java
 			'method':'post',
 			'data':'id_email='+chk_id,
@@ -138,11 +116,10 @@ $('#overlap').on('click',function(){ // 아이디 중복검사 버튼
 				alert('이미 가입된 아이디 입니다.');
 				}
 			} 		
+	
 		})//ajax
 	}
 });//click
-
-
 
 });//ready
 </script>
@@ -174,16 +151,15 @@ $('#overlap').on('click',function(){ // 아이디 중복검사 버튼
 	text-align:left;
 }
 
-#signupemailid,#deptselect,#name,#phone,#signuppw,#signuppw2{  /* input들 */
-    width: 250px;
-    height: 25px;
+#signupemailid,#deptselect,#name,#phone,#signuppw,#signuppw2{
+    width: 300px;
+    height: 35px;
     margin: 7px;
     border-radius: 5px;
     border: 1px solid #969696;
-    font-size:90%;
+    font-size:120%;
     text-align:center;
     vertical-align:middle;
-    
 }
 
 #signupbtn,#signupback{/* 버튼 */
@@ -194,7 +170,6 @@ $('#overlap').on('click',function(){ // 아이디 중복검사 버튼
     margin: 7px;
     width: 50px;
     height: 20px;
-    line-height:20px;
 }
 #signupbtn:hover,#signupback:hover{/* 버튼 */
 	background-color:white;
@@ -207,10 +182,8 @@ $('#overlap').on('click',function(){ // 아이디 중복검사 버튼
     color:white;
     margin-top : 9px;
     margin-right: 10px;
-    width: 50px;
-    height: 25px;
-    line-height:20px;
-    font-size:90%;
+    width: 60px;
+    height: 37px;
     border-radius:5px;
 
 }
@@ -263,7 +236,6 @@ $('#overlap').on('click',function(){ // 아이디 중복검사 버튼
 	lecture varchar2(30),					--강좌명 
  -->
 
-
 				<table id="signuptable">
 					<tr>
 						<th>이메일</th>
@@ -276,8 +248,8 @@ $('#overlap').on('click',function(){ // 아이디 중복검사 버튼
 						<td><input type="text" id="name" name="name" placeholder="이름을 입력하세요."/></td>
 					</tr>
 					<tr>
-						<th>비밀번호</th>
-						<td><input type="password" id="signuppw" name="pw" placeholder="영문+숫자조합 8~12자리 입니다."/></td>
+						<th>비밀번호<br>&nbsp;</th>
+						<td><input type="password" id="signuppw" name="pw" placeholder="영문+숫자조합 8~12자리 입니다."/><br><span id="passwordCheck">&nbsp;</span></td>
 					</tr>
 					<tr>
 						<th>비밀번호확인</th>

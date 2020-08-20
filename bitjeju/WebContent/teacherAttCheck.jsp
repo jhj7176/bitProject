@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <title>BITCAMP JEJU: LMS강사-출석체크</title>
 <script type="text/javascript">
+
 var selectDate;
 $(function(){
 	  document.getElementById('nalja').value = new Date().toISOString().substring(0, 10);
@@ -17,23 +18,16 @@ $(function(){
 		var temp=$('.listnalja').text().substring(0, 10);
 	  if(temp==selectDate){
 		  $('#attchecktable').hide();
-		  $('#naljadiv').hide();
 		  $('#fin').hide();
 		  $('#attlist').show();
 	  }else{
 		  $('#attchecktable').show();
-		  $('#naljadiv').show();
 		  $('#fin').show();
 		  $('#attlist').hide();		  
 	  }
 		
-	  
-	  
-	  
-	  
-	  
-	  
 });//READY
+
 </script>
 <style type="text/css">
 .lmscontent {
@@ -56,18 +50,35 @@ $(function(){
 #nalja{	
 	border:1px solid white;
 }
-#atttable,#attlist{
+#atttable{<!--출석체크 이전 테이블-->
 	text-align:center;
 	margin: 10px auto;
 	border-collapse:collapse;
 }
-#atttable th,#attlist th{
+#atttable th{
 	color:#1E3269;
 	padding:10px;
 	border-left:1px solid #e4e4e4;
 	text-align:center;
 }
-#atttable td,#attlist td{
+#atttable td{
+	border-left:1px solid #e4e4e4;
+	padding:25px;
+	text-align:center;
+}
+#attlist{<!--출석체크 이후 완료 테이블-->
+	text-align:center;
+	margin: 20px auto;
+	border-collapse:collapse;
+}
+#attlist th{
+	width: 200px;
+	color:#1E3269;
+	padding:10px;
+	border-left:1px solid #e4e4e4;
+	text-align:center;
+}
+#attlist td{
 	border-left:1px solid #e4e4e4;
 	padding:25px;
 	text-align:center;
@@ -81,10 +92,8 @@ $(function(){
     width: 50px;
     line-height: 20px;
 }
-#fin:hover{/*버튼 조절*/
-	cursor: pointer;
-	background-color: white;
-	color:#000069;
+.classStu{
+	float:right;
 }
 </style>
 </head>
@@ -124,9 +133,11 @@ $(function(){
        <div class="lmscontent">
 	   <h2>출결관리</h2>
 	   <h4>출석체크</h4>
+	   <c:set value="${classStu }" var="classStu" />
 	   <div id="naljadiv">
 	      <label for="nalja">날짜</label>
 	      <input type="date" id="nalja" name="nalja" readonly>
+	      <span class="classStu">총인원: ${classStu }</span>
 	   </div>
 	   <form method="post" action="lmsteacherattlist.bit">
 	   <div id="atttable">

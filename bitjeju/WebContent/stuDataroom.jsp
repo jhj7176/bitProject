@@ -90,6 +90,9 @@ $(function() {
 		margin: 20px auto;
 		border-collapse:collapse;
 	}
+	#drtable table{
+		border-collapse: collapse;
+	}
 	#drtable th{
 		width: 120px;
 		color:#1E3269;

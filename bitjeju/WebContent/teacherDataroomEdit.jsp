@@ -72,6 +72,10 @@
 		color:white;
 		cursor: pointer;
 	}
+	textarea{
+		resize: none;
+		height: 400px;
+	}
 	.btn,.btn2{
 		text-align:center;
 		text-decoration: none;
@@ -101,6 +105,13 @@ $(function() {
 		var cur = $("#drtable input[type='file']").val();
 		$(".upload-name").val(cur);
 	});
+	var str = document.getElementById("textarea").value;//줄바꿈을 <br/>로
+	str = str.replace(/(?:\r\n|\r|\n)/g, '<br/>');
+	document.getElementById("textarea").value = str;
+	
+	var str2 = document.getElementById("textarea").value;//<br>을 줄바꿈으로
+	str2 = str2.replace(/(<br>|<br\/>|<br \/>)/g, '\r\n');
+	document.getElementById("textarea").value = str2;
 });
 </script>
 <title>BITCAMP JEJU: LMS강사-자료실 수정페이지</title>
@@ -149,14 +160,14 @@ $(function() {
 	       			<td><input type="text" name="drTitle" maxlength="200" value="${bean.drTitle }" class="drTitle"/></td>
 	       		</tr>
 	       		<tr>
-	       			<td colspan="2"><textarea maxlength="2048" name="drContent">${bean.drContent }</textarea></td>
+	       			<td colspan="2"><textarea maxlength="2048" name="drContent" id="textarea">${bean.drContent }</textarea></td>
 	       		</tr>
 	       		<tr>
 	       			<th>첨부파일</th>
 	       			<td>
 	       				<input class="upload-name" value="${bean.fileName}" placeholder="파일선택" />
 						<label for="fileName">업로드</label>
-						<input type="file" id="fileName" name = "fileName" value="${bean.fileName}"/>
+						<input type="file" id="fileName" name ="fileName" value="${bean.fileName}"/>
 					</td>
 	       		</tr>
 	       	</table>

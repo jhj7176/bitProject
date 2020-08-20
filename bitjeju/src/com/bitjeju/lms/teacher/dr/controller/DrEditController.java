@@ -3,6 +3,7 @@ package com.bitjeju.lms.teacher.dr.controller;
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Enumeration;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -49,13 +50,26 @@ public class DrEditController extends HttpServlet {
 		DefaultFileRenamePolicy frp = new DefaultFileRenamePolicy();
 		
 		MultipartRequest mpReq = new MultipartRequest(request, directory, maxSize, "utf-8" ,frp);
-
+		DrDao dao;
 		int drNum=Integer.parseInt(mpReq.getParameter("drNum").trim());
 		String drTitle=mpReq.getParameter("drTitle");
 		String fileName = mpReq.getFilesystemName("fileName");
-		String drContent=mpReq.getParameter("drContent");
+		String drContent=mpReq.getParameter("drContent").replace("\r\n","<br>");
+		System.out.println("DrEditController,fileName:"+fileName);
 		try {
-			DrDao dao=new DrDao();
+			dao=new DrDao();
+			DrDto bean=dao.selectOne(drNum);//file이 존재하는지 확인하기 위해
+			String realFileName=bean.getFileName();
+			System.out.println("DrEditController,realFileName:"+realFileName);
+//			String tempFileName=mpReq.getParameter("fileName");//이름먼저 받아옴
+//			System.out.println("DrEditController,tempFileName:"+tempFileName);
+			if(fileName==null&&realFileName!=null){
+				fileName=realFileName;
+			}else if(fileName!=null&&realFileName!=null){
+				File file2 = new File(directory+"/"+bean.getFileName());
+				file2.delete();
+			}
+			dao=new DrDao();
 			dao.updateDr(drNum, drTitle, fileName, drContent);
 		} catch (SQLException e) {
 			e.printStackTrace();

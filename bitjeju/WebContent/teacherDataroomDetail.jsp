@@ -77,7 +77,7 @@ $(function(){
 			})//ajax
 				return false;
 		});//click
-	});//each	
+	});//each
 });
 </script>
 <title>BITCAMP JEJU: LMS강사-자료실 상세페이지</title>
@@ -131,7 +131,7 @@ $(function(){
 	       			<td>${bean.drDate }</td>
 	       		</tr>
 	       		<tr>
-	       			<td colspan="4">${bean.drContent }</td>
+	       			<td colspan="4" id="text">${bean.drContent }</td>
 	       		</tr>
 	       		<tr>
 	       			<th>첨부파일</th>

@@ -1,5 +1,6 @@
 package com.bitjeju.lms.teacher.dr.controller;
 
+
 import java.io.File;
 import java.io.IOException;
 import java.sql.SQLException;
@@ -46,7 +47,7 @@ public class DrWriteController extends HttpServlet {
 		MultipartRequest mpReq = new MultipartRequest(request, directory, maxSize, "utf-8" ,frp);
 		String drTitle=mpReq.getParameter("drTitle");
 		String fileName = mpReq.getFilesystemName("fileName");
-		String drContent=mpReq.getParameter("drContent");
+		String drContent=mpReq.getParameter("drContent").replace("\r\n","<br>");
 		
 		try {
 			DrDao dao=new DrDao();

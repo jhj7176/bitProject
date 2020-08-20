@@ -21,7 +21,7 @@ function carousel(){		/* 캐러셀 */
 		$('#carouselImg').fadeIn(1000).attr('src','img/'+cnt+'.jpg');
 	});
 	cnt++;	
-	setTimeout(carousel, 3000);
+	setTimeout(carousel, 4500);
 }
 
 function curriDetail(idx){									/* 강좌div클릭 시 idx받아서 해당강좌 정보로 이동.  */

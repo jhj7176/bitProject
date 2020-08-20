@@ -172,6 +172,7 @@
 	margin: 7px;
 	width: 50px;
 	height: 20px;
+	line-height:20px;
 }
 #accountadd:hover { /* 등록버튼 */
 		background-color:white;
@@ -223,7 +224,9 @@
 	width: 50px;
 	height: 20px;
 	float:right;
+	line-height:20px;
 }
+
 
 #searchbtn {
 	float: right;

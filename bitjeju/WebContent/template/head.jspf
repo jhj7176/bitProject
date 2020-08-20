@@ -87,13 +87,6 @@ $(function (){
 		location.href='mypage.bit'; //************마이페이지로 이동함
 	});
 	
-	
-	
-	
-	
-	
-	
-	
 	//비트캠프 메뉴 클릭 시 
 	$('#bitcamp-menu>a').on('mouseenter',function(){
 		$(this).append($('#bit-menu-sub1'));
@@ -141,7 +134,8 @@ $(function (){
     #menu>.grid6>ul>li{
         text-align: center;
         float: left;
-        width: 130px;
+        width: 100px;
+        /*width:130px; 노트북용 가로 100px 해상도 받아서 동적처리하기. */
         padding: 0 40px;
     }
     #menu>.grid6>ul>li>a{
@@ -194,6 +188,7 @@ $(function (){
         margin: 7px;
         width: 235px;
         height: 35px;
+        cursor:pointer;
     }
     
     #logout{/*로그아웃버튼*/
@@ -203,6 +198,7 @@ $(function (){
         margin: 7px;
         width: 235px;
         height: 35px;
+        cursor:pointer;
     }
     
     #login:hover{
@@ -220,6 +216,7 @@ $(function (){
         margin: 5px;
         width: 235px;
         height: 35px;
+        cursor:pointer;
     }
     #mypage{/*내정보버튼*/
         background-color: #1E3269;
@@ -228,6 +225,7 @@ $(function (){
         margin: 5px;
         width: 235px;
         height: 35px;
+        cursor:pointer;
     }
     #createaccount:hover{
         background-color: white;
@@ -244,6 +242,7 @@ $(function (){
         margin: 5px;
         width: 235px;
         height: 35px;
+        cursor:pointer;
     }
     .gotolms:hover{
         background-color: white;

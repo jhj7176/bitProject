@@ -87,7 +87,9 @@ $(function() {
 	#drtable{
 		text-align:center;
 		margin: 20px auto;
-		border-collapse:collapse;
+	}
+	#drtable table{
+		border-collapse: collapse;
 	}
 	#drtable th{
 		width: 120px;

@@ -113,15 +113,25 @@
 	text-align: center;
 }
 #waiting{
-	width:400px;
-	height:50px;
+	width:200px;
+	height:30px;
 	display:none;
 	margin:auto;
 	margin-top:40px;
 	text-align:center;
+	border:1px solid #000069;
+	background-color:white;
+	position:absolute;
+	top:25%;
+	left:40%;
+	z-index: 10;
+	vertical-align:middle;
 }
 #waitingMsg{
-	font-size:120%;
+	vertical-align:middle;
+	color:#000069;
+	font-weight:bold;
+	font-size:110%;
 }
 </style>
 </head>

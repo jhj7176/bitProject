@@ -122,7 +122,10 @@ public class FindDao {
 			// send the message
 			Transport.send(message); //// 전송
 			System.out.println("message sent successfully...");
-			
+/*
+ * <table><tr><td><small>님의 비밀번호입니다.</small></td></tr><tr><td></td></tr></table>
+ * 			
+ */
 		} catch (AddressException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

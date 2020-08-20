@@ -126,7 +126,14 @@
 				<table id="accounttable">
 					<tr>
 						<th>ID</th>
+						<c:choose>
+						<c:when test="${not empty id_email }">
 						<td>${id_email }</td>
+						</c:when>
+						<c:when test="${empty id_email }">
+						<td>일치하는 아이디를 찾을 수 없습니다.</td>
+						</c:when>
+						</c:choose>
 					</tr>
 
 				</table>

@@ -185,6 +185,7 @@ $(document).ready(function(){
 		line-height:40px;
 		float:left;
 		display:block;
+		cursor:pointer;
 	/* 	margin-right:2px; */
 	}
 	#Tab>ul>li:hover{
@@ -230,6 +231,7 @@ $(document).ready(function(){
 		line-height:40px;
 		float:left;
 		display:block;
+		cursor:pointer;
 	}
 	.tab_teacher{
 		display: block;
