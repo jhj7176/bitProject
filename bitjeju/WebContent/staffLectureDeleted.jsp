@@ -93,7 +93,7 @@ private String lecture_name;
 
 			</div>
 			<div class="lmscontent">
-			<button id="lecturedelete" type="submit">뒤로</button>					
+			<button id="lectureback" type="submit">뒤로</button>					
 			</div>
 			<!--*************content end******************-->
 			</form>

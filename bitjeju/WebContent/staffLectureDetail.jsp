@@ -56,6 +56,8 @@ $(function(){
 	});//click
 });//ready
 </script>
+
+
 <style type="text/css">
 .lmscontent {
 	width: 600px;
@@ -68,6 +70,7 @@ $(function(){
 }
 #lecturetable{
 	border-collapse:collapse;
+	width:600px;
 }
 #lecturetable tr{
 }
@@ -104,13 +107,15 @@ $(function(){
     height: 20px;
     line-height:20px;
     border-radius:5px;
-    
 }
+
 #starting:hover,#ending:hover{
 	background-color:white;
 	color:#000069;
 	cursor: pointer;
 }
+
+
 </style>
 </head>
 <body>

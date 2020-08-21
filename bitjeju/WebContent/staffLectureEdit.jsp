@@ -28,8 +28,28 @@ $(function(){
 			$(this).prop('selected',true);
 		}//if
 	});//each
-});//ready
+	
+		
+		$('#lectureform').on('submit',function(){
+			var dd = $('#start_day').val().substring(8, 10); //선택한 날짜의 day부분을 잘라내서 비교.
+			var start = new Date($('#start_day').val());
+			var end = new Date($('#end_day').val());
+			var dateDiff = Math.ceil((end.getTime()-start.getTime())/(1000*3600*24));
+			//getTime으로 19700101 00시00분부터 해당날짜까지 흐른 시간(ms)을 구해 차이를 구하고. 
+			//ms이므로 1000, 1시간은 1초*3600, 하루는 24시간. 
+			
+			if(dd!='01'){
+				alert('개강일은 매월 1일만 가능합니다.');
+				return false;
+			}else if(dateDiff<90){
+				alert('교육기간은 3개월입니다.');
+				return false;
+			}
+		});//submit
 
+	//console.log학인용 >> Math.ceil(((new Date($('#end_day').val())).getTime()-(new Date($('#start_day').val())).getTime())/(1000*3600*24));
+	//type은 number
+});//ready
 
 </script>
 <style type="text/css">
@@ -87,6 +107,7 @@ $(function(){
 		color:#000069;
 		cursor: pointer;
 }
+
 </style>
 </head>
 <body>
@@ -113,7 +134,7 @@ $(function(){
 		<div id="content" class="grid6">
 			&nbsp;
 			<!--*************content start****************-->
-			<form action="lmsstafflectureedit.bit" method="post">
+			<form action="lmsstafflectureedit.bit" method="post" id="lectureform">
 			<div class="lmscontent"><!--**********lmscontent start**********-->
 				<h2>강의관리</h2>
 				<h4>강좌수정</h4>

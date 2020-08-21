@@ -177,6 +177,7 @@
 #accountadd:hover { /* 등록버튼 */
 		background-color:white;
 		color:#000069;
+		cursor: pointer;
 }
 #paging {
 	width: 300px;
@@ -215,6 +216,8 @@
 	margin: 7px;
 	width: 50px;
 	height: 20px;
+	line-height:20px;
+	cursor: pointer;
 } 
 #studentnext { /*이전 다음 버튼  */
 	background-color: #000069;
@@ -225,6 +228,7 @@
 	height: 20px;
 	float:right;
 	line-height:20px;
+	cursor: pointer;
 }
 
 
@@ -241,6 +245,7 @@
 #searchbtn:hover{
 		background-color:white;
 		color:#000069;
+		cursor: pointer;
 }
 #search {
 	
