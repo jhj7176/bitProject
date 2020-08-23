@@ -1,6 +1,7 @@
 package com.bitjeju.customer.model;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -36,7 +37,7 @@ public class NoticeDao {
 	}
 
 	public ArrayList<NoticeDto> selectAll() throws SQLException{
-		String sql="select * from Board2";
+		String sql="select * from notice";
 		ArrayList<NoticeDto> list = new ArrayList<NoticeDto>();
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -58,8 +59,25 @@ public class NoticeDao {
 		
 		return list;
 	}
+	
+	/*
+	 * 
+	 * 	int num, read_cnt;
+	String title, writer, content, filename;
+	Date wtime;
+	
+	
+	
+	 *    ntnum number primary key,
+   title varchar2(100) not null,
+   num number,
+   wtime date,
+   content varchar2(3000),
+   read_cnt number,
+	 */
 	public int insertOne(String title,String writer) throws SQLException{
-		String sql="insert into board2 values (_seq.nextval,?,?)";
+		String sql="insert into notice values (notice_seq.nextval,?,?,sysdate,?,null)";
+		//ntnum title writer wtime content read_cnt
 		try{
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setString(1, title);
@@ -72,7 +90,7 @@ public class NoticeDao {
 	}
 
 	public Object selectOne(int num) throws SQLException {
-		String sql="select * from board2 where num=?";
+		String sql="select * from notice where num=?";
 		try{
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setInt(1, num);
@@ -92,7 +110,7 @@ public class NoticeDao {
 	}
 
 	public int updateOne(int num, String title, String writer) throws SQLException {
-		String sql="update board2 set title=?,writer=? where num=?";
+		String sql="update notice set title=?,writer=? where num=?";
 		try{
 			pstmt=conn.prepareStatement(sql);
 			pstmt.setInt(3, num);

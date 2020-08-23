@@ -170,6 +170,7 @@ $('#overlap').on('click',function(){ // 아이디 중복검사 버튼
     margin: 7px;
     width: 50px;
     height: 20px;
+    line-height:20px;
 }
 #signupbtn:hover,#signupback:hover{/* 버튼 */
 	background-color:white;

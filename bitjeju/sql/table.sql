@@ -160,6 +160,7 @@ create table notice(
    num number,
    wtime date,
    content varchar2(3000),
+   read_cnt number,
    foreign key (num) references member(num)
 );
 

@@ -23,7 +23,7 @@ public class CustomerController extends HttpServlet {
 		try {
 			NoticeDao dao = new NoticeDao();
 			ArrayList<NoticeDto> list = dao.selectAll();
-			req.setAttribute("alist", list);
+			req.setAttribute("notice", list);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
