@@ -89,7 +89,10 @@ function kakaoMap(){
 	map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 
 
-	var iwContent = '<div style="padding:5px;">비트캠프 제주점</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+	var iwContent = '<div style="padding:5px;">비트캠프 제주점<br>'
+	+'<a href="https://map.kakao.com/link/map/BIT JEJU,33.450701,126.570667" style="color:blue; text-decoration:none;" '
+	+'target="_blank">큰지도보기</a></div>', 
+	// 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
     iwPosition = new kakao.maps.LatLng(33.450701, 126.570667), //인포윈도우 표시 위치입니다
     iwRemoveable = true; // removeable 속성을 ture 로 설정하면 인포윈도우를 닫을 수 있는 x버튼이 표시됩니다
 

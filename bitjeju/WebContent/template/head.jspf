@@ -120,13 +120,56 @@ $(function (){
 	$('#cus-menu-sub1').on('mouseleave',function(){
 		$('#cus-menu-sub1').stop().fadeOut();
 	});//leave
+
+	
+	setInterval(function() { 
+		if (didScroll) {
+		hasScrolled();
+		didScroll = false; }
+		}, 50); 
 	
 });//document.Ready
+	
+	
+	var didScroll; 
+	var lastScrollTop = 0; 
+	var delta = 5; 
+	var navbarHeight = $('#menu').outerHeight(); 
+	
+	$(window).scroll(function(event){ 
+		didScroll = true; 
+	}); 
+	
+	function hasScrolled() { 
+		var st = $(this).scrollTop(); 
+		
+		if(Math.abs(lastScrollTop - st) <= delta) return; 
+		
+		if (st > lastScrollTop && st > navbarHeight && st >=112){ // Scroll Down 
+			$('#menu').removeClass('nav-down').addClass('nav-up'); 
+			$('#carousel').addClass('car-up');
+		} else { // Scroll Up 
+			if(st <= 109) { 
+				$('#menu').removeClass('nav-up').addClass('nav-down'); 
+				$('#carousel').removeClass('car-up');
+			} 
+		} 
+		lastScrollTop = st; 
+	}//hasScrolled
+
 	
 
 </script>
 
 <style rel="stylesheet" type="text/css">
+	.nav-up{
+		top:0px;
+		left:0px;
+		position: fixed;
+	}
+	.car-up{
+		padding-top:70px;
+	}
     #header{
         height: 110px;
     }
@@ -135,9 +178,11 @@ $(function (){
         margin-top: 40px;/*로고위치 밑으로 내림*/
     }
     #menu{
+    	z-index:10;
         height: 70px;/*메뉴 크기*/
         border-top: 1px solid #e4e4e4;
         border-bottom: 1px solid #e4e4e4;
+        background-color:white;
         width: 100%;
     }
     #menu>.grid6>ul{
