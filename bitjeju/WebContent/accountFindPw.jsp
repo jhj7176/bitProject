@@ -47,6 +47,12 @@
 	position:relative;
 	
 }
+
+#lock-icon{
+	vertical-align:text-bottom;
+	width:32px;
+	height:32px;
+}
 #content{
 	height:650px;
 }
@@ -82,20 +88,21 @@
 	text-align: left;
 }
 
-#pwfindbtn, #accountback {
+#pwfindbtn {
 	float: right;
-	background-color: #000069;
-	border: 1px solid #000069;
+	background-color: #5cb85c;
+	border: 1px solid #5cb85c;
 	color: white;
 	margin: 7px;
 	width: 50px;
-	height: 20px;
+	height: 30px;
 	line-height:20px;
+	border-radius:5px;
 }
 
-#pwfindbtn:hover, #accountback:hover {
-	background-color: white;
-	color: #000069;
+#pwfindbtn:hover {
+	background-color: #4cae4c;
+	color: white;
 	cursor: pointer;
 }
 
@@ -171,7 +178,7 @@
 			&nbsp;
 			<!--*************content start****************-->
 			<div class="lmscontent">
-				<h2>아이디/비밀번호 찾기</h2>
+				<h2><img id="lock-icon" src="img/lock-icon.png"> 비밀번호 찾기</h2>
 				<h4>&nbsp;</h4>
 
 
@@ -189,7 +196,6 @@
 
 			</div>
 			<div class="lmscontent">
-				<button id="accountback" type="button" onclick="window.history.go(-1)">뒤로</button>
 				<button id="pwfindbtn" type="submit">확인</button>
 
 			</div>

@@ -41,10 +41,17 @@
 	color:rgb(51, 51, 51);
 	margin-bottom:40px;
 }
+#lock-icon{
+	vertical-align:text-bottom;
+	width:32px;
+	height:32px;
+}
+
 #accounttable {
 	width:400px;
 	border-collapse: collapse;
 	border:1px solid #e4e4e4;
+	border-radius:5px;
 	margin:auto;
 }
 
@@ -82,19 +89,21 @@
 }
 
 #idfind, #pwfind {
-	background-color: #1E3269;
-	border: 1px solid #1E3269;
-	color: white;
+	background-color: white;
+	border: 1px solid #ddd;
+	color: gray;
 	display:block;
 	margin-left: auto;
 	margin-right: auto;
 	width: 200px;
 	height: 50px;
 	border-radius: 5px;
+	box-shadow: #ddd 1px 1px 2px;
+	font-weight: bold;
 }
 
 #idfind:hover, #pwfind:hover {
-	background-color: white;
+	background-color: #e4e4e4;
 	color: #1E3269;
 	cursor: pointer;
 }
@@ -122,7 +131,7 @@
 			&nbsp;
 			<!--*************content start****************-->
 			<div class="lmscontent">
-				<h2>아이디/비밀번호 찾기</h2>
+				<h2><img id="lock-icon" src="img/lock-icon.png"> 아이디/비밀번호 찾기</h2>
 				<h4>&nbsp;</h4>
 
 

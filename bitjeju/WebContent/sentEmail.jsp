@@ -14,6 +14,12 @@
 	margin: auto;
 	border-bottom:1px solid #e4e4e4;
 }
+#lock-icon{
+	vertical-align:text-bottom;
+	width:32px;
+	height:32px;
+}
+
 #deletedform{
 	margin-bottom:500px;
 }
@@ -32,14 +38,15 @@
 	padding:25px;
 	text-align:left;
 }
-#accountedit,#accountdelete,#accountback{
+#accountback{
 	float:right;
     background-color: #000069;
     border:1px solid #000069;
     color:white;
     margin: 7px;
     width: 50px;
-    height: 20px;
+    height: 30px;
+    border-radius:5px;
     line-height:20px;
 }
 #accountback:hover{
@@ -47,8 +54,6 @@
 		color:#000069;
 		cursor: pointer;
 }
-
-
 </style>
 </head>
 <body>
@@ -73,7 +78,7 @@
 			<form id="deletedform" action="main.bit">
 			<!--*************content start****************-->
 			<div class="lmscontent">
-				<h2>아이디/비밀번호 찾기</h2>
+				<h2><img id="lock-icon" src="img/lock-icon.png"> 아이디/비밀번호 찾기</h2>
 				<h4>&nbsp;</h4>
 				<table id="accounttable">
 					<tr>

@@ -13,6 +13,11 @@
 	
 </script>
 <style type="text/css">
+#header .grid3{
+	margin-top:40px;
+	position:relative;
+	
+}
 #content {
 	height: 800px;
 }
@@ -122,7 +127,7 @@
 	vertical-align:middle;
 }
 </style>
-<title>Insert title here</title>
+<title>BITCAMP JEJU: 공지사항</title>
 </head>
 <body>
 	<%@ include file="template/header.jspf"%>
@@ -134,7 +139,7 @@
 				<p>고객센터</p>
 				<ul>
 					<li class="bigletter"><a href="customercenter.bit">공지사항</a></li>
-					<li class="bigletter"><a href="#">FAQ</a></li>
+					<li class="bigletter"><a href="faq.bit">FAQ</a></li>
 					<li></li>
 				</ul>
 			</div>

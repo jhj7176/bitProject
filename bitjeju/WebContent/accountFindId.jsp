@@ -40,6 +40,11 @@
 .lmscontent:last-child { /*푸터와 거리두기  */
 	margin-bottom: 400px;
 }
+#lock-icon{
+	vertical-align:text-bottom;
+	width:32px;
+	height:32px;
+}
 
 #accounttable {
 	width:600px;
@@ -62,20 +67,21 @@
 	text-align: left;
 }
 
-#idfindbtn, #accountback {
+#idfindbtn {
 	float: right;
-	background-color: #000069;
-	border: 1px solid #000069;
+	background-color: #5cb85c;
+	border: 1px solid #5cb85c;
 	color: white;
 	margin: 7px;
 	width: 50px;
-	height: 20px;
+	height: 30px;
 	line-height:20px;
+	border-radius:5px;
 }
 
-#idfindbtn:hover, #accountback:hover {
-	background-color: white;
-	color: #000069;
+#idfindbtn:hover {
+	background-color: #4cae4c;
+	color: white;
 	cursor: pointer;
 }
 
@@ -131,7 +137,7 @@
 			&nbsp;
 			<!--*************content start****************-->
 			<div class="lmscontent">
-				<h2>아이디/비밀번호 찾기</h2>
+				<h2><img id="lock-icon" src="img/lock-icon.png"> 아이디 찾기</h2>
 				<h4>&nbsp;</h4>
 
 
@@ -149,7 +155,6 @@
 
 			</div>
 			<div class="lmscontent">
-				<button id="accountback" type="button" onclick="window.history.go(-1)">뒤로</button>
 				<button id="idfindbtn" type="submit">확인</button>
 
 			</div>

@@ -29,7 +29,11 @@
 .lmscontent:last-child { /*푸터와 거리두기  */
 	margin-bottom: 400px;
 }
-
+#lock-icon{
+	vertical-align:text-bottom;
+	width:32px;
+	height:32px;
+}
 #accounttable {
 	width:600px;
 	border-collapse: collapse;
@@ -51,18 +55,19 @@
 	text-align: left;
 }
 
-#pwfindbtn, #accountback {
+#accountback {
 	float: right;
 	background-color: #000069;
 	border: 1px solid #000069;
 	color: white;
 	margin: 7px;
 	width: 50px;
-	height: 20px;
+	height: 30px;
+	border-radius:5px;
 	line-height:20px;
 }
 
-#pwfindbtn:hover, #accountback:hover {
+#accountback:hover {
 	background-color: white;
 	color: #000069;
 	cursor: pointer;
@@ -119,7 +124,7 @@
 			&nbsp;
 			<!--*************content start****************-->
 			<div class="lmscontent">
-				<h2>아이디/비밀번호 찾기</h2>
+			<h2><img id="lock-icon" src="img/lock-icon.png"> 아이디/비밀번호 찾기</h2>
 				<h4>&nbsp;</h4>
 
 

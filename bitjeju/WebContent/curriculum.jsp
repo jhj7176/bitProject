@@ -30,106 +30,118 @@ $(function(){
 
 </script>
 <style type="text/css">
-#header .grid3{
-	margin-top:40px;
-	position:relative;
-	
+#header .grid3 {
+	margin-top: 40px;
+	position: relative;
 }
-#lecturecontent{
-	display:block;
-	margin:auto;
-	margin-top:40px;
-	width:750px;
+
+#lecturecontent {
+	display: block;
+	margin: auto;
+	margin-top: 40px;
+	width: 750px;
 }
-.title_bar {/* 국비지원 */
-    background-color: darkblue;
-    width: 4px;
-    height: 19px;
-    display: inline-block;
-    margin-left: 60px;
-    vertical-align: middle;
+
+.title_bar { /* 국비지원 */
+	background-color: darkblue;
+	width: 4px;
+	height: 19px;
+	display: inline-block;
+	margin-left: 60px;
+	vertical-align: middle;
 }
-.title_letter{
+
+.title_letter {
 	color: darkblue;
 	font-size: 18px;
 	font-weight: 600;
 	display: inline;
 	vertical-align: middle;
 }
-.col-xs-4{ /*강좌들 전체  */
-	width:235px;
-	height:380px;
-	float:left;
-	display:block;
-	margin:auto;
-	overflow:hidden;
+
+.col-xs-4 { /*강좌들 전체  */
+	width: 235px;
+	height: 380px;
+	float: left;
+	display: block;
+	margin: auto;
+	overflow: hidden;
 }
-.thumbnail{/* 강좌 전체 */
-	width:215px;
-	height:340px;
+
+.thumbnail { /* 강좌 전체 */
+	width: 215px;
+	height: 340px;
 	border: 1px solid rgb(221, 221, 221);
 	border-radius: 5px;
 	transition-duration: 600ms;
-	display:block;
-	margin:auto;
-	margin-top:3px;
+	display: block;
+	margin: auto;
+	margin-top: 3px;
 }
-.thumbnail:hover{		/* 강좌 테두리 반짝 */
+
+.thumbnail:hover { /* 강좌 테두리 반짝 */
 	transition-duration: 600ms;
 	border: 1px solid rgb(255, 170, 0);
-	box-shadow:rgb(255, 204, 102) 0px 0px 6px;
-	cursor:pointer;
+	box-shadow: rgb(255, 204, 102) 0px 0px 6px;
+	cursor: pointer;
 }
-.text-left,.caption{
-	padding-left:10px;
+
+.text-left, .caption {
+	padding-left: 10px;
 }
-.text-left>small{/* 교육기간 */
-	color:#191919;
-	font-weight:bold;
+
+.text-left>small { /* 교육기간 */
+	color: #191919;
+	font-weight: bold;
 	padding-right: 5px;
 }
-.orange{
+
+.orange {
 	padding-left: 5px;
 }
-.thumbnail>img{ /* 강좌 이미지 */
-	display:block;
-	margin:auto;	
-}
-.thumbnail > .caption > h3 { /* 이미지아래 강좌이름 */
-	color:#191919;
-    font-size: 15px;
-    font-weight: 900;
-    margin-top: 3px;
-    margin-bottom: 3px;
-    line-height: 1.4;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    width: 183px;
-    height: 38px;
+
+.thumbnail>img { /* 강좌 이미지 */
+	display: block;
+	margin: auto;
 }
 
-.box-tag-normal{
+.thumbnail>.caption>h3 { /* 이미지아래 강좌이름 */
+	color: #191919;
+	font-size: 15px;
+	font-weight: 900;
+	margin-top: 3px;
+	margin-bottom: 3px;
+	line-height: 1.4;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	width: 183px;
+	height: 38px;
 }
 
-.box-tag {				/* 제주센터 */
-	font-weight:bold;
-    position: absolute;
-    margin-left:8px;
-    font-size: 15px;
-    height: 23px;
-    text-align: center;
-    width: 75px;
-    background-color: black;
-    color:white;
+.box-tag-normal {
+	
 }
 
-#content{
-	height:1100px;
+.box-tag { /* 제주센터 */
+	font-weight: bold;
+	position: absolute;
+	margin-left: 8px;
+	font-size: 15px;
+	height: 23px;
+	text-align: center;
+	width: 75px;
+	background-color: black;
+	color: white;
 }
-#footer{
+
+#content {
+	height: 1100px;
+}
+
+#footer {
 	/* margin-top:400px; */
+	
 }
-
 </style>
 <title>BITCAMP JEJU: 교육과정</title>
 </head>
@@ -143,45 +155,50 @@ $(function(){
 				<p>교육과정</p>
 				<ul>
 					<li class="bigletter">강좌정보</li>
-				<!-- 	<li><a href="lmsteacherattendance.bit">모집공고</a></li> -->
+					<!-- 	<li><a href="lmsteacherattendance.bit">모집공고</a></li> -->
 
 					<li></li>
 				</ul>
 			</div>
 		</div>
 		<!--*****************lms메뉴******************-->
-		<div id="content" class="grid6">&nbsp;
-<!--*************content start****************-->
+		<div id="content" class="grid6">
+			&nbsp;
+			<!--*************content start****************-->
 			<div>
-			<span class="title_bar">&nbsp;</span>
-      		<div class="title_letter" >&nbsp;&nbsp;국비지원 교육</div>
+				<span class="title_bar">&nbsp;</span>
+				<div class="title_letter">&nbsp;&nbsp;국비지원 교육</div>
 			</div>
-		<div id="lecturecontent">
-		<!-- ***********col-xs-4를 foreach로 db에서 모집공고 받아와서 반복.**************** -->
-		
- 		<c:forEach items="${lecture}" var="bean">
-		<c:set value="${bean.recruit_num }" var="idx"></c:set>
-		<div class="col-xs-4">
-			<div class="thumbnail" onclick="curriDetail(${idx})">
-				<div class="box-tag box-tag-normal">제주센터</div>
-				<img src="img/curriAD3.png"><!-- 강좌이미지 모집공고이미지 -->
-				<div class="caption">
-					<h3><span class="lecture-name">${bean.recruit_name }</span></h3>
-				</div>
-				<div class="text-left price-bar">
-					<small>개강일</small>&#124;<span class="orange">${bean.start_day }</span><br />
-					<small>교육기간</small>&#124;<br>${bean.start_day}~${bean.end_day }
-				</div>
+			<div id="lecturecontent">
+				<!-- ***********col-xs-4를 foreach로 db에서 모집공고 받아와서 반복.**************** -->
+
+				<c:forEach items="${lecture}" var="bean">
+					<c:set value="${bean.recruit_num }" var="idx"></c:set>
+					<div class="col-xs-4">
+						<div class="thumbnail" onclick="curriDetail(${idx})">
+							<div class="box-tag box-tag-normal">제주센터</div>
+							<img src="img/curriAD3.png">
+							<!-- 강좌이미지 모집공고이미지 -->
+							<div class="caption">
+								<h3>
+									<span class="lecture-name">${bean.recruit_name }</span>
+								</h3>
+							</div>
+							<div class="text-left price-bar">
+								<small>개강일</small>&#124;<span class="orange">${bean.start_day }</span><br />
+								<small>교육기간</small>&#124;<br>${bean.start_day}~${bean.end_day }
+							</div>
+						</div>
+					</div>
+
+				</c:forEach>
+
+
+
+				<!-- ***********col-xs-4를 foreach로 db에서 모집공고 받아와서 반복.**************** -->
+
 			</div>
-		</div>
-		
-		</c:forEach>
-
-
-		
-<!-- ***********col-xs-4를 foreach로 db에서 모집공고 받아와서 반복.**************** -->
-
-</div><!-- lecture content -->
+			<!-- lecture content -->
 			<!--*************content end******************-->
 			<%@ include file="template/footer.jspf"%>
 </body>
