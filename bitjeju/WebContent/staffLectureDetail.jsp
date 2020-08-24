@@ -16,6 +16,7 @@
 var lecturename ="${lecture.lecture_name}";//el
 var lecturenum ="${lecture.lecture_num}";
 var teacher ="${lecture.name}";
+var num = "${lecture.num}";
 
 $(function(){
 	console.log(lecturename, lecturenum);
@@ -29,13 +30,13 @@ $(function(){
 	$('#starting').on('click',function(){	//멤버테이블 강사 lecture컬럼에 과목추가. 개강확정
 		$.ajax('lmsteacherlecupdate.bit',{
 			'method':'post',
-			'data':'lecture='+lecturename+'&name='+teacher,
+			'data':'lecture='+lecturename+'&name='+teacher+'&num='+num,
 			'success':function(data){
 				var result = $(data).find('result').text();
 				if(result=='starting'){
 					alert('개강확정되었습니다.');
 				}else{
-					alert('실패');
+					alert('이미 배정받은 강좌가 있습니다.');
 				}
 			}//success
 		});//ajax

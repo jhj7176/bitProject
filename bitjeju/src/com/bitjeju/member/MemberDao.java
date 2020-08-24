@@ -180,7 +180,7 @@ public class MemberDao {
 		return list;
 	}// stselectAll()
 
-	public MemberDto selectOne(int num) throws SQLException {
+	public MemberDto selectOne(int num) {
 		// String sql = "select * from member where num=?";
 		String sql = "select num, id_email, name, dept, lvl, phone, "
 				+ "lecture from member natural join bitjejudept where num=?";
@@ -193,25 +193,36 @@ public class MemberDao {
 		 * join bitjeju
 		 * 
 		 */
-		pstmt = conn.prepareStatement(sql);
-		pstmt.setInt(1, num);
-		rs = pstmt.executeQuery();
-		if (rs.next()) {
-			bean = new MemberDto();
-			bean.setNum(rs.getInt("num"));
-			bean.setId_email(rs.getString("id_email"));
-			bean.setName(rs.getString("name"));
-			bean.setDept(rs.getString("dept"));
-			bean.setLvl(rs.getInt("lvl"));
-			bean.setPhone(rs.getString("phone"));
-			bean.setLecture(rs.getString("lecture"));
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				bean = new MemberDto();
+				bean.setNum(rs.getInt("num"));
+				bean.setId_email(rs.getString("id_email"));
+				bean.setName(rs.getString("name"));
+				bean.setDept(rs.getString("dept"));
+				bean.setLvl(rs.getInt("lvl"));
+				bean.setPhone(rs.getString("phone"));
+				bean.setLecture(rs.getString("lecture"));
 
-		}
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
 
-		if (pstmt != null)
-			pstmt.close();
-		if (conn != null)
-			conn.close();
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}//finally
 
 		return bean;
 	}// selectOne
@@ -277,11 +288,11 @@ public class MemberDao {
 		pstmt.setString(1, id_email);
 		System.out.println(sql2);
 		rs = pstmt.executeQuery();
-		if(rs.next()) {
-		
+		if (rs.next()) {
+
 			return -1;
-		}	
-		
+		}
+
 		if (pstmt != null)
 			pstmt.close();
 
@@ -302,43 +313,44 @@ public class MemberDao {
 		return 1;
 
 	}// signUp
-	
+
 	public int signUp(String id_email) throws SQLException {
-		
-		String sql="select * from member where id_email=?";
+
+		String sql = "select * from member where id_email=?";
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, id_email);
 		rs = pstmt.executeQuery();
-		if(rs.next()) {
-			
+		if (rs.next()) {
+
 			return -1;
 		}
-		
+
 		if (pstmt != null)
 			pstmt.close();
 		if (conn != null)
 			conn.close();
-	
+
 		return 1;
-	}//singUp
-	
+	}// singUp
+
 	public void passwordUpdate(String password, String id_email) throws SQLException {
 		String sql = "update member set password=? where id_email=?";
-		
+
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, password);
 		pstmt.setString(2, id_email);
 		pstmt.executeQuery();
-		
+
 		if (pstmt != null)
 			pstmt.close();
 		if (conn != null)
 			conn.close();
-	
+
 	}
+
 	public void phoneUpdate(String phone, String id_email) throws SQLException {
 		String sql = "update member set phone=? where id_email=?";
-		
+
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, phone);
 		pstmt.setString(2, id_email);
@@ -347,8 +359,9 @@ public class MemberDao {
 			pstmt.close();
 		if (conn != null)
 			conn.close();
-		
-	}//updatePhone
+
+	}// updatePhone
+
 	public void updateLevel(int deptLevel, int num) throws SQLException {
 		String sql = "update member set lvl = ? where num = ?";
 		pstmt = conn.prepareStatement(sql);
@@ -360,9 +373,8 @@ public class MemberDao {
 			pstmt.close();
 		if (conn != null)
 			conn.close();
-		
-		
-	}//updatelvl
+
+	}// updatelvl
 
 	public void enrolment(String lecture, int num) {
 		String sql = "update member set lecture = ? where num = ?";
@@ -371,11 +383,11 @@ public class MemberDao {
 			pstmt.setString(1, lecture);
 			pstmt.setInt(2, num);
 			pstmt.executeQuery();
-		
+
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}finally{
+		} finally {
 			try {
 				if (pstmt != null)
 					pstmt.close();
@@ -385,12 +397,7 @@ public class MemberDao {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		}//finally
-	}//enrolment
-	
-	
-	
+		} // finally
+	}// enrolment
+
 }// classEnd
-
-
-

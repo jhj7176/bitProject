@@ -35,6 +35,9 @@ public class LectureListController extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		for (LectureDto dto : list) {
+			System.out.println(dto.toString());
+		}
 		request.setAttribute("list", list); //리퀘스트스코프에 list를 저장.
 		request.getRequestDispatcher("staffLectureList.jsp").forward(request, response);//강의목록 페이지이동
 	}

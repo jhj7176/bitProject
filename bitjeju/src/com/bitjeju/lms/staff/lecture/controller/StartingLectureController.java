@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.bitjeju.lms.staff.lecture.model.LectureDao;
 import com.bitjeju.member.MemberDao;
+import com.bitjeju.member.MemberDto;
 
 /**
  * Servlet implementation class StartingLectureController
@@ -31,11 +32,19 @@ public class StartingLectureController extends HttpServlet {
 
 		String lecture = request.getParameter("lecture");
 		String name = request.getParameter("name");
+		int num = Integer.parseInt(request.getParameter("num"));
 		
 		System.out.println();
 		System.out.println(lecture);
 		System.out.println(name);
-		System.out.println();
+		System.out.println("강사번호"+num);
+		
+		MemberDao member = new MemberDao();
+		MemberDto bean = member.selectOne(num);
+		if(bean.getLecture()!=null && !(bean.getLecture().equals(""))) {
+			return;
+		}
+		
 		
 		LectureDao dao = new LectureDao();
 		dao.updateLecture(lecture, name);//멤버테이블에 강사의 과목컬럼에 과목 입력. 개강

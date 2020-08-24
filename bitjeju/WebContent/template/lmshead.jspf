@@ -106,7 +106,22 @@ $(function (){
 		
 			return false;
 		});
+	});//each
+	
+	
+	//고객센터 하위메뉴
+	$('#customer-menu>a').on('mouseenter',function(){
+		$(this).append($('#cus-menu-sub1'));
+		$('#cus-menu-sub1').stop().fadeIn(function(){
+			$(this).css('display','block');
+		});
+		
+	});//고객센터 하위메뉴 
+	$('#cus-menu-sub1').on('mouseleave',function(){
+		$('#cus-menu-sub1').stop().fadeOut();
 	});
+	
+
 });//document.Ready
 	
 
@@ -371,6 +386,40 @@ $(function (){
 		background-color:#e4e4e4;
 	}
 	#bit-menu-sub1>ul>li>a{
+		text-decoration:none;
+		color:black;
+	}
+	
+	
+    	/* 고객센터 서브메뉴 */
+	#cus-menu-sub1{
+		position:absolute;
+		display:none;
+		width:200px;
+		margin-top:-30px;		
+		z-index:10;
+	}
+	#cus-menu-sub1>ul{
+		margin-top:40px;
+		border-radius:5px;
+		border:1px solid #dddddd;
+		overflow:hidden;
+		width:150px;
+		list-style:none;
+		text-align:left;	
+		background-color:white;
+	}
+	#cus-menu-sub1>ul>li{
+		diplay:block;
+		margin-left:-40px;
+		padding:10px;	
+		text-indent: 40px;
+		font-weight:lighter;
+	}
+	#cus-menu-sub1>ul>li:hover{
+		background-color:#e4e4e4;
+	}
+	#cus-menu-sub1>ul>li>a{
 		text-decoration:none;
 		color:black;
 	}

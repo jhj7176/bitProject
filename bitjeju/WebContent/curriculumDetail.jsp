@@ -12,6 +12,12 @@
 <script type="text/javascript">
 	var loginLvl = "${login.lvl}";
 	var lecture = "${recruit.recruit_name }";
+	var start_day = new Date("${bean.start_day}"); 
+	var end_day = new Date("${bean.end_day}");
+	var today = new Date();
+	var dateDiff = Math.ceil((start_day.getTime()-today.getTime())/(1000*3600*24));
+	//개강날짜 - 오늘날짜 <= 0 : 0이하이면 수강신청 불가.  
+	
 	$(function() {
 
 		$('#enrolment').on('click', function() {
@@ -21,7 +27,9 @@
 				alert('이미 수강중인 강좌가 있습니다.');
 			} else if (loginLvl >= 3) {
 				alert('신청대상이 아닙니다.');
-			} else {
+			}else if (dateDiff <= 0) {
+				alert('모집이 마감된 강좌입니다.');
+			}else {
 				var param = 'lecture=' + lecture;
 				$.ajax('enrolment.bit', {
 					'method' : 'post',

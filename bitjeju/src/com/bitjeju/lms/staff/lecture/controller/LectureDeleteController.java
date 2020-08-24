@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.bitjeju.lms.staff.lecture.model.LectureDao;
+import com.bitjeju.lms.staff.lecture.model.LectureDto;
 
 /**
  * Servlet implementation class LectureDeleteController
@@ -45,9 +46,24 @@ public class LectureDeleteController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		LectureDao dao = new LectureDao();
+		
 		try {
-			dao.deleteLecture(lecture_name, lecture_num); //detail에서 삭제를 눌렀을 때 필드에 저장한 값으로 삭제.
 			//강좌이름과 강좌번호(PK)로 더블체크후 삭제.
+			
+			LectureDto bean = dao.selectOne(lecture_num);
+			dao = new LectureDao();
+			System.out.println(lecture_num);
+			System.out.println(bean.getNum());
+			System.out.println(bean.getName());
+			dao.deleteLecture(bean.getName());//멤버테이블에 강사의 과목컬럼에 과목 삭제 종강
+
+			dao = new LectureDao();
+			dao.deleteStuInfo(lecture_name); //해당과목 수강하는 수강생의 성적과 출석정보 삭제. 
+
+			
+			
+			dao = new LectureDao();
+			dao.deleteLecture(lecture_name, lecture_num); //detail에서 삭제를 눌렀을 때 필드에 저장한 값으로 삭제.
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

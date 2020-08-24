@@ -25,6 +25,15 @@ public class LectureDto {
 
 	
 	
+	@Override
+	public String toString() {
+		return "LectureDto [lecture_name=" + lecture_name + ", name=" + name + ", start_day=" + start_day + ", end_day="
+				+ end_day + ", num=" + num + ", lecture_room=" + lecture_room + ", lecture_num=" + lecture_num
+				+ ", recruit_num=" + recruit_num + "]";
+	}
+
+
+
 	public LectureDto() {
 		// TODO Auto-generated constructor stub
 	}

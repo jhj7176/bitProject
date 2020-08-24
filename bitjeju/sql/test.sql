@@ -75,4 +75,7 @@ select * from grade;
 select * from attendance;
 
 
+delete from lectures;
+alter table recruit drop primary key(recruit_num);
+alter table recruit modify (recruit_num number unique);
 

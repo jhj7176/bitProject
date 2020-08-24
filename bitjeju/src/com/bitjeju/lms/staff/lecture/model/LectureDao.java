@@ -142,7 +142,14 @@ public class LectureDao {
 
 	public void deleteLecture(String lecture_name, int lecture_num) throws SQLException {
 		String sql = "delete from lectures where lecture_name=? and lecture_num=?";
+		String sql2 = "delete from recruit where recruit_num = ?";
 
+		pstmt = conn.prepareStatement(sql2);
+		pstmt.setInt(1, lecture_num);
+		pstmt.executeQuery();
+		if (pstmt != null)
+			pstmt.close();
+		
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, lecture_name);
 		pstmt.setInt(2, lecture_num);
@@ -297,7 +304,7 @@ public class LectureDao {
 		String sql1 = "select num from member where lecture = ? and lvl = 2"; // 종강하는 강좌를 듣는 수강생들의 회원번호들.
 		String sql2 = "delete from attendance where num in ("; // 수강생 데이터 삭제.
 		String sql3 = "delete from grade where num in (";
-		String sql4 = "update member set lvl = 1 where num in ("; // 수강생을 수료생으로 변경.
+		String sql4 = "update member set lvl = 1, lecture=null where num in ("; // 수강생을 수료생으로 변경.
 		// where num in ( ????? );
 		try {
 			pstmt = conn.prepareStatement(sql1);
