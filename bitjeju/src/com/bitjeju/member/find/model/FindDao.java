@@ -80,22 +80,20 @@ public class FindDao {
 	}//findEmail
 	
 	
-	public void sendEmail(String id_email, String name) {
+	public void sendEmail(String id_email) {
 		String user_password = null;
 		
 		
 		
-		String sql = "select password from member where id_email=? and name=?";
+		String sql = "select password from member where id_email=?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, id_email);
-			pstmt.setString(2, name);
 			rs = pstmt.executeQuery();
 			if(rs.next()) {
 				user_password = rs.getString("password");
 			}
 			System.out.println(id_email);
-			System.out.println(name);
 			System.out.println(user_password);
 			
 			prop = new Properties();

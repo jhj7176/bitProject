@@ -37,7 +37,7 @@ public class FindPwController extends HttpServlet {
 		
 		FindDao dao = new FindDao();
 		response.setContentType("text/html;charset=utf-8");
-		dao.sendEmail(id_email, name);
+		dao.sendEmail(id_email);
 		request.getRequestDispatcher("sentEmail.jsp").forward(request, response);
 	}
 

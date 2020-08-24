@@ -34,7 +34,7 @@
 	width: 600px;
 	display: block;
 	margin: auto;
-	border-bottom: 1px solid #e4e4e4;
+	/* border-bottom: 1px solid #e4e4e4; */
 }
 
 .lmscontent:last-child { /*푸터와 거리두기  */
@@ -45,9 +45,18 @@
 	width:32px;
 	height:32px;
 }
+.title_small {
+	margin-top: 10px;
+	margin-bottom: 50px;
+	width: 600px;
+	height: 40px;
+	border-bottom: 1px solid #e4e4e4;
+	color: #999;
+}
 
 #accounttable {
-	width:600px;
+	margin:auto;
+	width:430px;
 	border-collapse: collapse;
 }
 
@@ -75,7 +84,7 @@
 	margin: 7px;
 	width: 50px;
 	height: 30px;
-	line-height:20px;
+	line-height:30px;
 	border-radius:5px;
 }
 
@@ -138,7 +147,9 @@
 			<!--*************content start****************-->
 			<div class="lmscontent">
 				<h2><img id="lock-icon" src="img/lock-icon.png"> 아이디 찾기</h2>
-				<h4>&nbsp;</h4>
+				<div class="title_small">
+				<small>이름과 가입할 때 사용한 전화번호를 입력해주세요<br/></small>
+				</div>
 
 
 				<table id="accounttable">
@@ -147,15 +158,19 @@
 						<td><input type=text name="findname" class="findname" placeholder="이름을 입력해주세요."/></td>
 					</tr>
 					<tr>
-						<th>전화번호</th>
+						<th>연락처</th>
 						<td><input type="tel" name="findphone" class="findphone" placeholder="전화번호를 입력해주세요."/></td>
+					</tr>
+					<tr>
+						<th></th>
+						<td><button id="idfindbtn" type="submit">확인</button></td>
 					</tr>
 				</table>
 
 
 			</div>
 			<div class="lmscontent">
-				<button id="idfindbtn" type="submit">확인</button>
+				
 
 			</div>
 			</form>

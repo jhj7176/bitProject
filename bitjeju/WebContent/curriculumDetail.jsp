@@ -131,15 +131,16 @@
 	vertical-align: middle;
 }
 
-#recruitadd, #recruitedit, #recruitdelete, #recruitback {
+#recruitback {
 	float: right;
 	background-color: #000069;
 	border: 1px solid #000069;
 	color: white;
 	margin: 7px;
 	width: 50px;
-	height: 20px;
-	line-height:20px;
+	height: 30px;
+	line-height:30px;
+	border-radius: 5px;
 }
 
 #recruitback:hover {

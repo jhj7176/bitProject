@@ -53,6 +53,14 @@
 	width:32px;
 	height:32px;
 }
+.title_small {
+	margin-top: 10px;
+	margin-bottom: 50px;
+	width: 600px;
+	height: 55px;
+	border-bottom: 1px solid #e4e4e4;
+	color: #999;
+}
 #content{
 	height:650px;
 }
@@ -60,7 +68,7 @@
 	width: 600px;
 	display: block;
 	margin: auto;
-	border-bottom: 1px solid #e4e4e4;
+	/* border-bottom: 1px solid #e4e4e4; */
 }
 
 .lmscontent:last-child { /*푸터와 거리두기  */
@@ -68,7 +76,8 @@
 }
 
 #accounttable {
-	width:600px;
+	margin:auto;
+	width:430px;
 	border-collapse: collapse;
 }
 
@@ -94,9 +103,9 @@
 	border: 1px solid #5cb85c;
 	color: white;
 	margin: 7px;
-	width: 50px;
+	width: 70px;
 	height: 30px;
-	line-height:20px;
+	line-height:30px;
 	border-radius:5px;
 }
 
@@ -179,7 +188,10 @@
 			<!--*************content start****************-->
 			<div class="lmscontent">
 				<h2><img id="lock-icon" src="img/lock-icon.png"> 비밀번호 찾기</h2>
-				<h4>&nbsp;</h4>
+				<div class="title_small">
+				<small>비트캠프의 아이디는 이메일입니다.<br/>
+				가입했던 이메일 주소를 아래의 란에 입력하시면 비밀번호가 이메일로 보내집니다.</small>
+				</div>
 
 
 				<table id="accounttable">
@@ -188,15 +200,15 @@
 						<td><input type="email" name="findemail" class="findemail" placeholder="이메일을 입력해주세요."/></td>
 					</tr>
 					<tr>
-						<th>이름</th>
-						<td><input type="text" name="findname" class="findname" placeholder="이름을 입력해주세요."/></td>
+						<th></th>
+						<td><button id="pwfindbtn" type="submit">보내기</button></td>
 					</tr>
 				</table>
 
 
+			
 			</div>
 			<div class="lmscontent">
-				<button id="pwfindbtn" type="submit">확인</button>
 
 			</div>
 			</form>

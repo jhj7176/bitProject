@@ -23,7 +23,7 @@
 	width: 600px;
 	display: block;
 	margin: auto;
-	border-bottom: 1px solid #e4e4e4;
+/* 	border-bottom: 1px solid #e4e4e4; */
 }
 
 .lmscontent:last-child { /*푸터와 거리두기  */
@@ -64,7 +64,7 @@
 	width: 50px;
 	height: 30px;
 	border-radius:5px;
-	line-height:20px;
+	line-height:30px;
 }
 
 #accountback:hover {
