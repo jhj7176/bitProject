@@ -64,9 +64,13 @@ public class RecruitEditController extends HttpServlet {
 		RecruitDao dao = new RecruitDao();
 		RecruitDto bean = dao.selectOne(recruit_num);
 		File file = new File(path+"/"+bean.getRecruit_file_name());		
+		File thumbnail = new File(path+"/"+bean.getThumbnail());		
 		System.out.println(bean.getRecruit_file_name());
 		
 		if (file.delete()) {
+			System.out.println("deleted~~ ");
+		}
+		if (thumbnail.delete()) {
 			System.out.println("deleted~~ ");
 		}
 		
@@ -104,7 +108,8 @@ public class RecruitEditController extends HttpServlet {
 		}
 
 		String file_name = mpReq.getFilesystemName("recruitfile");// 저장된파일명
-
+		String thumbnail_name = mpReq.getFilesystemName("thumbnail");//저장된파일명
+		
 		System.out.println(lecture_name);
 		System.out.println(file_name);
 
@@ -112,7 +117,7 @@ public class RecruitEditController extends HttpServlet {
 		try {
 			// *************************DB에 모집공고 정보 저장********************************
 
-			dao.updateRecruit(lecture_name, file_name);
+			dao.updateRecruit(lecture_name, file_name, thumbnail_name);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -51,8 +51,8 @@ var recruit_num = "${recruit.recruit_num }";
 #recruittable th {
 	color: #1E3269;
 	padding: 10px;
-	border-right: 1px solid #e4e4e4;
-	text-align: right;
+	border-bottom: 1px solid #e4e4e4;
+	/* text-align: right; */
 	vertical-align:top;
 }
 
@@ -139,7 +139,7 @@ var recruit_num = "${recruit.recruit_num }";
 			&nbsp;
 			<!--*************content start****************-->
 			<div class="lmscontent">
-				<h2>강의관리</h2>
+				<h2>모집공고</h2>
 				<h4>강좌정보</h4>
 	
 
@@ -148,12 +148,31 @@ var recruit_num = "${recruit.recruit_num }";
 				<table id="recruittable">
 					<tr>
 					<c:set value="${recruit }" var="bean"></c:set>
-						<th>모집공고</th>
-						<td>${bean.recruit_file_name}</td>
+						<td></td>
 					</tr>
-
+	
+	
+	
 					<tr>
-						<th>내용</th>
+						<th>모집공고 썸네일</th>
+					</tr>
+	
+					<tr>
+						<th>${bean.thumbnail}</th>
+					</tr>
+					<tr>
+						<td>
+						<img id="thumbnail-img" alt="" src="recruit/${bean.thumbnail }">
+						</td>
+					</tr>
+					<tr>
+						<th>모집공고</th>
+					</tr>
+	
+					<tr>
+						<th>${bean.recruit_file_name}</th>
+					</tr>
+					<tr>
 						<td>
 						<img id="recruit_img" alt="" src="recruit/${bean.recruit_file_name }">
 						</td>

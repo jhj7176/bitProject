@@ -43,12 +43,18 @@ public class RecruitDeleteController extends HttpServlet {
 		RecruitDto bean = dao.selectOne(recruit_num);
 		
 		String path = request.getRealPath("./recruit");
-		File file = new File(path+"/"+bean.getRecruit_file_name());		
+		
+		File file = new File(path+"/"+bean.getRecruit_file_name());	
+		File thumbnail = new File(path+"/"+bean.getThumbnail());
 		System.out.println(bean.getRecruit_file_name());
 		
 		if (file.delete()) {
 			System.out.println("deleted~~ ");
 		}
+		if(thumbnail.delete()) {
+			System.out.println("deleted~~ ");
+		}
+
 		dao = new RecruitDao();
 		dao.deleteOne(recruit_num);
 

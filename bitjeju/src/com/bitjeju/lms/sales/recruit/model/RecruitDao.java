@@ -40,7 +40,7 @@ public class RecruitDao {
 	 * 
 	 * 
 	 */
-	public void recruitUpload(String lecture_name, String file_name) throws SQLException {
+	public void recruitUpload(String lecture_name, String file_name, String thumbnail) throws SQLException {
 
 		String sql2 = "select lecture_num from lectures where lecture_name = ?";
 		pstmt = conn.prepareStatement(sql2);
@@ -54,11 +54,12 @@ public class RecruitDao {
 		if (pstmt != null)
 			pstmt.close();
 
-		String sql = "insert into recruit values (?,?)";
+		String sql = "insert into recruit values (?,?,?)";
 		System.out.println(sql);
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, file_name);
 		pstmt.setInt(2, lecture_num);
+		pstmt.setString(3, thumbnail);
 		pstmt.executeQuery();
 
 		if (pstmt != null)
@@ -68,7 +69,7 @@ public class RecruitDao {
 
 	}// recruitupload
 
-	public void updateRecruit(String lecture_name, String file_name) throws SQLException {
+	public void updateRecruit(String lecture_name, String file_name, String thumbnail) throws SQLException {
 		String sql2 = "select lecture_num from lectures where lecture_name = ?";
 		pstmt = conn.prepareStatement(sql2);
 		pstmt.setString(1, lecture_name);
@@ -81,11 +82,12 @@ public class RecruitDao {
 		if (pstmt != null)
 			pstmt.close();
 
-		String sql = "update recruit set recruit_file_name=? where recruit_num=? ";
+		String sql = "update recruit set recruit_file_name=?, thumbnail=? where recruit_num=? ";
 		System.out.println(sql);
 		pstmt = conn.prepareStatement(sql);
 		pstmt.setString(1, file_name);
-		pstmt.setInt(2, lecture_num);
+		pstmt.setString(2, thumbnail);
+		pstmt.setInt(3, lecture_num);
 		pstmt.executeQuery();
 
 		if (pstmt != null)
@@ -134,8 +136,8 @@ public class RecruitDao {
 				bean = new RecruitDto();
 				bean.setRecruit_file_name(rs.getString("recruit_file_name"));
 				bean.setRecruit_num(recruit_num);
+				bean.setThumbnail(rs.getString("thumbnail"));
 			}
-
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -168,6 +170,7 @@ public class RecruitDao {
 				bean.setRecruit_name(rs.getString("lecture_name"));
 				bean.setEnd_day(rs.getDate("end_day"));
 				bean.setStart_day(rs.getDate("start_day"));
+				bean.setThumbnail(rs.getString("thumbnail"));
 				list.add(bean);
 				System.out.println(bean.toString());
 			}
@@ -203,6 +206,7 @@ public class RecruitDao {
 				bean.setRecruit_name(rs.getString("lecture_name"));
 				bean.setEnd_day(rs.getDate("end_day"));
 				bean.setStart_day(rs.getDate("start_day"));
+				bean.setThumbnail(rs.getString("thumbnail"));
 				System.out.println(bean.toString());
 			}
 		} catch (SQLException e) {

@@ -86,6 +86,10 @@ $(function(){
 	cursor: pointer;
 }
 
+#thumbnail-img{
+	width:200px;
+	height: 200px;
+}
 .text-left, .caption {
 	padding-left: 10px;
 }
@@ -177,7 +181,7 @@ $(function(){
 					<div class="col-xs-4">
 						<div class="thumbnail" onclick="curriDetail(${idx})">
 							<div class="box-tag box-tag-normal">제주센터</div>
-							<img src="img/curriAD3.png">
+							<img id="thumbnail-img" src="recruit/${bean.thumbnail }"><!-- **********썸네일이미지********* -->
 							<!-- 강좌이미지 모집공고이미지 -->
 							<div class="caption">
 								<h3>

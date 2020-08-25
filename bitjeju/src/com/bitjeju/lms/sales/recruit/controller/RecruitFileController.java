@@ -84,18 +84,19 @@ public class RecruitFileController extends HttpServlet {
 			lecture_name = mpReq.getParameter(lecture);
 		}
 		
+		String thumbnail_name = mpReq.getFilesystemName("thumbnail");//저장된파일명
 		String file_name = mpReq.getFilesystemName("recruitfile");//저장된파일명
-		String thumbnail_file_name = mpReq.getFilesystemName("thumbnail-name");//저장된파일명
 		
-		System.out.println(lecture_name); 
-		System.out.println(file_name);
+		System.out.println(lecture_name); //모집공고 강좌
+		System.out.println(thumbnail_name); //목록에서 보이는 썸네일 이미지
+		System.out.println(file_name);//모집공고 이미지파일
 		
 		RecruitDao dao = new RecruitDao();
 		
 		try {
 		//*************************DB에 모집공고 정보 저장********************************
 			
-			dao.recruitUpload(lecture_name,file_name);
+			dao.recruitUpload(lecture_name,file_name,thumbnail_name);//강좌명으로 강좌번호찾기, 파일명,썸네일명 저장
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

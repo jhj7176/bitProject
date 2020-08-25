@@ -19,8 +19,13 @@
 
 		var fileTarget = $('#recruitfile');
 		fileTarget.on('change', function() { // 값이 변경되면
-			var cur = $("#recruittable input[type='file']").val();
+			var cur = $("#recruitfile").val();
 			$(".upload-name").val(cur);
+		});
+		var thumbnail = $('#thumbnail');
+		thumbnail.on('change', function() { // 값이 변경되면
+			var cur = $("#thumbnail").val();
+			$(".thumbnail-name").val(cur);
 		});
 
 	});//ready
@@ -58,7 +63,7 @@
 }
 
 
-#recruit_name, .upload-name, #recruit_state { /* form input */
+#recruit_name, .upload-name, .thumbnail-name { /* form input */
 	width: 300px;
 	height: 20px;
 	margin: 7px;
@@ -156,6 +161,13 @@ private String lecture_name;
 						<th>강좌명</th>
 						<td id="lecture_td">&nbsp;&nbsp;${bean.lecture_name }
 						<input type="hidden" name="lecture_name" id="lecture_name" value="${bean.lecture_name }"/></td>
+					</tr>
+					
+					<tr>
+						<th>썸네일</th>
+						<td><input class="thumbnail-name" value="" placeholder="파일선택" />
+							<label for="thumbnail">업로드</label> <input type="file"
+							id="thumbnail" name = "thumbnail"/></td>
 					</tr>
 					
 					<tr>

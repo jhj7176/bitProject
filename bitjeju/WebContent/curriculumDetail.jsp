@@ -87,6 +87,11 @@
 .orange{
 	color: #E56D29;
 }
+
+#thumbnail-img{
+	width:200px;
+	height: 200px;
+}
 #enrolment { /* 수강신청버튼 */
 	background-color: #E56D29;
 	border: 1px solid #E56D29;
@@ -213,7 +218,7 @@
 
 
 				<div>
-					<img alt="" src="img/curriAD3.png" />
+					<img id="thumbnail-img" alt="" src="recruit/${bean.thumbnail }" /><!--썸네일이미지  -->
 				</div>
 				<div>
 					<table id="currintro-table">

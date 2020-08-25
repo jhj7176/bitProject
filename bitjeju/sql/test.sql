@@ -75,9 +75,10 @@ select * from grade;
 select * from attendance;
 
 
-delete from recruit;
+delete from recruit; 	
 select lecture_name,start_day,end_day,num,lecture_room,lecture_num,recruit_num from lectures full outer join recruit on recruit_num = lecture_num;
 delete from lectures;
 alter table recruit drop primary key(recruit_num);
 alter table recruit modify (recruit_num number unique);
+alter table recruit add (thumbnail varchar2(100));
 

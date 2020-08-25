@@ -4,11 +4,19 @@ import java.sql.Date;
 
 public class RecruitDto {
 
-	private String recruit_name, recruit_file_name, recruit_state;
+	private String recruit_name, recruit_file_name, recruit_state, thumbnail;
 	private int recruit_num;
 	private Date start_day, end_day;
 
 	
+	public String getThumbnail() {
+		return thumbnail;
+	}
+
+	public void setThumbnail(String thumbnail) {
+		this.thumbnail = thumbnail;
+	}
+
 	public Date getStart_day() {
 		return start_day;
 	}
@@ -39,11 +47,12 @@ public class RecruitDto {
 
 
 	
+
 	@Override
 	public String toString() {
 		return "RecruitDto [recruit_name=" + recruit_name + ", recruit_file_name=" + recruit_file_name
-				+ ", recruit_state=" + recruit_state + ", recruit_num=" + recruit_num + ", start_day=" + start_day
-				+ ", end_day=" + end_day + "]";
+				+ ", recruit_state=" + recruit_state + ", thumbnail=" + thumbnail + ", recruit_num=" + recruit_num
+				+ ", start_day=" + start_day + ", end_day=" + end_day + "]";
 	}
 
 	public String getRecruit_name() {

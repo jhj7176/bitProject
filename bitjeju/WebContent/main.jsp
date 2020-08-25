@@ -93,6 +93,12 @@ $(function(){
 	cursor:pointer;
 }
 
+
+#thumbnail-img{
+	width:200px;
+	height: 200px;
+}
+
 .text-left,.caption{
 	padding-left:10px;
 }
@@ -189,7 +195,7 @@ $(function(){
 							<div class="box-tag box-tag-normal">제주센터</div>
 							
 							
-							<img src="img/curriAD3.png">
+							<img id="thumbnail-img" src="recruit/${bean.thumbnail }">
 							<!-- 강좌이미지 모집공고이미지 -->
 							
 							
