@@ -113,7 +113,7 @@ $(function() {
 
 });
 </script>
-<title>BITCAMP JEJU: LMS강사-자료실 작성페이지</title>
+<title>BITCAMP JEJU: 공지사항 작성페이지</title>
 </head>
 <body>
 <%@ include file="template/header.jspf" %>

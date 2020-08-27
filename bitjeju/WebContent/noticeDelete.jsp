@@ -20,10 +20,11 @@
 		text-decoration: none;
 		background-color: #000069;
 		border: 1px solid #000069;
+		border-radius:5px;
 		color: white;
 		width: 45px;
 		margin: 5px;
-		line-height: 25px;
+		line-height: 28px;
 		font-size:14px;
 		cursor:pointer;	
 		float:left;
@@ -34,10 +35,11 @@
 		text-decoration: none;
 		background-color: #000069;
 		border: 1px solid #000069;
+		border-radius:5px;
 		color: white;
 		width: 45px;
 		margin: 5px;
-		line-height: 27px;
+		line-height: 30px;
 		display:inline-block;
 	    float:left;
 	}

@@ -102,7 +102,7 @@ $(function(){
 	
 });//ready
 </script>
-<title>BITCAMP JEJU: LMS강사-자료실 상세페이지</title>
+<title>BITCAMP JEJU: 공지사항</title>
 </head>
 <body>
 <%@ include file="template/lmsheader.jspf" %>
