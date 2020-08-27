@@ -5,19 +5,24 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%@ include file="template/lmshead.jspf" %>
 <style rel="stylesheet" type="text/css">
+	#header .grid3 {
+		margin-top: 40px;
+		position: relative;
+	}
+
 	.lmscontent {
 		width: 600px;
 		display: block;
 		margin: auto;
 	}
 	.lmscontent:last-child {
-		margin-bottom:100px;
+		margin-bottom:150px;
 	}
 	#drtable{
 		margin: 20px auto;
-		width:585px;
+		margin-top:40px;
 		border-collapse:collapse;
-		border-top:3px solid #e4e4e4;
+		border-top:3px solid #000069;
 	}
 	#drtable tr{
 	}
@@ -40,7 +45,7 @@
 	}
 	#text{
 		width:585px;
-		height:400px;
+		height:350px;
 		vertical-align:top;
 	}
 	.filename{
@@ -105,7 +110,7 @@ $(function(){
 <title>BITCAMP JEJU: 공지사항</title>
 </head>
 <body>
-<%@ include file="template/lmsheader.jspf" %>
+<%@ include file="template/header.jspf" %>
 <%@ include file="template/menu.jspf" %>
    <div id="contents">
   		<!--*****************고객센터 메뉴******************-->
@@ -124,8 +129,8 @@ $(function(){
        <!--*************content start****************-->
        <div class="lmscontent">
        <h2>공지사항</h2>
-	       <div id="drtable">
-	       	<table>
+	       <div>
+	       	<table id="drtable">
 	       	<c:set value="${bean }" var="bean" />
 	       		<tr>
 	       			<th>제목</th>

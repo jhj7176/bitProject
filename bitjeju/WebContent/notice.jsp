@@ -168,7 +168,7 @@ var loginLvl;
 	width: 700px;
 	border-collapse: collapse;
 	border-bottom: 1px solid #e4e4e4;
-	border-top: 1px solid #e4e4e4;
+	border-top: 3px solid #000069;
 	margin-bottom: 10px;
 }
 

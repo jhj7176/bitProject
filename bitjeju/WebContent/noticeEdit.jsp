@@ -5,6 +5,11 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <%@ include file="template/lmshead.jspf" %>
 <style rel="stylesheet" type="text/css">
+	#header .grid3 {
+		margin-top: 40px;
+		position: relative;
+	}
+
 	.lmscontent {
 		width: 600px;
 		display: block;
@@ -16,6 +21,8 @@
 	#drtable{
 		margin: 20px auto;
 		border-collapse:collapse;
+		margin-top:40px;
+		border-top:3px solid #000069;
 	}
 	#drtable th{
 		height: 30px;
@@ -135,10 +142,10 @@ $(function() {
        <!--*************content start****************-->
        <div class="lmscontent">
        <h2>공지사항</h2>
-	       <div id="drtable">
+	       <div>
 	       <form method="post" action="noticeedit.bit" enctype="multipart/form-data">
 	       <c:set value="${bean }" var="bean"></c:set>
-	       	<table>
+	       	<table id="drtable">
 	       		<tr>
 	       			<th>제목</th>
 	       			<td><input type="text" name="notiTitle" maxlength="200" class="drTitle" value="${bean.title }"/></td>
