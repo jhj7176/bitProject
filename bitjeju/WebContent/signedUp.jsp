@@ -52,8 +52,9 @@
     color:white;
     margin: 7px;
     width: 50px;
-    height: 20px;
-    line-height:20px;
+    height: 30px;
+    line-height:30px;
+	border-radius: 5px;
 }
 #signupback:hover{
 	background-color:white;

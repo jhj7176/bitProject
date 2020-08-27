@@ -400,4 +400,70 @@ public class MemberDao {
 		} // finally
 	}// enrolment
 
+	public int deleteMeValidation(int num, String password) {
+
+		String sql = "select password from member where num = ?";
+		int result = 0;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setInt(1, num);
+			rs = pstmt.executeQuery();
+			System.out.println(sql);
+			String pw = null;
+
+			if (rs.next()) {
+				pw = rs.getString("password");
+				System.out.println("pw from DB = "+pw);
+				System.out.println("password = "+password);
+				System.out.println(pw==password);
+				if (pw.equals(password)) {
+
+					pstmt.close();
+					String sql2 = "delete from member where num = ?";
+					pstmt = conn.prepareStatement(sql);
+					pstmt.setInt(1, num);
+					pstmt.executeQuery();
+					System.out.println(sql2);
+
+					result = 1;
+				} else if (pw != password) {
+					result = 2;
+				}
+			} // if
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+
+			try {
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		} // finally
+//ºñ¹øÀÌ ÀÏÄ¡ÇÏ¸é 1 Æ²¸®¸é 2 
+		System.out.println("result = "+result);
+		return result;
+	}// Å»Åð°ËÁõ
+	
+
+	public void deleteMe(int num) throws SQLException {
+		String sql = "delete from member where num=?";
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setInt(1, num);
+		System.out.println(sql);
+		pstmt.executeQuery();
+		if (pstmt != null)
+			pstmt.close();
+		if (conn != null)
+			conn.close();
+	} // deleteMe Å»Åð
+	
+	
+	
 }// classEnd

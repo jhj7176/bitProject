@@ -40,6 +40,12 @@ $(function(){
 .lmscontent:last-child{/*푸터와 거리두기  */
 	margin-bottom:400px;
 }
+
+#lock-icon{
+	vertical-align:text-bottom;
+	width:32px;
+	height:32px;
+}
 #beforemypagetable{
 	border-collapse:collapse;
 }
@@ -62,7 +68,9 @@ $(function(){
     color:white;
     margin: 7px;
     width: 50px;
-    height: 20px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 5px;
 }
 #mypagesubmit:hover,#mypageback:hover{
 	background-color:white;
@@ -92,7 +100,7 @@ $(function(){
 			<!--*************content start****************-->
 		<form action="mypage.bit" method="post" id="mypageForm">
 			<div class="lmscontent">
-				<h2>본인확인</h2>
+				<h2><img id="lock-icon" src="img/lock-icon.png"> 본인확인</h2>
 
 					<c:set value="${login }" var="bean" />
 				<table id="beforemypagetable">

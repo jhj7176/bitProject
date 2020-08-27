@@ -26,6 +26,22 @@ $(function(){
 			}//error
 		});//ajax
 	});//click
+	
+	$('#accountdelete').on('click', function(){ // 탈퇴 페이지로 이동
+		var param = 'idx='+num
+		$.ajax('deletemechk.bit', {
+			'method' : 'post',
+			'data' : param,
+			'success' : function(data){
+				location.href ='deletemechk.bit';
+			}, //success
+			'error' : function(data){
+				alert('이동 실패');
+			} //error
+		}); //ajax
+	}); //click
+	
+	
 });//ready
 </script>
 <style type="text/css">
@@ -37,6 +53,12 @@ $(function(){
 }
 .lmscontent:last-child{/*푸터와 거리두기  */
 	margin-bottom:400px;
+}
+
+#lock-icon{
+	vertical-align:text-bottom;
+	width:32px;
+	height:32px;
 }
 #accounttable{
 	border-collapse:collapse;
@@ -60,14 +82,33 @@ $(function(){
     color:white;
     margin: 7px;
     width: 50px;
-    height: 20px;
-    line-height:20px;
+    height: 30px;
+    line-height:30px;
+    border-radius: 5px;
 }
 #mypageedit:hover,#accountback:hover{
 	background-color:white;
 	color:#000069;
 	cursor: pointer;
 }
+#accountdelete{
+	float: left;
+	background-color: #d90b0b;
+	border: 1px solid #d90b0b;
+	color: white;
+	margin: 7px;
+	width: 80px;
+	height: 30px;
+	line-height:30px;
+	border-radius:5px;
+	margin-left: 23px;
+}
+#accountdelete:hover{
+	background-color: white;
+	color: #d90b0b;
+	cursor: pointer;
+}
+
 #mypagepw,#mypagephone{/*비밀번호 input  */
     width: 300px;
     height: 35px;
@@ -107,8 +148,8 @@ $(function(){
 			&nbsp;
 			<!--*************content start****************-->
 			<div class="lmscontent">
-				<h2>계정관리</h2>
-				<h4>회원정보</h4>
+				<h2><img id="lock-icon" src="img/lock-icon.png"> 내정보</h2>
+				<h4>&nbsp;</h4>
 
 
 					<c:set value="${bean }" var="bean" />
@@ -135,6 +176,7 @@ $(function(){
 
 			</div>
 			<div class="lmscontent">
+			<button id="accountdelete" type="submit">탈퇴하기</button>
 			<button id="accountback" onclick="window.history.go(-1)">뒤로</button>
 			<button id="mypageedit" type="submit">수정</button>			
 			

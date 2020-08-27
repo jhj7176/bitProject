@@ -137,6 +137,19 @@ $(function(){
 .lmscontent:last-child{/*푸터와 거리두기  */
 	margin-bottom:400px;
 }
+#lock-icon{
+	vertical-align:text-bottom;
+	width:32px;
+	height:32px;
+}
+.title_small {
+	margin-top: 10px;
+	margin-bottom: 50px;
+	width: 600px;
+	height: 30px;
+	border-bottom: 1px solid #e4e4e4;
+	color: #999;
+}
 #accounttable{
 	border-collapse:collapse;
 }
@@ -159,12 +172,14 @@ $(function(){
     color:white;
     margin: 7px;
     width: 50px;
-    height: 20px;
-    line-height:20px;
+    height: 30px;
+    line-height:30px;
+    border-radius: 5px;
 }
 #accountback:hover{
 	background-color:white;
 	color:#000069;
+	cursor: pointer;
 }
 
 #changepw,#changephone{   /* 비번변경 버튼 */
@@ -183,6 +198,7 @@ $(function(){
 #changepw:hover,#changephone:hover{
 	background-color:white;
 	color:#000069;
+	cursor: pointer;
 }
 #mypagepw1,#mypagepw2,#mypagephone{/*비밀번호 input  */
     width: 250px;
@@ -225,8 +241,10 @@ $(function(){
 			&nbsp;
 			<!--*************content start****************-->
 			<div class="lmscontent">
-				<h2>계정관리</h2>
-				<h4>회원정보</h4>
+				<h2><img id="lock-icon" src="img/lock-icon.png"> 내정보 수정</h2>
+				<div class="title_small">
+				<small>비트캠프 비밀번호와 전화번호를 수정 하실 수 있습니다.</small>
+				</div>
 
 
 					<c:set value="${bean }" var="bean" />

@@ -169,8 +169,9 @@ $('#overlap').on('click',function(){ // 아이디 중복검사 버튼
     color:white;
     margin: 7px;
     width: 50px;
-    height: 20px;
-    line-height:20px;
+    height: 30px;
+    line-height:30px;
+    border-radius: 5px;
 }
 #signupbtn:hover,#signupback:hover{/* 버튼 */
 	background-color:white;
