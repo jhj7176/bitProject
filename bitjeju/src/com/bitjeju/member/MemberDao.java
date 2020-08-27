@@ -420,7 +420,7 @@ public class MemberDao {
 
 					pstmt.close();
 					String sql2 = "delete from member where num = ?";
-					pstmt = conn.prepareStatement(sql);
+					pstmt = conn.prepareStatement(sql2);
 					pstmt.setInt(1, num);
 					pstmt.executeQuery();
 					System.out.println(sql2);

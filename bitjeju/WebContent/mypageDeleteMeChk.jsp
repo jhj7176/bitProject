@@ -27,7 +27,7 @@ var num = "${bean.num }";
 						var result = $(data).find('result').text();
 						if (result == 1) {
 							alert('회원정보가 삭제되었습니다')
-							location.href = 'deleteme.bit';
+							location.href = 'logout.bit';
 						} else {
 							alert('비밀번호를 확인해주세요');
 						}
