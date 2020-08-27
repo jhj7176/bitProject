@@ -13,7 +13,7 @@
 	$(function() {
 		$('#accountfindform').on('submit',function(){
 			if($('.findemail').val() == ''|| $('.findname').val() == ''){
-				alert('모든 정보를 입력해주세요.');
+				alert('이메일을 입력해주세요.');
 				return false;
 			}
 			$('#waiting').css('display','block');

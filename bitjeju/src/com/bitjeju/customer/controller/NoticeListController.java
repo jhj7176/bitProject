@@ -1,10 +1,8 @@
 package com.bitjeju.customer.controller;
 
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -14,26 +12,40 @@ import javax.servlet.http.HttpServletResponse;
 import com.bitjeju.customer.model.NoticeDao;
 import com.bitjeju.customer.model.NoticeDto;
 
-
 @WebServlet("/customercenter.bit")
 public class NoticeListController extends HttpServlet {
-	
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) 
-			throws ServletException, IOException {
-		try {
-			NoticeDao dao = new NoticeDao();
-			ArrayList<NoticeDto> list = dao.selectAll();
-			req.setAttribute("notice", list);
-		} catch (SQLException e) {
-			e.printStackTrace();
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		request.setCharacterEncoding("utf-8");
+		String word = "";
+		if(request.getParameter("searchword")!=null)
+			word = new String(request.getParameter("searchword").getBytes("iso-8859-1"), "utf-8");
+		
+		System.out.println(word);
+		int pageNum=0;
+		int totalList = -1;
+		if (request.getParameter("pageNum") != null) {
+			System.out.println("pageNum:" + request.getParameter("pageNum"));
+			pageNum = Integer.parseInt(request.getParameter("pageNum").trim());
+		} else {
+			pageNum = 1;
+			System.out.println("pageNum :" + pageNum);
 		}
-		RequestDispatcher rd = req.getRequestDispatcher("customer.jsp");
-		rd.forward(req, resp);
+
+		NoticeDao dao = new NoticeDao();
+		ArrayList<NoticeDto> list = dao.selectAll(pageNum, word);
+		dao = new NoticeDao();
+		totalList = dao.totalList();
+
+		request.setAttribute("pageNum", pageNum);
+		request.setAttribute("totalList", totalList);
+		request.setAttribute("notice", list);
+		request.getRequestDispatcher("notice.jsp").forward(request, response);
 	}
 
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) 
-			throws ServletException, IOException {
-		
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
 	}
 
 }

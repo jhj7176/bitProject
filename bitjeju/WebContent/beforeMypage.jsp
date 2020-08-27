@@ -31,6 +31,12 @@ $(function(){
 });
 </script>
 <style type="text/css">
+#header .grid3{
+	margin-top:40px;
+	position:relative;
+	
+}
+
 .lmscontent {
 	width: 600px;
 	display: block;
@@ -48,6 +54,8 @@ $(function(){
 }
 #beforemypagetable{
 	border-collapse:collapse;
+	display:block;
+	margin-top:80px;
 }
 #beforemypagetable tr{
 }

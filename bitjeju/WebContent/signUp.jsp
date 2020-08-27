@@ -157,7 +157,7 @@ $('#overlap').on('click',function(){ // 아이디 중복검사 버튼
     margin: 7px;
     border-radius: 5px;
     border: 1px solid #969696;
-    font-size:120%;
+    font-size:90%;
     text-align:center;
     vertical-align:middle;
 }

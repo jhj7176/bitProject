@@ -1,35 +1,55 @@
 package com.bitjeju.customer.model;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 public class NoticeDto {
 
-	int num, read_cnt;
-	String title, writer, content, filename;
-	Date wtime;
+	private int ntnum, num, read_cnt;
+	private String title, content, filename, wtimeStamp;
+	private Date wtime;
 
 	public NoticeDto() {
 
 	}
 
-	@Override
-	public String toString() {
-		return "NoticeDto [num=" + num + ", read_cnt=" + read_cnt + ", title=" + title + ", writer=" + writer
-				+ ", content=" + content + ", filename=" + filename + ", wtime=" + wtime + "]";
-	}
-
-	public NoticeDto(int num, int read_cnt, String title, String writer, String content, String filename, Date wtime) {
+	public NoticeDto(int ntnum, int read_cnt, String title, String content, String filename, Date wtime) {
 		super();
-		this.num = num;
+		this.ntnum = ntnum;
 		this.read_cnt = read_cnt;
 		this.title = title;
-		this.writer = writer;
 		this.content = content;
 		this.filename = filename;
 		this.wtime = wtime;
 	}
 
-	public int getNum() {
+
+	@Override
+	public String toString() {
+		return "NoticeDto [ntnum=" + ntnum + ", num=" + num + ", read_cnt=" + read_cnt + ", title=" + title
+				+ ", content=" + content + ", filename=" + filename + ", wtime=" + wtime + "]";
+	}
+
+	
+	
+
+	public String getWtimeStamp() {
+		return wtimeStamp;
+	}
+
+	public void setWtimeStamp(String wtimeStamp) {
+		this.wtimeStamp = wtimeStamp;
+	}
+
+	public int getNtnum() { // 글번호
+		return ntnum;
+	}
+
+	public void setNtnum(int ntnum) {
+		this.ntnum = ntnum;
+	}
+
+	public int getNum() { // 작성자 회원번호
 		return num;
 	}
 
@@ -51,14 +71,6 @@ public class NoticeDto {
 
 	public void setTitle(String title) {
 		this.title = title;
-	}
-
-	public String getWriter() {
-		return writer;
-	}
-
-	public void setWriter(String writer) {
-		this.writer = writer;
 	}
 
 	public String getContent() {
@@ -84,5 +96,6 @@ public class NoticeDto {
 	public void setWtime(Date wtime) {
 		this.wtime = wtime;
 	}
+
 
 }

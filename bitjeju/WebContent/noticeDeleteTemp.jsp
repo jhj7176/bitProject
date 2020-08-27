@@ -8,7 +8,7 @@
 <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
 <script type="text/javascript">
 $(function(){
-	opener.parent.location='http://localhost:8083/bitjeju/lmsteacherDataroom.bit';
+	opener.parent.location='http://localhost:8083/bitjeju/customercenter.bit';
 	window.close();
 });
 </script>

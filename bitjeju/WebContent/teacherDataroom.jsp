@@ -73,7 +73,7 @@ $(function() {
 			var paramnext = 'pageNum=' + pageNum;
 			location.href = 'lmsteacherDataroom.bit?' + paramnext;
 	});//click
-});//click
+});//ready
 </script>
 <style rel="stylesheet" type="text/css">
 	.lmscontent {
