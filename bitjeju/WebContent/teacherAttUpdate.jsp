@@ -37,7 +37,8 @@
 	    border:1px solid #000069;
 	    color:white;
 	    width: 50px;
-	    line-height: 20px;
+	    line-height: 22px;
+	    border-radius: 5px;
 	}
 	#btn:hover{/*버튼 조절*/
 		cursor: pointer;

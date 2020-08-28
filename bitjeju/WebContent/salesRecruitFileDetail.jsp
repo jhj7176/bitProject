@@ -37,7 +37,8 @@ var recruit_num = "${recruit.recruit_num }";
 }
 
 .lmscontent:last-child {
-	margin-bottom: 300px;
+	border-bottom: 0px solid #e4e4e4;
+	margin-bottom: 200px;
 }
 
 #recruittable {
@@ -80,8 +81,9 @@ var recruit_num = "${recruit.recruit_num }";
 	color: white;
 	margin: 7px;
 	width: 50px;
-	height: 20px;
-	line-height:20px;
+	height: 30px;
+	line-height:30px;
+	border-radius: 5px;
 }
 #recruitedit:hover, #recruitdelete:hover, #recruitback:hover {
 		background-color:white;
@@ -110,7 +112,9 @@ var recruit_num = "${recruit.recruit_num }";
 #recruit_img{
 	width:700px;
 }
-
+.btns{
+	padding-top:40px;
+}
 /* named upload */
 </style>
 </head>
@@ -186,10 +190,10 @@ var recruit_num = "${recruit.recruit_num }";
 
 
 			</div>
-			<div class="lmscontent">
-				<button id="recruitback" onclick="window.history.go(-1)">뒤로</button>
-				<button id="recruitdelete">삭제</button>
-				<button id="recruitedit">수정</button>
+			<div class="lmscontent btns">
+				<button id="recruitback" type="button" onclick="window.history.go(-1)">뒤로</button>
+				<button id="recruitdelete" type="button" >삭제</button>
+				<button id="recruitedit" type="button" >수정</button>
 			</div>
 			<!--*************content end******************-->
 			<%@ include file="template/footer.jspf"%>

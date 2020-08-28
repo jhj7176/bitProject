@@ -132,10 +132,10 @@ $(function(){
 	width: 600px;
 	display: block;
 	margin: auto;
-	border-bottom:1px solid #e4e4e4;
+	/* border-bottom:1px solid #e4e4e4; */
 }
 .lmscontent:last-child{/*푸터와 거리두기  */
-	margin-bottom:400px;
+	margin-bottom:150px;
 }
 #lock-icon{
 	vertical-align:text-bottom;
@@ -147,7 +147,7 @@ $(function(){
 	margin-bottom: 50px;
 	width: 600px;
 	height: 30px;
-	border-bottom: 1px solid #e4e4e4;
+	/* border-bottom: 1px solid #e4e4e4; */
 	color: #999;
 }
 #accounttable{
@@ -186,14 +186,15 @@ $(function(){
     background-color: #000069;
     border:1px solid #000069;
     color:white;
-    margin-top : 9px;
+    margin-top : 7px;
     margin-right: 10px;
     width: 50px;
-    height: 25px;
+    height: 32px;
     font-size:90%;
     border-radius:5px;
+    vertical-align:middle;
     float:left;
-    ling-height:25px;
+    ling-height:35px;
 }
 #changepw:hover,#changephone:hover{
 	background-color:white;
@@ -202,13 +203,13 @@ $(function(){
 }
 #mypagepw1,#mypagepw2,#mypagephone{/*비밀번호 input  */
     width: 250px;
-    height: 25px;
+    height: 30px;
     margin: 7px;
     border-radius: 5px;
     border: 1px solid #969696;
     font-size:90%;
     text-align:center;
-    line-height:25px;
+    line-height:30px;
     vertical-align:middle;
     float:left;
   
@@ -287,7 +288,7 @@ $(function(){
 
 			</div>
 			<div class="lmscontent">
-			<button id="accountback" onclick="window.history.go(-1)">뒤로</button>	
+			<!-- <button id="accountback" onclick="window.history.go(-1)">뒤로</button>	 -->
 
 	
 			</div>

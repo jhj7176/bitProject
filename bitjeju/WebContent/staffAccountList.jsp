@@ -104,24 +104,40 @@
 							+ '&word=' + word;
 					location.href = 'lmsstaffaccountlist.bit?' + paramsearch;
 					return false;
-				});//submit
+		});//submit
 
+		
+		$('.page_num>a').each(function(){ //페이지링크 누르면 현재 페이지번호 색깔변함
+			if($(this).text().trim()==pageNum){
+				$(this).css('color','white');
+				$(this).parent().css('background-color','#000069');
+			}
+		});
+		
+		
+		$('#searchkey option').each(function(){
+			var space = '&nbsp;&nbsp;&nbsp;&nbsp;';
+			$(this).html(space+$(this).text());
+		});//each
 	});//ready
 </script>
 <style type="text/css">
 .lmscontent { /* 제목과 테이블을 전부 감싸는 div */
 	width: 600px;
+	
 	display: block;
 	margin: auto;
 }
+.firstc-lmsctnt{
 
+}
 
 #formdiv { /*검색창 감싸는 Div  */
 	display: block;
 	margin: auto;
 	clear: both;
 	width: 440px;
-	margin-bottom:300px;
+	margin-bottom:150px;
 }
 
 #accounttable {
@@ -171,8 +187,9 @@
 	color: white;
 	margin: 7px;
 	width: 50px;
-	height: 20px;
-	line-height:20px;
+	height: 30px;
+	line-height:30px;
+	border-radius: 5px;
 }
 #accountadd:hover { /* 등록버튼 */
 		background-color:white;
@@ -181,9 +198,11 @@
 }
 #paging {
 	width: 300px;
+	height:40px;
 	display: block;
 	overflow:hidden;
 	margin:auto;
+	margin-bottom:20px;
 	
 }
 #paging>.lmscontent { /* 이전 다음버튼 감싸는 div 버튼중앙 */
@@ -203,12 +222,13 @@
 	float:left;
 }
 
-
-.page_num {
-
+.page_num{
 	vertical-align:middle;
+	margin-left:2px;
+	width:10px;
+	height:10px;
+	border:1px solid #000069;
 }
-
 #studentprev{
 	background-color: #000069;
 	border: 1px solid #000069;
@@ -238,9 +258,11 @@
 	border: 1px solid #000069;
 	border-radius: 5px;
 	color: white;
-	margin: 7px;
+	margin: 8px;
 	width: 50px;
-	height: 33px;
+	line-height:28px;
+	vertical-align: middle;
+	
 }
 #searchbtn:hover{
 		background-color:white;
@@ -254,14 +276,17 @@
 #search>select {
 	width: 100px;
 	height: 33px;
+	
 	margin: 7px;
 	border-radius: 5px;
 	border: 1px solid #969696;
 	font-size: 120%;
 	text-align: center;
+	vertical-align: middle;
 }
 
 #search>input {
+	vertical-align: middle;
 	width: 230px;
 	height: 30px;
 	margin: 7px;
@@ -296,7 +321,7 @@
 		<div id="content" class="grid6">
 			&nbsp;
 			<!--*************content start****************-->
-			<div class="lmscontent">
+			<div class="lmscontent firstc-lmsctnt">
 				<h2>계정관리</h2>
 				<h4>회원정보</h4>
 				<div class="lmscontentadd">

@@ -35,13 +35,15 @@
 .btn{/*버튼 조절*/
 	vertical-align: middle;
 	font-size: 14px;
+	text-align:center;
 	text-decoration: none;
     background-color: #000069;
     border:1px solid #000069;
     color:white;
     margin: 7px;
-    width: 60px;
-    line-height: 20px;
+    width: 62px;
+    line-height: 25px;
+    border-radius:5px;
     float:right;
 }
 .btn:hover{

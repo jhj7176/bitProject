@@ -69,6 +69,12 @@ $('#accountform').submit(function(){ //등록버튼 눌렀을 때 이벤트.
 	return false;
 });//submit
 
+	$('select option').each(function(){
+		var space = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+			+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+			+'&nbsp;&nbsp;&nbsp;&nbsp;';
+		$(this).html(space+$(this).text());
+	});//each
 
 });//ready
 </script>
@@ -78,14 +84,16 @@ $('#accountform').submit(function(){ //등록버튼 눌렀을 때 이벤트.
 	width: 600px;
 	display: block;
 	margin: auto;
-	border-bottom:1px solid #e4e4e4;
 }
 
 #accountform{
-	margin-bottom:400px;
+	margin-bottom:200px;
 }
 #accounttable{
+	width:600px;
+	border-bottom:1px solid #e4e4e4;
 	border-collapse:collapse;
+	margin-bottom:40px;
 }
 #accounttable tr{
 }
@@ -96,17 +104,18 @@ $('#accountform').submit(function(){ //등록버튼 눌렀을 때 이벤트.
 	text-align:right;
 }
 #accounttable td{
+	width:400px;
 	padding:25px;
 	text-align:left;
 }
 
 #accountemailid,#deptselect,#name,#phone,#accountpw{ /* form input */
-    width: 330px;
-    height: 43px;
+    width: 300px;
+    height: 33px;
     margin: 7px;
     border-radius: 5px;
     border: 1px solid #969696;
-    font-size:120%;
+    font-size:90%;
     text-align:center;
 }
 
@@ -114,11 +123,12 @@ $('#accountform').submit(function(){ //등록버튼 눌렀을 때 이벤트.
 	float:right;
     background-color: #000069;
     border:1px solid #000069;
+	border-radius:5px;
     color:white;
     margin: 7px;
     width: 50px;
-    height: 20px;
-    line-height:20px;
+    height: 30px;
+    line-height:30px;
 }
 #accountedit:hover,#accountdelete:hover,#accountback:hover{/*  수정삭제뒤로가기 버튼 */
 		background-color:white;
@@ -181,7 +191,7 @@ $('#accountform').submit(function(){ //등록버튼 눌렀을 때 이벤트.
 					<tr>
 						<th>부서</th>
 						<td>
-						<select id="deptselect">
+						<select  id="deptselect">
 						<option selected="selected">영업</option>
 						<option>강사</option>
 						<option>행정</option>
@@ -197,10 +207,6 @@ $('#accountform').submit(function(){ //등록버튼 눌렀을 때 이벤트.
 					<tr>
 						<th>전화번호</th>
 						<td><input type="tel" name="phone" id="phone" placeholder="'-' 없이 입력해주세요."/></td>
-					</tr>
-					<tr>
-						<th></th>
-						<td></td>
 					</tr>
 				</table>
 

@@ -29,8 +29,9 @@ public class DrDao {
 	}
 	
 	public ArrayList<DrDto> getList(int pageNum, int num) throws SQLException{
-		int startNum = 1 + (pageNum - 1) * 10;
-		int endNum = 10 + (pageNum - 1) * 10;
+		int post = 5;
+		int startNum = 1 + (pageNum - 1) * post;
+		int endNum = post + (pageNum - 1) * post;
 		String sql="select * from (select rownum as rwn,drNum,drTitle,name,drdate,fileName,drContent from (select * from dataroom,member "
 				+ "where member.num=dataroom.num and dataroom.num=? order by drNum desc)) where rwn between "+startNum+" and "+endNum;
 		System.out.println(sql);

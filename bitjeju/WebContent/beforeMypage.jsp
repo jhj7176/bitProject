@@ -36,12 +36,20 @@ $(function(){
 	position:relative;
 	
 }
-
+.title_small {
+	margin-top: 10px;
+	margin-bottom: 50px;
+	width: 600px;
+	height: 30px;
+	/* border-bottom: 1px solid #e4e4e4; */
+	color: #999;
+}
 .lmscontent {
 	width: 600px;
 	display: block;
 	margin: auto;
-	border-bottom:1px solid #e4e4e4;
+	margin-bottom:40px;
+	/* border-bottom:1px solid #e4e4e4; */
 }
 .lmscontent:last-child{/*푸터와 거리두기  */
 	margin-bottom:400px;
@@ -54,21 +62,33 @@ $(function(){
 }
 #beforemypagetable{
 	border-collapse:collapse;
+	width:400px;
 	display:block;
+	margin:auto;
 	margin-top:80px;
+	border-top:1px solid #e4e4e4;
+	border-bottom:1px solid #e4e4e4;
 }
 #beforemypagetable tr{
 }
 #beforemypagetable th{
 	color:#1E3269;
 	padding:30px;
-	border-right:1px solid #e4e4e4;
+/* 	border-right:1px solid #e4e4e4; */
 	text-align:right;
 }
 #beforemypagetable td{
 	padding:25px;
 	text-align:left;
 }
+#mypagepw{
+	width:200px;
+	height:25px;
+	border-radius: 5px;
+	font-size:130%;
+	text-align:center;
+}
+
 #mypagesubmit,#mypageback{
 	float:right;
     background-color: #000069;
@@ -79,6 +99,9 @@ $(function(){
     height: 30px;
     line-height: 30px;
     border-radius: 5px;
+}
+#mypageback{
+	margin-right:140px;
 }
 #mypagesubmit:hover,#mypageback:hover{
 	background-color:white;
@@ -109,7 +132,9 @@ $(function(){
 		<form action="mypage.bit" method="post" id="mypageForm">
 			<div class="lmscontent">
 				<h2><img id="lock-icon" src="img/lock-icon.png"> 본인확인</h2>
-
+			 	<div class="title_small">
+				<small>비밀번호를 입력해주세요.</small>
+				</div>
 					<c:set value="${login }" var="bean" />
 				<table id="beforemypagetable">
 					<tr>

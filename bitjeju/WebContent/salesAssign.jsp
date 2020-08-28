@@ -56,11 +56,13 @@
 	    color:white;
 	    margin: 7px;
 	    width: 50px;
-	    line-height: 20px;
+	    line-height: 25px;
+	    border-radius: 5px;
 	}
 	.btn:hover{
 		background-color:white;
 		color:#000069;	
+		cursor: pointer;
 	}
 	#studentprev, #studentnext { /* 테이블 아래 이전,다음버튼 */
 		background-color: #000069;

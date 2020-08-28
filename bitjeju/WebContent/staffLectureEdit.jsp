@@ -47,6 +47,17 @@ $(function(){
 			}
 		});//submit
 
+		
+		$('#teacherselect option').each(function(){
+			var space = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+				+'&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;';
+			$(this).html(space+$(this).text());
+		});//each
+		$('#lectureroomselect option').each(function(){
+			var space = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+				+'&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;';
+			$(this).html(space+$(this).text());
+		});//each
 	//console.log학인용 >> Math.ceil(((new Date($('#end_day').val())).getTime()-(new Date($('#start_day').val())).getTime())/(1000*3600*24));
 	//type은 number
 });//ready
@@ -61,7 +72,8 @@ $(function(){
 }
 
 .lmscontent:last-child{
-	margin-bottom:400px;
+	border-bottom: 0px solid #e4e4e4;
+	margin-bottom:200px;
 }
 #lecturetable {
 	border-collapse: collapse;
@@ -85,11 +97,11 @@ $(function(){
 
 #lecture_name,#start_day,#end_day,#teacherselect,#lectureroomselect{
     width: 230px;
-    height: 43px;
+    height: 33px;
     margin: 7px;
     border-radius: 5px;
     border: 1px solid #969696;
-    font-size:120%;
+    font-size:90%;
     text-align:center;
 }
 
@@ -100,14 +112,18 @@ $(function(){
 	color: white;
 	margin: 7px;
 	width: 50px;
-	height: 20px;
+	height: 30px;
+	line-height:30px;
+	border-radius: 5px;
 }
 #lectureadd:hover, #lectureback:hover {
 		background-color:white;
 		color:#000069;
 		cursor: pointer;
 }
-
+.btns{
+	padding-top:40px;
+}
 </style>
 </head>
 <body>
@@ -167,15 +183,11 @@ $(function(){
 						</tr>
 						<tr>
 							<th>종강일</th>
-							<td><input type="date" name="end_day" id="end_day" value="${lecture.end_day }"/></td>
-						</tr>
-						<tr>
-							<th></th>
-							<td><input type="hidden" id="lecture_num" name="lecture_num" value="${lecture.lecture_num }"/></td>
+							<td><input type="date" name="end_day" id="end_day" value="${lecture.end_day }"/><input type="hidden" id="lecture_num" name="lecture_num" value="${lecture.lecture_num }"/></td>
 						</tr>
 					</table>
 			</div><!--**********lmscontent end**********-->
-			<div class="lmscontent">
+			<div class="lmscontent btns" >
 				<button id="lectureback" type="button" onclick="window.history.go(-1)">뒤로</button>
 				<button id="lectureadd" type="submit">등록</button>
 

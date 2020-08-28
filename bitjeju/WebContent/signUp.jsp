@@ -126,17 +126,26 @@ $('#overlap').on('click',function(){ // 아이디 중복검사 버튼
 
 <style type="text/css">
 .lmscontent {
-	width: 700px;
+	width: 650px;
 	display: block;
 	margin: auto;
-	border-bottom:1px solid #e4e4e4;
+	/* border-bottom:1px solid #e4e4e4; */
 }
-
+.title_small {
+	margin-top: 10px;
+	margin-bottom: 50px;
+	width: 700px;
+	height: 40px;
+/* 	border-bottom: 1px solid #e4e4e4; */
+	color: #999;
+}
 #signup{
 	margin-bottom:400px;
 }
 #signuptable{
+	/* margin:auto; */
 	border-collapse:collapse;
+/* 	border-top:1px solid #e4e4e4; */
 }
 #signuptable tr{
 }
@@ -161,13 +170,25 @@ $('#overlap').on('click',function(){ // 아이디 중복검사 버튼
     text-align:center;
     vertical-align:middle;
 }
-
-#signupbtn,#signupback{/* 버튼 */
+#signupbtn{
 	float:right;
     background-color: #000069;
     border:1px solid #000069;
     color:white;
     margin: 7px;
+    width: 80px;
+    height: 30px;
+    line-height:30px;
+    border-radius: 5px;
+
+}
+#signupback{/* 버튼 */
+	float:right;
+    background-color: #000069;
+    border:1px solid #000069;
+    color:white;
+    margin:7px;
+    margin-right: 155px;
     width: 50px;
     height: 30px;
     line-height:30px;
@@ -225,7 +246,10 @@ $('#overlap').on('click',function(){ // 아이디 중복검사 버튼
 			<!--*************content start****************-->
 			<div class="lmscontent">
 				<h2>회원가입</h2>
-				<h4>정보를 입력해주세요</h4>
+				<div class="title_small">
+				<small>정보를 입력해주세요.<br/>
+				</small>
+				</div>
 <!-- 
 --회원테이블
 	num number primary key, 				--회원번호
@@ -261,16 +285,12 @@ $('#overlap').on('click',function(){ // 아이디 중복검사 버튼
 						<th>전화번호</th>
 						<td><input type="tel" name="phone" id="phone" placeholder="'-' 없이 입력해주세요."/></td>
 					</tr>
-					<tr>
-						<th></th>
-						<td></td>
-					</tr>
 				</table>
 				
 			</div>
 			<div class="lmscontent">
 			<button id="signupback" type="button" onclick="window.history.go(-1)">뒤로</button>			
-			<button id="signupbtn" type="submit">등록</button>			
+			<button id="signupbtn" type="submit">가입하기</button>			
 			</div>
 			<!--*************content end******************-->
 			</form>

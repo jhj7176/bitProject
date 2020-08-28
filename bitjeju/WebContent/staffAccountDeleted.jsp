@@ -32,15 +32,16 @@
 	padding:25px;
 	text-align:left;
 }
-#accountedit,#accountdelete,#accountback{
+#accountback{
 	float:right;
     background-color: #000069;
     border:1px solid #000069;
+    border-radius:5px;
     color:white;
     margin: 7px;
     width: 50px;
-    height: 20px;
-    line-height:20px;
+    height: 30px;
+    line-height:30px;
 }
 #accountback:hover{
 		background-color:white;
@@ -86,7 +87,7 @@
 				</table>
 			</div>
 			<div class="lmscontent">
-			<button id="accountdelete" type="submit">뒤로</button>				
+			<button id="accountback" type="button" onclick="location.href='lmsstaffaccountlist.bit'">뒤로</button>				
 			</div>
 			</form>
 			<!--*************content end******************-->

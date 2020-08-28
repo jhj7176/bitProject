@@ -31,14 +31,18 @@ var recruit_num = "${recruit.recruit_num }";
 	});//ready
 </script>
 <style type="text/css">
+#content{
+	height: 700px;
+}
 .lmscontent {
-	width: 800px;
+	width: 600px;
 	display: block;
 	margin: auto;
 	border-bottom: 1px solid #e4e4e4;
 }
 
 .lmscontent:last-child {
+	border-bottom: 0px solid #e4e4e4;
 	margin-bottom: 300px;
 }
 
@@ -82,7 +86,9 @@ var recruit_num = "${recruit.recruit_num }";
 	color: white;
 	margin: 7px;
 	width: 50px;
-	height: 20px;
+	height: 30px;
+	line-height: 30px;
+	border-radius: 5px;
 }
 #recruitdelete:hover, #recruitback:hover {
 		background-color:white;
@@ -108,7 +114,9 @@ var recruit_num = "${recruit.recruit_num }";
 	border: 1px solid gray;
 	border-radius: 5px;
 }
-
+.btns{
+	padding-top:40px;
+}
 /* named upload */
 </style>
 </head>
@@ -150,7 +158,7 @@ var recruit_num = "${recruit.recruit_num }";
 
 
 			</div>
-			<div class="lmscontent">
+			<div class="lmscontent btns">
 				<button id="recruitback" type="button" onclick="window.history.go(-1)">뒤로</button>
 				<button id="recruitdelete" type="submit">삭제</button>
 			</div>

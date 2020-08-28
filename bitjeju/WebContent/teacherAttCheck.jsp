@@ -90,7 +90,13 @@ $(function(){
     color:white;
     margin: 7px;
     width: 50px;
-    line-height: 20px;
+    line-height: 25px;
+    border-radius: 5px;
+}
+#fin:hover{
+	background-color:white;
+	color:#000069;
+	cursor: pointer;
 }
 .classStu{
 	float:right;

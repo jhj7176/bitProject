@@ -30,6 +30,18 @@ $(function(){
 		}
 	});//submit
 
+	
+	$('#teacherselect option').each(function(){
+		var space = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+			+'&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;';
+		$(this).html(space+$(this).text());
+	});//each
+	$('#lectureroomselect option').each(function(){
+		var space = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+			+'&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;';
+		$(this).html(space+$(this).text());
+	});//each
+	
 //console.log학인용 >> Math.ceil(((new Date($('#end_day').val())).getTime()-(new Date($('#start_day').val())).getTime())/(1000*3600*24));
 //type은 number
 });//ready
@@ -40,12 +52,13 @@ $(function(){
 	width: 600px;
 	display: block;
 	margin: auto;
-	border-bottom: 1px solid #e4e4e4;
 }
 #lectureform{
-	margin-bottom:300px; /*푸터와 거리두기  */
+	margin-bottom:200px; /*푸터와 거리두기  */
 }
 #lecturetable {
+	width:600px;
+	border-bottom: 1px solid #e4e4e4;
 	border-collapse: collapse;
 }
 
@@ -61,6 +74,7 @@ $(function(){
 }
 
 #lecturetable td {
+	width:400px;
 	padding: 25px;
 	text-align: left;
 }
@@ -71,11 +85,11 @@ $(function(){
 
 #lecture_name,#start_day,#end_day,#teacherselect,#lectureroomselect{
     width: 230px;
-    height: 43px;
+    height: 33px;
     margin: 7px;
     border-radius: 5px;
     border: 1px solid #969696;
-    font-size:120%;
+    font-size:90%;
     text-align:center;
 }
 
@@ -86,12 +100,17 @@ $(function(){
 	color: white;
 	margin: 7px;
 	width: 50px;
-	height: 20px;
+	height: 30px;
+	line-heigth:30px;
+	border-radius:5px;
 }
 #lectureadd:hover, #lectureback:hover {
 		background-color:white;
 		color:#000069;
 		cursor: pointer;
+}
+.btns{
+	padding-top:40px;
 }
 </style>
 </head>
@@ -159,7 +178,7 @@ $(function(){
 
 					</table>
 			</div><!--**********lmscontent end**********-->
-			<div class="lmscontent">
+			<div class="lmscontent btns">
 				<button id="lectureback" type="button" onclick="window.history.go(-1)">뒤로</button>
 				<button id="lectureadd" type="submit">등록</button>
 

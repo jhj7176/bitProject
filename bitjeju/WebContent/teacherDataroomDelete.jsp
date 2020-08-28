@@ -23,6 +23,7 @@
 		color: white;
 		width: 45px;
 		margin: 5px;
+		border-radius:5px;
 		line-height: 25px;
 		font-size:14px;
 		cursor:pointer;	
@@ -38,6 +39,7 @@
 		width: 45px;
 		margin: 5px;
 		line-height: 27px;
+		border-radius:5px;
 		display:inline-block;
 	    float:left;
 	}

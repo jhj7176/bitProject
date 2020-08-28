@@ -52,14 +52,15 @@ var loginLvl;
 	$(function() {
 		lang = 10; //한 페이지당 페이지 링크번호 수. 10개 
 		var left = 0;
-		if (cardinality % 10 != 0) {//게시글 나누기 5의 나머지가 있는 경우 1페이지 추가
+		var post = 5; //한페이지에 보이는 게시글 수
+		if (cardinality % post != 0) {//게시글 나누기 5의 나머지가 있는 경우 1페이지 추가
 			left = 1;
 		}
 		/* 
 		77개 /10 =7
 		나머지 +1페이지
 		*/
-		var totalPage = (cardinality - cardinality % 5) / 5 + left;
+		var totalPage = (cardinality - cardinality % post) / post + left;
 		console.log('totalpage', totalPage);
 		start = 1 + parseInt((pageNum - 1) / lang) * lang;
 		end = start + lang; //페이지 번호링크 끝	
@@ -103,6 +104,17 @@ var loginLvl;
 				var paramnext = 'pageNum=' + pageNum;
 				location.href = 'customercenter.bit?' + paramnext;
 		});//click
+		
+		
+		$('.page_num>a').each(function(){
+			if($(this).text().trim()==pageNum){
+				$(this).css('color','white');
+				$(this).parent().css('background-color','#000069');
+			}
+		});
+		
+		
+		
 	});//ready
 	
 	
@@ -201,10 +213,16 @@ var loginLvl;
 	padding: 25px;
 }
 #paging{
-display: block;
-margin:auto;
-width:400px;
-text-align:center;
+	display: block;
+	margin:auto;
+	width:400px;
+	text-align:center;
+}
+.page_num{
+	margin-left:2px;
+	width:10px;
+	height:10px;
+	border:1px solid #000069;
 }
 #prev,#next{
 	text-decoration: none;

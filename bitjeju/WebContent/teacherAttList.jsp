@@ -25,7 +25,8 @@
     color:white;
     margin: 7px;
     width: 50px;
-    line-height: 20px;
+    line-height: 23px;
+    border-radius:5px;
     cursor:pointer;
 }
 .btn:hover{
@@ -63,6 +64,13 @@
 }
 #paging{
 		border-top:1px solid #e4e4e4;
+}
+.page_num{
+	vertical-align:middle;
+	margin-left:2px;
+	width:10px;
+	height:10px;
+	border:1px solid #000069;
 }
 #prev,#next{
 	text-decoration: none;
@@ -164,6 +172,16 @@ $(function(){
 			var paramnext = 'pageNum=' + pageNum;
 			location.href = 'lmsteacherattlist.bit?' + paramnext;
 	});//click
+	
+	
+	$('.page_num>a').each(function(){ //페이지링크 누르면 현재 페이지번호 색깔변함
+		if($(this).text().trim()==pageNum){
+			$(this).css('color','white');
+			$(this).parent().css('background-color','#000069');
+		}
+	});
+	
+	
 });
 </script>
 </head>

@@ -13,13 +13,15 @@
 	width: 600px;
 	display: block;
 	margin: auto;
-	border-bottom:1px solid #e4e4e4;
 }
 #deleteform{
 	margin-bottom:500px;/*푸터와 거리두기  */
 }
 #accounttable{
+	width:600px;
+	border-bottom:1px solid #e4e4e4;
 	border-collapse:collapse;
+	margin-bottom: 40px;
 }
 #accounttable tr{
 }
@@ -30,6 +32,7 @@
 	text-align:right;
 }
 #accounttable td{
+	width:400px;
 	padding:25px;
 	text-align:left;
 }
@@ -37,11 +40,12 @@
 	float:right;
     background-color: #000069;
     border:1px solid #000069;
+    border-radius:5px;
     color:white;
     margin: 7px;
     width: 50px;
-    height: 20px;
-    line-height:20px;
+    height: 30px;
+    line-height:30px;
 }
 #accountedit:hover,#accountdelete:hover,#accountback:hover{
 		background-color:white;
@@ -95,8 +99,8 @@
 
 			</div>
 			<div class="lmscontent">
-			<button id="accountback" onclick="window.history.go(-1)">뒤로</button>			
-			<button id="accountdelete">삭제</button>			
+			<button type="button" id="accountback" onclick="window.history.go(-1)">뒤로</button>			
+			<button type="submit" id="accountdelete">삭제</button>			
 			</div>
 			</form>
 			<!--*************content end******************-->

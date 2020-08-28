@@ -11,12 +11,16 @@
 		margin: auto;
 	}
 	.lmscontent:last-child {
-		margin-bottom:300px;
+		margin-bottom:150px;
 	}
 	#drtable{
 		margin: 20px auto;
 		border-collapse:collapse;
 	}
+	#drtable table{
+		border-top:3px solid #000069;
+	}
+		
 	#drtable th{
 		height: 30px;
 		text-align:center;
@@ -86,6 +90,7 @@
 		margin: 5px;
 		margin-top:30px;
 		line-height: 25px;
+		border-radius:5px;
 		float:right;
 		cursor:pointer;	
 	}

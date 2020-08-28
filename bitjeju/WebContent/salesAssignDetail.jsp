@@ -71,7 +71,8 @@
 	color: white;
 	margin: 7px;
 	width: 50px;
-	line-height: 20px;
+	line-height: 27px;
+	border-radius: 5px;
 }
 
 #assignback:hover {

@@ -25,6 +25,26 @@ $(function(){
 		}//if
 	});
 	//each
+	
+	$('select option').each(function(){
+		var textLength = $(this).text().length;
+		var space = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+			+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+		if(textLength==2){ 
+			$(this).html(space+$(this).text());
+		}
+		else if(textLength==3){ 
+			space = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+			+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+			$(this).html(space+$(this).text());
+		}
+		else if(textLength==4){ 
+			space = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;'
+			+'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
+			$(this).html(space+$(this).text());
+		}
+	});//each
+	
 });//ready
 </script>
 <style type="text/css">
@@ -32,13 +52,15 @@ $(function(){
 	width: 600px;
 	display: block;
 	margin: auto;
-	border-bottom:1px solid #e4e4e4;
 }
 .lmscontent:last-child{/*푸터와 거리두기  */
-	margin-bottom:400px;
+	margin-bottom:200px;
 }
 #accounttable{
+	width:600px;
+	border-bottom:1px solid #e4e4e4;
 	border-collapse:collapse;
+	margin-bottom: 40px;
 }
 #accounttable tr{
 }
@@ -49,6 +71,7 @@ $(function(){
 	text-align:right;
 }
 #accounttable td{
+	width:400px;
 	padding:25px;
 	text-align:left;
 }
@@ -56,17 +79,19 @@ $(function(){
 	float:right;
     background-color: #000069;
     border:1px solid #000069;
+    border-radius:5px;
     color:white;
     margin: 7px;
     width: 50px;
-    height: 20px;
-    line-height:20px;
+    height: 30px;
+    line-height:30px;
 }
 #accountedit:hover,#accountdelete:hover,#accountback:hover{
 		background-color:white;
 		color:#000069;
 		cursor: pointer;
 }
+
 #selectlvl{
 	border-radius:5px;
 	width:200px;

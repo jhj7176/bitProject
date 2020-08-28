@@ -11,11 +11,14 @@
 		margin: auto;
 	}
 	.lmscontent:last-child {
-		margin-bottom:300px;
+		margin-bottom:150px;
 	}
 	#drtable{
 		margin: 20px auto;
 		border-collapse:collapse;
+	}
+	#drtable table{
+		border-top:3px solid #000069;		
 	}
 	#drtable th{
 		height: 30px;
@@ -25,6 +28,10 @@
 		padding:10px;
 		border-right:1px solid #e4e4e4;
 		border-bottom:1px solid #e4e4e4;
+	}
+	#text{
+		height:300px;
+		vertical-align:top;
 	}
 	.line{
 		border-right:1px solid #e4e4e4;
@@ -51,6 +58,7 @@
 		margin: 5px;
 		margin-top:30px;
 		line-height: 25px;
+		border-radius:5px;
 		float:right;
 	}
 	.btn:hover,.btn2:hover{

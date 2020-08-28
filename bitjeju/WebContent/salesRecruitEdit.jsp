@@ -8,7 +8,9 @@
 <%@ include file="template/lmshead.jspf"%>
 <title>BITCAMP JEJU: LMS영업-모집공고</title>
 <script type="text/javascript">
-
+	function gotolist(){
+		location.href="lmssalesrecruitlist.bit";
+	}
 
 	$(function() {
 
@@ -39,7 +41,8 @@
 }
 
 .lmscontent:last-child {
-	margin-bottom: 300px;
+	border-bottom: 0px solid #e4e4e4;
+	margin-bottom: 200px;
 }
 
 #recruittable {
@@ -81,7 +84,9 @@
 	color: white;
 	margin: 7px;
 	width: 50px;
-	height: 20px;
+	height: 30px;
+	line-height: 30px;
+	border-radius: 5px;
 }
 #recruitedit:hover, #recruitedit:hover, #recruitdelete:hover, #recruitback:hover {
 		background-color:white;
@@ -113,7 +118,9 @@
 	border: 1px solid gray;
 	border-radius: 5px;
 }
-
+.btns{
+	padding-top:40px;
+}
 /* named upload */
 </style>
 </head>
@@ -175,8 +182,8 @@
 
 
 			</div>
-			<div class="lmscontent">
-				<button id="recruitback" onclick="window.history.go(-1)">뒤로</button>
+			<div class="lmscontent btns">
+				<button id="recruitback" type="button" onclick="gotolist()">뒤로</button>
 				<button id="recruitedit" type="submit">수정</button>
 			</div>
 				</form>

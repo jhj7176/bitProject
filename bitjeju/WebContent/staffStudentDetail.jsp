@@ -53,7 +53,8 @@
 }
 
 .lmscontent:last-child {
-	margin-bottom: 300px;
+	border-bottom: 0px solid #e4e4e4;
+	margin-bottom: 200px;
 }
 
 #lecturetable {
@@ -84,8 +85,9 @@
 	color: white;
 	margin: 7px;
 	width: 50px;
-	height: 20px;
-	line-height:20px;
+	height: 30px;
+	line-height:30px;
+	border-radius: 5px;
 }
 
 #studentdelete:hover, #studentback:hover {
@@ -98,6 +100,9 @@
 	height: 20px;
 	width: 300px;
 	/* 	background-color:beige; */
+}
+.btns{
+	padding-top:40px;
 }
 </style>
 </head>
@@ -219,7 +224,7 @@ private String lecture_name;
 
 
 			</div>
-			<div class="lmscontent">
+			<div class="lmscontent btns">
 				<button id="studentback" onclick="window.history.go(-1)">뒤로</button>
 				<button id="studentdelete">삭제</button>
 

@@ -12,11 +12,14 @@
 		margin: auto;
 	}
 	.lmscontent:last-child {
-		margin-bottom:300px;
+		margin-bottom:150px;
 	}
 	#drtable{
 		margin: 20px auto;
 		border-collapse:collapse;
+	}
+	#drtable table{
+		border-top: 3px solid #000069;
 	}
 	#drtable th{
 		height: 30px;
@@ -30,6 +33,10 @@
 	.line{
 		border-right:1px solid #e4e4e4;
 		width: 130px;
+	}
+	#text{
+		height:300px;
+		vertical-align: top;
 	}
 	#drtable td{
 		border-bottom:1px solid #e4e4e4;
@@ -105,7 +112,7 @@
 	       			<td>${bean.drDate }</td>
 	       		</tr>
 	       		<tr>
-	       			<td colspan="4">${bean.drContent }</td>
+	       			<td id="text" colspan="4">${bean.drContent }</td>
 	       		</tr>
 	       		<tr>
 	       			<th>첨부파일</th>

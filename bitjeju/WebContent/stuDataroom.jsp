@@ -23,14 +23,15 @@ function pages() {
 $(function() {
 	lang = 10; //한 페이지당 페이지 링크번호 수. 10개 
 	var left = 0;
-	if (cardinality % 10 != 0) {//게시글 나누기 5의 나머지가 있는 경우 1페이지 추가
+	var post = 5;
+	if (cardinality % post != 0) {//게시글 나누기 5의 나머지가 있는 경우 1페이지 추가
 		left = 1;
 	}
 	/* 
 	77개 /10 =7
 	나머지 +1페이지
 	*/
-	var totalPage = (cardinality - cardinality % 10) / 10 + left;
+	var totalPage = (cardinality - cardinality % post) / post + left;
 	console.log('totalpage', totalPage);
 	start = 1 + parseInt((pageNum - 1) / lang) * lang;
 	end = start + lang; //페이지 번호링크 끝	
@@ -74,16 +75,28 @@ $(function() {
 			var paramnext = 'pageNum=' + pageNum;
 			location.href = 'lmsstudataroom.bit?' + paramnext;
 	});//click
+	
+	
+	$('.page_num>a').each(function(){ //페이지링크 누르면 현재 페이지번호 색깔변함
+		if($(this).text().trim()==pageNum){
+			$(this).css('color','white');
+			$(this).parent().css('background-color','#000069');
+		}
+	});
 });//click
 </script>
 <style rel="stylesheet" type="text/css">
+	#content{
+		height:700px;
+	}
 	.lmscontent {
 		width: 600px;
+		height:500px
 		display: block;
 		margin: auto;
 	}
 	.lmscontent:last-child {
-	margin-bottom:300px;
+	/* margin-bottom:300px; */
 	}
 	#drtable{
 		text-align:center;
@@ -91,6 +104,9 @@ $(function() {
 		border-collapse:collapse;
 	}
 	#drtable table{
+		margin:auto;
+		margin-top:50px;
+		border-top:3px solid #000069;
 		border-collapse: collapse;
 	}
 	#drtable th{
@@ -101,6 +117,7 @@ $(function() {
 	}
 	#drtable td{
 		padding:15px;
+		border-bottom:1px solid #e4e4e4;
 	}
 	#drtable tr:first-child~tr:hover{
 		color: #1E3269;
@@ -114,8 +131,14 @@ $(function() {
 		color: black;
 	}
 	#paging{
-		border-top:1px solid #e4e4e4;
+		/* border-top:1px solid #e4e4e4; */
 	}
+	.page_num{
+	margin-left:2px;
+	width:10px;
+	height:10px;
+	border:1px solid #000069;
+}
 </style>
 </head>
 <body>

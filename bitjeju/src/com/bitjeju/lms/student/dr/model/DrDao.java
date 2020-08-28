@@ -33,8 +33,8 @@ public class DrDao {
 	}
 	
 	public ArrayList<DrDto> getList(int pageNum, String lecture) throws SQLException{
-		int startNum = 1 + (pageNum - 1) * 10;
-		int endNum = 10 + (pageNum - 1) * 10;
+		int startNum = 1 + (pageNum - 1) * 5;
+		int endNum = 5 + (pageNum - 1) * 5;
 		String sql="select * from (select rownum as rwn,drNum,drTitle,name,drdate,fileName,drContent from "
 				+ "(select * from dataroom,member where member.num=dataroom.num and dataroom.num="
 				+ "(select num from member where lecture=? and lvl=3) order by drNum desc))"

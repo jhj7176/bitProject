@@ -49,10 +49,11 @@ $(function(){
 	width: 600px;
 	display: block;
 	margin: auto;
-	border-bottom:1px solid #e4e4e4;
+	margin-bottom:40px;
+	/* border-bottom:1px solid #e4e4e4; */
 }
 .lmscontent:last-child{/*푸터와 거리두기  */
-	margin-bottom:400px;
+	margin-bottom:200px;
 }
 
 #lock-icon{
@@ -61,17 +62,21 @@ $(function(){
 	height:32px;
 }
 #accounttable{
+	width:600px;
 	border-collapse:collapse;
+	border-top:1px solid #e4e4e4;
+	border-bottom:1px solid #e4e4e4;
 }
 #accounttable tr{
 }
 #accounttable th{
 	color:#1E3269;
 	padding:30px;
-	border-right:1px solid #e4e4e4;
+	/* border-right:1px solid #e4e4e4; */
 	text-align:right;
 }
 #accounttable td{
+	width:400px;
 	padding:25px;
 	text-align:left;
 }

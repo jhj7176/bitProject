@@ -17,6 +17,11 @@
 		margin: 20px auto;
 		border-collapse:collapse;
 	}
+		#drtable table{
+		border-top:3px solid #000069;
+		border-collapse: collapse;
+	}
+	
 	#drtable th{
 		height: 30px;
 		text-align:center;
@@ -86,6 +91,7 @@
 		margin: 5px;
 		margin-top:30px;
 		line-height: 25px;
+		border-radius:5px;
 		float:right;
 	}
 	.btn:hover{

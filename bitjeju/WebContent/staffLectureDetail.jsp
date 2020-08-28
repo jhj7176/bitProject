@@ -67,6 +67,7 @@ $(function(){
 	border-bottom:1px solid #e4e4e4;
 }
 .lmscontent:last-child {
+	border-bottom:0px solid #e4e4e4;
 	margin-bottom:300px;
 }
 #lecturetable{
@@ -92,7 +93,9 @@ $(function(){
     color:white;
     margin: 7px;
     width: 50px;
-    height: 20px;
+    height: 30px;
+    line-height:30px;
+    border-radius: 5px;
 }
 #lectureedit:hover,#lecturedelete:hover,#lectureback:hover{
 		background-color:white;
@@ -116,7 +119,9 @@ $(function(){
 	cursor: pointer;
 }
 
-
+.btns{
+	padding-top:40px;
+}
 </style>
 </head>
 <body>
@@ -185,7 +190,7 @@ private String lecture_name;
 
 
 			</div>
-			<div class="lmscontent">
+			<div class="lmscontent btns">
 			<button id="lectureback" onclick="window.history.go(-1)">뒤로</button>			
 			<button id="lecturedelete">삭제</button>			
 			<button id="lectureedit">수정</button>			

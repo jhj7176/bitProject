@@ -91,7 +91,25 @@ lang = 5; //한 페이지당 페이지 링크번호 수. 5개
 		return false;
 	});//submit
 	
+	$('.page_num>a').each(function(){ //페이지링크 누르면 현재 페이지번호 색깔변함
+		if($(this).text().trim()==pageNum){
+			$(this).css('color','white');
+			$(this).parent().css('background-color','#000069');
+		}
+	});
 	
+	
+	$('#searchkey option').each(function(){
+		var textLength = $(this).text().length;
+		var space = '&nbsp;&nbsp;&nbsp;&nbsp;';
+		if(textLength==2){ 
+			$(this).html(space+$(this).text());
+		}
+		else if(textLength==3){ 
+			space = '&nbsp;&nbsp;';
+			$(this).html(space+$(this).text());
+		}
+	});//each
 	
 });//ready
 </script>
@@ -169,39 +187,53 @@ lang = 5; //한 페이지당 페이지 링크번호 수. 5개
 	display:block;
 	margin:auto;
 }
+.page_num{
+	vertical-align:middle;
+	margin-left:2px;
+	width:10px;
+	height:10px;
+	border:1px solid #000069;
+}
 #search{}
-#search>select{
-	width: 100px;
-    height: 33px;
-    margin: 7px;
-    border-radius: 5px;
-    border: 1px solid #969696;
-    font-size:120%;
-    text-align:center;
-}
-#search>input{	/*  검색창*/
-	width: 230px;
-    height: 30px;
-    margin: 7px;
-    border-radius: 5px;
-    border: 1px solid #969696;
-    font-size:120%;
-    text-align:center;
-}
-#searchbtn{ /* 검색버튼 */
+
+#searchbtn {
 	float: right;
 	background-color: #000069;
 	border: 1px solid #000069;
-	border-radius:5px;
+	border-radius: 5px;
 	color: white;
-	margin: 7px;
+	margin: 8px;
 	width: 50px;
-	height: 33px;
-} 
-#searchbtn:hover{ /* 검색버튼 */
+	line-height:28px;
+	vertical-align: middle;
+	
+}
+#searchbtn:hover{
 		background-color:white;
 		color:#000069;
 		cursor: pointer;
+}
+#search>select {
+	width: 100px;
+	height: 33px;
+	
+	margin: 7px;
+	border-radius: 5px;
+	border: 1px solid #969696;
+	font-size: 120%;
+	text-align: center;
+	vertical-align: middle;
+}
+
+#search>input {
+	vertical-align: middle;
+	width: 230px;
+	height: 30px;
+	margin: 7px;
+	border-radius: 5px;
+	border: 1px solid #969696;
+	font-size: 120%;
+	text-align: center;
 }
 </style>
 </head>

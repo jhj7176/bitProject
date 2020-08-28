@@ -32,15 +32,17 @@
 	width: 600px;
 	display: block;
 	margin: auto;
-	border-bottom: 1px solid #e4e4e4;
 }
 
 .lmscontent:last-child { /*푸터와 거리두기  */
+	margin-top:40px;
 	margin-bottom: 400px;
 }
 
 #accounttable {
+	border-bottom: 1px solid #e4e4e4;
 	border-collapse: collapse;
+	width:600px;
 }
 
 #accounttable tr {
@@ -55,6 +57,7 @@
 }
 
 #accounttable td {
+width:400px;
 	padding: 25px;
 	text-align: left;
 }
@@ -66,8 +69,9 @@
 	color: white;
 	margin: 7px;
 	width: 50px;
-	height: 20px;
-	line-height: 20px;
+	height: 30px;
+	line-height: 30px;
+	border-radius: 5px;
 }
 
 #accountedit:hover, #accountdelete:hover, #accountback:hover {
