@@ -192,11 +192,11 @@ $('#accountform').submit(function(){ //등록버튼 눌렀을 때 이벤트.
 						<th>부서</th>
 						<td>
 						<select  id="deptselect">
-						<option selected="selected">영업</option>
-						<option>강사</option>
-						<option>행정</option>
-						<option>회계</option>
-						<option>취업</option>
+						<option value="영업" selected="selected">영업</option>
+						<option value="강사">강사</option>
+						<option value="행정">행정</option>
+						<option value="회계">회계</option>
+						<option value="취업">취업</option>
 						</select>
 						</td>
 					</tr>

@@ -70,4 +70,7 @@ public class StuAttDao {
 		}
 		return list;
 	}
+	
+	
+	
 }

@@ -165,16 +165,16 @@ $(function(){
 							<td>
 							<select id="teacherselect" name = "name">
 									<c:forEach items ="${teacherList }" var="name">
-									<option>${name }</option>
+									<option value="${name }">${name }</option>
 									</c:forEach>
 							</select></td>
 						</tr>
 						<tr>
 							<th>강의실</th>
 							<td><select id="lectureroomselect" name="lecture_room">
-									<option>201</option>
-									<option>202</option>
-									<option>203</option>
+									<option value="201">201</option>
+									<option value="202">202</option>
+									<option value="203">203</option>
 							</select></td>
 						</tr>
 						<tr>

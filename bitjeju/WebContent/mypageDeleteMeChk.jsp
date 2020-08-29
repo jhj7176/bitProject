@@ -157,7 +157,7 @@ var num = "${bean.num }";
 		<!--*****************lms메뉴******************-->
 		<div class="grid2">
 			<div id="lmsmenu">
-				<p>계정관리</p>
+				<p>내 정보</p>
 				<ul>
 					<li class="bigletter">계정관리</li>
 					<li><a href="mypage.bit">회원정보</a></li>

@@ -106,7 +106,7 @@ var loginLvl;
 		});//click
 		
 		
-		$('.page_num>a').each(function(){
+		$('.page_num>a').each(function(){ //페이지링크 누르면 현재 페이지번호 색깔변함
 			if($(this).text().trim()==pageNum){
 				$(this).css('color','white');
 				$(this).parent().css('background-color','#000069');

@@ -139,7 +139,7 @@ $(function(){
 		<!--*****************lms메뉴******************-->
 		<div class="grid2">
 			<div id="lmsmenu">
-				<p>내정보</p>
+				<p>내 정보</p>
 				<ul>
 					<li class="bigletter">계정관리</li>
 					<li><a href="mypage.bit">회원정보</a></li>
@@ -153,7 +153,7 @@ $(function(){
 			&nbsp;
 			<!--*************content start****************-->
 			<div class="lmscontent">
-				<h2><img id="lock-icon" src="img/lock-icon.png"> 내정보</h2>
+				<h2><img id="lock-icon" src="img/lock-icon.png"> 내 정보</h2>
 				<h4>&nbsp;</h4>
 
 

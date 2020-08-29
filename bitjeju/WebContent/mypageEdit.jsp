@@ -228,7 +228,7 @@ $(function(){
 		<!--*****************lms메뉴******************-->
 		<div class="grid2">
 			<div id="lmsmenu">
-				<p>내정보</p>
+				<p>내 정보</p>
 				<ul>
 					<li class="bigletter">계정관리</li>
 					<li><a href="mypage.bit">회원정보</a></li>
@@ -242,7 +242,7 @@ $(function(){
 			&nbsp;
 			<!--*************content start****************-->
 			<div class="lmscontent">
-				<h2><img id="lock-icon" src="img/lock-icon.png"> 내정보 수정</h2>
+				<h2><img id="lock-icon" src="img/lock-icon.png"> 내 정보 수정</h2>
 				<div class="title_small">
 				<small>비트캠프 비밀번호와 전화번호를 수정 하실 수 있습니다.</small>
 				</div>

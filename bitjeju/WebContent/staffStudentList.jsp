@@ -99,7 +99,7 @@ lang = 5; //한 페이지당 페이지 링크번호 수. 5개
 	});
 	
 	
-	$('#searchkey option').each(function(){
+	$('#searchkey option').each(function(){			//selecet option가운데 정렬
 		var textLength = $(this).text().length;
 		var space = '&nbsp;&nbsp;&nbsp;&nbsp;';
 		if(textLength==2){ 

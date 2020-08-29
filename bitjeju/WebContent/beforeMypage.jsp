@@ -117,9 +117,9 @@ $(function(){
 		<!--*****************lms메뉴******************-->
 		<div class="grid2">
 			<div id="lmsmenu">
-				<p>내정보</p>
+				<p>내 정보</p>
 				<ul>
-					<li class="bigletter">게정관리</li>
+					<li class="bigletter">계정관리</li>
 					<li><a href="mypage.bit">회원정보</a></li>
 
 				</ul>
@@ -151,7 +151,7 @@ $(function(){
 
 			</div>
 			<div class="lmscontent">
-			<button id="mypageback" onclick="window.history.go(-1)">뒤로</button>			
+			<button id="mypageback" type="button" onclick="window.history.go(-1)">뒤로</button>			
 			<button id="mypagesubmit" type="submit">확인</button>			
 <!-- 			<button id="accountedit">수정</button>
 
