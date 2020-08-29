@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.bitjeju.lms.student.attendance.model.StuAttDao;
 import com.bitjeju.lms.student.attendance.model.StuAttDto;
+import com.bitjeju.lms.teacher.stu.model.StudentDao;
+import com.bitjeju.lms.teacher.stu.model.StudentDto;
 
 
 
@@ -25,6 +27,7 @@ public class StuAttDetailController extends HttpServlet {
 		System.out.println(num+state);
 		try {
 			StuAttDao dao=new StuAttDao();
+			
 			ArrayList<StuAttDto> list=dao.selectState(num, state);
 			request.setAttribute("list", list);
 		} catch (SQLException e) {

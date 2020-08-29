@@ -27,6 +27,9 @@ public class StuAttDto {
 		this.state = state;
 		this.attList = attList;
 	}
+
+
+	
 	public int calAttDays() { //총 수업일 계
 		int attDays=0;	//총 출석일 변수설정
 		
@@ -77,9 +80,14 @@ public class StuAttDto {
 	}
 	
 	public double classProgress() {//수업 진행률 계산
-		System.out.println("수업진행률: "+ calTilToday()*100/calAttDays()*1.0);
-		return calTilToday()*100/calAttDays()*1.0;
+		System.out.println("수업진행률: "+ (calTilToday()*100.0/calAttDays()));
+		System.out.println("수업진행률: "+ calTilToday()+"//"+calAttDays());
+		return (calTilToday()*1000/calAttDays())/10.0;
 	}
+	
+	
+	
+	
 	public int cntAtt() {
 		int cnt=0;
 		for (int i=0 ; i<attList.size();i++) {//리스트 사이즈 = 총 수업들은 일 수 

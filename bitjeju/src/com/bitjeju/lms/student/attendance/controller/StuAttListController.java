@@ -12,6 +12,8 @@ import javax.servlet.http.HttpSession;
 
 import com.bitjeju.lms.student.attendance.model.StuAttDao;
 import com.bitjeju.lms.student.attendance.model.StuAttDto;
+import com.bitjeju.lms.teacher.stu.model.StudentDao;
+import com.bitjeju.lms.teacher.stu.model.StudentDto;
 import com.bitjeju.member.MemberDto;
 
 
@@ -26,10 +28,13 @@ public class StuAttListController extends HttpServlet {
 		int num=bean2.getNum();
 		
 		try {
-			StuAttDao dao=new StuAttDao();
-			bean=dao.selectAll(num);
+		//	StuAttDao dao=new StuAttDao();
+			//bean=dao.selectAll(num);
 			
-			request.setAttribute("bean", bean);
+			StudentDao dao2 = new StudentDao();
+			StudentDto bean1 = dao2.stuSelectOne(num);
+			//request.setAttribute("rate", rate);
+			request.setAttribute("bean", bean1);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

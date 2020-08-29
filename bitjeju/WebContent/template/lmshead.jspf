@@ -5,6 +5,8 @@
     <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
  <link rel="stylesheet" type="text/css" href="css/bitgrid.css">   
 <script type="text/javascript" src="js/jquery-1.12.4.min.js"></script>
+<link rel="stylesheet" href="js/jquery-ui.css"/>
+<script type="text/javascript" src="js/jquery-ui.js"></script>
 <script type="text/javascript">
 
 function goToLms(){ //LMS접속 버튼 눌렀을 때 처리

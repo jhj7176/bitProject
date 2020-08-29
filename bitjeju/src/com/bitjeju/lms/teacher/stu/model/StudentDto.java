@@ -90,8 +90,9 @@ public class StudentDto {
 	}
 	
 	public double classProgress() {//熱機 霞ч睦 啗骯
-		System.out.println("熱機霞ч睦: "+ calTilToday()*100/calAttDays()*1.0);
-		return calTilToday()*100/calAttDays()*1.0;
+		System.out.println("熱機霞ч睦: "+ (calTilToday()*100.0/calAttDays()));
+		System.out.println("熱機霞ч睦: "+ calTilToday()+"//"+calAttDays());
+		return (calTilToday()*1000/calAttDays())/10.0;
 	}
 	
 	public int cntAtt() {

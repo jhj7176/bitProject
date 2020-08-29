@@ -82,3 +82,8 @@ alter table recruit drop primary key(recruit_num);
 alter table recruit modify (recruit_num number unique);
 alter table recruit add (thumbnail varchar2(100));
 
+insert into member values (member_seq.nextval,'teststu@email.com','학생',2,'password',01012341235,'테스트반99');
+
+
+
+

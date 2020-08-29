@@ -10,8 +10,16 @@
 	var attRate = "${bean.attRate()}"; //출석률
 	var classRate = "${bean.classProgress()}"; //수업진행률
 	$(function() {
-		$('#attRange').prop('value', attRate);
-		$('#classRange').prop('value', classRate);
+		$('#cl-progress').progressbar({value : Math.floor(classRate)});
+		$('#cl-progress').css('height','23px').css('vertical-align','text-bottom');
+		$('#cl-progress').find(".ui-progressbar-value").css({"background":"#e4e4e4"}).css('height','100%');
+	 //프로그래스 바
+		$('#ar-progress').progressbar({value : Math.floor(attRate)});
+		//$('#ar-progress').progressbar({value : 88});
+		$('#ar-progress').css('height','23px').css('vertical-align','text-bottom');
+		$('#ar-progress').find(".ui-progressbar-value").css({"background":"#e4e4e4"}).css('height','100%');
+		
+		
 	});
 </script>
 <style type="text/css">
@@ -81,6 +89,19 @@
 .btns{
 	padding-top:40px;
 }
+.bardivs {
+	width: 300px; /* 100% */
+	position: relative;
+	
+}
+#cl-pro-text,#ar-pro-text {
+	position: absolute;
+ 	top: 0;
+	left: 0;
+	width: 100%;
+	padding-top: 0px;
+	text-align: center;
+} 
 </style>
 </head>
 <body>
@@ -156,11 +177,17 @@
 					</tr>
 					<tr>
 						<th>수업 진행률</th>
-						<td><progress id="classRange" max="100"></progress>${bean.classProgress()}%</td>
+						<td><div class="bardivs">
+								<div id="cl-progress"></div>
+								<div id="cl-pro-text">&nbsp;${bean.classProgress()}%&nbsp;(${bean.calTilToday()}/${bean.calAttDays()}일)</div>
+							</div></td>
 					</tr>
 					<tr>
 						<th>출석률</th>
-						<td><progress id="attRange" max="100"></progress>${bean.attRate()}%</td>
+						<td><div class="bardivs">
+								<div id="ar-progress"></div>
+								<div id="ar-pro-text">&nbsp;${bean.attRate()}%&nbsp;(${bean.cntAtt()}/${bean.calAttDays()}일)</div>
+							</div></td>
 					</tr>
 					<tr>
 						<th>출석</th>
