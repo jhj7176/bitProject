@@ -1,5 +1,7 @@
 # bitProject
 bitcamp164 2nd project
+javaWeb MVC 패턴 (jsp, controller, VO)
+java, html, css, jstl, javascript, jquery, oracle
 
 BitCamp Jeju점 오픈
 LMS(학습관리프로그램)을 가진 학원 홈페이지 만들기
